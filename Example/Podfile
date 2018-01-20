@@ -7,7 +7,5 @@ target 'JoyKit_Example' do
 
   target 'JoyKit_Tests' do
     inherit! :search_paths
-
-    
   end
 end

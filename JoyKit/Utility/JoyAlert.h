@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 typedef void(^AlertBlock)(UIAlertView *alertView,NSInteger btnIndex);
 @interface JoyAlert : NSObject
 

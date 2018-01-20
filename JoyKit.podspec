@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.01'
-  s.summary          = 'A short description of JoyKit.'
+  s.version          = '0.1.02'
+  s.summary          = 'test 0.1.02.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,29 +17,29 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
+
+s.description      = <<-DESC
 TODO: Add long description of the pod here.
-                       DESC
+DESC
 
-  s.homepage         = 'https://github.com/joy-make/JoyKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'joy-make' => '315585646@qq.com' }
-  s.source           = { :git => 'https://github.com/joy-make/JoyKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.homepage         = 'https://github.com/joy-make/JoyKit'
 
-  s.ios.deployment_target = '8.0'
+# s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'joy-make' => '315585646@qq.com' }
+s.source           = { :git => 'https://github.com/joy-make/JoyKit.git', :tag => s.version.to_s }
 
-  s.source_files = 'JoyKit/**/*.{h,m}'
+# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.resources = 'JoyKit/**/*.{png,jpeg,jpg,plist,xib}'
+s.ios.deployment_target = '7.0'
+s.source_files = 'JoyKit/**/*.{h,m}'
+s.resources = 'JoyKit/**/*.{png,jpeg,jpg,plist,xib}'
 
- #s.resource_bundles = {'JoyKit' => ['JoyKit/**/*.{xib,png,jpg,jpeg,plist}']}
+#s.resource_bundles = {'JoyKit' => ['JoyKit/**/*.{xib,png,jpg,jpeg,plist}']}
+# s.public_header_files = 'Pod/Classes/**/*.h'
+# s.frameworks = 'UIKit', 'MapKit'
 
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'Masonry'
-    s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}
+s.dependency 'Masonry'
+s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}
 
 end
