@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.0'
+  s.version          = '0.1.01'
   s.summary          = 'A short description of JoyKit.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'JoyKit/**/*.{h,m}'
 
-  s.resources = 'JoyKit/imageSources/*.{png,jpeg,jpg,plist,xib}'
+  s.resources = 'JoyKit/**/*.{png,jpeg,jpg,plist,xib}'
 
  #s.resource_bundles = {'JoyKit' => ['JoyKit/**/*.{xib,png,jpg,jpeg,plist}']}
 

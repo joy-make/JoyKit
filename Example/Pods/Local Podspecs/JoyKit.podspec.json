@@ -19,11 +19,7 @@
     "ios": "8.0"
   },
   "source_files": "JoyKit/**/*.{h,m}",
-  "resource_bundles": {
-    "JoyKit": [
-      "JoyKit/**/*.{xib,png,jpg,jpeg,plist}"
-    ]
-  },
+  "resources": "JoyKit/**/*.{png,jpeg,jpg,plist,xib}",
   "dependencies": {
     "Masonry": [
 
