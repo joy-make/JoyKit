@@ -1,0 +1,19 @@
+PODS:
+  - JoyKit (0.1.0):
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - JoyKit (from `../`)
+
+EXTERNAL SOURCES:
+  JoyKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  JoyKit: 3266591ef5f3106268ec9568362df8f7a35225a7
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: d27faa1f51779d461b8f59d55bcb6587ab57864a
+
+COCOAPODS: 1.3.1

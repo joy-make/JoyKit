@@ -1,0 +1,6 @@
+framework module JoyKit {
+  umbrella header "JoyKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
