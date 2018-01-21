@@ -2,7 +2,7 @@
 //  JoyLeftIconTopBottomLabelCell.m
 //  Toon
 //
-//  Created by wangguopeng on 16/9/9.
+//  Created by joymake on 16/9/9.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 
@@ -86,7 +86,7 @@
     if (model.subTitleColor) {
         self.subTitleLabel.textColor = model.subTitleColor;
     }
-    NSString *placeHolderImageStr = JOY_GETBUNDLE_PATH(model.avatarBundleName,model.placeHolderImageStr);
+    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
     self.accessView.image = model.placeHolderImageStr.length?[UIImage imageNamed:placeHolderImageStr]:nil;
     
 }

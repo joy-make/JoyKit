@@ -2,7 +2,7 @@
 //  JoyLeftLabelRightIconCell.m
 //  Toon
 //
-//  Created by wangguopeng on 16/5/11.
+//  Created by joymake on 16/5/11.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 
@@ -59,7 +59,7 @@
 
 - (void)setCellWithModel:(JoyImageCellBaseModel *)model{
     self.titleLabel.text = model.title;
-    NSString *placeHolderImageStr = JOY_GETBUNDLE_PATH(model.avatarBundleName,model.placeHolderImageStr);
+    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
 
     SDIMAGE_LOAD(self.imageVIew, model.avatar, placeHolderImageStr);
     if (model.titleColor) {

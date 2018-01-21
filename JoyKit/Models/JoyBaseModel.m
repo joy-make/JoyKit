@@ -2,7 +2,7 @@
 //  JoyBaseModel.m
 //  Toon
 //
-//  Created by wangguopeng on 16/5/30.
+//  Created by joymake on 16/5/30.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

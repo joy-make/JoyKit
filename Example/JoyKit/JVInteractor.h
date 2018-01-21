@@ -2,8 +2,8 @@
 //  JVInteractor.h
 //  JoyTool
 //
-//  Created by wangguopeng on 2017/4/12.
-//  Copyright © 2017年 wangguopeng. All rights reserved.
+//  Created by joymake on 2017/4/12.
+//  Copyright © 2017年 joymake. All rights reserved.
 //
 
 #import "JoyKit.h"

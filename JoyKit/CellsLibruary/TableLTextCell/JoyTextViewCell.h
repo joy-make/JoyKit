@@ -2,7 +2,7 @@
 //  JoyTextViewCell.h
 //  Pods
 //
-//  Created by wangguopeng on 2017/8/11.
+//  Created by joymake on 2017/8/11.
 //
 //
 

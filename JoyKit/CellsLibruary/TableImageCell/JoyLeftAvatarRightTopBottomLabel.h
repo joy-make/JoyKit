@@ -2,7 +2,7 @@
 //  JoyLeftAvatarRightTopBottomLabel.h
 //  Toon
 //
-//  Created by wangguopeng on 16/3/22.
+//  Created by joymake on 16/3/22.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

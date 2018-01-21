@@ -33,13 +33,12 @@ s.source           = { :git => 'https://github.com/joy-make/JoyKit.git', :tag =>
 
 s.ios.deployment_target = '7.0'
 s.source_files = 'JoyKit/**/*.{h,m}'
-s.resources = 'JoyKit/**/*.{png,jpeg,jpg,plist,xib}'
-
+s.resources = 'JoyKit/Assets/*'
 #s.resource_bundles = {'JoyKit' => ['JoyKit/**/*.{xib,png,jpg,jpeg,plist}']}
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
 
 s.dependency 'Masonry'
-s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}
+#s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}
 
 end

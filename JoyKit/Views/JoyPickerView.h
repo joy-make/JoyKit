@@ -2,7 +2,7 @@
 //  JoyPickerView.h
 //  Toon
 //
-//  Created by wangguopeng on 16/1/4.
+//  Created by joymake on 16/1/4.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

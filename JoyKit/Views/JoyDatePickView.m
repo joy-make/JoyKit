@@ -2,7 +2,7 @@
 //  JoyDatePickView.m
 //  Toon
 //
-//  Created by wangguopeng on 16/1/25.
+//  Created by joymake on 16/1/25.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 #define KBTN_TITLE_COLOR [UIColor colorWithRed:3/255.f green:122.f/255.f blue:1.f alpha:1.0f]

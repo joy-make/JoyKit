@@ -2,7 +2,7 @@
 //  UIBarButtonItem+JoyBarItem.h
 //  Toon
 //
-//  Created by wangguopeng on 2017/2/24.
+//  Created by joymake on 2017/2/24.
 //  Copyright © 2017年 JoyMake. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  JoyCellBaseModel+Edit.h
 //  Pods
 //
-//  Created by wangguopeng on 2017/4/7.
+//  Created by joymake on 2017/4/7.
 //
 //
 

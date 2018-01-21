@@ -2,7 +2,7 @@
 //  JoyLeftLabelRightPlaceHolderLabelCell.h
 //  Toon
 //
-//  Created by wangguopeng on 16/4/15.
+//  Created by joymake on 16/4/15.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

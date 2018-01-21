@@ -2,7 +2,7 @@
 //  UITableViewCell+JoyCell.m
 //  Toon
 //
-//  Created by wangguopeng on 2017/3/15.
+//  Created by joymake on 2017/3/15.
 //  Copyright © 2017年 JoyMake. All rights reserved.
 //
 

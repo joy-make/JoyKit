@@ -2,7 +2,7 @@
 //  JoyNoDataBackView.m
 //  Toon
 //
-//  Created by wangguopeng on 16/9/1.
+//  Created by joymake on 16/9/1.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

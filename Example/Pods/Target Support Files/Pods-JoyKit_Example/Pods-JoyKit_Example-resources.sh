@@ -83,6 +83,20 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@2x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@3x.png"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@2x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@3x.png"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

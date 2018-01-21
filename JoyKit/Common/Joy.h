@@ -2,7 +2,7 @@
 //  joy.h
 //  Toon
 //
-//  Created by wangguopeng on 2017/2/28.
+//  Created by joymake on 2017/2/28.
 //  Copyright © 2017年 JoyMake. All rights reserved.
 //
 
@@ -49,7 +49,7 @@
 //获取bundle----------------------------------------------
 #define JOY_GETBUNDLE(bundleName) bundleName?[NSBundle bundleWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:bundleName]]:nil
 
-#define JOY_GETBUNDLE_PATH(bundleName,resourceName) bundleName?[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", bundleName, resourceName]]:resourceName
+#define JOY_GETSOURCE_PATH(bundleName,resourceName) bundleName?[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", bundleName, resourceName]]:resourceName
 
 #define JoyToolBundle @"JoyKit.bundle"
 //获取bundle结束----------------------------------------------

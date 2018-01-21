@@ -2,7 +2,7 @@
 //  JoyUISegementView.m
 //  CustomSegMent
 //
-//  Created by wangguopeng on 16/7/7.
+//  Created by joymake on 16/7/7.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

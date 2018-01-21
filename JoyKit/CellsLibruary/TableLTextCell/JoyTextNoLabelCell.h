@@ -2,7 +2,7 @@
 //  TNATextAndTitleTopDownTableCell.h
 //  Toon
 //
-//  Created by wangguopeng on 16/7/12.
+//  Created by joymake on 16/7/12.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

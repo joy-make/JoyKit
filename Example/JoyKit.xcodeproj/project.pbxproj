@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E851333A20F5414F8E07056 /* libPods-JoyKit_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8F12AC87AADA3976222EC0 /* libPods-JoyKit_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -15,17 +16,15 @@
 		6003F59E195388D20070C39A /* JoyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* JoyAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* JoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* JoyViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		7553C01BA179038794A0536B /* Pods_JoyKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E5C058B62126781C805EA5 /* Pods_JoyKit_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9601372E8849A856FAB7A718 /* Pods_JoyKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706B93C8565BDFA60A0BA50A /* Pods_JoyKit_Example.framework */; };
 		BBE8882D200CC5CA007D9A64 /* JVPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE88826200CC5C8007D9A64 /* JVPresenter.m */; };
 		BBE88830200CC5CA007D9A64 /* JVInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE8882B200CC5C9007D9A64 /* JVInteractor.m */; };
+		D0C14AABC89106EFC0093287 /* libPods-JoyKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA1B7FE68E8F2CBD5FA7C24 /* libPods-JoyKit_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,7 @@
 /* Begin PBXFileReference section */
 		310A962050CDD3C5EC351979 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		38394C29529DA953D9FFAFF4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		59E5C058B62126781C805EA5 /* Pods_JoyKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoyKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C8F12AC87AADA3976222EC0 /* libPods-JoyKit_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoyKit_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* JoyKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoyKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,13 +55,11 @@
 		6003F5A6195388D20070C39A /* JoyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* JoyKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		68D8EB61F92ADD299217CC0D /* Pods-JoyKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Tests/Pods-JoyKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		706B93C8565BDFA60A0BA50A /* Pods_JoyKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoyKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		745F64B622452CB924860B92 /* JoyKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JoyKit.podspec; path = ../JoyKit.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +69,7 @@
 		BBE8882A200CC5C9007D9A64 /* JVInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVInteractor.h; sourceTree = "<group>"; };
 		BBE8882B200CC5C9007D9A64 /* JVInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVInteractor.m; sourceTree = "<group>"; };
 		BBE8882C200CC5CA007D9A64 /* JVPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVPresenter.h; sourceTree = "<group>"; };
+		DBA1B7FE68E8F2CBD5FA7C24 /* libPods-JoyKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoyKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2DBA04B0E12EDDAEE4A14 /* Pods-JoyKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Tests/Pods-JoyKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9601372E8849A856FAB7A718 /* Pods_JoyKit_Example.framework in Frameworks */,
+				D0C14AABC89106EFC0093287 /* libPods-JoyKit_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,10 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				7553C01BA179038794A0536B /* Pods_JoyKit_Tests.framework in Frameworks */,
+				5E851333A20F5414F8E07056 /* libPods-JoyKit_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,9 +125,8 @@
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				706B93C8565BDFA60A0BA50A /* Pods_JoyKit_Example.framework */,
-				59E5C058B62126781C805EA5 /* Pods_JoyKit_Tests.framework */,
+				DBA1B7FE68E8F2CBD5FA7C24 /* libPods-JoyKit_Example.a */,
+				3C8F12AC87AADA3976222EC0 /* libPods-JoyKit_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,9 +312,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example-resources.sh",
+				"${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png",
+				"${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png",
+				"${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg",
+				"${PODS_ROOT}/../../JoyKit/Assets/select@2x.png",
+				"${PODS_ROOT}/../../JoyKit/Assets/select@3x.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -575,13 +578,26 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JoyKit/JoyKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JoyKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+				);
 				INFOPLIST_FILE = "JoyKit/JoyKit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/JoyKit\"",
+				);
 				MODULE_NAME = ExampleApp;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoyKit.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -594,13 +610,26 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JoyKit/JoyKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JoyKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+				);
 				INFOPLIST_FILE = "JoyKit/JoyKit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/JoyKit\"",
+				);
 				MODULE_NAME = ExampleApp;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoyKit.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -2,7 +2,7 @@
 //  UIBarButtonItem+JoyBarItem.m
 //  Toon
 //
-//  Created by wangguopeng on 2017/2/24.
+//  Created by joymake on 2017/2/24.
 //  Copyright © 2017年 JoyMake. All rights reserved.
 //
 
@@ -19,8 +19,8 @@
                                           frame:(CGRect)frame
                                          bundle:(NSString *)bundleName
 {
-    normalImgName = JOY_GETBUNDLE_PATH(bundleName,normalImgName);
-    highLightImageName = JOY_GETBUNDLE_PATH(bundleName,normalImgName);
+    normalImgName = JOY_GETSOURCE_PATH(bundleName,normalImgName);
+    highLightImageName = JOY_GETSOURCE_PATH(bundleName,normalImgName);
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:frame];

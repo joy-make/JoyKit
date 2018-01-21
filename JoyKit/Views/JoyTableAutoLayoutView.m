@@ -2,7 +2,7 @@
 //  TNAAutoLayoutTableBaseView.m
 //  Toon
 //
-//  Created by wangguopeng on 16/6/20.
+//  Created by joymake on 16/6/20.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 #define KNoInfoSectionFootH 0.0f

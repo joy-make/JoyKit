@@ -2,7 +2,7 @@
 //  JoySectionBaseModel
 //  Toon
 //
-//  Created by wangguopeng on 16/3/23.
+//  Created by joymake on 16/3/23.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 

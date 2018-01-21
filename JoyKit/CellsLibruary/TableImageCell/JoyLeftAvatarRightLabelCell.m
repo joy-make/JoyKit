@@ -2,7 +2,7 @@
 //  JoyLeftAvatarRightLabelCell.m
 //  Toon
 //
-//  Created by wangguopeng on 16/3/16.
+//  Created by joymake on 16/3/16.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 
@@ -56,7 +56,7 @@
 
 - (void)setCellWithModel:(JoyImageCellBaseModel *)model{
     
-    NSString *placeHolderImageStr = JOY_GETBUNDLE_PATH(model.avatarBundleName,model.placeHolderImageStr);
+    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
 
     SDIMAGE_LOAD(self.headImageView, model.avatar,placeHolderImageStr);
     if (model.title) {

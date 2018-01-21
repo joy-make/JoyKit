@@ -2,7 +2,7 @@
 //  JoyTextViewCell.m
 //  Pods
 //
-//  Created by wangguopeng on 2017/8/11.
+//  Created by joymake on 2017/8/11.
 //
 //
 #define KTEXTMaXWIDTH  SCREEN_W - 110

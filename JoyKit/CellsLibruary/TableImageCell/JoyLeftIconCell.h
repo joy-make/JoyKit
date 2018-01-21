@@ -2,7 +2,7 @@
 //  JoyLeftIconCell.h
 //  Toon
 //
-//  Created by wangguopeng on 16/7/25.
+//  Created by joymake on 16/7/25.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 
