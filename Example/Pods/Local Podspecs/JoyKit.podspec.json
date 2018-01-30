@@ -1,7 +1,7 @@
 {
   "name": "JoyKit",
-  "version": "0.1.02",
-  "summary": "test 0.1.02.",
+  "version": "0.1.03",
+  "summary": "test 0.1.03",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.02"
+    "tag": "0.1.03"
   },
   "platforms": {
     "ios": "7.0"
