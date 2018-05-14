@@ -282,4 +282,15 @@ static   UIInterfaceOrientation AppInterfaceOrientation() {
     }
     return arr;
 }
+
+-(UIImage *)snapshotSingleView{
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+    
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return image;
+}
 @end

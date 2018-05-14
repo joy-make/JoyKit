@@ -17,7 +17,6 @@ static const void * inputOldStrKey =&inputOldStrKey;
 -(void)setTextMaxNum:(NSInteger)maxNum{
     objc_setAssociatedObject(self, @selector(textEditingChanged:), [NSNumber numberWithInteger:maxNum], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self addTarget:self action:@selector(textEditingChanged:) forControlEvents:UIControlEventEditingChanged];
-    
 }
 
 -(void)textEditingChanged:(UITextField *)textField

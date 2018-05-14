@@ -8,6 +8,9 @@
 
 #import "UIImage+Extension.h"
 #import <ImageIO/ImageIO.h>
+#import <Photos/Photos.h>
+//#import <Photos/PHAssetChangeRequest.h>
+
 @import Accelerate;
 
 @implementation UIImage (Extension)
@@ -449,6 +452,21 @@ void cleanupBuffer(void *userData, void *buf_data)
     UIGraphicsEndImageContext();
     
     return ret;
+}
+
+- (void)saveToPhotos:(VOIDBLOCK)successed
+{
+    if (@available(iOS 8.0, *)) {
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            //写入图片到相册
+            [PHAssetChangeRequest creationRequestForAssetFromImage:self];
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            NSLog(@"success = %d, error = %@", success, error);
+            if (success == 1) {
+                successed?successed():nil;
+            }
+        }];
+    }
 }
 
 @end

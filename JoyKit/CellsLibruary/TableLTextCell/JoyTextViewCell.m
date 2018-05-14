@@ -15,20 +15,17 @@
 #import "NSString+JoyCategory.h"
 #import "joy.h"
 @interface JoyTextViewCell()<UITextViewDelegate>
-//@property (weak, nonatomic)  UILabel *titleLabel;
 @property (strong, nonatomic)  UITextView *textView;
-//@property (weak, nonatomic)  NSLayoutConstraint *textViewHConstraint;
-
 @property (nonatomic,copy) NSString *inputOldStr;
 @property (nonatomic,copy)NSString *changeTextKey;
-//@property (weak, nonatomic) IBOutlet UILabel *placeHolderLabel;
+@property (strong, nonatomic) UILabel *placeHolderLabel;
 @property (nonatomic,assign)BOOL isNeedScroll;
 @end
 
 @implementation JoyTextViewCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-//        [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.placeHolderLabel];
         [self.contentView addSubview:self.textView];
         [self setConstraint];
         [self updateConstraintsIfNeeded];
@@ -41,27 +38,27 @@
         _textView = [[UITextView alloc]initWithFrame:CGRectZero];
         _textView.delegate = self;
         _textView.font = [UIFont systemFontOfSize:15];
+        _textView.backgroundColor = [UIColor clearColor];
     }
     return _textView;
 }
 
-//-(UILabel *)titleLabel{
-//    if(!_titleLabel){
-//        _titleLabel =[[UILabel alloc]init];
-//        _titleLabel.font = [UIFont systemFontOfSize:15];
-//        _titleLabel.numberOfLines = 0;
-//    }
-//    return _titleLabel;
-//}
-//
+-(UILabel *)placeHolderLabel{
+    if(!_placeHolderLabel){
+        _placeHolderLabel =[[UILabel alloc]init];
+        _placeHolderLabel.font = [UIFont systemFontOfSize:15];
+        _placeHolderLabel.textColor = [UIColor lightGrayColor];
+    }
+    return _placeHolderLabel;
+}
+
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
-//    MAS_CONSTRAINT(self.titleLabel,
-//                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
-//                   make.width.mas_lessThanOrEqualTo(80);
-//                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(5);
-//                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
-//                   );
+    MAS_CONSTRAINT(self.placeHolderLabel,
+                   make.leading.mas_equalTo(weakSelf.textView).offset(15);
+                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.centerY.mas_equalTo(weakSelf.textView.mas_centerY);
+                   );
     
     MAS_CONSTRAINT(self.textView,
                    make.leading.mas_equalTo(weakSelf.contentView).offset(5);
@@ -78,15 +75,13 @@
     self.changeTextKey = model.changeKey;
     self.textView.keyboardType = model.keyboardType?model.keyboardType:UIKeyboardTypeDefault;
     self.maxNum = model.maxNumber;
-//    self.titleLabel.text = model.title;
     if (self.maxNum && model.subTitle.strLength> self.maxNum)
     {
         model.subTitle  =  [model.subTitle subToMaxIndex:self.maxNum];
     }
     self.textView.text = model.subTitle;
-//    self.placeHolderLabel.text = model.placeHolder;
-//    self.placeHolderLabel.hidden = self.textView.text.length;
-//    if (model.titleColor) {self.titleLabel.textColor = model.titleColor;}
+    self.placeHolderLabel.text = model.placeHolder;
+    self.placeHolderLabel.hidden = self.textView.text.length;
     CGSize constraintSize = CGSizeMake(KTEXTMaXWIDTH, MAXFLOAT);
     CGSize size = [self.textView sizeThatFits:constraintSize];
     if (size.height >= KTEXTMaXHEIGHT)
@@ -97,7 +92,6 @@
     {
         size.height = KTEXTMINHEIGHT;
     }
-//    self.textViewHConstraint.constant = size.height;
     [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_greaterThanOrEqualTo(size.height);
     }];
@@ -160,7 +154,7 @@
             }
         }
     }
-//    self.placeHolderLabel.hidden = textView.text.length;
+    self.placeHolderLabel.hidden = textView.text.length;
     [self changeFrameWhenTextViewChanged:textView];
 }
 
@@ -198,9 +192,6 @@
         [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_greaterThanOrEqualTo(size.height);
         }];
-
-//        self.textViewHConstraint.constant = size.height;
-//        self.contentView.height = size.height+KTEXTTBSPACE;
         JoyTextCellBaseModel *model = objc_getAssociatedObject(self, @selector(changeFrameWhenTextViewChanged:));
         model.cellH = self.contentView.height;
         [self setNeedsUpdateConstraints];
@@ -219,7 +210,6 @@
         CGFloat contentOfSetY = size.height-scrollView.height;
         scrollView.contentOffset.y != contentOfSetY?[scrollView setContentOffset:CGPointMake(0, contentOfSetY)]:nil;
     }
-    
 }
 
 @end

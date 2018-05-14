@@ -82,4 +82,10 @@
 
 #pragma mark 邮箱是否正确
 - (BOOL)isValidateEmail;
+
+#pragma mark 条形码
+- (UIImage *)barCodeImage;
+
+#pragma mark 二维码
+- (UIImage *)logoQrCode;
 @end

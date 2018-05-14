@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Joy.h"
+
 FOUNDATION_EXPORT double ImageEffectsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 
@@ -38,4 +40,7 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 
 #pragma markUIBezierPath 裁剪
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c;
+
+//存相册
+- (void)saveToPhotos:(VOIDBLOCK)successed;
 @end

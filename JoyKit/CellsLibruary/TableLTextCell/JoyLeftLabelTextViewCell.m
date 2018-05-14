@@ -1,11 +1,10 @@
 //
-//  JoyLeftLabelTextViewCell.m
-//  Toon
+//  JoyTextViewCell.m
+//  Pods
 //
-//  Created by joymake on 16/8/31.
-//  Copyright © 2016年 Joy. All rights reserved.
+//  Created by joymake on 2017/8/11.
 //
-
+//
 #define KTEXTMaXWIDTH  SCREEN_W - 110
 #define KTEXTMaXHEIGHT 200
 #define KTEXTMINHEIGHT 34
@@ -15,18 +14,77 @@
 #import "JoyCellBaseModel.h"
 #import "NSString+JoyCategory.h"
 #import "joy.h"
-
-@interface JoyLeftLabelTextViewCell ()<UITextViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHConstraint;
-
-@property (nonatomic,copy) NSString *inputOldStr;
-@property (nonatomic,copy)NSString *changeTextKey;
-@property (weak, nonatomic) IBOutlet UILabel *placeHolderLabel;
+@interface JoyLeftLabelTextViewCell()<UITextViewDelegate>
+@property (strong, nonatomic)  UILabel *titleLabel;
+@property (strong, nonatomic)  UITextView *textView;
+@property (strong, nonatomic)  UILabel *placeHolderLabel;
+@property (nonatomic,copy)      NSString *inputOldStr;
+@property (nonatomic,copy)      NSString *changeTextKey;
 @property (nonatomic,assign)BOOL isNeedScroll;
 @end
+
 @implementation JoyLeftLabelTextViewCell
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.placeHolderLabel];
+        [self.contentView addSubview:self.textView];
+        [self setConstraint];
+        [self updateConstraintsIfNeeded];
+    }
+    return self;
+}
+
+-(UITextView *)textView{
+    if (!_textView) {
+        _textView = [[UITextView alloc]initWithFrame:CGRectZero];
+        _textView.delegate = self;
+        _textView.font = [UIFont systemFontOfSize:15];
+        _textView.backgroundColor = [UIColor clearColor];
+    }
+    return _textView;
+}
+
+-(UILabel *)titleLabel{
+    if(!_titleLabel){
+        _titleLabel =[[UILabel alloc]init];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.textColor = [UIColor lightGrayColor];
+    }
+    return _titleLabel;
+}
+
+-(UILabel *)placeHolderLabel{
+    if(!_placeHolderLabel){
+        _placeHolderLabel =[[UILabel alloc]init];
+        _placeHolderLabel.font = [UIFont systemFontOfSize:15];
+        _placeHolderLabel.textColor = [UIColor lightGrayColor];
+    }
+    return _placeHolderLabel;
+}
+
+-(void)setConstraint{
+    __weak __typeof(&*self)weakSelf = self;
+    MAS_CONSTRAINT(self.titleLabel,
+                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
+                   make.width.mas_lessThanOrEqualTo(100);
+                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
+                   );
+    
+    MAS_CONSTRAINT(self.placeHolderLabel,
+                   make.leading.mas_equalTo(weakSelf.textView).offset(15);
+                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.centerY.mas_equalTo(weakSelf.textView.mas_centerY);
+                   );
+    
+    MAS_CONSTRAINT(self.textView,
+                   make.leading.mas_equalTo(weakSelf.titleLabel.mas_trailing).offset(5);
+                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.height.mas_greaterThanOrEqualTo(33.5);
+                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(5);
+                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
+                   );
+}
 
 - (void)setCellWithModel:(JoyTextCellBaseModel *)model{
     self.textView.returnKeyType = UIReturnKeyDone;
@@ -34,15 +92,15 @@
     self.changeTextKey = model.changeKey;
     self.textView.keyboardType = model.keyboardType?model.keyboardType:UIKeyboardTypeDefault;
     self.maxNum = model.maxNumber;
-    self.titleLabel.text = model.title;
     if (self.maxNum && model.subTitle.strLength> self.maxNum)
     {
-    model.subTitle  =  [model.subTitle subToMaxIndex:self.maxNum];
+        model.subTitle  =  [model.subTitle subToMaxIndex:self.maxNum];
     }
+    self.titleLabel.text = model.title;
     self.textView.text = model.subTitle;
     self.placeHolderLabel.text = model.placeHolder;
     self.placeHolderLabel.hidden = self.textView.text.length;
-    if (model.titleColor) {self.titleLabel.textColor = model.titleColor;}
+    self.titleLabel.textColor = model.titleColor?model.titleColor:[UIColor darkTextColor];
     CGSize constraintSize = CGSizeMake(KTEXTMaXWIDTH, MAXFLOAT);
     CGSize size = [self.textView sizeThatFits:constraintSize];
     if (size.height >= KTEXTMaXHEIGHT)
@@ -53,7 +111,9 @@
     {
         size.height = KTEXTMINHEIGHT;
     }
-    self.textViewHConstraint.constant = size.height;
+    [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_greaterThanOrEqualTo(size.height);
+    }];
     self.contentView.height = size.height+11;
     [self setNeedsUpdateConstraints];
 }
@@ -61,7 +121,7 @@
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
     if ([self.delegate respondsToSelector:@selector(textshouldBeginEditWithTextContainter:andIndexPath:)])
     {
-    [self.delegate textshouldBeginEditWithTextContainter:textView andIndexPath:self.index];
+        [self.delegate textshouldBeginEditWithTextContainter:textView andIndexPath:self.index];
     }
     return YES;
 }
@@ -69,13 +129,13 @@
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView{
     if ([self.delegate respondsToSelector:@selector(textshouldEndEditWithTextContainter:andIndexPath:)])
     {
-    [self.delegate textshouldEndEditWithTextContainter:textView andIndexPath:self.index];
+        [self.delegate textshouldEndEditWithTextContainter:textView andIndexPath:self.index];
     }
     return YES;
 }
 
 - (void)textViewDidChange:(UITextView *)textView{
-
+    
     if ([self.delegate respondsToSelector:@selector(textHasChanged:andText:andChangedKey:)]) {
         [self.delegate textHasChanged:self.index andText:textView.text andChangedKey:self.changeTextKey];
     }
@@ -148,24 +208,27 @@
     }
     
     if (self.contentView.height-KTEXTTBSPACE != size.height) {
-        self.textViewHConstraint.constant = size.height;
-        self.contentView.height = size.height+KTEXTTBSPACE;
+        [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_greaterThanOrEqualTo(size.height);
+        }];
+        JoyTextCellBaseModel *model = objc_getAssociatedObject(self, @selector(changeFrameWhenTextViewChanged:));
+        model.cellH = self.contentView.height;
         [self setNeedsUpdateConstraints];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.beginUpdatesBlock?self.beginUpdatesBlock():nil;
-        self.endUpdatesBlock?self.endUpdatesBlock():nil;
-        self.scrollBlock?self.scrollBlock(self.index,UITableViewScrollPositionBottom,NO):nil;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.scrollBlock?self.scrollBlock(self.index,UITableViewScrollPositionBottom,NO):nil;
+            self.beginUpdatesBlock?self.beginUpdatesBlock():nil;
+            self.endUpdatesBlock?self.endUpdatesBlock():nil;
         });
     }
 }
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;
 {
     if (scrollView == self.textView) {
-    CGSize constraintSize = CGSizeMake(scrollView.contentSize.width, MAXFLOAT);
-    CGSize size = [scrollView sizeThatFits:constraintSize];
-    CGFloat contentOfSetY = size.height-scrollView.height;
-    scrollView.contentOffset.y != contentOfSetY?[scrollView setContentOffset:CGPointMake(0, contentOfSetY)]:nil;
+        CGSize constraintSize = CGSizeMake(scrollView.contentSize.width, MAXFLOAT);
+        CGSize size = [scrollView sizeThatFits:constraintSize];
+        CGFloat contentOfSetY = size.height-scrollView.height;
+        scrollView.contentOffset.y != contentOfSetY?[scrollView setContentOffset:CGPointMake(0, contentOfSetY)]:nil;
     }
-
 }
+
 @end

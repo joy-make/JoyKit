@@ -142,4 +142,12 @@
  */
 
 - (NSArray*)allSubviews;
+
+
+/**
+ view转换图片
+ @return 返回转后的image
+ */
+-(UIImage *)snapshotSingleView;
+
 @end
