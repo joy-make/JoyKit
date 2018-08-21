@@ -10,7 +10,6 @@ PODS:
     - JoyKit/Views (= 0.1.05)
     - Masonry
   - JoyKit/Category (0.1.05):
-    - JoyKit/Common
     - Masonry
   - JoyKit/CellsLibruary (0.1.05):
     - JoyKit/Category
@@ -18,6 +17,7 @@ PODS:
     - JoyKit/Models
     - Masonry
   - JoyKit/Common (0.1.05):
+    - JoyKit/Category
     - Masonry
   - JoyKit/Controllers (0.1.05):
     - JoyKit/Category
@@ -28,6 +28,7 @@ PODS:
     - JoyKit/CellsLibruary
     - JoyKit/Controllers
     - JoyKit/Utility
+    - JoyKit/Views
     - Masonry
   - JoyKit/Models (0.1.05):
     - Masonry
@@ -51,7 +52,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JoyKit: 105e761ef1bdcc8a248d5a4c5c3289ddd19d7fab
+  JoyKit: 3925bec989bcbaf5f34fd179c3424d5719f6161a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: 207b95c55ed86f2034c88c5d38811ff18ee011a5

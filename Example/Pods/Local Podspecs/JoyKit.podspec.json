@@ -42,6 +42,9 @@
         ],
         "JoyKit/Utility": [
 
+        ],
+        "JoyKit/Views": [
+
         ]
       }
     },
@@ -61,16 +64,16 @@
     {
       "name": "Common",
       "source_files": "JoyKit/Common/**/*.{h,m}",
+      "dependencies": {
+        "JoyKit/Category": [
+
+        ]
+      },
       "public_header_files": "JoyKit/Common/**/*.h"
     },
     {
       "name": "Category",
       "source_files": "JoyKit/Category/**/*.{h,m}",
-      "dependencies": {
-        "JoyKit/Common": [
-
-        ]
-      },
       "public_header_files": "JoyKit/Category/**/*.h"
     },
     {
