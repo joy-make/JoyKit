@@ -55,7 +55,7 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.placeHolderLabel,
-                   make.leading.mas_equalTo(weakSelf.textView).offset(15);
+                   make.leading.mas_equalTo(weakSelf.textView).offset(10);
                    make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
                    make.centerY.mas_equalTo(weakSelf.textView.mas_centerY);
                    );

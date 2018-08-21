@@ -59,4 +59,8 @@
 @property (nonatomic,copy)void (^longPressBlock)(void);
 
 @property (nonatomic,copy)void (^scrollBlock)(NSIndexPath *indexPath,UITableViewScrollPosition scrollPosition,BOOL animated);
+
+@property (nonatomic,copy)void (^collectionDidSelectBlock)(NSIndexPath *collectionIndexPath);
+
+@property (nonatomic,copy)void (^collectionDeleteBlock)(NSIndexPath *collectionIndexPath);
 @end

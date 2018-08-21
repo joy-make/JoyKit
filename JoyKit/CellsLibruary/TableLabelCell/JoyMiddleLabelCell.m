@@ -11,12 +11,15 @@
 
 @interface JoyMiddleLabelCell ()
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic,strong) JoyCellBaseModel   *model;
 @end
 
 @implementation JoyMiddleLabelCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.titleLabel];
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressAction:)];
+        [self.contentView addGestureRecognizer:longPress];
         [self setConstraint];
         [self updateConstraintsIfNeeded];
     }
@@ -44,10 +47,16 @@
                    );
 }
 - (void)setCellWithModel:(JoyCellBaseModel *)model{
+    self.model = model;
     self.titleLabel.text = model.title;
     if (model.titleColor) {
         self.titleLabel.textColor = model.titleColor;
     }
 }
 
+- (void)longPressAction:(UILongPressGestureRecognizer *)gesture{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        self.model.longPressAction&&self.longPressBlock?self.longPressBlock():nil;
+    }
+}
 @end

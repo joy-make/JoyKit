@@ -10,6 +10,7 @@
 
 @interface JoyPickerView : UIView
 @property (nonatomic,strong)UIPickerView *pickerView;
+@property (nonatomic,assign) NSTextAlignment textAlignment;
 @property (nonatomic,copy)void (^CancleBtnClickBlock)(void);
 @property (nonatomic,copy)void (^EntryBtnClickBlock)(void);
 @property (nonatomic,copy)void (^pickSelectBlock)(NSInteger coponent,NSInteger row);

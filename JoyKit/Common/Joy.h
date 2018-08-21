@@ -12,25 +12,6 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #pragma clang diagnostic ignored "-Wnonportable-include-path"
 
-//提示语相关--------------------------------------------------
-#if __has_include("MBProgressHUD+Extend.h") && __has_include("TNACompatible.h")
-#import "MBProgressHUD+Extend.h"
-#import "TNACompatible.h"
-
-#define KTOPICERRORCODE(errorCode) {KHIDEHUB; [MBProgressHUD showMessage:[[TNACompatible sharedTNACompatible] getDescriptionStringWithErrorCode:errorCode] inView:nil];}
-#define KHIDEHUB [MBProgressHUD hideHudInView:nil animated:NO];
-#define KTOPICINfO(topic)  {KHIDEHUB; [MBProgressHUD showMessage:topic inView:nil];}
-#define KTOPIC(topic)  [MBProgressHUD showMessage:[[TNACompatible sharedTNACompatible] getDescriptionStringWithErrorCodeString:topic] inView:nil];
-
-#define KSHOWHUDLOADING {[MBProgressHUD showActivityIndicatorViewInView:nil withMessage:@"努力加载中" dimBackground:NO];}
-
-#else
-#define KTOPICERRORCODE(errorCode)
-#define KHIDEHUB
-#define KTOPICINfO(topic)
-#define KTOPIC(topic)
-#define KSHOWHUDLOADING
-#endif
 //提示语相关结束-------------------------------------------------
 
 //数据处理----------------------------------------------------
@@ -51,7 +32,6 @@
 
 #define JOY_GETSOURCE_PATH(bundleName,resourceName) bundleName?[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", bundleName, resourceName]]:resourceName
 
-#define JoyToolBundle @"JoyKit.bundle"
 //获取bundle结束----------------------------------------------
 
 //获取color----------------------------------------------

@@ -92,7 +92,7 @@ static const void * inputOldStrKey =&inputOldStrKey;
 {
     NSString *maxTopicStr = objc_getAssociatedObject(self, @selector(setTextTopicStr:));
     if (maxTopicStr) {
-        KTOPICINfO(maxTopicStr);
+//        KTOPICINfO(maxTopicStr);
     }
 }
 - (void)setLeftContentPadding:(CGFloat)padding {

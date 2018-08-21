@@ -227,6 +227,14 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         [weakSelf.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:animated];
     };
     
+    cell.collectionDeleteBlock = ^(NSIndexPath *collectionIndexPath) {
+        [weakSelf collectionDeSelect:indexPath collectionIndexPath:collectionIndexPath];
+    };
+    
+    cell.collectionDidSelectBlock = ^(NSIndexPath *collectionIndexPath) {
+        [weakSelf collectionDidSelect:indexPath collectionIndexPath:collectionIndexPath];
+    };
+    
     cell.longPressBlock = ^{
         [weakSelf cellDidSelectWithIndexPath:indexPath action:model.longPressAction];
     };
@@ -338,6 +346,17 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         cellSelectBlock?cellSelectBlock(indexPath,action?:model.tapAction):nil;
         [model action:action];
     }
+}
+
+#pragma mark collectionCell点击事件
+- (void)collectionDidSelect:(NSIndexPath *)tableIndexPath collectionIndexPath:(NSIndexPath *)collectionIndexPath{
+    CellCollectionBlock collectionDidSelectBlock = objc_getAssociatedObject(self, @selector(collectionDidSelect));
+    collectionDidSelectBlock?collectionDidSelectBlock(tableIndexPath, collectionIndexPath):nil;
+}
+
+- (void)collectionDeSelect:(NSIndexPath *)tableIndexPath collectionIndexPath:(NSIndexPath *)collectionIndexPath{
+    CellCollectionBlock collectionDeSelectBlock = objc_getAssociatedObject(self, @selector(collectionDeSelect));
+    collectionDeSelectBlock?collectionDeSelectBlock(tableIndexPath, collectionIndexPath):nil;
 }
 
 #pragma mark ⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️ scrollDelegate protocol⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️⚽️
@@ -511,6 +530,23 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 -(JoyTableAutoLayoutView *(^)(CellTextCharacterHasChanged))cellTextCharacterHasChanged{
     __weak __typeof(&*self)weakSelf = self;
     return ^(CellTextCharacterHasChanged block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+//collectionCell点击
+-(JoyTableAutoLayoutView *(^)(CellCollectionBlock))collectionDidSelect{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(CellCollectionBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+-(JoyTableAutoLayoutView *(^)(CellCollectionBlock))collectionDeSelect{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(CellCollectionBlock block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
         return weakSelf;
     };

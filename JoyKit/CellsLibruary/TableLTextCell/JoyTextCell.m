@@ -116,7 +116,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if ([self.delegate respondsToSelector:@selector(textChanged:andText:andChangedKey:)]) {
         JoyTextCellBaseModel *model = objc_getAssociatedObject(self, _cmd);
-        model.title = textField.text;
+        model.subTitle = textField.text;
         [self.delegate textChanged:self.index andText:textField.text andChangedKey:self.changeTextKey];
     }
 }

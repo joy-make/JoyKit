@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.04'
+  s.version          = '0.1.05'
   s.summary          = 'cellTextView优化'
 
 # This description is used to generate tags and improve search results.
@@ -37,6 +37,71 @@ s.resources = 'JoyKit/Assets/*'
 #s.resource_bundles = {'JoyKit' => ['JoyKit/**/*.{xib,png,jpg,jpeg,plist}']}
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
+
+s.subspec 'Views' do|ss|
+ss.source_files = 'JoyKit/Views/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Views/**/*.h'
+ss.dependency 'JoyKit/CellsLibruary'
+ss.dependency 'JoyKit/Category'
+ss.dependency 'JoyKit/Controllers'
+ss.dependency 'JoyKit/Utility'
+ss.dependency 'JoyKit/Interactor'
+ss.dependency 'JoyKit/Presenter'
+ss.public_header_files = 'JoyKit/Views/**/*.h'
+end
+
+s.subspec 'Common' do|ss|
+ss.source_files = 'JoyKit/Common/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Common/**/*.h'
+end
+
+s.subspec 'Category' do|ss|
+ss.source_files = 'JoyKit/Category/**/*.{h,m}'
+ss.dependency 'JoyKit/Common'
+ss.public_header_files = 'JoyKit/Category/**/*.h'
+end
+
+s.subspec 'Models' do|ss|
+ss.source_files = 'JoyKit/Models/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Models/**/*.h'
+end
+
+s.subspec 'CellsLibruary' do|ss|
+ss.source_files = 'JoyKit/CellsLibruary/**/*.{h,m}'
+ss.dependency 'JoyKit/Models'
+ss.dependency 'JoyKit/Common'
+ss.dependency 'JoyKit/Category'
+ss.public_header_files = 'JoyKit/CellsLibruary/**/*.h'
+end
+
+s.subspec 'Protocols' do|ss|
+ss.source_files = 'JoyKit/Protocols/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Protocols/**/*.h'
+end
+
+s.subspec 'Controllers' do|ss|
+ss.source_files = 'JoyKit/Controllers/**/*.{h,m}'
+ss.dependency 'JoyKit/Protocols'
+ss.dependency 'JoyKit/Common'
+ss.dependency 'JoyKit/Category'
+ss.public_header_files = 'JoyKit/Controllers/**/*.h'
+end
+
+s.subspec 'Interactor' do|ss|
+ss.source_files = 'JoyKit/Interactor/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Interactor/**/*.h'
+end
+
+s.subspec 'Presenter' do|ss|
+ss.source_files = 'JoyKit/Presenter/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Presenter/**/*.h'
+end
+
+s.subspec 'Utility' do|ss|
+ss.source_files = 'JoyKit/Utility/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Utility/**/*.h'
+end
+
 
 s.dependency 'Masonry'
 #s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}

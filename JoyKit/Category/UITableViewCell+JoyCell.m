@@ -67,4 +67,20 @@
 -(void (^)(NSIndexPath *, UITableViewScrollPosition, BOOL))scrollBlock{
     return objc_getAssociatedObject(self, @selector(setScrollBlock:));
 }
+
+-(void)setCollectionDidSelectBlock:(void (^)(NSIndexPath *))collectionDidSelectBlock{
+    objc_setAssociatedObject(self, _cmd, collectionDidSelectBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(void (^)(NSIndexPath *))collectionDidSelectBlock{
+    return objc_getAssociatedObject(self, @selector(setCollectionDidSelectBlock:));
+}
+
+-(void)setCollectionDeleteBlock:(void (^)(NSIndexPath *))collectionDeleteBlock{
+    objc_setAssociatedObject(self, _cmd, collectionDeleteBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(void (^)(NSIndexPath *))collectionDeleteBlock{
+    return objc_getAssociatedObject(self, @selector(setCollectionDeleteBlock:));
+}
 @end

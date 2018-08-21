@@ -25,6 +25,8 @@ typedef void (^CellTextCharacterHasChanged)(NSIndexPath *indexPath,NSString *con
 
 typedef void (^ScrollBlock)(UIScrollView *scrollView);
 
+typedef void (^CellCollectionBlock)(NSIndexPath *indexPath,NSIndexPath *collectionIndexPath);
+
 @class JoySectionBaseModel;
 @interface JoyTableAutoLayoutView : UIView<UITableViewDataSource,UITableViewDelegate>
 
@@ -64,6 +66,11 @@ typedef void (^ScrollBlock)(UIScrollView *scrollView);
 //**************编辑Action结束
 #pragma mark Table滚动
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScroll)(ScrollBlock scrollBlock);
+
+#pragma mark tableCollection
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDidSelect)(CellCollectionBlock collectionDidSelectBlock);
+
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDeSelect)(CellCollectionBlock collectionDeSelectBlock);
 
 //**********************************链式配置,以支持链式调用*************************************************
 
