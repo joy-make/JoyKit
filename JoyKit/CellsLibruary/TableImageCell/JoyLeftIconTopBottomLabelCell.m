@@ -86,8 +86,7 @@
     if (model.subTitleColor) {
         self.subTitleLabel.textColor = model.subTitleColor;
     }
-    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
-    self.accessView.image = model.placeHolderImageStr.length?[UIImage imageNamed:placeHolderImageStr]:nil;
+    self.accessView.image = model.placeHolderImageStr.length?[UIImage imageNamed:model.placeHolderImageStr]:nil;
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

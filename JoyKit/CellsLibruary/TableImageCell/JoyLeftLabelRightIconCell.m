@@ -59,9 +59,7 @@
 
 - (void)setCellWithModel:(JoyImageCellBaseModel *)model{
     self.titleLabel.text = model.title;
-    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
-
-    SDIMAGE_LOAD(self.imageVIew, model.avatar, placeHolderImageStr);
+    SDIMAGE_LOAD(self.imageVIew, model.avatar, model.placeHolderImageStr);
     if (model.titleColor) {
         self.titleLabel.textColor = model.titleColor;
     }

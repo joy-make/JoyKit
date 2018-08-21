@@ -56,9 +56,7 @@
 
 - (void)setCellWithModel:(JoyImageCellBaseModel *)model{
     
-    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
-
-    SDIMAGE_LOAD(self.headImageView, model.avatar,placeHolderImageStr);
+    SDIMAGE_LOAD(self.headImageView, model.avatar,model.placeHolderImageStr);
     if (model.title) {
         self.titleLabel.text =  model.title;
     }

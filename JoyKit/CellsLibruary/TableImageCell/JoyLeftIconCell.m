@@ -63,8 +63,7 @@
 }
 
 -(void)setCellWithModel:(JoyImageCellBaseModel *)model{
-    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
-    SDIMAGE_LOAD(_iconImageView, model.avatar, placeHolderImageStr);
+    SDIMAGE_LOAD(_iconImageView, model.avatar, model.placeHolderImageStr);
     if (model.viewShape == EImageTypeRound) {
         _iconImageView.layer.masksToBounds = YES;
         _iconImageView.layer.cornerRadius = 17;

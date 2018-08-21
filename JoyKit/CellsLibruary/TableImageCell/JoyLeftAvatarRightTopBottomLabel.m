@@ -77,7 +77,6 @@
 
 
 -(void)setCellWithModel:(JoyImageCellBaseModel *)model{
-    NSString *placeHolderImageStr = JOY_GETSOURCE_PATH(model.avatarBundleName,model.placeHolderImageStr);
     self.titleLabel.text = model.title;
     self.subtitleLabel.text = model.subTitle;
     if (model.titleColor) {
@@ -86,7 +85,7 @@
     if (model.subTitleColor) {
         self.subtitleLabel.textColor = model.subTitleColor;
     }
-    SDIMAGE_LOAD(self.headImageView, model.avatar,placeHolderImageStr);
+    SDIMAGE_LOAD(self.headImageView, model.avatar,model.placeHolderImageStr);
 }
 
 @end

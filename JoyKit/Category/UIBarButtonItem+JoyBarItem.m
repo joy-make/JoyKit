@@ -18,9 +18,6 @@
                                           frame:(CGRect)frame
                                          bundle:(NSString *)bundleName
 {
-    normalImgName = JOY_GETSOURCE_PATH(bundleName,normalImgName);
-    highLightImageName = JOY_GETSOURCE_PATH(bundleName,normalImgName);
-    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:frame];
     UIImage* rendingNormalImage = [[UIImage imageNamed:normalImgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
