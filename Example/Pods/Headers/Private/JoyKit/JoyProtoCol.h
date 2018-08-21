@@ -1,1 +1,1 @@
-../../../../../JoyKit/Protocols/JoyProtoCol.h
+../../../../../JoyKit/Common/JoyProtoCol.h

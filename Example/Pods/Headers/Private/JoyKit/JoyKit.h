@@ -1,1 +1,1 @@
-../../../../../JoyKit/Common/JoyKit.h
+../../../../../JoyKit/JoyKit/JoyKit.h

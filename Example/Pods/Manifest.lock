@@ -1,45 +1,41 @@
 PODS:
-  - JoyKit (0.1.04):
-    - JoyKit/Category (= 0.1.04)
-    - JoyKit/CellsLibruary (= 0.1.04)
-    - JoyKit/Common (= 0.1.04)
-    - JoyKit/Controllers (= 0.1.04)
-    - JoyKit/Interactor (= 0.1.04)
-    - JoyKit/Models (= 0.1.04)
-    - JoyKit/Presenter (= 0.1.04)
-    - JoyKit/Protocols (= 0.1.04)
-    - JoyKit/Utility (= 0.1.04)
-    - JoyKit/Views (= 0.1.04)
+  - JoyKit (0.1.05):
+    - JoyKit/Category (= 0.1.05)
+    - JoyKit/CellsLibruary (= 0.1.05)
+    - JoyKit/Common (= 0.1.05)
+    - JoyKit/Controllers (= 0.1.05)
+    - JoyKit/JoyKit (= 0.1.05)
+    - JoyKit/Models (= 0.1.05)
+    - JoyKit/Utility (= 0.1.05)
+    - JoyKit/Views (= 0.1.05)
     - Masonry
-  - JoyKit/Category (0.1.04):
+  - JoyKit/Category (0.1.05):
     - JoyKit/Common
     - Masonry
-  - JoyKit/CellsLibruary (0.1.04):
+  - JoyKit/CellsLibruary (0.1.05):
     - JoyKit/Category
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/Common (0.1.04):
+  - JoyKit/Common (0.1.05):
     - Masonry
-  - JoyKit/Controllers (0.1.04):
+  - JoyKit/Controllers (0.1.05):
     - JoyKit/Category
     - JoyKit/Common
-    - JoyKit/Protocols
     - Masonry
-  - JoyKit/Interactor (0.1.04):
-    - Masonry
-  - JoyKit/Models (0.1.04):
-    - Masonry
-  - JoyKit/Presenter (0.1.04):
-    - Masonry
-  - JoyKit/Protocols (0.1.04):
-    - Masonry
-  - JoyKit/Utility (0.1.04):
-    - Masonry
-  - JoyKit/Views (0.1.04):
+  - JoyKit/JoyKit (0.1.05):
     - JoyKit/Category
     - JoyKit/CellsLibruary
-    - JoyKit/Common
+    - JoyKit/Controllers
+    - JoyKit/Utility
+    - Masonry
+  - JoyKit/Models (0.1.05):
+    - Masonry
+  - JoyKit/Utility (0.1.05):
+    - Masonry
+  - JoyKit/Views (0.1.05):
+    - JoyKit/Category
+    - JoyKit/CellsLibruary
     - Masonry
   - Masonry (1.1.0)
 
@@ -55,7 +51,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JoyKit: a8982d0d866003e1113a88918b404a4274d9d71b
+  JoyKit: 105e761ef1bdcc8a248d5a4c5c3289ddd19d7fab
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: 207b95c55ed86f2034c88c5d38811ff18ee011a5

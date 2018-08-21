@@ -1,1 +1,1 @@
-../../../../../JoyKit/Protocols/TNACellModelProtocol.h
+../../../../../JoyKit/Common/TNACellModelProtocol.h

@@ -50,6 +50,8 @@
 #define JoyMiddleLabelCell                      @"JoyMiddleLabelCell"                           //中label
 #define JoyTextCell                             @"JoyTextCell"                                  //左label右textfield
 #define JoyTextNoLabelCell                      @"JoyTextNoLabelCell"                           //空textfield
+#define JoyTextViewCell                         @"JoyTextViewCell"                              //textviewcell
+#define JoyLeftLabelTextViewCell                @"JoyLeftLabelTextViewCell"                     //左label右textview
 
 
 #endif /* JoyKit_h */

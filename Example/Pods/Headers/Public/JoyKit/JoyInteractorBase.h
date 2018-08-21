@@ -1,1 +1,1 @@
-../../../../../JoyKit/Interactor/JoyInteractorBase.h
+../../../../../JoyKit/Common/JoyInteractorBase.h

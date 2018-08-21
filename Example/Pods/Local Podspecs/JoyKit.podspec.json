@@ -1,6 +1,6 @@
 {
   "name": "JoyKit",
-  "version": "0.1.04",
+  "version": "0.1.05",
   "summary": "cellTextView优化",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.04"
+    "tag": "0.1.05"
   },
   "platforms": {
     "ios": "7.0"
@@ -26,6 +26,38 @@
     ]
   },
   "subspecs": [
+    {
+      "name": "JoyKit",
+      "source_files": "JoyKit/JoyKit/**/*.{h,m}",
+      "public_header_files": "JoyKit/JoyKit/**/*.h",
+      "dependencies": {
+        "JoyKit/CellsLibruary": [
+
+        ],
+        "JoyKit/Category": [
+
+        ],
+        "JoyKit/Controllers": [
+
+        ],
+        "JoyKit/Utility": [
+
+        ]
+      }
+    },
+    {
+      "name": "Views",
+      "source_files": "JoyKit/Views/**/*.{h,m}",
+      "public_header_files": "JoyKit/Views/**/*.h",
+      "dependencies": {
+        "JoyKit/CellsLibruary": [
+
+        ],
+        "JoyKit/Category": [
+
+        ]
+      }
+    },
     {
       "name": "Common",
       "source_files": "JoyKit/Common/**/*.{h,m}",
@@ -63,17 +95,9 @@
       "public_header_files": "JoyKit/CellsLibruary/**/*.h"
     },
     {
-      "name": "Protocols",
-      "source_files": "JoyKit/Protocols/**/*.{h,m}",
-      "public_header_files": "JoyKit/Protocols/**/*.h"
-    },
-    {
       "name": "Controllers",
       "source_files": "JoyKit/Controllers/**/*.{h,m}",
       "dependencies": {
-        "JoyKit/Protocols": [
-
-        ],
         "JoyKit/Common": [
 
         ],
@@ -84,35 +108,9 @@
       "public_header_files": "JoyKit/Controllers/**/*.h"
     },
     {
-      "name": "Interactor",
-      "source_files": "JoyKit/Interactor/**/*.{h,m}",
-      "public_header_files": "JoyKit/Interactor/**/*.h"
-    },
-    {
-      "name": "Presenter",
-      "source_files": "JoyKit/Presenter/**/*.{h,m}",
-      "public_header_files": "JoyKit/Presenter/**/*.h"
-    },
-    {
       "name": "Utility",
       "source_files": "JoyKit/Utility/**/*.{h,m}",
       "public_header_files": "JoyKit/Utility/**/*.h"
-    },
-    {
-      "name": "Views",
-      "source_files": "JoyKit/Views/**/*.{h,m}",
-      "public_header_files": "JoyKit/Views/**/*.h",
-      "dependencies": {
-        "JoyKit/Common": [
-
-        ],
-        "JoyKit/CellsLibruary": [
-
-        ],
-        "JoyKit/Category": [
-
-        ]
-      }
     }
   ]
 }

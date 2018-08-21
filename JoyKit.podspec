@@ -38,15 +38,21 @@ s.resources = 'JoyKit/Assets/*'
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
 
-s.subspec 'Views' do|ss|
-ss.source_files = 'JoyKit/Views/**/*.{h,m}'
+s.subspec 'JoyKit' do|ss|
+ss.source_files = 'JoyKit/JoyKit/**/*.{h,m}'
 ss.public_header_files = 'JoyKit/Views/**/*.h'
 ss.dependency 'JoyKit/CellsLibruary'
 ss.dependency 'JoyKit/Category'
 ss.dependency 'JoyKit/Controllers'
 ss.dependency 'JoyKit/Utility'
-ss.dependency 'JoyKit/Interactor'
-ss.dependency 'JoyKit/Presenter'
+ss.public_header_files = 'JoyKit/JoyKit/**/*.h'
+end
+
+s.subspec 'Views' do|ss|
+ss.source_files = 'JoyKit/Views/**/*.{h,m}'
+ss.public_header_files = 'JoyKit/Views/**/*.h'
+ss.dependency 'JoyKit/CellsLibruary'
+ss.dependency 'JoyKit/Category'
 ss.public_header_files = 'JoyKit/Views/**/*.h'
 end
 
@@ -74,27 +80,11 @@ ss.dependency 'JoyKit/Category'
 ss.public_header_files = 'JoyKit/CellsLibruary/**/*.h'
 end
 
-s.subspec 'Protocols' do|ss|
-ss.source_files = 'JoyKit/Protocols/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Protocols/**/*.h'
-end
-
 s.subspec 'Controllers' do|ss|
 ss.source_files = 'JoyKit/Controllers/**/*.{h,m}'
-ss.dependency 'JoyKit/Protocols'
 ss.dependency 'JoyKit/Common'
 ss.dependency 'JoyKit/Category'
 ss.public_header_files = 'JoyKit/Controllers/**/*.h'
-end
-
-s.subspec 'Interactor' do|ss|
-ss.source_files = 'JoyKit/Interactor/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Interactor/**/*.h'
-end
-
-s.subspec 'Presenter' do|ss|
-ss.source_files = 'JoyKit/Presenter/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Presenter/**/*.h'
 end
 
 s.subspec 'Utility' do|ss|
