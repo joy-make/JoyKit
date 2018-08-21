@@ -40,11 +40,12 @@ s.resources = 'JoyKit/Assets/*'
 
 s.subspec 'JoyKit' do|ss|
 ss.source_files = 'JoyKit/JoyKit/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Views/**/*.h'
+ss.public_header_files = 'JoyKit/JoyKit/**/*.h'
 ss.dependency 'JoyKit/CellsLibruary'
 ss.dependency 'JoyKit/Category'
 ss.dependency 'JoyKit/Controllers'
 ss.dependency 'JoyKit/Utility'
+ss.dependency 'JoyKit/Views'
 ss.public_header_files = 'JoyKit/JoyKit/**/*.h'
 end
 
