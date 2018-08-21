@@ -59,12 +59,12 @@ end
 
 s.subspec 'Common' do|ss|
 ss.source_files = 'JoyKit/Common/**/*.{h,m}'
+ss.dependency 'JoyKit/Category'
 ss.public_header_files = 'JoyKit/Common/**/*.h'
 end
 
 s.subspec 'Category' do|ss|
 ss.source_files = 'JoyKit/Category/**/*.{h,m}'
-ss.dependency 'JoyKit/Common'
 ss.public_header_files = 'JoyKit/Category/**/*.h'
 end
 

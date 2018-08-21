@@ -7,7 +7,6 @@
 //
 
 #import "UIBarButtonItem+JoyBarItem.h"
-#import "Joy.h"
 #import "UIImage+Extension.h"
 @implementation UIBarButtonItem (JoyBarItem)
 + (UIBarButtonItem *)JoyBarButtonItemWithTarget:(id)target

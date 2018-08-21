@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Joy.h"
+typedef void (^SAVEIMAGEBLOCK)(void);
 
 FOUNDATION_EXPORT double ImageEffectsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
@@ -42,5 +42,5 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c;
 
 //存相册
-- (void)saveToPhotos:(VOIDBLOCK)successed;
+- (void)saveToPhotos:(SAVEIMAGEBLOCK)successed;
 @end

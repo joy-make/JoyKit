@@ -454,7 +454,7 @@ void cleanupBuffer(void *userData, void *buf_data)
     return ret;
 }
 
-- (void)saveToPhotos:(VOIDBLOCK)successed
+- (void)saveToPhotos:(SAVEIMAGEBLOCK)successed
 {
     if (@available(iOS 8.0, *)) {
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{

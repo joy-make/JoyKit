@@ -9,7 +9,6 @@
 #import "UITextField+JoyCategory.h"
 #import "NSString+JoyCategory.h"
 #import <objc/runtime.h>
-#import "joy.h"
 
 static const void * inputOldStrKey =&inputOldStrKey;
 

@@ -10,12 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "joy.h"
 
-@class JoyBaseVC;
 @interface JoyPresenterBase : NSObject
 @property (nonatomic, weak)UIView *rootView;
 
 - (id)initWithView:(UIView *)view;
-@property (nonatomic,strong,readonly) JoyBaseVC *currentVC;
+@property (nonatomic,strong,readonly) UIViewController *currentVC;
 #pragma mark 屏蔽右导航
 - (void)disableRightNavItem;
 
@@ -31,7 +30,7 @@
 - (void)goBack;
 
 #pragma MARk goVC
-- (void)goVC:(JoyBaseVC *)vc;
+- (void)goVC:(UIViewController *)vc;
 
 - (void)presentVC:(UIViewController *)vc;
 

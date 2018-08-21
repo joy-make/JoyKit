@@ -8,12 +8,10 @@
 
 
 #import "JoyPresenterBase.h"
-#import "JoyBaseVC.h"
-#import "JoySectionBaseModel.h"
 #import "UIView+JoyCategory.h"
 
 @interface JoyPresenterBase ()
-@property (nonatomic,strong,readwrite) JoyBaseVC *currentVC;
+@property (nonatomic,strong,readwrite) UIViewController *currentVC;
 @end
 
 @implementation JoyPresenterBase
@@ -26,8 +24,8 @@
     return self;
 }
 
--(JoyBaseVC *)currentVC{
-    return _currentVC?:(JoyBaseVC *)self.rootView.viewController;
+-(UIViewController *)currentVC{
+    return _currentVC?:self.rootView.viewController;
 }
 
 #pragma mark 返回
@@ -61,7 +59,7 @@
 }
 
 #pragma MARk goVC
-- (void)goVC:(JoyBaseVC *)vc{
+- (void)goVC:(UIViewController *)vc{
     self.rootView.viewController.hidesBottomBarWhenPushed=YES;
     BOOL isNavStackMoreThanOne = self.rootView.viewController.navigationController.viewControllers.count>1;
     vc?[self.rootView.viewController.navigationController pushViewController:vc
@@ -108,7 +106,7 @@
 
 #pragma MARk goRoot
 - (void)popToRootVC{
-    JoyBaseVC *baseVC = (JoyBaseVC *)self.rootView.viewController;
+    UIViewController *baseVC = self.rootView.viewController;
     [baseVC.navigationController popToRootViewControllerAnimated:YES];
 }
 
