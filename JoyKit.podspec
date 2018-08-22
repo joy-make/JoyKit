@@ -32,7 +32,7 @@ s.source           = { :git => 'https://github.com/joy-make/JoyKit.git', :tag =>
 # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
 s.ios.deployment_target = '7.0'
-s.source_files = 'JoyKit/**/*.{h,m}'
+#s.source_files = 'JoyKit/**/*.{h,m}'
 s.resources = 'JoyKit/Assets/*'
 #s.resource_bundles = {'JoyKit' => ['JoyKit/**/*.{xib,png,jpg,jpeg,plist}']}
 # s.public_header_files = 'Pod/Classes/**/*.h'
