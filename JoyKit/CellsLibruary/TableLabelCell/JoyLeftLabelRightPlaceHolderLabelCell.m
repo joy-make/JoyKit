@@ -8,7 +8,7 @@
 
 #import "JoyLeftLabelRightPlaceHolderLabelCell.h"
 #import "JoyCellBaseModel.h"
-#import "joy.h"
+#import "Joy.h"
 @interface JoyLeftLabelRightPlaceHolderLabelCell ()
 
 @property (strong, nonatomic) UILabel *titleLabel;

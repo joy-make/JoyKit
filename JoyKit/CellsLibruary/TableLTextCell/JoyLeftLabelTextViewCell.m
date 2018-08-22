@@ -13,7 +13,7 @@
 #import "JoyLeftLabelTextViewCell.h"
 #import "JoyCellBaseModel.h"
 #import "NSString+JoyCategory.h"
-#import "joy.h"
+#import "Joy.h"
 @interface JoyLeftLabelTextViewCell()<UITextViewDelegate>
 @property (strong, nonatomic)  UILabel *titleLabel;
 @property (strong, nonatomic)  UITextView *textView;

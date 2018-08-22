@@ -10,7 +10,7 @@
 #import "JoyCellBaseModel.h"
 #import "NSString+JoyCategory.h"
 #import "UITextField+JoyCategory.h"
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyTextCell()<UITextFieldDelegate>
 @property (strong, nonatomic) UILabel *titleLabel;

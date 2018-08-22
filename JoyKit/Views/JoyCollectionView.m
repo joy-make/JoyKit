@@ -13,7 +13,7 @@
 #import "JoyImageCollectionViewCell.h"
 #import "JoyCellBaseModel.h"
 #import "JoyCellBaseModel+Action.h"
-#import "joy.h"
+#import "Joy.h"
 
 const int min_cellSpace = 5;
 const int min_cellInset = 15;

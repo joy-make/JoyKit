@@ -9,7 +9,7 @@
 
 #import "JoyLeftAvatarRightTopBottomLabel.h"
 #import "JoyCellBaseModel.h"
-#import "joy.h"
+#import "Joy.h"
 @interface JoyLeftAvatarRightTopBottomLabel ()
 
 @property (strong, nonatomic) UIImageView *headImageView;

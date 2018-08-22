@@ -7,7 +7,7 @@
 //
 
 #import "JoyLeftIconTopBottomLabelCell.h"
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyLeftIconTopBottomLabelCell ()
 @property (strong, nonatomic) UIImageView *accessView;

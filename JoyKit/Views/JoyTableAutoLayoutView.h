@@ -10,7 +10,7 @@
 
 
 #import "UIView+JoyCategory.h"
-#import "joy.h"
+#import "Joy.h"
 @class JoyTableAutoLayoutView;
 
 typedef void (^CellSelectBlock)(NSIndexPath *indexPath,NSString *tapAction);

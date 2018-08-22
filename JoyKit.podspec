@@ -93,7 +93,7 @@ ss.source_files = 'JoyKit/Utility/**/*.{h,m}'
 ss.public_header_files = 'JoyKit/Utility/**/*.h'
 end
 
-
+s.frameworks = 'UIKit', 'IMageIO', 'Photos'
 s.dependency 'Masonry'
 #s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}
 

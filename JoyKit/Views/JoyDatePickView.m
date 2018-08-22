@@ -11,7 +11,7 @@
 #define KCOVER_ALPHA 0.3
 
 #import "JoyDatePickView.h"
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyDatePickView ()
 @property (nonatomic,strong)UIView       *coverView;

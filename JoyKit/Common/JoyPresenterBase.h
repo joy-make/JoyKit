@@ -8,7 +8,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyPresenterBase : NSObject
 @property (nonatomic, weak)UIView *rootView;

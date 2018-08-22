@@ -8,7 +8,7 @@
 
 #import "JoyLeftLabelRightIconCell.h"
 #import "JoyCellBaseModel.h"
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyLeftLabelRightIconCell ()
 

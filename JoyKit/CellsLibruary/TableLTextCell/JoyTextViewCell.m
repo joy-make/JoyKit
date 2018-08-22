@@ -13,7 +13,7 @@
 #import "JoyTextViewCell.h"
 #import "JoyCellBaseModel.h"
 #import "NSString+JoyCategory.h"
-#import "joy.h"
+#import "Joy.h"
 @interface JoyTextViewCell()<UITextViewDelegate>
 @property (strong, nonatomic)  UITextView *textView;
 @property (nonatomic,copy) NSString *inputOldStr;

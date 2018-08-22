@@ -1,5 +1,5 @@
 //
-//  joy.h
+//  Joy.h
 //  Toon
 //
 //  Created by joymake on 2017/2/28.

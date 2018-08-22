@@ -7,7 +7,7 @@
 //
 
 #import "JoyLeftAvatarRightLabelCell.h"
-#import "joy.h"
+#import "Joy.h"
 @interface JoyLeftAvatarRightLabelCell ()
 @property (strong, nonatomic) UIImageView *headImageView;
 @property (strong, nonatomic) UILabel *titleLabel;

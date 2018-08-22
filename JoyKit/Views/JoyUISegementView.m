@@ -7,7 +7,7 @@
 //
 
 #import "JoyUISegementView.h"
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyUISegementView (){
     UISegmentedControl *_segment;

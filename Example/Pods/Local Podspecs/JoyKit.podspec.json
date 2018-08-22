@@ -20,6 +20,11 @@
   },
   "source_files": "JoyKit/**/*.{h,m}",
   "resources": "JoyKit/Assets/*",
+  "frameworks": [
+    "UIKit",
+    "IMageIO",
+    "Photos"
+  ],
   "dependencies": {
     "Masonry": [
 

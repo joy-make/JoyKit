@@ -7,7 +7,7 @@
 //
 
 #import "JoyPickerView.h"
-#import "joy.h"
+#import "Joy.h"
 
 @interface JoyPickerView ()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic,strong)UIView     *          coverView;
