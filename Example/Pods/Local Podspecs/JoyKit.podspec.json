@@ -32,9 +32,8 @@
   },
   "subspecs": [
     {
-      "name": "JoyKit",
-      "source_files": "JoyKit/JoyKit/**/*.{h,m}",
-      "public_header_files": "JoyKit/JoyKit/**/*.h",
+      "name": "JoyHeader",
+      "source_files": "JoyKit/JoyHeader/**/*.{h,m}",
       "dependencies": {
         "JoyKit/CellsLibruary": [
 
@@ -51,12 +50,12 @@
         "JoyKit/Views": [
 
         ]
-      }
+      },
+      "public_header_files": "JoyKit/JoyHeader/**/*.h"
     },
     {
       "name": "Views",
       "source_files": "JoyKit/Views/**/*.{h,m}",
-      "public_header_files": "JoyKit/Views/**/*.h",
       "dependencies": {
         "JoyKit/CellsLibruary": [
 
@@ -64,7 +63,8 @@
         "JoyKit/Category": [
 
         ]
-      }
+      },
+      "public_header_files": "JoyKit/Views/**/*.h"
     },
     {
       "name": "Common",

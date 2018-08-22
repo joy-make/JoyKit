@@ -38,20 +38,18 @@ s.resources = 'JoyKit/Assets/*'
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
 
-s.subspec 'JoyKit' do|ss|
-ss.source_files = 'JoyKit/JoyKit/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/JoyKit/**/*.h'
+s.subspec 'JoyHeader' do|ss|
+ss.source_files = 'JoyKit/JoyHeader/**/*.{h,m}'
 ss.dependency 'JoyKit/CellsLibruary'
 ss.dependency 'JoyKit/Category'
 ss.dependency 'JoyKit/Controllers'
 ss.dependency 'JoyKit/Utility'
 ss.dependency 'JoyKit/Views'
-ss.public_header_files = 'JoyKit/JoyKit/**/*.h'
+ss.public_header_files = 'JoyKit/JoyHeader/**/*.h'
 end
 
 s.subspec 'Views' do|ss|
 ss.source_files = 'JoyKit/Views/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Views/**/*.h'
 ss.dependency 'JoyKit/CellsLibruary'
 ss.dependency 'JoyKit/Category'
 ss.public_header_files = 'JoyKit/Views/**/*.h'
