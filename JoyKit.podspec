@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.05'
+  s.version          = '0.1.06'
   s.summary          = 'cellTextView优化'
 
 # This description is used to generate tags and improve search results.
