@@ -63,6 +63,8 @@
     _segment = [[UISegmentedControl alloc]initWithItems:_segmentItems];
     _segment.backgroundColor = [UIColor clearColor];
     _segment.tintColor = [UIColor clearColor];
+//    [_segment setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x2663C7)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    [_segment setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     _segment.layer.masksToBounds = YES;
     _segment.layer.borderWidth = 2;
     _segment.layer.borderColor = [UIColor clearColor].CGColor;

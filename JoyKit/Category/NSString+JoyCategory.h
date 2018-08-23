@@ -43,41 +43,41 @@
 
 - (NSString *)joy_clip_10char;
 
-//是否是emoji表情
+#pragma mark是否是emoji表情
 - (BOOL)joy_isEmoji;
 
-//是否是特殊字符
+#pragma mark是否是特殊字符
 - (BOOL)joy_isSpecialCharacter;
 
-// 判断是否为空格
+#pragma mark判断是否为空格
 - (BOOL)joy_isEmpty;
 
-// 判断是否为数字
+#pragma mark判断是否为数字
 - (BOOL)joy_isIntType;
 
-//汉子转化为拼音
+#pragma mark汉子转化为拼音
 - (NSString *)joy_phonetic;
 
-//判断是否纯数字
+#pragma mark判断是否纯数字
 - (BOOL)joy_checkIsNumber;
 
 - (NSString *)joy_replaceCharactersAtIndexes:(NSArray *)indexes withString:(NSString *)aString;
 
 - (NSMutableArray *)joy_itemsForPattern:(NSString *)pattern captureGroupIndex:(NSUInteger)index;
 
-//根据最大尺寸和字体计算文字的实际尺寸
+#pragma mark根据最大尺寸和字体计算文字的实际尺寸
 - (CGSize)joy_sizeWithMaxSize:(CGSize)maxSize andFont:(UIFont *)font;
 
-// 字典转json串
+#pragma mark 字典转json串
 +(NSString *)joy_jsonStringWithDict:(NSDictionary *)dict;
 
-// json串转字典
+#pragma markjson串转字典
 + (NSDictionary *)joy_dictionaryWithJsonString:(NSString *)jsonString;
 
-// 编码 url中的特殊字符
+#pragma mark 编码 url中的特殊字符
 + (NSString *)joy_urlEncodedString:(NSString *)urlString;
 
-// 把当前字符串转成字典
+#pragma mark 把当前字符串转成字典
 -(id)joy_JSONValue;
 
 #pragma mark 邮箱是否正确

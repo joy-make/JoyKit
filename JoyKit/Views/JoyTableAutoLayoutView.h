@@ -45,6 +45,8 @@ typedef void (^CellCollectionBlock)(NSIndexPath *indexPath,NSIndexPath *collecti
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setDataSource)(NSMutableArray<JoySectionBaseModel *> *dataArrayM);
 #pragma mark  给背景视图TableBackView
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableBackView)(UIView *backView);
+#pragma mark  给背景视图设置无数据源BackView
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableBackNoDataView)(UIView *noDataView);
 #pragma mark  给头视图TableHeadView
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableHeadView)(UIView *headView);
 #pragma mark  给尾视图TableFootView

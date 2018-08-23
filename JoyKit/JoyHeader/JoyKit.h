@@ -17,7 +17,7 @@
 #import "JoyBaseModel.h"
 
 #import "JoyNavProtocol.h"
-#import "TNACellModelProtocol.h"
+#import "JoyCellModelProtocol.h"
 #import "JoyProtoCol.h"
 
 #import "JoyBaseVC.h"
@@ -52,6 +52,6 @@
 #define JoyTextNoLabelCell                      @"JoyTextNoLabelCell"                           //空textfield
 #define JoyTextViewCell                         @"JoyTextViewCell"                              //textviewcell
 #define JoyLeftLabelTextViewCell                @"JoyLeftLabelTextViewCell"                     //左label右textview
-
+#define JoySwitchCell                           @"JoySwitchCell"                                //左label右switch
 
 #endif /* JoyKit_h */

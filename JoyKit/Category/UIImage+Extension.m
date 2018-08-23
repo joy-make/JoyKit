@@ -454,6 +454,31 @@ void cleanupBuffer(void *userData, void *buf_data)
     return ret;
 }
 
++(UIImage*)imageWithColor:(UIColor*)color{
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(1, 1), NO, 0.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CALayer *layer = [[CALayer alloc] init];
+    layer.bounds = CGRectMake(0, 0, 1, 1);
+    layer.backgroundColor=[color CGColor];
+    [layer renderInContext:ctx];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
++(UIImage *)snapshotSingleView:(UIView *)view
+
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
+    
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 - (void)saveToPhotos:(SAVEIMAGEBLOCK)successed
 {
     if (@available(iOS 8.0, *)) {

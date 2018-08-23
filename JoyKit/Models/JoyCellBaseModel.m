@@ -19,38 +19,44 @@
     NSLog(@"找不到%@对应的字段",key);
     return nil;
 }
-
-//@synthesize cellName = _cellName;
--(void)setCellName:(NSString *)cellName{
-    _cellName = cellName;
-}
-
--(NSString *)cellName{
-    return _cellName?:@"JoyLeftMiddleRightLabelCell";
-}
+//
+////@synthesize cellName = _cellName;
+//-(void)setCellName:(NSString *)cellName{
+//    _cellName = cellName;
+//}
+//
+//-(NSString *)cellName{
+//    return _cellName?:@"JoyLeftMiddleRightLabelCell";
+//}
 
 @end
 
 
 @implementation JoyTextCellBaseModel
--(NSString *)cellName{
-    return _cellName?:@"JoyTextNoLabelCell";
-}
+//-(NSString *)cellName{
+//    return _cellName?:@"JoyTextNoLabelCell";
+//}
 
 @end
 
 @implementation JoyImageCellBaseModel
--(NSString *)cellName{
-    return _cellName?:@"JoyLeftAvatarRightLabelCell";
-}
+//-(NSString *)cellName{
+//    return _cellName?:@"JoyLeftAvatarRightLabelCell";
+//}
 
 @end
 
 @implementation JoySwitchCellBaseModel
--(NSString *)cellName{
-    return _cellName?:@"JoySwitchCell";
-}
+//-(NSString *)cellName{
+//    return _cellName?:@"JoySwitchCell";
+//}
 
+@end
+
+@implementation JoyTableCollectionCellBaseModel
+-(NSMutableArray *)itemList{
+    return _itemList = _itemList?:[NSMutableArray array];
+}
 @end
 //OC最初设定@property和@synthesize的作用：
 //

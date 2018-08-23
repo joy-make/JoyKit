@@ -7,135 +7,137 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		071CEEBFA400F25AB85DFEEC94CAFB52 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F937BDEB8DF93A08D20C5355C0FDB5C /* MASConstraint.m */; };
-		0913BA644DCF443ED93CD7341F65D3D9 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB44751192F0AA8DA5F75A06138D15 /* MASConstraintMaker.m */; };
-		09834E93DE8D4D2298759F6BAF5D766C /* UITextField+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB7D1429056AA7EBE1DE95B8E4660D6 /* UITextField+JoyCategory.m */; };
-		0CF2531A185A84AF1CAD42C442ACB266 /* JoyBaseVC+Extention.h in Headers */ = {isa = PBXBuildFile; fileRef = 4845F713A475A42F6AEC3EB480870A0B /* JoyBaseVC+Extention.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0FF913A65700A9FEF75E0E2FF8D212E6 /* JoyCellBaseModel+Edit.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E0CCD82FE8569E9DAE88164F47D953 /* JoyCellBaseModel+Edit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		119020AA6C805A2C457B21799E01331B /* JoyUISegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F23872848AF43FCB8B4702312136B /* JoyUISegementView.m */; };
-		11AD9E7CDA904F4D15C482C95B12B734 /* JoyCellBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E827B9AC92FA513CFC136FB871D418EE /* JoyCellBaseModel.m */; };
-		13F3CE78AEE53B7C4E39FA1564A6B9D6 /* JoyLeftIconTopBottomLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0474EED45571B1CE094467C02492758 /* JoyLeftIconTopBottomLabelCell.m */; };
-		1696B55C03B6263616117869E9DCAE2E /* JoySwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96EDDC411F3406726566670067537E2 /* JoySwitchCell.m */; };
-		18D756F8A5062B39FD6027486B0235EE /* JoyLeftMiddleRightLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990391EC876D09FA07EDC25C201BF90E /* JoyLeftMiddleRightLabelCell.m */; };
-		196B5B37342B242715B2FF47ED21A374 /* JoyProtoCol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F3A640576548C18FFED3802B9E940A7 /* JoyProtoCol.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1B4A78C1FEAA6784ED36ACD986CA24AF /* JoyBaseVC+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E58B2561840A9E9265FDAFA851A51 /* JoyBaseVC+Extention.m */; };
-		1BC60F89F51A3101B7B2350AB223692A /* JoyUISegementView.h in Headers */ = {isa = PBXBuildFile; fileRef = F8AC9501361679226231CFC43293D813 /* JoyUISegementView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1C2CFC8E4D65A6B2D1116257516F9F47 /* JoyCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0A81FDFE37D1F6ABFED811E66D654E /* JoyCollectionView.m */; };
-		1D23B7E8D44A8A076E771D46AAFF6CA4 /* JoyLeftAvatarRightLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D841CD370F6993F660A23F34247914 /* JoyLeftAvatarRightLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1D70B5F0FE20B509EFD0928B3200A16D /* JoyMiddleLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD4EB60F98612CE8018BDF57F1FD0DE /* JoyMiddleLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		21CF6369E15521BC94F6A87359800422 /* JoyBaseCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A9EC8F0F87BC57207A226D2D919DE74 /* JoyBaseCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		220434324AC08756CFFD8A5F0813A904 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E158FC65C5404E098F16E26F478DA504 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		25429A9611236EAE43E536199B43EA2E /* JoyBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431687226785CBB7C81ACCAD697C7F05 /* JoyBaseModel.m */; };
+		01532CE81C768841AE5F1075DD636CA4 /* JoyDeviceModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9EBCC2FE2E40A759A60F3CEF9AD823 /* JoyDeviceModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		016F7BD1BFE057AA994AF5AC592B5F87 /* JoyCellBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C08FF6FAAB1A102484DB7590BC8EE4 /* JoyCellBaseModel.m */; };
+		01EB39DBF07A9EDDF8D64AF51859394D /* JoyPresenterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6775046E629BD8988417CFEF93BB1171 /* JoyPresenterBase.m */; };
+		021A445E4F3EA5C05FB939D51C21039A /* JoyDeviceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C883DB6B9E6FAAEACBC899B2AC361A /* JoyDeviceModule.m */; };
+		02E077B885E705E43E96ABF7B6169A9A /* JoySectionBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B24F45B9A86CAA3FFD3A308B2599AC0E /* JoySectionBaseModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		03DD4E2B27C43D0DC97E156FB4C1DDAA /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A9F610CB90E57B81F8F7DCA2176E0FD /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		043D002387DDB158E9B0BF162FA274F2 /* JoyUISegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF5292876B90F17815B1566E4F3E /* JoyUISegementView.m */; };
+		07ED6015D2FB1013878FCA89F3B7AE6C /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE23E70FF64ACC81816A368E171B903 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		082B1F5D9039FC4CC1C3AEBF065C7C69 /* IMageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E22132C08BA937EC5F61CC23DB1C2DA /* IMageIO.framework */; };
+		0934850E477A38A08BB25A1647C55C20 /* JoyLeftLabelRightIconCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 52916C087FF8A6C61D1743C35F5BF68C /* JoyLeftLabelRightIconCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0A685B8E87E0E57DF8A1694CDDEFC19A /* JoyLeftLabelRightIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFB40516C428DE707CF2CC9E09620B0 /* JoyLeftLabelRightIconCell.m */; };
+		0B72DDB19C33A39178D3A29F8FB95D08 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 780A86CEB0A0131C88BE12414D500734 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0DA74362FE75DCC31D4C2BFF8AA79698 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EBC7F1C051681A2D73700FAD83C2B4 /* Foundation.framework */; };
+		0FFE2550FC03C68798150CDAC8911B9A /* JoyTextCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A74B5DAC8CB7B687F8236ACC679E93AD /* JoyTextCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		15387F04F9B8402DF79CC7978326B45A /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CED739CF35B6D0A1D95AE17D712A7F /* ViewController+MASAdditions.m */; };
+		1609C24A9EACDBAF7CAE7FAFF5D65C72 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F937BDEB8DF93A08D20C5355C0FDB5C /* MASConstraint.m */; };
+		19AA552959ACF0E13FAC385A2AFC46E1 /* UIWindow+Observer.h in Headers */ = {isa = PBXBuildFile; fileRef = BE56A47B16B94B7E6AF39DA8B0926B36 /* UIWindow+Observer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1B11D6AB383574893918ECCF92112402 /* JoyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 101BA6D4E0395529C46C8D95AEB40A19 /* JoyKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1B482238E0EFF57891EF503CF9DDB584 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 043FB94CF93050E20D8E4C071ACFA5D2 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1C25B157C995226F2DFE4D48058C9754 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC2A09AC3DCD0E4A3D268DAABC5135 /* View+MASAdditions.m */; };
 		256418DAFC664D5D780B6AF6A30FD701 /* Pods-JoyKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D766FEB41744BBB3B6DC4B6ED10E036A /* Pods-JoyKit_Example-dummy.m */; };
-		25C8E4E76B9DDA06CC73E2CF5B57616A /* UIImageView+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9DE685085A1F81F32AA573E868ADE7 /* UIImageView+JoyCategory.m */; };
-		25E0B762154FC43F2DA563FABF44DE82 /* JoyBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E45045C81FE083C0E33AAE6600B2738 /* JoyBaseVC.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		261BFD229361C721E8CC7D0FFFA0EF1B /* JoyPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1625BE9D3F16FBAD499C1C6FB7CB3 /* JoyPickerView.m */; };
-		26CA55DC05BA5B230BA187B4F5C9767C /* JoyPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C745D9693754B0C99BDAE203B021664 /* JoyPickerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		27720D8ED1923B23A958AC432383ACE8 /* JoyNoDataBackView.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A56D475AC9500C441BCA4CC72B0EAA /* JoyNoDataBackView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2D8693B266FF7D8871046EE4CFFD58D5 /* JoyLeftLabelTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECECDDC21F60B73EB03AE31F470AD3BF /* JoyLeftLabelTextViewCell.m */; };
-		2F74A27C7A04E746A1562DCC8FFD7E5C /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 475326F2A929CD1AFFB74850961F32C0 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		31B2E7A2D9AA5371D8604099A5E16A04 /* AVAudioSession+manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0477D1E2F8F04DB0BD32C436DCD446 /* AVAudioSession+manager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		34E511CDD915F1E67B2E45118B469C5E /* UITableViewCell+JoyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77010076153D48E672BA93B48A78191B /* UITableViewCell+JoyCell.m */; };
-		357DB1281C8AE524B10A577B38471919 /* JoyLeftIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA4F76342D724D4B7BB44FE825EF347 /* JoyLeftIconCell.m */; };
-		35D237C1E22E49A0C30039F60960E661 /* JoyLeftAvatarRightLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0607016EE65FA59627DC1EBC928273 /* JoyLeftAvatarRightLabelCell.m */; };
-		3ADCB33B4E9CA96B40BC7034FB652279 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8229525E7067F22D3977D2628DF5F2C3 /* NSArray+MASAdditions.m */; };
-		3CE64A0C0F5A5C4543570917E28E605E /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E2395DA2EBCF6241A0DA0E1859FF45 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3D5BE66F505D72C9BA36C5B4BB309263 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B179F4D3D34A3CE25A698B8D9AC9D6C2 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3E7B77803C2262A8152FADF55DB1EBE9 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C02266037F030E22468AC86802DB57 /* MASViewConstraint.m */; };
-		43D7C0EAB294D4AE3EAD6C9CCEEC3FAC /* Joy.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CAF64981D358B51968310319ECF801 /* Joy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		44D5B2CBA83487579EDA534C0AE13D2C /* NSArray+JoyCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 1294AC1D40EBF3B7A7020D55E286F147 /* NSArray+JoyCrash.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		49EB346B9FDCA36725978973B867E640 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FA891F8E85C079B4FB101DDD5BC7A477 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4A0CF000D6B92746E60476B85621F6A5 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EC6EDDDD3E503C5B2E967D3FEECFEB /* MASCompositeConstraint.m */; };
-		4D89CE5EDCD2B7D86C08EA54F3C1577A /* JoyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E35B564B83EE0E77CF48BEA2E2E5A8 /* JoyKit-dummy.m */; };
-		4E2F180DD28B4D2D7ADEE5CE35679640 /* JoyPresenterBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F3061EA76A3258DED3BFCC31F63728D /* JoyPresenterBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4EAB75D2BB75038F44BADBA4D263DC92 /* JoyTextNoLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 546BBBF38ACF7EBAF74F6955C21F1E0D /* JoyTextNoLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		538E4AF7F24EF36C34ECB36CC2C089AF /* UIView+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C38656B9FE7F83C701BEBF8A29465A37 /* UIView+JoyCategory.m */; };
-		549E34895A746B13075D81BC2F7959CE /* JoySectionBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCCB0C7709A46FA8E128E5E11CEB84 /* JoySectionBaseModel.m */; };
-		54EEFEEAE1AD8491874370F071F9DE1A /* JoyTextViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 492B5FD66531C8532A69A849798890FB /* JoyTextViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		59C5355E28F40641759307173DEA9603 /* AVAudioSession+manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF7F671C2DB28297EBCEE2342C6FBB /* AVAudioSession+manager.m */; };
-		5DAAA4AC60B1C3C7566BB644661669E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EBC7F1C051681A2D73700FAD83C2B4 /* Foundation.framework */; };
-		5E82094F7626A3CC1BAB9B5741466F3E /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A231E76AF7DC6CB887B5B2C522A7A /* Masonry-dummy.m */; };
-		5E8B9A2954638F39C009221E969AAF99 /* JoyTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7037116E5857FB9F8718B04AE7396C1E /* JoyTextViewCell.m */; };
-		60573049D0191877C50D708D091276B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CED74A195C4733CB009D5EB947CEFA /* UIKit.framework */; };
-		6236C1E457AC37C9D26BB25FECEE5593 /* JoyDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B712C67C8E4782132A42A9B8B939F3 /* JoyDatePickView.m */; };
-		6263C25B5416EB6A9A244F2DEE2A331A /* UITableViewCell+JoyCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 79F442A3F1C042E718709836BE21BF67 /* UITableViewCell+JoyCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		630FAD555B8F15C36756D0B24897A934 /* UIView+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE144F1995739F7E9E0CCD7D97224FE /* UIView+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		646B76B25A21E3B45C7B6D22F466795C /* JoyNoDataBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = D354CC3CFCD1B91B3D9E667D279D8632 /* JoyNoDataBackView.m */; };
-		657D4AC31F90A1F45960A5E37F8DCB50 /* UIImage+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 8572062292C4DD89960863202C81C1EF /* UIImage+Extension.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6645B83AE3038D68824BAB02AA395B97 /* JoyCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = F7792D699E716291394221963AB08016 /* JoyCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		670198E94EEDCA002CB52ABF0A34E5E6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C762C4F3A304C10AF7EBEA6AAA8508A0 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		6DF63FAFE9F07816290F3EFB99EF9EA3 /* UIImageView+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9B5B3C83505187184764FCF512B62E /* UIImageView+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6E40E8B1F677B5D855F58CB87DCEE27C /* CAAnimation+HCAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 79F5E23146848927B7E223043BDB377A /* CAAnimation+HCAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6E729D15936E0FB309DB44253BD15B07 /* UIWindow+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6340ABF7F04A0EF71C3E2F21CE3533C /* UIWindow+Observer.m */; };
-		6F6A8371AD482272CD7281D70D84DC2D /* JoyInteractorBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE62E43A631A62748BFD0F5CED5B72A /* JoyInteractorBase.m */; };
-		73A53481115E5265556465DC933D0875 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405C25E60B1D433FEE0E13E9D47ABE4C /* Photos.framework */; };
-		74B1131E40CDF4D1F942F02F02725894 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E7E17DB5590A8C4D9625D67E6FBD243 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7657DDF99A29CF11F615BB10302C4D27 /* JoySectionBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D9B139B1F523F8F54120B0CAEF82C5C /* JoySectionBaseModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7A545DE18ED11FE1105D4A4319DF2F81 /* NSObject+JoyRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = ED48744CFD443752648778222BA5BBB4 /* NSObject+JoyRouter.m */; };
-		7A8B27C13E84EA9AC17A25272324F0A3 /* CALayer+JoyLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 64791EEAE11FE02C6ABA28C0B316DA09 /* CALayer+JoyLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7C5AF4A2DABA6BD964B1038993DE8FE9 /* JoyNavProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DF41CB67B9C575D78F63DBC6B8922D15 /* JoyNavProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7CE56106CB8F7828AB342C17BE92753A /* UITextField+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AAEDDEC9518376EEC66951AE27C9FE2 /* UITextField+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7F8AA49999CDA5ABFEF885194B2BD7B1 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F28AEAAF722BC62BF5B37D6663BBC2 /* MASViewAttribute.m */; };
-		7FEB42AE3DC363713F5BA8636962B042 /* JoyLeftLabelRightIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7453D4F0F06E0E0FD0D831A33DFEC /* JoyLeftLabelRightIconCell.m */; };
-		84E6C0F6DE2E21717995F8FEAA133138 /* JoyImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BA9898EDF2E4F07E1C2F811E557BB4F7 /* JoyImageCollectionViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		85A551B42C9551637008D0CEA7A7D52C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CED74A195C4733CB009D5EB947CEFA /* UIKit.framework */; };
-		88933499B394E0204DD250E83FF1B0FA /* JoyMiddleLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C79501D3992FEE6A0D4AD521754640 /* JoyMiddleLabelCell.m */; };
-		8C0DE1599E8A482B24A22D8055153365 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE23E70FF64ACC81816A368E171B903 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8D528D2A4A64E5FBF71A1B013F3137C0 /* JoyLeftIconCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 586577FC97FF637B29FDAA3CC2A7865F /* JoyLeftIconCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		92ABD8FE3B1A8BD491E0A645D105525D /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 043FB94CF93050E20D8E4C071ACFA5D2 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		93FDE3D886CC60ECBD16F71D36E6761A /* JoyLeftAvatarRightTopBottomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D3FC4408DB77AE85A449C8DA34665 /* JoyLeftAvatarRightTopBottomLabel.m */; };
-		978E9B9E436EEF04D8E5EA8517B61113 /* NSString+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439C4EDDC3CDB471BD88345FC809A91 /* NSString+JoyCategory.m */; };
-		9A90C150A55FBC3058BCF07B87E058B1 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B48867DE203BCF3BB3DFCAB8FDC7516B /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9B39E537032030467270D507AEE49AC2 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC2A09AC3DCD0E4A3D268DAABC5135 /* View+MASAdditions.m */; };
-		9C3143D11BC86B43B1B30AC38E763419 /* JoyDeviceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D49C3D7BBF1BE27AC0AD1E7F9B297A89 /* JoyDeviceModule.m */; };
-		9C961C54D80B712DDD1939EDAF6ACAB1 /* JoyImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B193AD908E7C4B65C8FCC7A1A28046E /* JoyImageCollectionViewCell.m */; };
-		9D81DDC161812D3B33E8DE2073263256 /* JoyCellBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 53E6C5CC0CC6ABBDCCA23EBDA6A57F39 /* JoyCellBaseModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9EFD5D399F4B532997E042064A781065 /* JoyTextCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BC272DB32D72017CBD87EE2B9F673AD /* JoyTextCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9FD3488483069E6CFB8FC7C678CCE5E7 /* JoyLeftIconTopBottomLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D26C6C0194509DAA6DC5CB76633F789 /* JoyLeftIconTopBottomLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A2D0BD796C2D9F7283008B29A3B3AA8E /* JoyDeviceModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E19BF0A0945CB7E9F8F895C014B0A692 /* JoyDeviceModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A40F0F6C920DD3AC35E3A114BD537403 /* JoyLeftMiddleRightLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 809F53293566F07154DBCBFAF5DDC182 /* JoyLeftMiddleRightLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A85688093F49C8B8AEC19A46687DBE70 /* JoyBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 920010DD159FC7B92845C6EDD550930F /* JoyBaseCell.m */; };
-		A889194CD550E6CBC081BD77AC0E4B62 /* JoyCellBaseModel+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA8767614263C00832E2BD685C64C8 /* JoyCellBaseModel+Action.m */; };
-		AAE3564BEBE7CD999517A8859D6EA683 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 613026A94E34CA885ED2E02CD455E374 /* UIImage+Extension.m */; };
-		B2F9864A10AC61B2960DB2B164CF3052 /* JoyLeftLabelRightPlaceHolderLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11A38501EFD6DF29A2B0CE99C6D6AB /* JoyLeftLabelRightPlaceHolderLabelCell.m */; };
-		BE997AB886F4E4EDDD35A5C6A3108E05 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A9F610CB90E57B81F8F7DCA2176E0FD /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BE9DE308D9CF47EC8BBCE4E63DE45CAC /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 780A86CEB0A0131C88BE12414D500734 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C286463A8AB8EC7204A18F4B2A917781 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CED739CF35B6D0A1D95AE17D712A7F /* ViewController+MASAdditions.m */; };
+		2570A98780A5E564274BD34E8B92EFB8 /* JoyCellBaseModel+Edit.m in Sources */ = {isa = PBXBuildFile; fileRef = ED81560BCEB8DDF1D443ECE72CC78927 /* JoyCellBaseModel+Edit.m */; };
+		25A49E44BD1DC2E2A4DFB4F3FDA064F8 /* CALayer+JoyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 437D8F2AC1E93869EDC28D2E484D4AEE /* CALayer+JoyLayer.m */; };
+		265E86D486657BCEF53819EBEDE735EC /* JoyBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E151FBAB8FD0F0073C20155A6FED5D4 /* JoyBaseModel.m */; };
+		267A5118709A3298E8EC139D095FE6A9 /* JoyCellBaseModel+Action.h in Headers */ = {isa = PBXBuildFile; fileRef = 325B65950DC92E57CAD74BA86908E29A /* JoyCellBaseModel+Action.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		26DD154325304C5343E4A7B463FA8240 /* JoyTableCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24FE5F6106E727BD943722063A7E689 /* JoyTableCollectionCell.m */; };
+		28125D8CAD28FFEDDAB5E7A9AC48DF14 /* JoySectionBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8B8242270176FDF6F5D48A4F619A5 /* JoySectionBaseModel.m */; };
+		282DCE4E0B3FBC26D089F5673D53CD37 /* JoyAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = BAFA5D81D9C4674F41A5B1C5FD0679AE /* JoyAlert.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		291A9F51637BD8E18A3CC847E3EB3E31 /* JoyBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 44BC48819C5D3BF10B2068F634A2280F /* JoyBaseVC.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		29966AA05BB8B087558C027C6FAF8A5E /* UIView+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 512084DCD69E6556F042B328D4CF0DBF /* UIView+JoyCategory.m */; };
+		2A1A38247B6CC9BF687748684CCD07AA /* JoyLeftLabelTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7047A52268ACA0EF089333CBC32ED9 /* JoyLeftLabelTextViewCell.m */; };
+		2BA49ACD35E067C3B022E05F4370A425 /* JoyInteractorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBFAEC4808E249B49313E227F577303 /* JoyInteractorBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2E326927DCD65AEF9BA340FDDD4B4FC5 /* UITableViewCell+JoyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAC7C0E79E820589BAF2E711F86FFE /* UITableViewCell+JoyCell.m */; };
+		2F1B4DD9C355767FB49B53B5A4B0C350 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AB44751192F0AA8DA5F75A06138D15 /* MASConstraintMaker.m */; };
+		2F3E106AB8D0D394D369438A4F88E514 /* JoyTableAutoLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 13FA9DD66F9B5AB42694F8DF4EC384ED /* JoyTableAutoLayoutView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		38E9949C9DE958769FA745F1E720B77D /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A231E76AF7DC6CB887B5B2C522A7A /* Masonry-dummy.m */; };
+		39F7784A64FF7085564BA06FB9C4C0CF /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1321572A3ED9C894C94A131BE29B81B2 /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3A4BFA63E04F87ABACA226A36BD27953 /* UITextField+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 36502CADB5DA01F654D5AAE7BF10A1E5 /* UITextField+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3E10B7C905D32EB6DFF6C8202A8DC9FE /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FFD255E8235D5B42FE078299B5F1B /* MASLayoutConstraint.m */; };
+		3E305C285EECE29B825EA9D450F92CCA /* JoyLeftMiddleRightLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 026C4FBD585CF975886E1D6B94043730 /* JoyLeftMiddleRightLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3F6F02C1272B9642679F48F9BA179B4E /* JoyNoDataBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F3C892C1E0519DB0E27C14BECC45F /* JoyNoDataBackView.m */; };
+		43F30C95F6168FA1870EEB11675B7743 /* JoyBaseVC+Extention.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FF7DD459C8E1C2A6A338A35769CAD9 /* JoyBaseVC+Extention.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		445B655BE547BC50A31290EA0E6B5786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CED74A195C4733CB009D5EB947CEFA /* UIKit.framework */; };
+		4836E3B3BE8755A481ABC9CB75CDC70E /* JoyTextNoLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3096A0A6036733DD6511B671B46D2A6B /* JoyTextNoLabelCell.m */; };
+		4983FBBE80DCA23A4CB5AE90D93B6ECF /* JoyDatePickView.h in Headers */ = {isa = PBXBuildFile; fileRef = 441289B321A38A3198C63F4C64773741 /* JoyDatePickView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4B02F30E3B91FDD0F3C234258F0FCC50 /* JoyPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5189664F76C322CBA9ADFE7BFEE64A6 /* JoyPickerView.m */; };
+		4BCA60BFC2E118B2CF6C9C2B293BDE89 /* JoyLeftMiddleRightLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2004FF7F4A4D066092EB98470CDDE /* JoyLeftMiddleRightLabelCell.m */; };
+		4C5B1A6817B99277F772C25A1DB64253 /* JoyLeftIconTopBottomLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 365CCAF880F305A6FE487BB09AD8E80E /* JoyLeftIconTopBottomLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4DDE6370AA823915C3013C933655A03A /* JoyPresenterBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C8B5D925007F9A5504417602F9D7DB6 /* JoyPresenterBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		51655B897CAFCB364A332E30F8792D06 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E7E17DB5590A8C4D9625D67E6FBD243 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		51C3F1FB678E9549344F4C49CF82D089 /* JoyCellBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F1DC9BEC1C9BD4D50889E9D73D07FA5C /* JoyCellBaseModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		54DE244F7FE482E3F61ADD90232C478F /* JoyCellModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B37C3A7711A3D6807C02102B35E45622 /* JoyCellModelProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5AA2035346D235F55F5600A16D3DE615 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C02266037F030E22468AC86802DB57 /* MASViewConstraint.m */; };
+		5ADB6FBDA500A4FBCE2FF76375C8AA80 /* JoyTextViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A4E5A8C83E76E1870C9AB537D4254EF /* JoyTextViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5CC736F6F5D9BFA826E7190551508EEA /* JoyImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE515DE719B5E391FF6986B84C009F44 /* JoyImageCollectionViewCell.m */; };
+		5E2C411BB3646BDFD73E5A37FBC62F14 /* JoyMiddleLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8129296B4AEE51AF9DAEE82CFE7EE03F /* JoyMiddleLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		606F6CF00D812410D9A726AA15136914 /* JoyCellBaseModel+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD6676476F87AF6666CFAF5F529A24A /* JoyCellBaseModel+Action.m */; };
+		612A1A7AB805EE2DE122D6B5B566F16C /* JoyMiddleLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA341F420D932D8F1BFD0FB09DDD831 /* JoyMiddleLabelCell.m */; };
+		6287F3CEFB9CB6FAA8E501831BFD74EE /* JoyBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 55B37F2CE9B8648FDF2C0FABC271FE8E /* JoyBaseModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		66AB5B7C0C534A581E4F0304C117259B /* JoyUISegementView.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F06C933417FB3335D6282A3EC0884D /* JoyUISegementView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6C530E3C995C621F7B31590F21F7DD3A /* NSObject+JoyRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = DA009285B951C78A05F0F6165D8A6DAB /* NSObject+JoyRouter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6CC3645A1782C37316C230360EF3E66A /* JoyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B021006CFE0094628703A386A1C912C /* JoyKit-dummy.m */; };
+		6F131E9329A7A6680D29E7C8E0D256C1 /* JoyLeftAvatarRightLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4037E55EF49C2AE571FD9C1FC5E76EFC /* JoyLeftAvatarRightLabelCell.m */; };
+		72037754214B860CC55D2B7983567684 /* JoyLeftLabelRightPlaceHolderLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7AAA83B9D72520AEF93836401FAA9 /* JoyLeftLabelRightPlaceHolderLabelCell.m */; };
+		730B5296ECC83B8F1C40C9F2F1CB3155 /* JoyLeftAvatarRightTopBottomLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B7DEF6202C94F25971A6AAB8445BACCD /* JoyLeftAvatarRightTopBottomLabel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7567A072382E497AB997C57310E862A6 /* UIImageView+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6505EA0C3A3B6068C2FB91F93FF3E973 /* UIImageView+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		75D551C1E796DC4AA76A5524BD5A94B5 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B179F4D3D34A3CE25A698B8D9AC9D6C2 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		78761E65D2908B4D1AB666C69A79A4CE /* JoyProtoCol.h in Headers */ = {isa = PBXBuildFile; fileRef = 43C371785B718D035EB16D035DCF6D3D /* JoyProtoCol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7AF1625134C5471BBFFEEC6312700175 /* JoyLeftAvatarRightLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 90BCFDD8A05EE4EB6FC6EA748150223F /* JoyLeftAvatarRightLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7C4415CF0C89DFD7ABD99CBA9BA5F14B /* UIBarButtonItem+JoyBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 93331B6DA25A255B27F1B7E7B00DB616 /* UIBarButtonItem+JoyBarItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7DCE1BE78C68F7E0F6E1701A9B01DA1F /* UIImageView+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0658757E1CDE97A17C70B4CDCBCA410B /* UIImageView+JoyCategory.m */; };
+		7EB5B5B1F623312BEE00A015EB95D90A /* NSArray+JoyCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 44D697C7BB71A603C42DD3D59E8E0977 /* NSArray+JoyCrash.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7F2956A9C5B1370DC1A6A5A0DC9B716C /* JoyImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C83386AE12CE5719AF372271EEC5AF0 /* JoyImageCollectionViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		81597981DBF7514057E4D83D48BE383C /* JoyBaseCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C92EF446160C73DC48DAD9E3F928872 /* JoyBaseCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		816017B99E634A53350CC7B528185C9C /* JoyDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4108D39810B1A9903062B0C8785EFEAD /* JoyDatePickView.m */; };
+		83B1E743C9CD6DC63ABC9E9CC62699DC /* NSString+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3CD986493A640A445F28394C6633F0 /* NSString+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		845DC47137843DAEF92D652262C0C962 /* UIView+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = E3685CEB64C51D29C573E095F1991DEF /* UIView+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		88209DD9524E6C62539CCD460531A56F /* AVAudioSession+manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BEF29D1BBF1D62BF7AB48B777D9D089 /* AVAudioSession+manager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		882AFF9EAB31ADC25A70F66977CF0A02 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 475326F2A929CD1AFFB74850961F32C0 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8D63285F93FD59BF89A94315C2B86148 /* Joy.h in Headers */ = {isa = PBXBuildFile; fileRef = D3FDF823F5969E663EE59F43162922A5 /* Joy.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8FBAB60E840C02ABC2A6EBEDF75F993E /* JoyCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB24AD85C6B332DB844C4CA5CCA962D /* JoyCollectionView.m */; };
+		902F2E4CBCBDC368FDB3CEEF2CA4CCAB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C762C4F3A304C10AF7EBEA6AAA8508A0 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		90C3E39357C69BFBABAC7C72092FA904 /* JoyTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDAC8EC0742D37B51C86BF601B35847 /* JoyTextCell.m */; };
+		91E45F93D033701946A373CCE7625FFF /* JoyLeftIconCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BC392B0B63ACF90FBA1C0CA6B65FA2BA /* JoyLeftIconCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9420B5DE5AC38B34CED62B430228BFC2 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E2395DA2EBCF6241A0DA0E1859FF45 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9712AB416ED61FE9FFA5A9CBCBF822CC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EC6EDDDD3E503C5B2E967D3FEECFEB /* MASCompositeConstraint.m */; };
+		981219254B1CE7D1632CE20BC62F1799 /* JoyTableAutoLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7306D902F9EB6BABF867C78290330CCB /* JoyTableAutoLayoutView.m */; };
+		98D10FC818E7E0B5E5E88753C55F6AFD /* JoyNoDataBackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 887F0610BA70237FCA44D4F5C06B8FA8 /* JoyNoDataBackView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9ACC9FE6564CCBB79BABC47E88C9538F /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FA891F8E85C079B4FB101DDD5BC7A477 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A069A9D7D3A35133D8DB9C79A9FBA529 /* JoyPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = CEC8113C24D9F23BA35E001409B57F58 /* JoyPickerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3835D92B72FE0974607776EC2577D28 /* AVAudioSession+manager.m in Sources */ = {isa = PBXBuildFile; fileRef = A101D8EFB7D93DC2CC90AEA8F6FD02A0 /* AVAudioSession+manager.m */; };
+		A6F36823B2C089C366909262A904ADA3 /* JoyTextNoLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1442D97822D4E2ECE258960EF783E515 /* JoyTextNoLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A7D50724BE240D839E4DB7CF0D6AC4EC /* NSArray+JoyCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EAA788D724E4506E9D5B111C5FD854 /* NSArray+JoyCrash.m */; };
+		A81F7CC80981480EBC329ECA43E3F03D /* JoySwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEF6F23898ACFAC82ACE70E4FF2876 /* JoySwitchCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AA71BF15872248D49C65F999FC0BD539 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D717D3961B09922638E7F18C74DC380A /* UIImage+Extension.m */; };
+		ADF438C4C1D332DA13EDE7AC638310D9 /* NSObject+JoyRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E93A1703B225D81D64DB983EB6934A /* NSObject+JoyRouter.m */; };
+		AE92FA8BAE02130C8B0D4D69B438E38A /* CALayer+JoyLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DFCC52435D7EDBD9C40A4658D72C788 /* CALayer+JoyLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B1054FC4CED5C3889C988FF247EBB02F /* UITextField+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC9754FDDA10462E2C412F9722A5D6E /* UITextField+JoyCategory.m */; };
+		B3870ACE804FA8CD2CBC324A382B7AA1 /* JoyLeftAvatarRightTopBottomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F15F138060684CC23430B3A6607264D /* JoyLeftAvatarRightTopBottomLabel.m */; };
+		B5168603C3F784DD69B5B670F12D3235 /* JoyBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 605F0A1881D3300B228B7E85451326E3 /* JoyBaseCell.m */; };
+		B82811FB8232F24FBE651777D7B4F4E0 /* JoyCellBaseModel+Edit.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F59BDB1AA8475C0E720BDB871EA53F /* JoyCellBaseModel+Edit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C53D6E48C8680CFBE25125033929B8D2 /* CAAnimation+HCAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E1DA5095939CCE2D43CCE58A1217D3 /* CAAnimation+HCAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C640600229C3ACBA2D2B5B718EB81FFE /* Pods-JoyKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF80761A809C184AC2F4B44E4DF4AE3 /* Pods-JoyKit_Tests-dummy.m */; };
-		C7189BE6045EFEDD8538867C8160758B /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1321572A3ED9C894C94A131BE29B81B2 /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C9A43362E0C0C78EEC86F3BC01CB43DB /* JoySwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E46492BC1B646258F9C63DFB25000DF1 /* JoySwitchCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CDC49502435FA3F00F6E06BF46E61019 /* JoyCellBaseModel+Action.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F26AEB6CE464AE74AFFC98CF8F13DFA /* JoyCellBaseModel+Action.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CE0BF63AF87BDFB942C25F0286201BDD /* JoyBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ED9AEC62F6B837BC14831048353CD8D /* JoyBaseModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CF378A3D4CD6FDB15F320D24AEC5E8AD /* JoyCellBaseModel+Edit.m in Sources */ = {isa = PBXBuildFile; fileRef = A33992C9A6CC1E5B688A2608B4718166 /* JoyCellBaseModel+Edit.m */; };
-		D056584E61CF88B0661C8E4296D88D76 /* NSArray+JoyCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4108BF99D4485EB4CA77EBE584B5D6BF /* NSArray+JoyCrash.m */; };
-		D214CCB4477365D8488CE6F8A98E0535 /* CAAnimation+HCAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E8140C6A9AF65C9EB452CC56967090 /* CAAnimation+HCAnimation.m */; };
-		D294B113CC014044AF69338D430BAA9B /* JoyTextNoLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9D62562337FD9266586B47684232F /* JoyTextNoLabelCell.m */; };
-		D2BB97E0BE614BA68BF704C52B998705 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3162AC8E29FA7F3BF0D8641F7F4D9B60 /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D3EBF61C8CE14844509CC6A11F34DC7C /* JoyTableAutoLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC63A689CDE7C1B51831F407D4E34006 /* JoyTableAutoLayoutView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D83A0A02A6022D6EDF0C0525A58040A2 /* JoyLeftLabelTextViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8505AC9774D2F5A591451119FFB770F8 /* JoyLeftLabelTextViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DB3401F3B6138204B48DC56FB11EE4D9 /* CALayer+JoyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B15FD1ADB699A0FCB4CC01FBB9AF592 /* CALayer+JoyLayer.m */; };
-		E0FE19234A08EBFE035F4961BF523FED /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 807FFD255E8235D5B42FE078299B5F1B /* MASLayoutConstraint.m */; };
-		E151A7725459A837D69F4DAFFED77710 /* JoyLeftLabelRightPlaceHolderLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AB49A6380BEBD63EC4F864E77F23CC3 /* JoyLeftLabelRightPlaceHolderLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E2172928E6EE68D1FF62D28577B61F5C /* JoyLeftAvatarRightTopBottomLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D08CDE83E836F3A5C1F4B99F2D11489 /* JoyLeftAvatarRightTopBottomLabel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E6A7349FE0F235F4E861E8C0E2488A1C /* UIBarButtonItem+JoyBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0925E9DEB31DDC4CF58064D3C04E39EC /* UIBarButtonItem+JoyBarItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E80A28CF2A320B855DDBFBA492045080 /* JoyPresenterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC579780AD82DAECA77BFB7693E8D /* JoyPresenterBase.m */; };
-		EA5CDBAB433F58719BE67B990C3B7FB6 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0384F145CF471A951BA8E9486AD626 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EA9EEBF7E02DE17359E89DC83042CC5C /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 915A6FF0E04F5A5C0ACDE0E32BD2F193 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EC862655EF58054EF2CBC65AAB8C318F /* NSObject+JoyRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = F2AD3851021E8441381651EC0F920E7A /* NSObject+JoyRouter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EF8C78A9CB040752655281F717403CA2 /* IMageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E22132C08BA937EC5F61CC23DB1C2DA /* IMageIO.framework */; };
-		F114937C2CD80524F16A34C3EE4B93B4 /* NSString+JoyCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 334CA2ACF300A45D7C98EE6FED001606 /* NSString+JoyCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F24741B0209AAF3B384C71BFCAF50747 /* JoyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E43D640CAAFB248D77CFEAFBF300136 /* JoyKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F35E872C597B743E264FAD87BDB2198C /* TNACellModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 334CF3C192D8EDD4C869F8C4507960CB /* TNACellModelProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F3CC41526F2A508E7A60725D440F6E84 /* JoyBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E192DB88D630A358027917909CE4CBD6 /* JoyBaseVC.m */; };
-		F44329FB01B88C61C7C5341AC2A12857 /* JoyLeftLabelRightIconCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC6F34D0B5310F3FA4964434DD5D175 /* JoyLeftLabelRightIconCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F4DE1971A9DCEF112B7A5AD37B596A13 /* JoyAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 8652C49C4CEB5D8FF62AA4503B850867 /* JoyAlert.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5635C46C4156B6DC239CD13F62BD219 /* UIWindow+Observer.h in Headers */ = {isa = PBXBuildFile; fileRef = F0CB785BE7047250F2C4CA9C1FFAF5CC /* UIWindow+Observer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F65018FB4820B510ECB82CD365042C0C /* JoyTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 993546B189D742F086B445656E04D251 /* JoyTextCell.m */; };
-		F756CBB9F674EB21ABDC9C9E8EB96082 /* JoyInteractorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = FB75623474449A24F55F511C1CCE7391 /* JoyInteractorBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F9EB549E4A67A8AEAA1C37507D51D46D /* JoyTableAutoLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E65D3820C84A5ABFD9B61E6361EB12 /* JoyTableAutoLayoutView.m */; };
-		FBA35CD5B5F11B842E5BC774934DE435 /* UIBarButtonItem+JoyBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E576801DD8906EEAD5A418B5F3E355FA /* UIBarButtonItem+JoyBarItem.m */; };
-		FC27D0AE3B7A75F8279EFE51C7F187CE /* JoyDatePickView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E6FA6AB67AEA1B8FE4F3318D1B71F5B /* JoyDatePickView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FE2EECE3358A9519F75DD55D292921DB /* JoyAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 00864D6D9100F930E073EC3193851879 /* JoyAlert.m */; };
+		C7B820684DFB26C4B7DF91525791A170 /* JoyNavProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 4731C6870002057048A48FBA572A037B /* JoyNavProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CAEA1E2767203BD2AD3EAF7AA35D8DAE /* CAAnimation+HCAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C238132FAB44A98ED9C416C5268ADDA8 /* CAAnimation+HCAnimation.m */; };
+		CB47BED7462BFE50F1BC936D967A8C41 /* JoyLeftLabelRightPlaceHolderLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9148BA3F737E6CD74DDD0D7E1CB8B62A /* JoyLeftLabelRightPlaceHolderLabelCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CCF57C9A872C2CD755F1EFE42627AAE6 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3162AC8E29FA7F3BF0D8641F7F4D9B60 /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CF3C96E0780168A6F585E269F4BFAE98 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405C25E60B1D433FEE0E13E9D47ABE4C /* Photos.framework */; };
+		D59D924A739647F26F5E5F9CE26E5AFB /* JoyBaseVC+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 9871EC959CB53F17406D5C343115224B /* JoyBaseVC+Extention.m */; };
+		D7396F0BA0156D67ED75A5DE922BA949 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B48867DE203BCF3BB3DFCAB8FDC7516B /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D790410BD4A05D296AE5098C38041E75 /* UIImage+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2E9F5DD2CA2248A389455DB4247965 /* UIImage+Extension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D94DD0C12FFBA112B8E726E2EA321114 /* JoySwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E2DB809A76B53DDEB42195791285EE /* JoySwitchCell.m */; };
+		D98389C6EE0A9D9A898C17EE1FAB4FE8 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0384F145CF471A951BA8E9486AD626 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DAB2A5D90887987918925FF1729E024C /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E158FC65C5404E098F16E26F478DA504 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DB6DF2152B8894BB43A2C036F952F1D6 /* JoyBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 263755233AC6ADA2BB569DB1578ECE41 /* JoyBaseVC.m */; };
+		DFE7C90E40A3DD6238F27C4626D72609 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 915A6FF0E04F5A5C0ACDE0E32BD2F193 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E50A4D50134202B6B6127D5E1E21BB82 /* JoyLeftIconTopBottomLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FE70001C2331A4B41B705CD199B48 /* JoyLeftIconTopBottomLabelCell.m */; };
+		E77E7B12C57DE2AFA1FAC5617DB0B490 /* JoyAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BABC05CE772320BCE64BD5762AA0D /* JoyAlert.m */; };
+		E8C77AE4FB27C35C1C15C38476C2CAD2 /* UIBarButtonItem+JoyBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A03FA2492944806A833BDBBEB79331 /* UIBarButtonItem+JoyBarItem.m */; };
+		EA856F0BF4C98AF68DD95AA0E5516E40 /* JoyTableCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA4A541BAC9EAB7B06695D302696CE91 /* JoyTableCollectionCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA8CCCE18A32B9EA6FAE72C46B65E5EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CED74A195C4733CB009D5EB947CEFA /* UIKit.framework */; };
+		F12C8C934A713900A55BBA2393A54444 /* JoyLeftIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B38F1F16C8257B2F676ACC56D761A4 /* JoyLeftIconCell.m */; };
+		F151FB07BA8784CB293D2EE940663F4E /* UIWindow+Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F0042B5497A3C0F3D752C0CF949E55 /* UIWindow+Observer.m */; };
+		F1D88439CD246CB5C89DFD4B01604979 /* JoyInteractorBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3A65791B2414AC1610079158457AC /* JoyInteractorBase.m */; };
+		F1F9D2346CDCF42E6B79B26F76CE9F01 /* UITableViewCell+JoyCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 796F33BA774AF30E65131EEBB60E4928 /* UITableViewCell+JoyCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3E7CA421EC676C870F7F12EEB3C3BAE /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8229525E7067F22D3977D2628DF5F2C3 /* NSArray+MASAdditions.m */; };
+		F416B315D903B4790E895E285EFEDCD9 /* JoyCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05F488575C7D227FF385A1DBB1419F8F /* JoyCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F777E8026BD3C29E050F412C812F9F7F /* NSString+JoyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C5E440075B16EE58CEEE9F8C1C808 /* NSString+JoyCategory.m */; };
+		F943EDD82EDEF25997237D75A2C7D39C /* JoyLeftLabelTextViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D5111FB5560147463389CD9494F6FF6C /* JoyLeftLabelTextViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F98EB9319D75BFBF628BE5943393357E /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F28AEAAF722BC62BF5B37D6663BBC2 /* MASViewAttribute.m */; };
+		FEDE115DFC726615936DA989DF999BC5 /* JoyTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34672D7D7372E484FE3FF978955CA5C1 /* JoyTextViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,8 +145,15 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 892BAF83D677B31406611FB43A845BC6;
+			remoteGlobalIDString = 41C15BD46DD687CEC64D81683881C007;
 			remoteInfo = JoyKit;
+		};
+		88051C4A2672AE7333528E3277298814 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08B8D23AE4BC34B0BF5785FA9C71625C;
+			remoteInfo = Masonry;
 		};
 		995181376DCDFE1A8353F3E926CC3446 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -157,176 +166,171 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6CF0D7F98B156524AAD94A1D7B3988B7;
-			remoteInfo = Masonry;
-		};
-		B7EDF6E0C585EE48180C15206E4A221E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6CF0D7F98B156524AAD94A1D7B3988B7;
+			remoteGlobalIDString = 08B8D23AE4BC34B0BF5785FA9C71625C;
 			remoteInfo = Masonry;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00864D6D9100F930E073EC3193851879 /* JoyAlert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyAlert.m; sourceTree = "<group>"; };
-		0439C4EDDC3CDB471BD88345FC809A91 /* NSString+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+JoyCategory.m"; sourceTree = "<group>"; };
+		00F0042B5497A3C0F3D752C0CF949E55 /* UIWindow+Observer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+Observer.m"; path = "JoyKit/Category/UIWindow+Observer.m"; sourceTree = "<group>"; };
+		026C4FBD585CF975886E1D6B94043730 /* JoyLeftMiddleRightLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftMiddleRightLabelCell.h; path = JoyKit/CellsLibruary/TableLabelCell/JoyLeftMiddleRightLabelCell.h; sourceTree = "<group>"; };
 		043FB94CF93050E20D8E4C071ACFA5D2 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		0925E9DEB31DDC4CF58064D3C04E39EC /* UIBarButtonItem+JoyBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JoyBarItem.h"; sourceTree = "<group>"; };
-		0BC272DB32D72017CBD87EE2B9F673AD /* JoyTextCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyTextCell.h; sourceTree = "<group>"; };
+		05C08FF6FAAB1A102484DB7590BC8EE4 /* JoyCellBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyCellBaseModel.m; path = JoyKit/Models/JoyCellBaseModel.m; sourceTree = "<group>"; };
+		05F488575C7D227FF385A1DBB1419F8F /* JoyCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyCollectionView.h; path = JoyKit/Views/JoyCollectionView.h; sourceTree = "<group>"; };
+		0658757E1CDE97A17C70B4CDCBCA410B /* UIImageView+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+JoyCategory.m"; path = "JoyKit/Category/UIImageView+JoyCategory.m"; sourceTree = "<group>"; };
+		06AA6DA620EF724728E9AD544E549CFC /* JoyKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JoyKit-prefix.pch"; sourceTree = "<group>"; };
+		0BE7AAA83B9D72520AEF93836401FAA9 /* JoyLeftLabelRightPlaceHolderLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftLabelRightPlaceHolderLabelCell.m; path = JoyKit/CellsLibruary/TableLabelCell/JoyLeftLabelRightPlaceHolderLabelCell.m; sourceTree = "<group>"; };
 		0C651C0D53B9E36DB625C047D22875EB /* Pods-JoyKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JoyKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		0EF9D62562337FD9266586B47684232F /* JoyTextNoLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyTextNoLabelCell.m; sourceTree = "<group>"; };
-		0F3061EA76A3258DED3BFCC31F63728D /* JoyPresenterBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyPresenterBase.h; sourceTree = "<group>"; };
-		1294AC1D40EBF3B7A7020D55E286F147 /* NSArray+JoyCrash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+JoyCrash.h"; sourceTree = "<group>"; };
+		0C8B5D925007F9A5504417602F9D7DB6 /* JoyPresenterBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyPresenterBase.h; path = JoyKit/Common/JoyPresenterBase.h; sourceTree = "<group>"; };
+		0C8BAC425F30BBE48EBF8E1E009E66B5 /* joymakeHead.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = joymakeHead.jpg; path = JoyKit/Assets/joymakeHead.jpg; sourceTree = "<group>"; };
+		0E7047A52268ACA0EF089333CBC32ED9 /* JoyLeftLabelTextViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftLabelTextViewCell.m; path = JoyKit/CellsLibruary/TableTextCell/JoyLeftLabelTextViewCell.m; sourceTree = "<group>"; };
+		0FB8B8242270176FDF6F5D48A4F619A5 /* JoySectionBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoySectionBaseModel.m; path = JoyKit/Models/JoySectionBaseModel.m; sourceTree = "<group>"; };
+		101BA6D4E0395529C46C8D95AEB40A19 /* JoyKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyKit.h; path = JoyKit/JoyHeader/JoyKit.h; sourceTree = "<group>"; };
 		1321572A3ED9C894C94A131BE29B81B2 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		13FA9DD66F9B5AB42694F8DF4EC384ED /* JoyTableAutoLayoutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyTableAutoLayoutView.h; path = JoyKit/Views/JoyTableAutoLayoutView.h; sourceTree = "<group>"; };
+		1442D97822D4E2ECE258960EF783E515 /* JoyTextNoLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyTextNoLabelCell.h; path = JoyKit/CellsLibruary/TableTextCell/JoyTextNoLabelCell.h; sourceTree = "<group>"; };
 		16EBC7F1C051681A2D73700FAD83C2B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1BE144F1995739F7E9E0CCD7D97224FE /* UIView+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+JoyCategory.h"; sourceTree = "<group>"; };
-		1D08CDE83E836F3A5C1F4B99F2D11489 /* JoyLeftAvatarRightTopBottomLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftAvatarRightTopBottomLabel.h; sourceTree = "<group>"; };
-		1F3A640576548C18FFED3802B9E940A7 /* JoyProtoCol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyProtoCol.h; sourceTree = "<group>"; };
+		1A4E5A8C83E76E1870C9AB537D4254EF /* JoyTextViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyTextViewCell.h; path = JoyKit/CellsLibruary/TableTextCell/JoyTextViewCell.h; sourceTree = "<group>"; };
+		1A9EBCC2FE2E40A759A60F3CEF9AD823 /* JoyDeviceModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyDeviceModule.h; path = JoyKit/Utility/JoyDeviceModule.h; sourceTree = "<group>"; };
 		22E2395DA2EBCF6241A0DA0E1859FF45 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		25CED739CF35B6D0A1D95AE17D712A7F /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		263755233AC6ADA2BB569DB1578ECE41 /* JoyBaseVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyBaseVC.m; path = JoyKit/Controllers/JoyBaseVC.m; sourceTree = "<group>"; };
 		28DE855C0024EB2A4312A7C0C7C9751C /* Pods-JoyKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JoyKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		2A7F23872848AF43FCB8B4702312136B /* JoyUISegementView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyUISegementView.m; sourceTree = "<group>"; };
-		2C745D9693754B0C99BDAE203B021664 /* JoyPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyPickerView.h; sourceTree = "<group>"; };
-		2E7AF5CF52D121FA3E3BC9284FDC491F /* JoyKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JoyKit.xcconfig; sourceTree = "<group>"; };
-		2F40741DBB709BC06C4E761B1575AB79 /* header_icon_back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header_icon_back@3x.png"; path = "JoyKit/Assets/header_icon_back@3x.png"; sourceTree = "<group>"; };
+		2B021006CFE0094628703A386A1C912C /* JoyKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JoyKit-dummy.m"; sourceTree = "<group>"; };
+		2DFCC52435D7EDBD9C40A4658D72C788 /* CALayer+JoyLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+JoyLayer.h"; path = "JoyKit/Category/CALayer+JoyLayer.h"; sourceTree = "<group>"; };
 		2FCC2A09AC3DCD0E4A3D268DAABC5135 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		3096A0A6036733DD6511B671B46D2A6B /* JoyTextNoLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyTextNoLabelCell.m; path = JoyKit/CellsLibruary/TableTextCell/JoyTextNoLabelCell.m; sourceTree = "<group>"; };
 		3162AC8E29FA7F3BF0D8641F7F4D9B60 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		32E8140C6A9AF65C9EB452CC56967090 /* CAAnimation+HCAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+HCAnimation.m"; sourceTree = "<group>"; };
-		334CA2ACF300A45D7C98EE6FED001606 /* NSString+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+JoyCategory.h"; sourceTree = "<group>"; };
-		334CF3C192D8EDD4C869F8C4507960CB /* TNACellModelProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TNACellModelProtocol.h; sourceTree = "<group>"; };
-		36E0CCD82FE8569E9DAE88164F47D953 /* JoyCellBaseModel+Edit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JoyCellBaseModel+Edit.h"; sourceTree = "<group>"; };
+		325B65950DC92E57CAD74BA86908E29A /* JoyCellBaseModel+Action.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JoyCellBaseModel+Action.h"; path = "JoyKit/Models/JoyCellBaseModel+Action.h"; sourceTree = "<group>"; };
+		33E1DA5095939CCE2D43CCE58A1217D3 /* CAAnimation+HCAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CAAnimation+HCAnimation.h"; path = "JoyKit/Category/CAAnimation+HCAnimation.h"; sourceTree = "<group>"; };
+		34672D7D7372E484FE3FF978955CA5C1 /* JoyTextViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyTextViewCell.m; path = JoyKit/CellsLibruary/TableTextCell/JoyTextViewCell.m; sourceTree = "<group>"; };
+		36502CADB5DA01F654D5AAE7BF10A1E5 /* UITextField+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+JoyCategory.h"; path = "JoyKit/Category/UITextField+JoyCategory.h"; sourceTree = "<group>"; };
+		365CCAF880F305A6FE487BB09AD8E80E /* JoyLeftIconTopBottomLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftIconTopBottomLabelCell.h; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftIconTopBottomLabelCell.h; sourceTree = "<group>"; };
 		380EA4FD84ADA1917A7E4363677E2F41 /* Pods-JoyKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JoyKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		3AB7453D4F0F06E0E0FD0D831A33DFEC /* JoyLeftLabelRightIconCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftLabelRightIconCell.m; sourceTree = "<group>"; };
-		3B0477D1E2F8F04DB0BD32C436DCD446 /* AVAudioSession+manager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AVAudioSession+manager.h"; sourceTree = "<group>"; };
-		3ED9AEC62F6B837BC14831048353CD8D /* JoyBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyBaseModel.h; sourceTree = "<group>"; };
+		3A2E9F5DD2CA2248A389455DB4247965 /* UIImage+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Extension.h"; path = "JoyKit/Category/UIImage+Extension.h"; sourceTree = "<group>"; };
+		3A3CD986493A640A445F28394C6633F0 /* NSString+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+JoyCategory.h"; path = "JoyKit/Category/NSString+JoyCategory.h"; sourceTree = "<group>"; };
+		4037E55EF49C2AE571FD9C1FC5E76EFC /* JoyLeftAvatarRightLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftAvatarRightLabelCell.m; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftAvatarRightLabelCell.m; sourceTree = "<group>"; };
 		4056A87BCCA2D2378BC1B23098087EA5 /* Pods-JoyKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JoyKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		405C25E60B1D433FEE0E13E9D47ABE4C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
-		4108BF99D4485EB4CA77EBE584B5D6BF /* NSArray+JoyCrash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JoyCrash.m"; sourceTree = "<group>"; };
-		41EF7F671C2DB28297EBCEE2342C6FBB /* AVAudioSession+manager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AVAudioSession+manager.m"; sourceTree = "<group>"; };
+		4108D39810B1A9903062B0C8785EFEAD /* JoyDatePickView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyDatePickView.m; path = JoyKit/Views/JoyDatePickView.m; sourceTree = "<group>"; };
+		41D2004FF7F4A4D066092EB98470CDDE /* JoyLeftMiddleRightLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftMiddleRightLabelCell.m; path = JoyKit/CellsLibruary/TableLabelCell/JoyLeftMiddleRightLabelCell.m; sourceTree = "<group>"; };
 		41F065E3FAB202E19A4F20AF7FB32C03 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		431687226785CBB7C81ACCAD697C7F05 /* JoyBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyBaseModel.m; sourceTree = "<group>"; };
+		437D8F2AC1E93869EDC28D2E484D4AEE /* CALayer+JoyLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+JoyLayer.m"; path = "JoyKit/Category/CALayer+JoyLayer.m"; sourceTree = "<group>"; };
+		43C371785B718D035EB16D035DCF6D3D /* JoyProtoCol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyProtoCol.h; path = JoyKit/Common/JoyProtoCol.h; sourceTree = "<group>"; };
+		441289B321A38A3198C63F4C64773741 /* JoyDatePickView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyDatePickView.h; path = JoyKit/Views/JoyDatePickView.h; sourceTree = "<group>"; };
+		44BC48819C5D3BF10B2068F634A2280F /* JoyBaseVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyBaseVC.h; path = JoyKit/Controllers/JoyBaseVC.h; sourceTree = "<group>"; };
+		44D697C7BB71A603C42DD3D59E8E0977 /* NSArray+JoyCrash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+JoyCrash.h"; path = "JoyKit/Category/NSArray+JoyCrash.h"; sourceTree = "<group>"; };
 		464C5BBE430071147D02EEACB6516141 /* Pods-JoyKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JoyKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		46B38F1F16C8257B2F676ACC56D761A4 /* JoyLeftIconCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftIconCell.m; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftIconCell.m; sourceTree = "<group>"; };
+		4731C6870002057048A48FBA572A037B /* JoyNavProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyNavProtocol.h; path = JoyKit/Common/JoyNavProtocol.h; sourceTree = "<group>"; };
 		475326F2A929CD1AFFB74850961F32C0 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		4845F713A475A42F6AEC3EB480870A0B /* JoyBaseVC+Extention.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JoyBaseVC+Extention.h"; sourceTree = "<group>"; };
-		492B5FD66531C8532A69A849798890FB /* JoyTextViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyTextViewCell.h; sourceTree = "<group>"; };
-		4A6E58B2561840A9E9265FDAFA851A51 /* JoyBaseVC+Extention.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JoyBaseVC+Extention.m"; sourceTree = "<group>"; };
-		4BBCCB0C7709A46FA8E128E5E11CEB84 /* JoySectionBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoySectionBaseModel.m; sourceTree = "<group>"; };
-		4D26C6C0194509DAA6DC5CB76633F789 /* JoyLeftIconTopBottomLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftIconTopBottomLabelCell.h; sourceTree = "<group>"; };
-		53E6C5CC0CC6ABBDCCA23EBDA6A57F39 /* JoyCellBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyCellBaseModel.h; sourceTree = "<group>"; };
-		546BBBF38ACF7EBAF74F6955C21F1E0D /* JoyTextNoLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyTextNoLabelCell.h; sourceTree = "<group>"; };
+		4CA3A65791B2414AC1610079158457AC /* JoyInteractorBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyInteractorBase.m; path = JoyKit/Common/JoyInteractorBase.m; sourceTree = "<group>"; };
+		4E151FBAB8FD0F0073C20155A6FED5D4 /* JoyBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyBaseModel.m; path = JoyKit/Models/JoyBaseModel.m; sourceTree = "<group>"; };
+		4EFEF6F23898ACFAC82ACE70E4FF2876 /* JoySwitchCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoySwitchCell.h; path = JoyKit/CellsLibruary/TableSwitchCell/JoySwitchCell.h; sourceTree = "<group>"; };
+		512084DCD69E6556F042B328D4CF0DBF /* UIView+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+JoyCategory.m"; path = "JoyKit/Category/UIView+JoyCategory.m"; sourceTree = "<group>"; };
+		52916C087FF8A6C61D1743C35F5BF68C /* JoyLeftLabelRightIconCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftLabelRightIconCell.h; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftLabelRightIconCell.h; sourceTree = "<group>"; };
+		55B37F2CE9B8648FDF2C0FABC271FE8E /* JoyBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyBaseModel.h; path = JoyKit/Models/JoyBaseModel.h; sourceTree = "<group>"; };
 		56CED74A195C4733CB009D5EB947CEFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		586577FC97FF637B29FDAA3CC2A7865F /* JoyLeftIconCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftIconCell.h; sourceTree = "<group>"; };
-		58E1625BE9D3F16FBAD499C1C6FB7CB3 /* JoyPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyPickerView.m; sourceTree = "<group>"; };
-		5A9EC8F0F87BC57207A226D2D919DE74 /* JoyBaseCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyBaseCell.h; sourceTree = "<group>"; };
-		5AAEDDEC9518376EEC66951AE27C9FE2 /* UITextField+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+JoyCategory.h"; sourceTree = "<group>"; };
-		5E45045C81FE083C0E33AAE6600B2738 /* JoyBaseVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyBaseVC.h; sourceTree = "<group>"; };
-		5F26AEB6CE464AE74AFFC98CF8F13DFA /* JoyCellBaseModel+Action.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JoyCellBaseModel+Action.h"; sourceTree = "<group>"; };
-		5F9DE685085A1F81F32AA573E868ADE7 /* UIImageView+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JoyCategory.m"; sourceTree = "<group>"; };
-		613026A94E34CA885ED2E02CD455E374 /* UIImage+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
-		64791EEAE11FE02C6ABA28C0B316DA09 /* CALayer+JoyLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CALayer+JoyLayer.h"; sourceTree = "<group>"; };
+		57D9B8D4763ECDD0FB269EBB6DA6FCFB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		58E2DB809A76B53DDEB42195791285EE /* JoySwitchCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoySwitchCell.m; path = JoyKit/CellsLibruary/TableSwitchCell/JoySwitchCell.m; sourceTree = "<group>"; };
+		59DCE8B597838F51C7145B5D3742880C /* JoyKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JoyKit.xcconfig; sourceTree = "<group>"; };
+		5ACD2993D566F9FE67350C5997AC6A6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5BEF29D1BBF1D62BF7AB48B777D9D089 /* AVAudioSession+manager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AVAudioSession+manager.h"; path = "JoyKit/Category/AVAudioSession+manager.h"; sourceTree = "<group>"; };
+		5C83386AE12CE5719AF372271EEC5AF0 /* JoyImageCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyImageCollectionViewCell.h; path = JoyKit/CellsLibruary/CollectionImageCell/JoyImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5C92EF446160C73DC48DAD9E3F928872 /* JoyBaseCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyBaseCell.h; path = JoyKit/CellsLibruary/TableLabelCell/JoyBaseCell.h; sourceTree = "<group>"; };
+		5D4FE70001C2331A4B41B705CD199B48 /* JoyLeftIconTopBottomLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftIconTopBottomLabelCell.m; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftIconTopBottomLabelCell.m; sourceTree = "<group>"; };
+		5EA341F420D932D8F1BFD0FB09DDD831 /* JoyMiddleLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyMiddleLabelCell.m; path = JoyKit/CellsLibruary/TableLabelCell/JoyMiddleLabelCell.m; sourceTree = "<group>"; };
+		601B849BEBA8642284B624269E620434 /* select@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "select@3x.png"; path = "JoyKit/Assets/select@3x.png"; sourceTree = "<group>"; };
+		605F0A1881D3300B228B7E85451326E3 /* JoyBaseCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyBaseCell.m; path = JoyKit/CellsLibruary/TableLabelCell/JoyBaseCell.m; sourceTree = "<group>"; };
+		62378B535E67285D7B7DFDAB4D5BD14A /* header_icon_back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header_icon_back@2x.png"; path = "JoyKit/Assets/header_icon_back@2x.png"; sourceTree = "<group>"; };
 		64E949C8B845E4A490E0046A5BBC8BD9 /* libPods-JoyKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-JoyKit_Example.a"; path = "libPods-JoyKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6505EA0C3A3B6068C2FB91F93FF3E973 /* UIImageView+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+JoyCategory.h"; path = "JoyKit/Category/UIImageView+JoyCategory.h"; sourceTree = "<group>"; };
 		65627A06C816CF26654B6E5E23A5DB91 /* Pods-JoyKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JoyKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		66CAF64981D358B51968310319ECF801 /* Joy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Joy.h; sourceTree = "<group>"; };
-		6AB49A6380BEBD63EC4F864E77F23CC3 /* JoyLeftLabelRightPlaceHolderLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftLabelRightPlaceHolderLabelCell.h; sourceTree = "<group>"; };
-		6AD4EB60F98612CE8018BDF57F1FD0DE /* JoyMiddleLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyMiddleLabelCell.h; sourceTree = "<group>"; };
-		6B15FD1ADB699A0FCB4CC01FBB9AF592 /* CALayer+JoyLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JoyLayer.m"; sourceTree = "<group>"; };
-		6D0D3FC4408DB77AE85A449C8DA34665 /* JoyLeftAvatarRightTopBottomLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftAvatarRightTopBottomLabel.m; sourceTree = "<group>"; };
-		6E11A38501EFD6DF29A2B0CE99C6D6AB /* JoyLeftLabelRightPlaceHolderLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftLabelRightPlaceHolderLabelCell.m; sourceTree = "<group>"; };
-		7037116E5857FB9F8718B04AE7396C1E /* JoyTextViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyTextViewCell.m; sourceTree = "<group>"; };
-		71BA8767614263C00832E2BD685C64C8 /* JoyCellBaseModel+Action.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JoyCellBaseModel+Action.m"; sourceTree = "<group>"; };
-		74E35B564B83EE0E77CF48BEA2E2E5A8 /* JoyKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JoyKit-dummy.m"; sourceTree = "<group>"; };
-		76B712C67C8E4782132A42A9B8B939F3 /* JoyDatePickView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyDatePickView.m; sourceTree = "<group>"; };
-		77010076153D48E672BA93B48A78191B /* UITableViewCell+JoyCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JoyCell.m"; sourceTree = "<group>"; };
+		66C883DB6B9E6FAAEACBC899B2AC361A /* JoyDeviceModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyDeviceModule.m; path = JoyKit/Utility/JoyDeviceModule.m; sourceTree = "<group>"; };
+		6775046E629BD8988417CFEF93BB1171 /* JoyPresenterBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyPresenterBase.m; path = JoyKit/Common/JoyPresenterBase.m; sourceTree = "<group>"; };
+		6AFB40516C428DE707CF2CC9E09620B0 /* JoyLeftLabelRightIconCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftLabelRightIconCell.m; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftLabelRightIconCell.m; sourceTree = "<group>"; };
+		71A03FA2492944806A833BDBBEB79331 /* UIBarButtonItem+JoyBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+JoyBarItem.m"; path = "JoyKit/Category/UIBarButtonItem+JoyBarItem.m"; sourceTree = "<group>"; };
+		7306D902F9EB6BABF867C78290330CCB /* JoyTableAutoLayoutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyTableAutoLayoutView.m; path = JoyKit/Views/JoyTableAutoLayoutView.m; sourceTree = "<group>"; };
 		780A86CEB0A0131C88BE12414D500734 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		7882AB8492CA4F59F730C76CC3BBF57A /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		79D03580B8E446AEE22AFBF047A9CB0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		79F442A3F1C042E718709836BE21BF67 /* UITableViewCell+JoyCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JoyCell.h"; sourceTree = "<group>"; };
-		79F5E23146848927B7E223043BDB377A /* CAAnimation+HCAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+HCAnimation.h"; sourceTree = "<group>"; };
-		7B193AD908E7C4B65C8FCC7A1A28046E /* JoyImageCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyImageCollectionViewCell.m; sourceTree = "<group>"; };
+		78F06C933417FB3335D6282A3EC0884D /* JoyUISegementView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyUISegementView.h; path = JoyKit/Views/JoyUISegementView.h; sourceTree = "<group>"; };
+		794260B3C588C7056860647E0BEA967E /* JoyKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JoyKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		796F33BA774AF30E65131EEBB60E4928 /* UITableViewCell+JoyCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+JoyCell.h"; path = "JoyKit/Category/UITableViewCell+JoyCell.h"; sourceTree = "<group>"; };
 		7B5A231E76AF7DC6CB887B5B2C522A7A /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		7DA4F76342D724D4B7BB44FE825EF347 /* JoyLeftIconCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftIconCell.m; sourceTree = "<group>"; };
 		7E22132C08BA937EC5F61CC23DB1C2DA /* IMageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IMageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/IMageIO.framework; sourceTree = DEVELOPER_DIR; };
 		807FFD255E8235D5B42FE078299B5F1B /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		809F53293566F07154DBCBFAF5DDC182 /* JoyLeftMiddleRightLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftMiddleRightLabelCell.h; sourceTree = "<group>"; };
+		8129296B4AEE51AF9DAEE82CFE7EE03F /* JoyMiddleLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyMiddleLabelCell.h; path = JoyKit/CellsLibruary/TableLabelCell/JoyMiddleLabelCell.h; sourceTree = "<group>"; };
 		8229525E7067F22D3977D2628DF5F2C3 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		82F28AEAAF722BC62BF5B37D6663BBC2 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		84D841CD370F6993F660A23F34247914 /* JoyLeftAvatarRightLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftAvatarRightLabelCell.h; sourceTree = "<group>"; };
-		8505AC9774D2F5A591451119FFB770F8 /* JoyLeftLabelTextViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftLabelTextViewCell.h; sourceTree = "<group>"; };
-		8572062292C4DD89960863202C81C1EF /* UIImage+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
-		8652C49C4CEB5D8FF62AA4503B850867 /* JoyAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyAlert.h; sourceTree = "<group>"; };
-		88E65D3820C84A5ABFD9B61E6361EB12 /* JoyTableAutoLayoutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyTableAutoLayoutView.m; sourceTree = "<group>"; };
+		887F0610BA70237FCA44D4F5C06B8FA8 /* JoyNoDataBackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyNoDataBackView.h; path = JoyKit/Views/JoyNoDataBackView.h; sourceTree = "<group>"; };
 		8A9F610CB90E57B81F8F7DCA2176E0FD /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		8C2435CE50A615E6AA4843FDB66071DE /* Pods-JoyKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JoyKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8D9B139B1F523F8F54120B0CAEF82C5C /* JoySectionBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoySectionBaseModel.h; sourceTree = "<group>"; };
-		8E43D640CAAFB248D77CFEAFBF300136 /* JoyKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyKit.h; sourceTree = "<group>"; };
-		8E6FA6AB67AEA1B8FE4F3318D1B71F5B /* JoyDatePickView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyDatePickView.h; sourceTree = "<group>"; };
 		8E7E17DB5590A8C4D9625D67E6FBD243 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		8F15F138060684CC23430B3A6607264D /* JoyLeftAvatarRightTopBottomLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftAvatarRightTopBottomLabel.m; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftAvatarRightTopBottomLabel.m; sourceTree = "<group>"; };
+		90BCFDD8A05EE4EB6FC6EA748150223F /* JoyLeftAvatarRightLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftAvatarRightLabelCell.h; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftAvatarRightLabelCell.h; sourceTree = "<group>"; };
+		9148BA3F737E6CD74DDD0D7E1CB8B62A /* JoyLeftLabelRightPlaceHolderLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftLabelRightPlaceHolderLabelCell.h; path = JoyKit/CellsLibruary/TableLabelCell/JoyLeftLabelRightPlaceHolderLabelCell.h; sourceTree = "<group>"; };
 		915A6FF0E04F5A5C0ACDE0E32BD2F193 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		920010DD159FC7B92845C6EDD550930F /* JoyBaseCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyBaseCell.m; sourceTree = "<group>"; };
+		92FF7DD459C8E1C2A6A338A35769CAD9 /* JoyBaseVC+Extention.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JoyBaseVC+Extention.h"; path = "JoyKit/Controllers/JoyBaseVC+Extention.h"; sourceTree = "<group>"; };
+		93331B6DA25A255B27F1B7E7B00DB616 /* UIBarButtonItem+JoyBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+JoyBarItem.h"; path = "JoyKit/Category/UIBarButtonItem+JoyBarItem.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93F59BDB1AA8475C0E720BDB871EA53F /* JoyCellBaseModel+Edit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JoyCellBaseModel+Edit.h"; path = "JoyKit/Models/JoyCellBaseModel+Edit.h"; sourceTree = "<group>"; };
 		953C046F2036588A308909CC12FA7211 /* Pods-JoyKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JoyKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		975226B9199C0DE54071A7F6CEF75749 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		9826D75A1045C2E6DC81D6CA0047FEC2 /* libJoyKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJoyKit.a; path = libJoyKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		990391EC876D09FA07EDC25C201BF90E /* JoyLeftMiddleRightLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftMiddleRightLabelCell.m; sourceTree = "<group>"; };
-		993546B189D742F086B445656E04D251 /* JoyTextCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyTextCell.m; sourceTree = "<group>"; };
+		9871EC959CB53F17406D5C343115224B /* JoyBaseVC+Extention.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JoyBaseVC+Extention.m"; path = "JoyKit/Controllers/JoyBaseVC+Extention.m"; sourceTree = "<group>"; };
+		9BBFAEC4808E249B49313E227F577303 /* JoyInteractorBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyInteractorBase.h; path = JoyKit/Common/JoyInteractorBase.h; sourceTree = "<group>"; };
 		9F937BDEB8DF93A08D20C5355C0FDB5C /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		A101D8EFB7D93DC2CC90AEA8F6FD02A0 /* AVAudioSession+manager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AVAudioSession+manager.m"; path = "JoyKit/Category/AVAudioSession+manager.m"; sourceTree = "<group>"; };
 		A2F75C96947B2651F82FC18F66C43B49 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
-		A33992C9A6CC1E5B688A2608B4718166 /* JoyCellBaseModel+Edit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JoyCellBaseModel+Edit.m"; sourceTree = "<group>"; };
+		A74B5DAC8CB7B687F8236ACC679E93AD /* JoyTextCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyTextCell.h; path = JoyKit/CellsLibruary/TableTextCell/JoyTextCell.h; sourceTree = "<group>"; };
 		A8E3FFE3207C0C31508C506EDC281168 /* Pods-JoyKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JoyKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A96EDDC411F3406726566670067537E2 /* JoySwitchCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoySwitchCell.m; sourceTree = "<group>"; };
 		A9FCB3370A10A92D1887647032D37A26 /* Pods-JoyKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JoyKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AE0A81FDFE37D1F6ABFED811E66D654E /* JoyCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyCollectionView.m; sourceTree = "<group>"; };
-		B0474EED45571B1CE094467C02492758 /* JoyLeftIconTopBottomLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftIconTopBottomLabelCell.m; sourceTree = "<group>"; };
-		B15B66CD84CF77D58C5910DA3BCDD95F /* select@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "select@3x.png"; path = "JoyKit/Assets/select@3x.png"; sourceTree = "<group>"; };
+		AAB24AD85C6B332DB844C4CA5CCA962D /* JoyCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyCollectionView.m; path = JoyKit/Views/JoyCollectionView.m; sourceTree = "<group>"; };
+		AC3883B2038603D5A6918C47732C0E8D /* header_icon_back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header_icon_back@3x.png"; path = "JoyKit/Assets/header_icon_back@3x.png"; sourceTree = "<group>"; };
+		AE0BABC05CE772320BCE64BD5762AA0D /* JoyAlert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyAlert.m; path = JoyKit/Utility/JoyAlert.m; sourceTree = "<group>"; };
+		B0EAA788D724E4506E9D5B111C5FD854 /* NSArray+JoyCrash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JoyCrash.m"; path = "JoyKit/Category/NSArray+JoyCrash.m"; sourceTree = "<group>"; };
 		B179F4D3D34A3CE25A698B8D9AC9D6C2 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		B1990698F81540C754F3D51D65203E03 /* libPods-JoyKit_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-JoyKit_Tests.a"; path = "libPods-JoyKit_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B24F45B9A86CAA3FFD3A308B2599AC0E /* JoySectionBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoySectionBaseModel.h; path = JoyKit/Models/JoySectionBaseModel.h; sourceTree = "<group>"; };
+		B24FE5F6106E727BD943722063A7E689 /* JoyTableCollectionCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyTableCollectionCell.m; path = JoyKit/CellsLibruary/TableCollectionCell/JoyTableCollectionCell.m; sourceTree = "<group>"; };
+		B37C3A7711A3D6807C02102B35E45622 /* JoyCellModelProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyCellModelProtocol.h; path = JoyKit/Common/JoyCellModelProtocol.h; sourceTree = "<group>"; };
 		B48867DE203BCF3BB3DFCAB8FDC7516B /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		B7C79501D3992FEE6A0D4AD521754640 /* JoyMiddleLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyMiddleLabelCell.m; sourceTree = "<group>"; };
-		BA9898EDF2E4F07E1C2F811E557BB4F7 /* JoyImageCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyImageCollectionViewCell.h; sourceTree = "<group>"; };
-		BC63A689CDE7C1B51831F407D4E34006 /* JoyTableAutoLayoutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyTableAutoLayoutView.h; sourceTree = "<group>"; };
-		BE5EC579780AD82DAECA77BFB7693E8D /* JoyPresenterBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyPresenterBase.m; sourceTree = "<group>"; };
-		BF0607016EE65FA59627DC1EBC928273 /* JoyLeftAvatarRightLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftAvatarRightLabelCell.m; sourceTree = "<group>"; };
-		C38656B9FE7F83C701BEBF8A29465A37 /* UIView+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+JoyCategory.m"; sourceTree = "<group>"; };
+		B7DEF6202C94F25971A6AAB8445BACCD /* JoyLeftAvatarRightTopBottomLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftAvatarRightTopBottomLabel.h; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftAvatarRightTopBottomLabel.h; sourceTree = "<group>"; };
+		BAFA5D81D9C4674F41A5B1C5FD0679AE /* JoyAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyAlert.h; path = JoyKit/Utility/JoyAlert.h; sourceTree = "<group>"; };
+		BC392B0B63ACF90FBA1C0CA6B65FA2BA /* JoyLeftIconCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftIconCell.h; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftIconCell.h; sourceTree = "<group>"; };
+		BE515DE719B5E391FF6986B84C009F44 /* JoyImageCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyImageCollectionViewCell.m; path = JoyKit/CellsLibruary/CollectionImageCell/JoyImageCollectionViewCell.m; sourceTree = "<group>"; };
+		BE56A47B16B94B7E6AF39DA8B0926B36 /* UIWindow+Observer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWindow+Observer.h"; path = "JoyKit/Category/UIWindow+Observer.h"; sourceTree = "<group>"; };
+		BECEBF5292876B90F17815B1566E4F3E /* JoyUISegementView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyUISegementView.m; path = JoyKit/Views/JoyUISegementView.m; sourceTree = "<group>"; };
+		C238132FAB44A98ED9C416C5268ADDA8 /* CAAnimation+HCAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+HCAnimation.m"; path = "JoyKit/Category/CAAnimation+HCAnimation.m"; sourceTree = "<group>"; };
 		C3A8A89769E83A4CA4C6EC743767FA55 /* Pods-JoyKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JoyKit_Example-resources.sh"; sourceTree = "<group>"; };
-		C4A56D475AC9500C441BCA4CC72B0EAA /* JoyNoDataBackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyNoDataBackView.h; sourceTree = "<group>"; };
 		C762C4F3A304C10AF7EBEA6AAA8508A0 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		C7C02266037F030E22468AC86802DB57 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
-		CBE62E43A631A62748BFD0F5CED5B72A /* JoyInteractorBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyInteractorBase.m; sourceTree = "<group>"; };
-		CE9B5B3C83505187184764FCF512B62E /* UIImageView+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JoyCategory.h"; sourceTree = "<group>"; };
-		D2F6565BECBE3B0FD15E223EC8D284C6 /* select@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "select@2x.png"; path = "JoyKit/Assets/select@2x.png"; sourceTree = "<group>"; };
-		D354CC3CFCD1B91B3D9E667D279D8632 /* JoyNoDataBackView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyNoDataBackView.m; sourceTree = "<group>"; };
-		D49C3D7BBF1BE27AC0AD1E7F9B297A89 /* JoyDeviceModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyDeviceModule.m; sourceTree = "<group>"; };
+		CA4A541BAC9EAB7B06695D302696CE91 /* JoyTableCollectionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyTableCollectionCell.h; path = JoyKit/CellsLibruary/TableCollectionCell/JoyTableCollectionCell.h; sourceTree = "<group>"; };
+		CEC8113C24D9F23BA35E001409B57F58 /* JoyPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyPickerView.h; path = JoyKit/Views/JoyPickerView.h; sourceTree = "<group>"; };
+		D3FDF823F5969E663EE59F43162922A5 /* Joy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Joy.h; path = JoyKit/Common/Joy.h; sourceTree = "<group>"; };
+		D5111FB5560147463389CD9494F6FF6C /* JoyLeftLabelTextViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftLabelTextViewCell.h; path = JoyKit/CellsLibruary/TableTextCell/JoyLeftLabelTextViewCell.h; sourceTree = "<group>"; };
 		D5EC6EDDDD3E503C5B2E967D3FEECFEB /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		D717D3961B09922638E7F18C74DC380A /* UIImage+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Extension.m"; path = "JoyKit/Category/UIImage+Extension.m"; sourceTree = "<group>"; };
 		D766FEB41744BBB3B6DC4B6ED10E036A /* Pods-JoyKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JoyKit_Example-dummy.m"; sourceTree = "<group>"; };
-		DDC6F34D0B5310F3FA4964434DD5D175 /* JoyLeftLabelRightIconCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyLeftLabelRightIconCell.h; sourceTree = "<group>"; };
-		DF41CB67B9C575D78F63DBC6B8922D15 /* JoyNavProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyNavProtocol.h; sourceTree = "<group>"; };
-		E007891A36153A7A18AC2420B70898D3 /* header_icon_back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header_icon_back@2x.png"; path = "JoyKit/Assets/header_icon_back@2x.png"; sourceTree = "<group>"; };
+		DA009285B951C78A05F0F6165D8A6DAB /* NSObject+JoyRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+JoyRouter.h"; path = "JoyKit/Category/NSObject+JoyRouter.h"; sourceTree = "<group>"; };
+		DBDAC8EC0742D37B51C86BF601B35847 /* JoyTextCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyTextCell.m; path = JoyKit/CellsLibruary/TableTextCell/JoyTextCell.m; sourceTree = "<group>"; };
 		E158FC65C5404E098F16E26F478DA504 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		E192DB88D630A358027917909CE4CBD6 /* JoyBaseVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyBaseVC.m; sourceTree = "<group>"; };
-		E19BF0A0945CB7E9F8F895C014B0A692 /* JoyDeviceModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyDeviceModule.h; sourceTree = "<group>"; };
-		E46492BC1B646258F9C63DFB25000DF1 /* JoySwitchCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoySwitchCell.h; sourceTree = "<group>"; };
+		E2E93A1703B225D81D64DB983EB6934A /* NSObject+JoyRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+JoyRouter.m"; path = "JoyKit/Category/NSObject+JoyRouter.m"; sourceTree = "<group>"; };
+		E3685CEB64C51D29C573E095F1991DEF /* UIView+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+JoyCategory.h"; path = "JoyKit/Category/UIView+JoyCategory.h"; sourceTree = "<group>"; };
 		E494B4B266E72FF209D41131705962B2 /* Pods-JoyKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JoyKit_Tests-resources.sh"; sourceTree = "<group>"; };
-		E576801DD8906EEAD5A418B5F3E355FA /* UIBarButtonItem+JoyBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JoyBarItem.m"; sourceTree = "<group>"; };
-		E6340ABF7F04A0EF71C3E2F21CE3533C /* UIWindow+Observer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Observer.m"; sourceTree = "<group>"; };
-		E827B9AC92FA513CFC136FB871D418EE /* JoyCellBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyCellBaseModel.m; sourceTree = "<group>"; };
+		E4BAC7C0E79E820589BAF2E711F86FFE /* UITableViewCell+JoyCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+JoyCell.m"; path = "JoyKit/Category/UITableViewCell+JoyCell.m"; sourceTree = "<group>"; };
+		E5189664F76C322CBA9ADFE7BFEE64A6 /* JoyPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyPickerView.m; path = JoyKit/Views/JoyPickerView.m; sourceTree = "<group>"; };
 		EAF80761A809C184AC2F4B44E4DF4AE3 /* Pods-JoyKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JoyKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		EB10342F15A7D8E7A436D8197E9FB65B /* JoyKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JoyKit-prefix.pch"; sourceTree = "<group>"; };
 		EC0384F145CF471A951BA8E9486AD626 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		ECECDDC21F60B73EB03AE31F470AD3BF /* JoyLeftLabelTextViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JoyLeftLabelTextViewCell.m; sourceTree = "<group>"; };
-		ED48744CFD443752648778222BA5BBB4 /* NSObject+JoyRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JoyRouter.m"; sourceTree = "<group>"; };
-		EE18E7EF7EE76845B4A7509FF97B104E /* joymakeHead.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = joymakeHead.jpg; path = JoyKit/Assets/joymakeHead.jpg; sourceTree = "<group>"; };
-		EFB7D1429056AA7EBE1DE95B8E4660D6 /* UITextField+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JoyCategory.m"; sourceTree = "<group>"; };
-		F0CB785BE7047250F2C4CA9C1FFAF5CC /* UIWindow+Observer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Observer.h"; sourceTree = "<group>"; };
-		F2AD3851021E8441381651EC0F920E7A /* NSObject+JoyRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+JoyRouter.h"; sourceTree = "<group>"; };
-		F7792D699E716291394221963AB08016 /* JoyCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyCollectionView.h; sourceTree = "<group>"; };
+		EC4C5E440075B16EE58CEEE9F8C1C808 /* NSString+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+JoyCategory.m"; path = "JoyKit/Category/NSString+JoyCategory.m"; sourceTree = "<group>"; };
+		ED81560BCEB8DDF1D443ECE72CC78927 /* JoyCellBaseModel+Edit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JoyCellBaseModel+Edit.m"; path = "JoyKit/Models/JoyCellBaseModel+Edit.m"; sourceTree = "<group>"; };
+		F1DC9BEC1C9BD4D50889E9D73D07FA5C /* JoyCellBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyCellBaseModel.h; path = JoyKit/Models/JoyCellBaseModel.h; sourceTree = "<group>"; };
+		F53F3C892C1E0519DB0E27C14BECC45F /* JoyNoDataBackView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyNoDataBackView.m; path = JoyKit/Views/JoyNoDataBackView.m; sourceTree = "<group>"; };
+		F6BBE5EB2416D3513B8287326BE91FDA /* select@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "select@2x.png"; path = "JoyKit/Assets/select@2x.png"; sourceTree = "<group>"; };
 		F8AB44751192F0AA8DA5F75A06138D15 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
-		F8AC9501361679226231CFC43293D813 /* JoyUISegementView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyUISegementView.h; sourceTree = "<group>"; };
-		F9E4647CD4B05120BB52376108EE3E71 /* JoyKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JoyKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FA891F8E85C079B4FB101DDD5BC7A477 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		FB75623474449A24F55F511C1CCE7391 /* JoyInteractorBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JoyInteractorBase.h; sourceTree = "<group>"; };
 		FBE23E70FF64ACC81816A368E171B903 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FEC9754FDDA10462E2C412F9722A5D6E /* UITextField+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+JoyCategory.m"; path = "JoyKit/Category/UITextField+JoyCategory.m"; sourceTree = "<group>"; };
+		FFD6676476F87AF6666CFAF5F529A24A /* JoyCellBaseModel+Action.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JoyCellBaseModel+Action.m"; path = "JoyKit/Models/JoyCellBaseModel+Action.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +341,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		865FEFA11FC94A812B22B43A8F4D7E89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082B1F5D9039FC4CC1C3AEBF065C7C69 /* IMageIO.framework in Frameworks */,
+				CF3C96E0780168A6F585E269F4BFAE98 /* Photos.framework in Frameworks */,
+				EA8CCCE18A32B9EA6FAE72C46B65E5EA /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90D5F144A777C384B660C3D55D0E07B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,28 +358,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E38C5AB30AEA9BB974327C58D82598EF /* Frameworks */ = {
+		92F2FABC38BE6B0377919020BBEAD62C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF8C78A9CB040752655281F717403CA2 /* IMageIO.framework in Frameworks */,
-				73A53481115E5265556465DC933D0875 /* Photos.framework in Frameworks */,
-				85A551B42C9551637008D0CEA7A7D52C /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8680B2F68758A536645612DA2456965 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DAAA4AC60B1C3C7566BB644661669E3 /* Foundation.framework in Frameworks */,
-				60573049D0191877C50D708D091276B4 /* UIKit.framework in Frameworks */,
+				0DA74362FE75DCC31D4C2BFF8AA79698 /* Foundation.framework in Frameworks */,
+				445B655BE547BC50A31290EA0E6B5786 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06575C64F2CB8683FE7231814040C898 /* CollectionImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				5C83386AE12CE5719AF372271EEC5AF0 /* JoyImageCollectionViewCell.h */,
+				BE515DE719B5E391FF6986B84C009F44 /* JoyImageCollectionViewCell.m */,
+			);
+			name = CollectionImageCell;
+			sourceTree = "<group>";
+		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,14 +387,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2273952FEDA7394AFB17D432F68451F0 /* Pod */ = {
+		192F15E0401DE1F909136961B34DE9B4 /* JoyKit */ = {
 			isa = PBXGroup;
 			children = (
-				F9E4647CD4B05120BB52376108EE3E71 /* JoyKit.podspec */,
-				79D03580B8E446AEE22AFBF047A9CB0A /* LICENSE */,
-				975226B9199C0DE54071A7F6CEF75749 /* README.md */,
+				FFA5758A4BF3A8728CE4F791EC613332 /* Category */,
+				7F520983B921A2DE20D59DC391C6237A /* CellsLibruary */,
+				486490498800921279DF61F4E1F15C0A /* Common */,
+				40423B8B496436500D80231F37DB1CDF /* Controllers */,
+				4EBADA0BC1D1A96310A2DAD95D21860F /* JoyHeader */,
+				C3DC255589D8FD848FCD7B5013AB8AC5 /* Models */,
+				7D2469C5AB56D85CCDE6C5F950494994 /* Pod */,
+				A302E58F7D5447C420911BBADA6084F2 /* Resources */,
+				CF8F7846EB142993841FE2BA80B4822F /* Support Files */,
+				70747B811EB4F96DA61EAA7A17961BF2 /* Utility */,
+				BB6085EF4E9047708B6619E0A3832D44 /* Views */,
 			);
-			name = Pod;
+			name = JoyKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		22CD70C746083C6BDE8C5D8979E39FC8 /* Pods-JoyKit_Tests */ = {
@@ -399,29 +421,25 @@
 			path = "Target Support Files/Pods-JoyKit_Tests";
 			sourceTree = "<group>";
 		};
-		2CCE787E1D01A2775453702862511599 /* JoyKit */ = {
+		2A9A2A7035CD2D3F86BF21ABC71FA71F /* TableLabelCell */ = {
 			isa = PBXGroup;
 			children = (
-				604D9D8F71C8E8F82AAB5E3D8748B8BC /* Category */,
-				6FA7FAAB56FF2666C62FF9BC7D5474DA /* CellsLibruary */,
-				C836F6AA9CB5FAB6D6AFF4C96114CFE2 /* Common */,
-				690A6A9B0C503192A799B84C4984BFDE /* Controllers */,
-				F92818031550122B02E333F4FC6FCFCC /* JoyHeader */,
-				6DD988722E7253E3C89A0353874141EB /* Models */,
-				2273952FEDA7394AFB17D432F68451F0 /* Pod */,
-				7170D5FEFA7ED68337A32BAD598BC8CA /* Resources */,
-				87D9C77D3194C9C08614FC6A6570526B /* Support Files */,
-				F99CA452C73973CD92CC4C427B136D05 /* Utility */,
-				A5B2F25232F863E5FD5D2E5CF3AE7B15 /* Views */,
+				5C92EF446160C73DC48DAD9E3F928872 /* JoyBaseCell.h */,
+				605F0A1881D3300B228B7E85451326E3 /* JoyBaseCell.m */,
+				9148BA3F737E6CD74DDD0D7E1CB8B62A /* JoyLeftLabelRightPlaceHolderLabelCell.h */,
+				0BE7AAA83B9D72520AEF93836401FAA9 /* JoyLeftLabelRightPlaceHolderLabelCell.m */,
+				026C4FBD585CF975886E1D6B94043730 /* JoyLeftMiddleRightLabelCell.h */,
+				41D2004FF7F4A4D066092EB98470CDDE /* JoyLeftMiddleRightLabelCell.m */,
+				8129296B4AEE51AF9DAEE82CFE7EE03F /* JoyMiddleLabelCell.h */,
+				5EA341F420D932D8F1BFD0FB09DDD831 /* JoyMiddleLabelCell.m */,
 			);
-			name = JoyKit;
-			path = ../..;
+			name = TableLabelCell;
 			sourceTree = "<group>";
 		};
 		340C2A29350F704F03E4847931DAFC70 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2CCE787E1D01A2775453702862511599 /* JoyKit */,
+				192F15E0401DE1F909136961B34DE9B4 /* JoyKit */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -475,14 +493,15 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		47410B711EF7D454688A935BEA8C2203 /* CollectionImageCell */ = {
+		40423B8B496436500D80231F37DB1CDF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA9898EDF2E4F07E1C2F811E557BB4F7 /* JoyImageCollectionViewCell.h */,
-				7B193AD908E7C4B65C8FCC7A1A28046E /* JoyImageCollectionViewCell.m */,
+				44BC48819C5D3BF10B2068F634A2280F /* JoyBaseVC.h */,
+				263755233AC6ADA2BB569DB1578ECE41 /* JoyBaseVC.m */,
+				92FF7DD459C8E1C2A6A338A35769CAD9 /* JoyBaseVC+Extention.h */,
+				9871EC959CB53F17406D5C343115224B /* JoyBaseVC+Extention.m */,
 			);
-			name = CollectionImageCell;
-			path = CollectionImageCell;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		4854BD850DB1ADEB02DE483F0C44E016 /* Support Files */ = {
@@ -496,103 +515,65 @@
 			path = "../Target Support Files/Masonry";
 			sourceTree = "<group>";
 		};
-		603377159CE5C191878471DC2B2D15E7 /* TableSwitchCell */ = {
+		486490498800921279DF61F4E1F15C0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E46492BC1B646258F9C63DFB25000DF1 /* JoySwitchCell.h */,
-				A96EDDC411F3406726566670067537E2 /* JoySwitchCell.m */,
+				D3FDF823F5969E663EE59F43162922A5 /* Joy.h */,
+				B37C3A7711A3D6807C02102B35E45622 /* JoyCellModelProtocol.h */,
+				9BBFAEC4808E249B49313E227F577303 /* JoyInteractorBase.h */,
+				4CA3A65791B2414AC1610079158457AC /* JoyInteractorBase.m */,
+				4731C6870002057048A48FBA572A037B /* JoyNavProtocol.h */,
+				0C8B5D925007F9A5504417602F9D7DB6 /* JoyPresenterBase.h */,
+				6775046E629BD8988417CFEF93BB1171 /* JoyPresenterBase.m */,
+				43C371785B718D035EB16D035DCF6D3D /* JoyProtoCol.h */,
 			);
-			name = TableSwitchCell;
-			path = TableSwitchCell;
+			name = Common;
 			sourceTree = "<group>";
 		};
-		604D9D8F71C8E8F82AAB5E3D8748B8BC /* Category */ = {
+		4EBADA0BC1D1A96310A2DAD95D21860F /* JoyHeader */ = {
 			isa = PBXGroup;
 			children = (
-				3B0477D1E2F8F04DB0BD32C436DCD446 /* AVAudioSession+manager.h */,
-				41EF7F671C2DB28297EBCEE2342C6FBB /* AVAudioSession+manager.m */,
-				79F5E23146848927B7E223043BDB377A /* CAAnimation+HCAnimation.h */,
-				32E8140C6A9AF65C9EB452CC56967090 /* CAAnimation+HCAnimation.m */,
-				64791EEAE11FE02C6ABA28C0B316DA09 /* CALayer+JoyLayer.h */,
-				6B15FD1ADB699A0FCB4CC01FBB9AF592 /* CALayer+JoyLayer.m */,
-				1294AC1D40EBF3B7A7020D55E286F147 /* NSArray+JoyCrash.h */,
-				4108BF99D4485EB4CA77EBE584B5D6BF /* NSArray+JoyCrash.m */,
-				F2AD3851021E8441381651EC0F920E7A /* NSObject+JoyRouter.h */,
-				ED48744CFD443752648778222BA5BBB4 /* NSObject+JoyRouter.m */,
-				334CA2ACF300A45D7C98EE6FED001606 /* NSString+JoyCategory.h */,
-				0439C4EDDC3CDB471BD88345FC809A91 /* NSString+JoyCategory.m */,
-				0925E9DEB31DDC4CF58064D3C04E39EC /* UIBarButtonItem+JoyBarItem.h */,
-				E576801DD8906EEAD5A418B5F3E355FA /* UIBarButtonItem+JoyBarItem.m */,
-				8572062292C4DD89960863202C81C1EF /* UIImage+Extension.h */,
-				613026A94E34CA885ED2E02CD455E374 /* UIImage+Extension.m */,
-				CE9B5B3C83505187184764FCF512B62E /* UIImageView+JoyCategory.h */,
-				5F9DE685085A1F81F32AA573E868ADE7 /* UIImageView+JoyCategory.m */,
-				79F442A3F1C042E718709836BE21BF67 /* UITableViewCell+JoyCell.h */,
-				77010076153D48E672BA93B48A78191B /* UITableViewCell+JoyCell.m */,
-				5AAEDDEC9518376EEC66951AE27C9FE2 /* UITextField+JoyCategory.h */,
-				EFB7D1429056AA7EBE1DE95B8E4660D6 /* UITextField+JoyCategory.m */,
-				1BE144F1995739F7E9E0CCD7D97224FE /* UIView+JoyCategory.h */,
-				C38656B9FE7F83C701BEBF8A29465A37 /* UIView+JoyCategory.m */,
-				F0CB785BE7047250F2C4CA9C1FFAF5CC /* UIWindow+Observer.h */,
-				E6340ABF7F04A0EF71C3E2F21CE3533C /* UIWindow+Observer.m */,
+				101BA6D4E0395529C46C8D95AEB40A19 /* JoyKit.h */,
 			);
-			name = Category;
-			path = JoyKit/Category;
+			name = JoyHeader;
 			sourceTree = "<group>";
 		};
-		690A6A9B0C503192A799B84C4984BFDE /* Controllers */ = {
+		6BD67E47F023431B94955CB55FD109B0 /* TableImageCell */ = {
 			isa = PBXGroup;
 			children = (
-				5E45045C81FE083C0E33AAE6600B2738 /* JoyBaseVC.h */,
-				E192DB88D630A358027917909CE4CBD6 /* JoyBaseVC.m */,
-				4845F713A475A42F6AEC3EB480870A0B /* JoyBaseVC+Extention.h */,
-				4A6E58B2561840A9E9265FDAFA851A51 /* JoyBaseVC+Extention.m */,
+				90BCFDD8A05EE4EB6FC6EA748150223F /* JoyLeftAvatarRightLabelCell.h */,
+				4037E55EF49C2AE571FD9C1FC5E76EFC /* JoyLeftAvatarRightLabelCell.m */,
+				B7DEF6202C94F25971A6AAB8445BACCD /* JoyLeftAvatarRightTopBottomLabel.h */,
+				8F15F138060684CC23430B3A6607264D /* JoyLeftAvatarRightTopBottomLabel.m */,
+				BC392B0B63ACF90FBA1C0CA6B65FA2BA /* JoyLeftIconCell.h */,
+				46B38F1F16C8257B2F676ACC56D761A4 /* JoyLeftIconCell.m */,
+				365CCAF880F305A6FE487BB09AD8E80E /* JoyLeftIconTopBottomLabelCell.h */,
+				5D4FE70001C2331A4B41B705CD199B48 /* JoyLeftIconTopBottomLabelCell.m */,
+				52916C087FF8A6C61D1743C35F5BF68C /* JoyLeftLabelRightIconCell.h */,
+				6AFB40516C428DE707CF2CC9E09620B0 /* JoyLeftLabelRightIconCell.m */,
 			);
-			name = Controllers;
-			path = JoyKit/Controllers;
+			name = TableImageCell;
 			sourceTree = "<group>";
 		};
-		6DD988722E7253E3C89A0353874141EB /* Models */ = {
+		70747B811EB4F96DA61EAA7A17961BF2 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				3ED9AEC62F6B837BC14831048353CD8D /* JoyBaseModel.h */,
-				431687226785CBB7C81ACCAD697C7F05 /* JoyBaseModel.m */,
-				53E6C5CC0CC6ABBDCCA23EBDA6A57F39 /* JoyCellBaseModel.h */,
-				E827B9AC92FA513CFC136FB871D418EE /* JoyCellBaseModel.m */,
-				5F26AEB6CE464AE74AFFC98CF8F13DFA /* JoyCellBaseModel+Action.h */,
-				71BA8767614263C00832E2BD685C64C8 /* JoyCellBaseModel+Action.m */,
-				36E0CCD82FE8569E9DAE88164F47D953 /* JoyCellBaseModel+Edit.h */,
-				A33992C9A6CC1E5B688A2608B4718166 /* JoyCellBaseModel+Edit.m */,
-				8D9B139B1F523F8F54120B0CAEF82C5C /* JoySectionBaseModel.h */,
-				4BBCCB0C7709A46FA8E128E5E11CEB84 /* JoySectionBaseModel.m */,
+				BAFA5D81D9C4674F41A5B1C5FD0679AE /* JoyAlert.h */,
+				AE0BABC05CE772320BCE64BD5762AA0D /* JoyAlert.m */,
+				1A9EBCC2FE2E40A759A60F3CEF9AD823 /* JoyDeviceModule.h */,
+				66C883DB6B9E6FAAEACBC899B2AC361A /* JoyDeviceModule.m */,
 			);
-			name = Models;
-			path = JoyKit/Models;
+			name = Utility;
 			sourceTree = "<group>";
 		};
-		6FA7FAAB56FF2666C62FF9BC7D5474DA /* CellsLibruary */ = {
+		7D2469C5AB56D85CCDE6C5F950494994 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				47410B711EF7D454688A935BEA8C2203 /* CollectionImageCell */,
-				D66DCD048F806493E830C2E33236C096 /* TableImageCell */,
-				A6F576DAAB17F48398205657B55166F1 /* TableLabelCell */,
-				D50B1C6556C22918AAA6F077BA197E78 /* TableLTextCell */,
-				603377159CE5C191878471DC2B2D15E7 /* TableSwitchCell */,
+				794260B3C588C7056860647E0BEA967E /* JoyKit.podspec */,
+				5ACD2993D566F9FE67350C5997AC6A6B /* LICENSE */,
+				57D9B8D4763ECDD0FB269EBB6DA6FCFB /* README.md */,
 			);
-			name = CellsLibruary;
-			path = JoyKit/CellsLibruary;
-			sourceTree = "<group>";
-		};
-		7170D5FEFA7ED68337A32BAD598BC8CA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E007891A36153A7A18AC2420B70898D3 /* header_icon_back@2x.png */,
-				2F40741DBB709BC06C4E761B1575AB79 /* header_icon_back@3x.png */,
-				EE18E7EF7EE76845B4A7509FF97B104E /* joymakeHead.jpg */,
-				D2F6565BECBE3B0FD15E223EC8D284C6 /* select@2x.png */,
-				B15B66CD84CF77D58C5910DA3BCDD95F /* select@3x.png */,
-			);
-			name = Resources;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -607,6 +588,19 @@
 			);
 			sourceTree = "<group>";
 		};
+		7F520983B921A2DE20D59DC391C6237A /* CellsLibruary */ = {
+			isa = PBXGroup;
+			children = (
+				06575C64F2CB8683FE7231814040C898 /* CollectionImageCell */,
+				E2119ED768FFFD864D63DB4610952AA4 /* TableCollectionCell */,
+				6BD67E47F023431B94955CB55FD109B0 /* TableImageCell */,
+				2A9A2A7035CD2D3F86BF21ABC71FA71F /* TableLabelCell */,
+				F0F09754EC3464821CA58EBAF36B4DEE /* TableSwitchCell */,
+				89D4AA82A20365EBAC4153DF5A989A1D /* TableTextCell */,
+			);
+			name = CellsLibruary;
+			sourceTree = "<group>";
+		};
 		80BA3244773C9ADFBFAAFEE2F44F561B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,101 +612,78 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87D9C77D3194C9C08614FC6A6570526B /* Support Files */ = {
+		89D4AA82A20365EBAC4153DF5A989A1D /* TableTextCell */ = {
 			isa = PBXGroup;
 			children = (
-				2E7AF5CF52D121FA3E3BC9284FDC491F /* JoyKit.xcconfig */,
-				74E35B564B83EE0E77CF48BEA2E2E5A8 /* JoyKit-dummy.m */,
-				EB10342F15A7D8E7A436D8197E9FB65B /* JoyKit-prefix.pch */,
+				D5111FB5560147463389CD9494F6FF6C /* JoyLeftLabelTextViewCell.h */,
+				0E7047A52268ACA0EF089333CBC32ED9 /* JoyLeftLabelTextViewCell.m */,
+				A74B5DAC8CB7B687F8236ACC679E93AD /* JoyTextCell.h */,
+				DBDAC8EC0742D37B51C86BF601B35847 /* JoyTextCell.m */,
+				1442D97822D4E2ECE258960EF783E515 /* JoyTextNoLabelCell.h */,
+				3096A0A6036733DD6511B671B46D2A6B /* JoyTextNoLabelCell.m */,
+				1A4E5A8C83E76E1870C9AB537D4254EF /* JoyTextViewCell.h */,
+				34672D7D7372E484FE3FF978955CA5C1 /* JoyTextViewCell.m */,
+			);
+			name = TableTextCell;
+			sourceTree = "<group>";
+		};
+		A302E58F7D5447C420911BBADA6084F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62378B535E67285D7B7DFDAB4D5BD14A /* header_icon_back@2x.png */,
+				AC3883B2038603D5A6918C47732C0E8D /* header_icon_back@3x.png */,
+				0C8BAC425F30BBE48EBF8E1E009E66B5 /* joymakeHead.jpg */,
+				F6BBE5EB2416D3513B8287326BE91FDA /* select@2x.png */,
+				601B849BEBA8642284B624269E620434 /* select@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BB6085EF4E9047708B6619E0A3832D44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05F488575C7D227FF385A1DBB1419F8F /* JoyCollectionView.h */,
+				AAB24AD85C6B332DB844C4CA5CCA962D /* JoyCollectionView.m */,
+				441289B321A38A3198C63F4C64773741 /* JoyDatePickView.h */,
+				4108D39810B1A9903062B0C8785EFEAD /* JoyDatePickView.m */,
+				887F0610BA70237FCA44D4F5C06B8FA8 /* JoyNoDataBackView.h */,
+				F53F3C892C1E0519DB0E27C14BECC45F /* JoyNoDataBackView.m */,
+				CEC8113C24D9F23BA35E001409B57F58 /* JoyPickerView.h */,
+				E5189664F76C322CBA9ADFE7BFEE64A6 /* JoyPickerView.m */,
+				13FA9DD66F9B5AB42694F8DF4EC384ED /* JoyTableAutoLayoutView.h */,
+				7306D902F9EB6BABF867C78290330CCB /* JoyTableAutoLayoutView.m */,
+				78F06C933417FB3335D6282A3EC0884D /* JoyUISegementView.h */,
+				BECEBF5292876B90F17815B1566E4F3E /* JoyUISegementView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C3DC255589D8FD848FCD7B5013AB8AC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55B37F2CE9B8648FDF2C0FABC271FE8E /* JoyBaseModel.h */,
+				4E151FBAB8FD0F0073C20155A6FED5D4 /* JoyBaseModel.m */,
+				F1DC9BEC1C9BD4D50889E9D73D07FA5C /* JoyCellBaseModel.h */,
+				05C08FF6FAAB1A102484DB7590BC8EE4 /* JoyCellBaseModel.m */,
+				325B65950DC92E57CAD74BA86908E29A /* JoyCellBaseModel+Action.h */,
+				FFD6676476F87AF6666CFAF5F529A24A /* JoyCellBaseModel+Action.m */,
+				93F59BDB1AA8475C0E720BDB871EA53F /* JoyCellBaseModel+Edit.h */,
+				ED81560BCEB8DDF1D443ECE72CC78927 /* JoyCellBaseModel+Edit.m */,
+				B24F45B9A86CAA3FFD3A308B2599AC0E /* JoySectionBaseModel.h */,
+				0FB8B8242270176FDF6F5D48A4F619A5 /* JoySectionBaseModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CF8F7846EB142993841FE2BA80B4822F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				59DCE8B597838F51C7145B5D3742880C /* JoyKit.xcconfig */,
+				2B021006CFE0094628703A386A1C912C /* JoyKit-dummy.m */,
+				06AA6DA620EF724728E9AD544E549CFC /* JoyKit-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/JoyKit";
-			sourceTree = "<group>";
-		};
-		A5B2F25232F863E5FD5D2E5CF3AE7B15 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F7792D699E716291394221963AB08016 /* JoyCollectionView.h */,
-				AE0A81FDFE37D1F6ABFED811E66D654E /* JoyCollectionView.m */,
-				8E6FA6AB67AEA1B8FE4F3318D1B71F5B /* JoyDatePickView.h */,
-				76B712C67C8E4782132A42A9B8B939F3 /* JoyDatePickView.m */,
-				C4A56D475AC9500C441BCA4CC72B0EAA /* JoyNoDataBackView.h */,
-				D354CC3CFCD1B91B3D9E667D279D8632 /* JoyNoDataBackView.m */,
-				2C745D9693754B0C99BDAE203B021664 /* JoyPickerView.h */,
-				58E1625BE9D3F16FBAD499C1C6FB7CB3 /* JoyPickerView.m */,
-				BC63A689CDE7C1B51831F407D4E34006 /* JoyTableAutoLayoutView.h */,
-				88E65D3820C84A5ABFD9B61E6361EB12 /* JoyTableAutoLayoutView.m */,
-				F8AC9501361679226231CFC43293D813 /* JoyUISegementView.h */,
-				2A7F23872848AF43FCB8B4702312136B /* JoyUISegementView.m */,
-			);
-			name = Views;
-			path = JoyKit/Views;
-			sourceTree = "<group>";
-		};
-		A6F576DAAB17F48398205657B55166F1 /* TableLabelCell */ = {
-			isa = PBXGroup;
-			children = (
-				5A9EC8F0F87BC57207A226D2D919DE74 /* JoyBaseCell.h */,
-				920010DD159FC7B92845C6EDD550930F /* JoyBaseCell.m */,
-				6AB49A6380BEBD63EC4F864E77F23CC3 /* JoyLeftLabelRightPlaceHolderLabelCell.h */,
-				6E11A38501EFD6DF29A2B0CE99C6D6AB /* JoyLeftLabelRightPlaceHolderLabelCell.m */,
-				809F53293566F07154DBCBFAF5DDC182 /* JoyLeftMiddleRightLabelCell.h */,
-				990391EC876D09FA07EDC25C201BF90E /* JoyLeftMiddleRightLabelCell.m */,
-				6AD4EB60F98612CE8018BDF57F1FD0DE /* JoyMiddleLabelCell.h */,
-				B7C79501D3992FEE6A0D4AD521754640 /* JoyMiddleLabelCell.m */,
-			);
-			name = TableLabelCell;
-			path = TableLabelCell;
-			sourceTree = "<group>";
-		};
-		C836F6AA9CB5FAB6D6AFF4C96114CFE2 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				66CAF64981D358B51968310319ECF801 /* Joy.h */,
-				FB75623474449A24F55F511C1CCE7391 /* JoyInteractorBase.h */,
-				CBE62E43A631A62748BFD0F5CED5B72A /* JoyInteractorBase.m */,
-				DF41CB67B9C575D78F63DBC6B8922D15 /* JoyNavProtocol.h */,
-				0F3061EA76A3258DED3BFCC31F63728D /* JoyPresenterBase.h */,
-				BE5EC579780AD82DAECA77BFB7693E8D /* JoyPresenterBase.m */,
-				1F3A640576548C18FFED3802B9E940A7 /* JoyProtoCol.h */,
-				334CF3C192D8EDD4C869F8C4507960CB /* TNACellModelProtocol.h */,
-			);
-			name = Common;
-			path = JoyKit/Common;
-			sourceTree = "<group>";
-		};
-		D50B1C6556C22918AAA6F077BA197E78 /* TableLTextCell */ = {
-			isa = PBXGroup;
-			children = (
-				8505AC9774D2F5A591451119FFB770F8 /* JoyLeftLabelTextViewCell.h */,
-				ECECDDC21F60B73EB03AE31F470AD3BF /* JoyLeftLabelTextViewCell.m */,
-				0BC272DB32D72017CBD87EE2B9F673AD /* JoyTextCell.h */,
-				993546B189D742F086B445656E04D251 /* JoyTextCell.m */,
-				546BBBF38ACF7EBAF74F6955C21F1E0D /* JoyTextNoLabelCell.h */,
-				0EF9D62562337FD9266586B47684232F /* JoyTextNoLabelCell.m */,
-				492B5FD66531C8532A69A849798890FB /* JoyTextViewCell.h */,
-				7037116E5857FB9F8718B04AE7396C1E /* JoyTextViewCell.m */,
-			);
-			name = TableLTextCell;
-			path = TableLTextCell;
-			sourceTree = "<group>";
-		};
-		D66DCD048F806493E830C2E33236C096 /* TableImageCell */ = {
-			isa = PBXGroup;
-			children = (
-				84D841CD370F6993F660A23F34247914 /* JoyLeftAvatarRightLabelCell.h */,
-				BF0607016EE65FA59627DC1EBC928273 /* JoyLeftAvatarRightLabelCell.m */,
-				1D08CDE83E836F3A5C1F4B99F2D11489 /* JoyLeftAvatarRightTopBottomLabel.h */,
-				6D0D3FC4408DB77AE85A449C8DA34665 /* JoyLeftAvatarRightTopBottomLabel.m */,
-				586577FC97FF637B29FDAA3CC2A7865F /* JoyLeftIconCell.h */,
-				7DA4F76342D724D4B7BB44FE825EF347 /* JoyLeftIconCell.m */,
-				4D26C6C0194509DAA6DC5CB76633F789 /* JoyLeftIconTopBottomLabelCell.h */,
-				B0474EED45571B1CE094467C02492758 /* JoyLeftIconTopBottomLabelCell.m */,
-				DDC6F34D0B5310F3FA4964434DD5D175 /* JoyLeftLabelRightIconCell.h */,
-				3AB7453D4F0F06E0E0FD0D831A33DFEC /* JoyLeftLabelRightIconCell.m */,
-			);
-			name = TableImageCell;
-			path = TableImageCell;
 			sourceTree = "<group>";
 		};
 		DFE1BADBEB1344DAE00650FE16E0280A /* Targets Support Files */ = {
@@ -724,6 +695,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		E2119ED768FFFD864D63DB4610952AA4 /* TableCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA4A541BAC9EAB7B06695D302696CE91 /* JoyTableCollectionCell.h */,
+				B24FE5F6106E727BD943722063A7E689 /* JoyTableCollectionCell.m */,
+			);
+			name = TableCollectionCell;
+			sourceTree = "<group>";
+		};
 		E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,25 +712,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F92818031550122B02E333F4FC6FCFCC /* JoyHeader */ = {
+		F0F09754EC3464821CA58EBAF36B4DEE /* TableSwitchCell */ = {
 			isa = PBXGroup;
 			children = (
-				8E43D640CAAFB248D77CFEAFBF300136 /* JoyKit.h */,
+				4EFEF6F23898ACFAC82ACE70E4FF2876 /* JoySwitchCell.h */,
+				58E2DB809A76B53DDEB42195791285EE /* JoySwitchCell.m */,
 			);
-			name = JoyHeader;
-			path = JoyKit/JoyHeader;
+			name = TableSwitchCell;
 			sourceTree = "<group>";
 		};
-		F99CA452C73973CD92CC4C427B136D05 /* Utility */ = {
+		FFA5758A4BF3A8728CE4F791EC613332 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				8652C49C4CEB5D8FF62AA4503B850867 /* JoyAlert.h */,
-				00864D6D9100F930E073EC3193851879 /* JoyAlert.m */,
-				E19BF0A0945CB7E9F8F895C014B0A692 /* JoyDeviceModule.h */,
-				D49C3D7BBF1BE27AC0AD1E7F9B297A89 /* JoyDeviceModule.m */,
+				5BEF29D1BBF1D62BF7AB48B777D9D089 /* AVAudioSession+manager.h */,
+				A101D8EFB7D93DC2CC90AEA8F6FD02A0 /* AVAudioSession+manager.m */,
+				33E1DA5095939CCE2D43CCE58A1217D3 /* CAAnimation+HCAnimation.h */,
+				C238132FAB44A98ED9C416C5268ADDA8 /* CAAnimation+HCAnimation.m */,
+				2DFCC52435D7EDBD9C40A4658D72C788 /* CALayer+JoyLayer.h */,
+				437D8F2AC1E93869EDC28D2E484D4AEE /* CALayer+JoyLayer.m */,
+				44D697C7BB71A603C42DD3D59E8E0977 /* NSArray+JoyCrash.h */,
+				B0EAA788D724E4506E9D5B111C5FD854 /* NSArray+JoyCrash.m */,
+				DA009285B951C78A05F0F6165D8A6DAB /* NSObject+JoyRouter.h */,
+				E2E93A1703B225D81D64DB983EB6934A /* NSObject+JoyRouter.m */,
+				3A3CD986493A640A445F28394C6633F0 /* NSString+JoyCategory.h */,
+				EC4C5E440075B16EE58CEEE9F8C1C808 /* NSString+JoyCategory.m */,
+				93331B6DA25A255B27F1B7E7B00DB616 /* UIBarButtonItem+JoyBarItem.h */,
+				71A03FA2492944806A833BDBBEB79331 /* UIBarButtonItem+JoyBarItem.m */,
+				3A2E9F5DD2CA2248A389455DB4247965 /* UIImage+Extension.h */,
+				D717D3961B09922638E7F18C74DC380A /* UIImage+Extension.m */,
+				6505EA0C3A3B6068C2FB91F93FF3E973 /* UIImageView+JoyCategory.h */,
+				0658757E1CDE97A17C70B4CDCBCA410B /* UIImageView+JoyCategory.m */,
+				796F33BA774AF30E65131EEBB60E4928 /* UITableViewCell+JoyCell.h */,
+				E4BAC7C0E79E820589BAF2E711F86FFE /* UITableViewCell+JoyCell.m */,
+				36502CADB5DA01F654D5AAE7BF10A1E5 /* UITextField+JoyCategory.h */,
+				FEC9754FDDA10462E2C412F9722A5D6E /* UITextField+JoyCategory.m */,
+				E3685CEB64C51D29C573E095F1991DEF /* UIView+JoyCategory.h */,
+				512084DCD69E6556F042B328D4CF0DBF /* UIView+JoyCategory.m */,
+				BE56A47B16B94B7E6AF39DA8B0926B36 /* UIWindow+Observer.h */,
+				00F0042B5497A3C0F3D752C0CF949E55 /* UIWindow+Observer.m */,
 			);
-			name = Utility;
-			path = JoyKit/Utility;
+			name = Category;
 			sourceTree = "<group>";
 		};
 		FFE0E180BBC25ECC00714A6AB0D38470 /* iOS */ = {
@@ -767,88 +768,106 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3DF8B88AAF70C35060C83EE8F096483A /* Headers */ = {
+		12C9DB4ED25CC645559A9C9D38E3F592 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F74A27C7A04E746A1562DCC8FFD7E5C /* MASCompositeConstraint.h in Headers */,
-				3CE64A0C0F5A5C4543570917E28E605E /* MASConstraint+Private.h in Headers */,
-				D2BB97E0BE614BA68BF704C52B998705 /* MASConstraint.h in Headers */,
-				BE9DE308D9CF47EC8BBCE4E63DE45CAC /* MASConstraintMaker.h in Headers */,
-				9A90C150A55FBC3058BCF07B87E058B1 /* MASLayoutConstraint.h in Headers */,
-				EA5CDBAB433F58719BE67B990C3B7FB6 /* Masonry.h in Headers */,
-				C7189BE6045EFEDD8538867C8160758B /* MASUtilities.h in Headers */,
-				EA9EEBF7E02DE17359E89DC83042CC5C /* MASViewAttribute.h in Headers */,
-				92ABD8FE3B1A8BD491E0A645D105525D /* MASViewConstraint.h in Headers */,
-				3D5BE66F505D72C9BA36C5B4BB309263 /* NSArray+MASAdditions.h in Headers */,
-				8C0DE1599E8A482B24A22D8055153365 /* NSArray+MASShorthandAdditions.h in Headers */,
-				220434324AC08756CFFD8A5F0813A904 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
-				74B1131E40CDF4D1F942F02F02725894 /* View+MASAdditions.h in Headers */,
-				BE997AB886F4E4EDDD35A5C6A3108E05 /* View+MASShorthandAdditions.h in Headers */,
-				49EB346B9FDCA36725978973B867E640 /* ViewController+MASAdditions.h in Headers */,
+				88209DD9524E6C62539CCD460531A56F /* AVAudioSession+manager.h in Headers */,
+				C53D6E48C8680CFBE25125033929B8D2 /* CAAnimation+HCAnimation.h in Headers */,
+				AE92FA8BAE02130C8B0D4D69B438E38A /* CALayer+JoyLayer.h in Headers */,
+				8D63285F93FD59BF89A94315C2B86148 /* Joy.h in Headers */,
+				282DCE4E0B3FBC26D089F5673D53CD37 /* JoyAlert.h in Headers */,
+				81597981DBF7514057E4D83D48BE383C /* JoyBaseCell.h in Headers */,
+				6287F3CEFB9CB6FAA8E501831BFD74EE /* JoyBaseModel.h in Headers */,
+				43F30C95F6168FA1870EEB11675B7743 /* JoyBaseVC+Extention.h in Headers */,
+				291A9F51637BD8E18A3CC847E3EB3E31 /* JoyBaseVC.h in Headers */,
+				267A5118709A3298E8EC139D095FE6A9 /* JoyCellBaseModel+Action.h in Headers */,
+				B82811FB8232F24FBE651777D7B4F4E0 /* JoyCellBaseModel+Edit.h in Headers */,
+				51C3F1FB678E9549344F4C49CF82D089 /* JoyCellBaseModel.h in Headers */,
+				54DE244F7FE482E3F61ADD90232C478F /* JoyCellModelProtocol.h in Headers */,
+				F416B315D903B4790E895E285EFEDCD9 /* JoyCollectionView.h in Headers */,
+				4983FBBE80DCA23A4CB5AE90D93B6ECF /* JoyDatePickView.h in Headers */,
+				01532CE81C768841AE5F1075DD636CA4 /* JoyDeviceModule.h in Headers */,
+				7F2956A9C5B1370DC1A6A5A0DC9B716C /* JoyImageCollectionViewCell.h in Headers */,
+				2BA49ACD35E067C3B022E05F4370A425 /* JoyInteractorBase.h in Headers */,
+				1B11D6AB383574893918ECCF92112402 /* JoyKit.h in Headers */,
+				7AF1625134C5471BBFFEEC6312700175 /* JoyLeftAvatarRightLabelCell.h in Headers */,
+				730B5296ECC83B8F1C40C9F2F1CB3155 /* JoyLeftAvatarRightTopBottomLabel.h in Headers */,
+				91E45F93D033701946A373CCE7625FFF /* JoyLeftIconCell.h in Headers */,
+				4C5B1A6817B99277F772C25A1DB64253 /* JoyLeftIconTopBottomLabelCell.h in Headers */,
+				0934850E477A38A08BB25A1647C55C20 /* JoyLeftLabelRightIconCell.h in Headers */,
+				CB47BED7462BFE50F1BC936D967A8C41 /* JoyLeftLabelRightPlaceHolderLabelCell.h in Headers */,
+				F943EDD82EDEF25997237D75A2C7D39C /* JoyLeftLabelTextViewCell.h in Headers */,
+				3E305C285EECE29B825EA9D450F92CCA /* JoyLeftMiddleRightLabelCell.h in Headers */,
+				5E2C411BB3646BDFD73E5A37FBC62F14 /* JoyMiddleLabelCell.h in Headers */,
+				C7B820684DFB26C4B7DF91525791A170 /* JoyNavProtocol.h in Headers */,
+				98D10FC818E7E0B5E5E88753C55F6AFD /* JoyNoDataBackView.h in Headers */,
+				A069A9D7D3A35133D8DB9C79A9FBA529 /* JoyPickerView.h in Headers */,
+				4DDE6370AA823915C3013C933655A03A /* JoyPresenterBase.h in Headers */,
+				78761E65D2908B4D1AB666C69A79A4CE /* JoyProtoCol.h in Headers */,
+				02E077B885E705E43E96ABF7B6169A9A /* JoySectionBaseModel.h in Headers */,
+				A81F7CC80981480EBC329ECA43E3F03D /* JoySwitchCell.h in Headers */,
+				2F3E106AB8D0D394D369438A4F88E514 /* JoyTableAutoLayoutView.h in Headers */,
+				EA856F0BF4C98AF68DD95AA0E5516E40 /* JoyTableCollectionCell.h in Headers */,
+				0FFE2550FC03C68798150CDAC8911B9A /* JoyTextCell.h in Headers */,
+				A6F36823B2C089C366909262A904ADA3 /* JoyTextNoLabelCell.h in Headers */,
+				5ADB6FBDA500A4FBCE2FF76375C8AA80 /* JoyTextViewCell.h in Headers */,
+				66AB5B7C0C534A581E4F0304C117259B /* JoyUISegementView.h in Headers */,
+				7EB5B5B1F623312BEE00A015EB95D90A /* NSArray+JoyCrash.h in Headers */,
+				6C530E3C995C621F7B31590F21F7DD3A /* NSObject+JoyRouter.h in Headers */,
+				83B1E743C9CD6DC63ABC9E9CC62699DC /* NSString+JoyCategory.h in Headers */,
+				7C4415CF0C89DFD7ABD99CBA9BA5F14B /* UIBarButtonItem+JoyBarItem.h in Headers */,
+				D790410BD4A05D296AE5098C38041E75 /* UIImage+Extension.h in Headers */,
+				7567A072382E497AB997C57310E862A6 /* UIImageView+JoyCategory.h in Headers */,
+				F1F9D2346CDCF42E6B79B26F76CE9F01 /* UITableViewCell+JoyCell.h in Headers */,
+				3A4BFA63E04F87ABACA226A36BD27953 /* UITextField+JoyCategory.h in Headers */,
+				845DC47137843DAEF92D652262C0C962 /* UIView+JoyCategory.h in Headers */,
+				19AA552959ACF0E13FAC385A2AFC46E1 /* UIWindow+Observer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBA256BA28269B3675806C27AD6D4F38 /* Headers */ = {
+		C7DF992A18EB2969E8F40D4E3FEC7DC2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31B2E7A2D9AA5371D8604099A5E16A04 /* AVAudioSession+manager.h in Headers */,
-				6E40E8B1F677B5D855F58CB87DCEE27C /* CAAnimation+HCAnimation.h in Headers */,
-				7A8B27C13E84EA9AC17A25272324F0A3 /* CALayer+JoyLayer.h in Headers */,
-				43D7C0EAB294D4AE3EAD6C9CCEEC3FAC /* Joy.h in Headers */,
-				F4DE1971A9DCEF112B7A5AD37B596A13 /* JoyAlert.h in Headers */,
-				21CF6369E15521BC94F6A87359800422 /* JoyBaseCell.h in Headers */,
-				CE0BF63AF87BDFB942C25F0286201BDD /* JoyBaseModel.h in Headers */,
-				0CF2531A185A84AF1CAD42C442ACB266 /* JoyBaseVC+Extention.h in Headers */,
-				25E0B762154FC43F2DA563FABF44DE82 /* JoyBaseVC.h in Headers */,
-				CDC49502435FA3F00F6E06BF46E61019 /* JoyCellBaseModel+Action.h in Headers */,
-				0FF913A65700A9FEF75E0E2FF8D212E6 /* JoyCellBaseModel+Edit.h in Headers */,
-				9D81DDC161812D3B33E8DE2073263256 /* JoyCellBaseModel.h in Headers */,
-				6645B83AE3038D68824BAB02AA395B97 /* JoyCollectionView.h in Headers */,
-				FC27D0AE3B7A75F8279EFE51C7F187CE /* JoyDatePickView.h in Headers */,
-				A2D0BD796C2D9F7283008B29A3B3AA8E /* JoyDeviceModule.h in Headers */,
-				84E6C0F6DE2E21717995F8FEAA133138 /* JoyImageCollectionViewCell.h in Headers */,
-				F756CBB9F674EB21ABDC9C9E8EB96082 /* JoyInteractorBase.h in Headers */,
-				F24741B0209AAF3B384C71BFCAF50747 /* JoyKit.h in Headers */,
-				1D23B7E8D44A8A076E771D46AAFF6CA4 /* JoyLeftAvatarRightLabelCell.h in Headers */,
-				E2172928E6EE68D1FF62D28577B61F5C /* JoyLeftAvatarRightTopBottomLabel.h in Headers */,
-				8D528D2A4A64E5FBF71A1B013F3137C0 /* JoyLeftIconCell.h in Headers */,
-				9FD3488483069E6CFB8FC7C678CCE5E7 /* JoyLeftIconTopBottomLabelCell.h in Headers */,
-				F44329FB01B88C61C7C5341AC2A12857 /* JoyLeftLabelRightIconCell.h in Headers */,
-				E151A7725459A837D69F4DAFFED77710 /* JoyLeftLabelRightPlaceHolderLabelCell.h in Headers */,
-				D83A0A02A6022D6EDF0C0525A58040A2 /* JoyLeftLabelTextViewCell.h in Headers */,
-				A40F0F6C920DD3AC35E3A114BD537403 /* JoyLeftMiddleRightLabelCell.h in Headers */,
-				1D70B5F0FE20B509EFD0928B3200A16D /* JoyMiddleLabelCell.h in Headers */,
-				7C5AF4A2DABA6BD964B1038993DE8FE9 /* JoyNavProtocol.h in Headers */,
-				27720D8ED1923B23A958AC432383ACE8 /* JoyNoDataBackView.h in Headers */,
-				26CA55DC05BA5B230BA187B4F5C9767C /* JoyPickerView.h in Headers */,
-				4E2F180DD28B4D2D7ADEE5CE35679640 /* JoyPresenterBase.h in Headers */,
-				196B5B37342B242715B2FF47ED21A374 /* JoyProtoCol.h in Headers */,
-				7657DDF99A29CF11F615BB10302C4D27 /* JoySectionBaseModel.h in Headers */,
-				C9A43362E0C0C78EEC86F3BC01CB43DB /* JoySwitchCell.h in Headers */,
-				D3EBF61C8CE14844509CC6A11F34DC7C /* JoyTableAutoLayoutView.h in Headers */,
-				9EFD5D399F4B532997E042064A781065 /* JoyTextCell.h in Headers */,
-				4EAB75D2BB75038F44BADBA4D263DC92 /* JoyTextNoLabelCell.h in Headers */,
-				54EEFEEAE1AD8491874370F071F9DE1A /* JoyTextViewCell.h in Headers */,
-				1BC60F89F51A3101B7B2350AB223692A /* JoyUISegementView.h in Headers */,
-				44D5B2CBA83487579EDA534C0AE13D2C /* NSArray+JoyCrash.h in Headers */,
-				EC862655EF58054EF2CBC65AAB8C318F /* NSObject+JoyRouter.h in Headers */,
-				F114937C2CD80524F16A34C3EE4B93B4 /* NSString+JoyCategory.h in Headers */,
-				F35E872C597B743E264FAD87BDB2198C /* TNACellModelProtocol.h in Headers */,
-				E6A7349FE0F235F4E861E8C0E2488A1C /* UIBarButtonItem+JoyBarItem.h in Headers */,
-				657D4AC31F90A1F45960A5E37F8DCB50 /* UIImage+Extension.h in Headers */,
-				6DF63FAFE9F07816290F3EFB99EF9EA3 /* UIImageView+JoyCategory.h in Headers */,
-				6263C25B5416EB6A9A244F2DEE2A331A /* UITableViewCell+JoyCell.h in Headers */,
-				7CE56106CB8F7828AB342C17BE92753A /* UITextField+JoyCategory.h in Headers */,
-				630FAD555B8F15C36756D0B24897A934 /* UIView+JoyCategory.h in Headers */,
-				F5635C46C4156B6DC239CD13F62BD219 /* UIWindow+Observer.h in Headers */,
+				882AFF9EAB31ADC25A70F66977CF0A02 /* MASCompositeConstraint.h in Headers */,
+				9420B5DE5AC38B34CED62B430228BFC2 /* MASConstraint+Private.h in Headers */,
+				CCF57C9A872C2CD755F1EFE42627AAE6 /* MASConstraint.h in Headers */,
+				0B72DDB19C33A39178D3A29F8FB95D08 /* MASConstraintMaker.h in Headers */,
+				D7396F0BA0156D67ED75A5DE922BA949 /* MASLayoutConstraint.h in Headers */,
+				D98389C6EE0A9D9A898C17EE1FAB4FE8 /* Masonry.h in Headers */,
+				39F7784A64FF7085564BA06FB9C4C0CF /* MASUtilities.h in Headers */,
+				DFE7C90E40A3DD6238F27C4626D72609 /* MASViewAttribute.h in Headers */,
+				1B482238E0EFF57891EF503CF9DDB584 /* MASViewConstraint.h in Headers */,
+				75D551C1E796DC4AA76A5524BD5A94B5 /* NSArray+MASAdditions.h in Headers */,
+				07ED6015D2FB1013878FCA89F3B7AE6C /* NSArray+MASShorthandAdditions.h in Headers */,
+				DAB2A5D90887987918925FF1729E024C /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				51655B897CAFCB364A332E30F8792D06 /* View+MASAdditions.h in Headers */,
+				03DD4E2B27C43D0DC97E156FB4C1DDAA /* View+MASShorthandAdditions.h in Headers */,
+				9ACC9FE6564CCBB79BABC47E88C9538F /* ViewController+MASAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		08B8D23AE4BC34B0BF5785FA9C71625C /* Masonry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 560BAF185D40C6BCC42EA4C773E53289 /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildPhases = (
+				DA57DEA5C4F3FE01B110C92F11E4C52C /* Sources */,
+				92F2FABC38BE6B0377919020BBEAD62C /* Frameworks */,
+				C7DF992A18EB2969E8F40D4E3FEC7DC2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 41F065E3FAB202E19A4F20AF7FB32C03 /* libMasonry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		38720923CC9A72479E3EC334F1C38742 /* Pods-JoyKit_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC5553F2AB6B2B9CD80DD8388A08DE80 /* Build configuration list for PBXNativeTarget "Pods-JoyKit_Example" */;
@@ -884,35 +903,18 @@
 			productReference = B1990698F81540C754F3D51D65203E03 /* libPods-JoyKit_Tests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		6CF0D7F98B156524AAD94A1D7B3988B7 /* Masonry */ = {
+		41C15BD46DD687CEC64D81683881C007 /* JoyKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1CBB4299D082752C65CC7918F4027A75 /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildConfigurationList = 0951D178D0578EF3F4C926C66C528696 /* Build configuration list for PBXNativeTarget "JoyKit" */;
 			buildPhases = (
-				DA9344E435DE85612651AB055E0D2876 /* Sources */,
-				E8680B2F68758A536645612DA2456965 /* Frameworks */,
-				3DF8B88AAF70C35060C83EE8F096483A /* Headers */,
+				85122F073FD42EF2C19A679E2FA573A7 /* Sources */,
+				865FEFA11FC94A812B22B43A8F4D7E89 /* Frameworks */,
+				12C9DB4ED25CC645559A9C9D38E3F592 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = Masonry;
-			productName = Masonry;
-			productReference = 41F065E3FAB202E19A4F20AF7FB32C03 /* libMasonry.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		892BAF83D677B31406611FB43A845BC6 /* JoyKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AECAB783A2DCC2131397145A5C41D035 /* Build configuration list for PBXNativeTarget "JoyKit" */;
-			buildPhases = (
-				35B50F988445CEB1C08BC538430B4929 /* Sources */,
-				E38C5AB30AEA9BB974327C58D82598EF /* Frameworks */,
-				FBA256BA28269B3675806C27AD6D4F38 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				26BF6B6AAFB570B24969FC37E0F24114 /* PBXTargetDependency */,
+				DF26D6C7B50C95AB378D99D31977C2E2 /* PBXTargetDependency */,
 			);
 			name = JoyKit;
 			productName = JoyKit;
@@ -940,8 +942,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				892BAF83D677B31406611FB43A845BC6 /* JoyKit */,
-				6CF0D7F98B156524AAD94A1D7B3988B7 /* Masonry */,
+				41C15BD46DD687CEC64D81683881C007 /* JoyKit */,
+				08B8D23AE4BC34B0BF5785FA9C71625C /* Masonry */,
 				38720923CC9A72479E3EC334F1C38742 /* Pods-JoyKit_Example */,
 				3D6E15CE223AD5593AF890C208774DB5 /* Pods-JoyKit_Tests */,
 			);
@@ -949,59 +951,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		35B50F988445CEB1C08BC538430B4929 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59C5355E28F40641759307173DEA9603 /* AVAudioSession+manager.m in Sources */,
-				D214CCB4477365D8488CE6F8A98E0535 /* CAAnimation+HCAnimation.m in Sources */,
-				DB3401F3B6138204B48DC56FB11EE4D9 /* CALayer+JoyLayer.m in Sources */,
-				FE2EECE3358A9519F75DD55D292921DB /* JoyAlert.m in Sources */,
-				A85688093F49C8B8AEC19A46687DBE70 /* JoyBaseCell.m in Sources */,
-				25429A9611236EAE43E536199B43EA2E /* JoyBaseModel.m in Sources */,
-				1B4A78C1FEAA6784ED36ACD986CA24AF /* JoyBaseVC+Extention.m in Sources */,
-				F3CC41526F2A508E7A60725D440F6E84 /* JoyBaseVC.m in Sources */,
-				A889194CD550E6CBC081BD77AC0E4B62 /* JoyCellBaseModel+Action.m in Sources */,
-				CF378A3D4CD6FDB15F320D24AEC5E8AD /* JoyCellBaseModel+Edit.m in Sources */,
-				11AD9E7CDA904F4D15C482C95B12B734 /* JoyCellBaseModel.m in Sources */,
-				1C2CFC8E4D65A6B2D1116257516F9F47 /* JoyCollectionView.m in Sources */,
-				6236C1E457AC37C9D26BB25FECEE5593 /* JoyDatePickView.m in Sources */,
-				9C3143D11BC86B43B1B30AC38E763419 /* JoyDeviceModule.m in Sources */,
-				9C961C54D80B712DDD1939EDAF6ACAB1 /* JoyImageCollectionViewCell.m in Sources */,
-				6F6A8371AD482272CD7281D70D84DC2D /* JoyInteractorBase.m in Sources */,
-				4D89CE5EDCD2B7D86C08EA54F3C1577A /* JoyKit-dummy.m in Sources */,
-				35D237C1E22E49A0C30039F60960E661 /* JoyLeftAvatarRightLabelCell.m in Sources */,
-				93FDE3D886CC60ECBD16F71D36E6761A /* JoyLeftAvatarRightTopBottomLabel.m in Sources */,
-				357DB1281C8AE524B10A577B38471919 /* JoyLeftIconCell.m in Sources */,
-				13F3CE78AEE53B7C4E39FA1564A6B9D6 /* JoyLeftIconTopBottomLabelCell.m in Sources */,
-				7FEB42AE3DC363713F5BA8636962B042 /* JoyLeftLabelRightIconCell.m in Sources */,
-				B2F9864A10AC61B2960DB2B164CF3052 /* JoyLeftLabelRightPlaceHolderLabelCell.m in Sources */,
-				2D8693B266FF7D8871046EE4CFFD58D5 /* JoyLeftLabelTextViewCell.m in Sources */,
-				18D756F8A5062B39FD6027486B0235EE /* JoyLeftMiddleRightLabelCell.m in Sources */,
-				88933499B394E0204DD250E83FF1B0FA /* JoyMiddleLabelCell.m in Sources */,
-				646B76B25A21E3B45C7B6D22F466795C /* JoyNoDataBackView.m in Sources */,
-				261BFD229361C721E8CC7D0FFFA0EF1B /* JoyPickerView.m in Sources */,
-				E80A28CF2A320B855DDBFBA492045080 /* JoyPresenterBase.m in Sources */,
-				549E34895A746B13075D81BC2F7959CE /* JoySectionBaseModel.m in Sources */,
-				1696B55C03B6263616117869E9DCAE2E /* JoySwitchCell.m in Sources */,
-				F9EB549E4A67A8AEAA1C37507D51D46D /* JoyTableAutoLayoutView.m in Sources */,
-				F65018FB4820B510ECB82CD365042C0C /* JoyTextCell.m in Sources */,
-				D294B113CC014044AF69338D430BAA9B /* JoyTextNoLabelCell.m in Sources */,
-				5E8B9A2954638F39C009221E969AAF99 /* JoyTextViewCell.m in Sources */,
-				119020AA6C805A2C457B21799E01331B /* JoyUISegementView.m in Sources */,
-				D056584E61CF88B0661C8E4296D88D76 /* NSArray+JoyCrash.m in Sources */,
-				7A545DE18ED11FE1105D4A4319DF2F81 /* NSObject+JoyRouter.m in Sources */,
-				978E9B9E436EEF04D8E5EA8517B61113 /* NSString+JoyCategory.m in Sources */,
-				FBA35CD5B5F11B842E5BC774934DE435 /* UIBarButtonItem+JoyBarItem.m in Sources */,
-				AAE3564BEBE7CD999517A8859D6EA683 /* UIImage+Extension.m in Sources */,
-				25C8E4E76B9DDA06CC73E2CF5B57616A /* UIImageView+JoyCategory.m in Sources */,
-				34E511CDD915F1E67B2E45118B469C5E /* UITableViewCell+JoyCell.m in Sources */,
-				09834E93DE8D4D2298759F6BAF5D766C /* UITextField+JoyCategory.m in Sources */,
-				538E4AF7F24EF36C34ECB36CC2C089AF /* UIView+JoyCategory.m in Sources */,
-				6E729D15936E0FB309DB44253BD15B07 /* UIWindow+Observer.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A1423AC3FF1DC428A783145077C3822 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1018,43 +967,91 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA9344E435DE85612651AB055E0D2876 /* Sources */ = {
+		85122F073FD42EF2C19A679E2FA573A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A0CF000D6B92746E60476B85621F6A5 /* MASCompositeConstraint.m in Sources */,
-				071CEEBFA400F25AB85DFEEC94CAFB52 /* MASConstraint.m in Sources */,
-				0913BA644DCF443ED93CD7341F65D3D9 /* MASConstraintMaker.m in Sources */,
-				E0FE19234A08EBFE035F4961BF523FED /* MASLayoutConstraint.m in Sources */,
-				5E82094F7626A3CC1BAB9B5741466F3E /* Masonry-dummy.m in Sources */,
-				7F8AA49999CDA5ABFEF885194B2BD7B1 /* MASViewAttribute.m in Sources */,
-				3E7B77803C2262A8152FADF55DB1EBE9 /* MASViewConstraint.m in Sources */,
-				3ADCB33B4E9CA96B40BC7034FB652279 /* NSArray+MASAdditions.m in Sources */,
-				670198E94EEDCA002CB52ABF0A34E5E6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				9B39E537032030467270D507AEE49AC2 /* View+MASAdditions.m in Sources */,
-				C286463A8AB8EC7204A18F4B2A917781 /* ViewController+MASAdditions.m in Sources */,
+				A3835D92B72FE0974607776EC2577D28 /* AVAudioSession+manager.m in Sources */,
+				CAEA1E2767203BD2AD3EAF7AA35D8DAE /* CAAnimation+HCAnimation.m in Sources */,
+				25A49E44BD1DC2E2A4DFB4F3FDA064F8 /* CALayer+JoyLayer.m in Sources */,
+				E77E7B12C57DE2AFA1FAC5617DB0B490 /* JoyAlert.m in Sources */,
+				B5168603C3F784DD69B5B670F12D3235 /* JoyBaseCell.m in Sources */,
+				265E86D486657BCEF53819EBEDE735EC /* JoyBaseModel.m in Sources */,
+				D59D924A739647F26F5E5F9CE26E5AFB /* JoyBaseVC+Extention.m in Sources */,
+				DB6DF2152B8894BB43A2C036F952F1D6 /* JoyBaseVC.m in Sources */,
+				606F6CF00D812410D9A726AA15136914 /* JoyCellBaseModel+Action.m in Sources */,
+				2570A98780A5E564274BD34E8B92EFB8 /* JoyCellBaseModel+Edit.m in Sources */,
+				016F7BD1BFE057AA994AF5AC592B5F87 /* JoyCellBaseModel.m in Sources */,
+				8FBAB60E840C02ABC2A6EBEDF75F993E /* JoyCollectionView.m in Sources */,
+				816017B99E634A53350CC7B528185C9C /* JoyDatePickView.m in Sources */,
+				021A445E4F3EA5C05FB939D51C21039A /* JoyDeviceModule.m in Sources */,
+				5CC736F6F5D9BFA826E7190551508EEA /* JoyImageCollectionViewCell.m in Sources */,
+				F1D88439CD246CB5C89DFD4B01604979 /* JoyInteractorBase.m in Sources */,
+				6CC3645A1782C37316C230360EF3E66A /* JoyKit-dummy.m in Sources */,
+				6F131E9329A7A6680D29E7C8E0D256C1 /* JoyLeftAvatarRightLabelCell.m in Sources */,
+				B3870ACE804FA8CD2CBC324A382B7AA1 /* JoyLeftAvatarRightTopBottomLabel.m in Sources */,
+				F12C8C934A713900A55BBA2393A54444 /* JoyLeftIconCell.m in Sources */,
+				E50A4D50134202B6B6127D5E1E21BB82 /* JoyLeftIconTopBottomLabelCell.m in Sources */,
+				0A685B8E87E0E57DF8A1694CDDEFC19A /* JoyLeftLabelRightIconCell.m in Sources */,
+				72037754214B860CC55D2B7983567684 /* JoyLeftLabelRightPlaceHolderLabelCell.m in Sources */,
+				2A1A38247B6CC9BF687748684CCD07AA /* JoyLeftLabelTextViewCell.m in Sources */,
+				4BCA60BFC2E118B2CF6C9C2B293BDE89 /* JoyLeftMiddleRightLabelCell.m in Sources */,
+				612A1A7AB805EE2DE122D6B5B566F16C /* JoyMiddleLabelCell.m in Sources */,
+				3F6F02C1272B9642679F48F9BA179B4E /* JoyNoDataBackView.m in Sources */,
+				4B02F30E3B91FDD0F3C234258F0FCC50 /* JoyPickerView.m in Sources */,
+				01EB39DBF07A9EDDF8D64AF51859394D /* JoyPresenterBase.m in Sources */,
+				28125D8CAD28FFEDDAB5E7A9AC48DF14 /* JoySectionBaseModel.m in Sources */,
+				D94DD0C12FFBA112B8E726E2EA321114 /* JoySwitchCell.m in Sources */,
+				981219254B1CE7D1632CE20BC62F1799 /* JoyTableAutoLayoutView.m in Sources */,
+				26DD154325304C5343E4A7B463FA8240 /* JoyTableCollectionCell.m in Sources */,
+				90C3E39357C69BFBABAC7C72092FA904 /* JoyTextCell.m in Sources */,
+				4836E3B3BE8755A481ABC9CB75CDC70E /* JoyTextNoLabelCell.m in Sources */,
+				FEDE115DFC726615936DA989DF999BC5 /* JoyTextViewCell.m in Sources */,
+				043D002387DDB158E9B0BF162FA274F2 /* JoyUISegementView.m in Sources */,
+				A7D50724BE240D839E4DB7CF0D6AC4EC /* NSArray+JoyCrash.m in Sources */,
+				ADF438C4C1D332DA13EDE7AC638310D9 /* NSObject+JoyRouter.m in Sources */,
+				F777E8026BD3C29E050F412C812F9F7F /* NSString+JoyCategory.m in Sources */,
+				E8C77AE4FB27C35C1C15C38476C2CAD2 /* UIBarButtonItem+JoyBarItem.m in Sources */,
+				AA71BF15872248D49C65F999FC0BD539 /* UIImage+Extension.m in Sources */,
+				7DCE1BE78C68F7E0F6E1701A9B01DA1F /* UIImageView+JoyCategory.m in Sources */,
+				2E326927DCD65AEF9BA340FDDD4B4FC5 /* UITableViewCell+JoyCell.m in Sources */,
+				B1054FC4CED5C3889C988FF247EBB02F /* UITextField+JoyCategory.m in Sources */,
+				29966AA05BB8B087558C027C6FAF8A5E /* UIView+JoyCategory.m in Sources */,
+				F151FB07BA8784CB293D2EE940663F4E /* UIWindow+Observer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA57DEA5C4F3FE01B110C92F11E4C52C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9712AB416ED61FE9FFA5A9CBCBF822CC /* MASCompositeConstraint.m in Sources */,
+				1609C24A9EACDBAF7CAE7FAFF5D65C72 /* MASConstraint.m in Sources */,
+				2F1B4DD9C355767FB49B53B5A4B0C350 /* MASConstraintMaker.m in Sources */,
+				3E10B7C905D32EB6DFF6C8202A8DC9FE /* MASLayoutConstraint.m in Sources */,
+				38E9949C9DE958769FA745F1E720B77D /* Masonry-dummy.m in Sources */,
+				F98EB9319D75BFBF628BE5943393357E /* MASViewAttribute.m in Sources */,
+				5AA2035346D235F55F5600A16D3DE615 /* MASViewConstraint.m in Sources */,
+				F3E7CA421EC676C870F7F12EEB3C3BAE /* NSArray+MASAdditions.m in Sources */,
+				902F2E4CBCBDC368FDB3CEEF2CA4CCAB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				1C25B157C995226F2DFE4D48058C9754 /* View+MASAdditions.m in Sources */,
+				15387F04F9B8402DF79CC7978326B45A /* ViewController+MASAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		26BF6B6AAFB570B24969FC37E0F24114 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = 6CF0D7F98B156524AAD94A1D7B3988B7 /* Masonry */;
-			targetProxy = B7EDF6E0C585EE48180C15206E4A221E /* PBXContainerItemProxy */;
-		};
 		5CEF5A9274FB4A5F56699B57B456D551 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JoyKit;
-			target = 892BAF83D677B31406611FB43A845BC6 /* JoyKit */;
+			target = 41C15BD46DD687CEC64D81683881C007 /* JoyKit */;
 			targetProxy = 3E249F166DBB880D58877F2985DF3950 /* PBXContainerItemProxy */;
 		};
 		5E78A051DA50CCF7106A04545AA9C0DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
-			target = 6CF0D7F98B156524AAD94A1D7B3988B7 /* Masonry */;
+			target = 08B8D23AE4BC34B0BF5785FA9C71625C /* Masonry */;
 			targetProxy = 9FFBCBFADF379E7CC51CCF29E37224A1 /* PBXContainerItemProxy */;
 		};
 		AEFC5CDEB1FA07E8CB830EF62DF33975 /* PBXTargetDependency */ = {
@@ -1063,32 +1060,15 @@
 			target = 38720923CC9A72479E3EC334F1C38742 /* Pods-JoyKit_Example */;
 			targetProxy = 995181376DCDFE1A8353F3E926CC3446 /* PBXContainerItemProxy */;
 		};
+		DF26D6C7B50C95AB378D99D31977C2E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 08B8D23AE4BC34B0BF5785FA9C71625C /* Masonry */;
+			targetProxy = 88051C4A2672AE7333528E3277298814 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		02FCA18B2CEE6AF0EE15736C4DB5D23E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E7AF5CF52D121FA3E3BC9284FDC491F /* JoyKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/JoyKit/JoyKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = JoyKit;
-				PRODUCT_NAME = JoyKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1152,7 +1132,7 @@
 			};
 			name = Debug;
 		};
-		21C4E0D712EFDE20BDCE527E1DE04BE2 /* Debug */ = {
+		511C867407E52EE56BF0B6693769AAB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7882AB8492CA4F59F730C76CC3BBF57A /* Masonry.xcconfig */;
 			buildSettings = {
@@ -1172,8 +1152,9 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		5EF2624D84B0112D0E912FA77FE69F67 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1196,21 +1177,44 @@
 			};
 			name = Debug;
 		};
-		86D11DC5737CBF63EA7C5A22248ECD16 /* Release */ = {
+		689A4B359F8E7F6D0D11E2F6CCF2BCD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7882AB8492CA4F59F730C76CC3BBF57A /* Masonry.xcconfig */;
+			baseConfigurationReference = 59DCE8B597838F51C7145B5D3742880C /* JoyKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				GCC_PREFIX_HEADER = "Target Support Files/JoyKit/JoyKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
+				PRODUCT_MODULE_NAME = JoyKit;
+				PRODUCT_NAME = JoyKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7031CCBEB39BAFC99E1B403B45CA263F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59DCE8B597838F51C7145B5D3742880C /* JoyKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/JoyKit/JoyKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = JoyKit;
+				PRODUCT_NAME = JoyKit;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1343,38 +1347,37 @@
 			};
 			name = Debug;
 		};
-		FF336895B537E16A7BCBA566BFE88AD9 /* Release */ = {
+		FDF5193383C100A3DF841C24DF2324BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E7AF5CF52D121FA3E3BC9284FDC491F /* JoyKit.xcconfig */;
+			baseConfigurationReference = 7882AB8492CA4F59F730C76CC3BBF57A /* Masonry.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/JoyKit/JoyKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = JoyKit;
-				PRODUCT_NAME = JoyKit;
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1CBB4299D082752C65CC7918F4027A75 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+		0951D178D0578EF3F4C926C66C528696 /* Build configuration list for PBXNativeTarget "JoyKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				21C4E0D712EFDE20BDCE527E1DE04BE2 /* Debug */,
-				86D11DC5737CBF63EA7C5A22248ECD16 /* Release */,
+				689A4B359F8E7F6D0D11E2F6CCF2BCD3 /* Debug */,
+				7031CCBEB39BAFC99E1B403B45CA263F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1388,11 +1391,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AECAB783A2DCC2131397145A5C41D035 /* Build configuration list for PBXNativeTarget "JoyKit" */ = {
+		560BAF185D40C6BCC42EA4C773E53289 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				02FCA18B2CEE6AF0EE15736C4DB5D23E /* Debug */,
-				FF336895B537E16A7BCBA566BFE88AD9 /* Release */,
+				FDF5193383C100A3DF841C24DF2324BB /* Debug */,
+				511C867407E52EE56BF0B6693769AAB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

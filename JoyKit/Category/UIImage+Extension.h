@@ -41,6 +41,15 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 #pragma markUIBezierPath 裁剪
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c;
 
++(UIImage*)imageWithColor:(UIColor*)color;
+
+/**
+ view转换图片
+ @param view 待转换view
+ @return 返回转后的image
+ */
++(UIImage *)snapshotSingleView:(UIView *)view;
+
 //存相册
 - (void)saveToPhotos:(SAVEIMAGEBLOCK)successed;
 @end

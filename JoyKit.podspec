@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.7'
-  s.summary          = 'cellTextView优化'
+  s.version          = '0.1.8'
+  s.summary          = '扩展类优化'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -39,57 +39,86 @@ s.resources = 'JoyKit/Assets/*'
 # s.frameworks = 'UIKit', 'MapKit'
 
 s.subspec 'JoyHeader' do|ss|
-ss.source_files = 'JoyKit/JoyHeader/**/*.{h,m}'
-ss.dependency 'JoyKit/CellsLibruary'
-ss.dependency 'JoyKit/Category'
-ss.dependency 'JoyKit/Controllers'
-ss.dependency 'JoyKit/Utility'
-ss.dependency 'JoyKit/Views'
-ss.public_header_files = 'JoyKit/JoyHeader/**/*.h'
+    ss.source_files = 'JoyKit/JoyHeader/**/*.{h,m}'
+    ss.dependency 'JoyKit/CellsLibruary'
+    ss.dependency 'JoyKit/Category'
+    ss.dependency 'JoyKit/Controllers'
+    ss.dependency 'JoyKit/Utility'
+    ss.dependency 'JoyKit/Views'
+    ss.public_header_files = 'JoyKit/JoyHeader/**/*.h'
 end
 
 s.subspec 'Views' do|ss|
-ss.source_files = 'JoyKit/Views/**/*.{h,m}'
-ss.dependency 'JoyKit/CellsLibruary'
-ss.dependency 'JoyKit/Category'
-ss.public_header_files = 'JoyKit/Views/**/*.h'
+    ss.source_files = 'JoyKit/Views/**/*.{h,m}'
+    ss.dependency 'JoyKit/CellsLibruary'
+    ss.dependency 'JoyKit/Category'
+    ss.public_header_files = 'JoyKit/Views/**/*.h'
 end
 
 s.subspec 'Common' do|ss|
-ss.source_files = 'JoyKit/Common/**/*.{h,m}'
-ss.dependency 'JoyKit/Category'
-ss.public_header_files = 'JoyKit/Common/**/*.h'
+    ss.source_files = 'JoyKit/Common/**/*.{h,m}'
+    ss.dependency 'JoyKit/Category'
+    ss.public_header_files = 'JoyKit/Common/**/*.h'
 end
 
 s.subspec 'Category' do|ss|
-ss.source_files = 'JoyKit/Category/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Category/**/*.h'
+    ss.source_files = 'JoyKit/Category/**/*.{h,m}'
+    ss.public_header_files = 'JoyKit/Category/**/*.h'
 end
 
 s.subspec 'Models' do|ss|
-ss.source_files = 'JoyKit/Models/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Models/**/*.h'
+    ss.source_files = 'JoyKit/Models/**/*.{h,m}'
+    ss.public_header_files = 'JoyKit/Models/**/*.h'
 end
 
 s.subspec 'CellsLibruary' do|ss|
-ss.source_files = 'JoyKit/CellsLibruary/**/*.{h,m}'
-ss.dependency 'JoyKit/Models'
-ss.dependency 'JoyKit/Common'
-ss.dependency 'JoyKit/Category'
-ss.public_header_files = 'JoyKit/CellsLibruary/**/*.h'
+    ss.subspec 'TableLabelCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableLabelCell/**/*.{h,m}'
+        sss.dependency 'JoyKit/CellsLibruary/CollectionImageCell'
+        sss.dependency 'JoyKit/CellsLibruary/TableImageCell'
+        sss.dependency 'JoyKit/CellsLibruary/TableTextCell'
+        sss.dependency 'JoyKit/CellsLibruary/TableSwitchCell'
+        sss.dependency 'JoyKit/CellsLibruary/TableCollectionCell'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableLabelCell/**/*.h'
+    end
+    ss.subspec 'CollectionImageCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}'
+        sss.public_header_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.h'
+    end
+    ss.subspec 'TableCollectionCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.h'
+    end
+    ss.subspec 'TableImageCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.h'
+    end
+    ss.subspec 'TableTextCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableTextCell/**/*.{h,m}'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableTextCell/**/*.h'
+    end
+    ss.subspec 'TableSwitchCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableSwitchCell/**/*.{h,m}'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableSwitchCell/**/*.h'
+    end
+    ss.dependency 'JoyKit/Models'
+    ss.dependency 'JoyKit/Common'
+    ss.dependency 'JoyKit/Category'
 end
 
 s.subspec 'Controllers' do|ss|
-ss.source_files = 'JoyKit/Controllers/**/*.{h,m}'
-ss.dependency 'JoyKit/Common'
-ss.dependency 'JoyKit/Category'
-ss.public_header_files = 'JoyKit/Controllers/**/*.h'
+    ss.source_files = 'JoyKit/Controllers/**/*.{h,m}'
+    ss.dependency 'JoyKit/Common'
+    ss.dependency 'JoyKit/Category'
+    ss.public_header_files = 'JoyKit/Controllers/**/*.h'
 end
 
 s.subspec 'Utility' do|ss|
-ss.source_files = 'JoyKit/Utility/**/*.{h,m}'
-ss.public_header_files = 'JoyKit/Utility/**/*.h'
+    ss.source_files = 'JoyKit/Utility/**/*.{h,m}'
+    ss.public_header_files = 'JoyKit/Utility/**/*.h'
 end
+
+
 
 s.frameworks = 'UIKit', 'IMageIO', 'Photos'
 s.dependency 'Masonry'

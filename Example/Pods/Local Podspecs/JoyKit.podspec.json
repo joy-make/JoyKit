@@ -1,7 +1,7 @@
 {
   "name": "JoyKit",
-  "version": "0.1.05",
-  "summary": "cellTextView优化",
+  "version": "0.1.8",
+  "summary": "扩展类优化",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
   "license": {
@@ -13,12 +13,11 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.05"
+    "tag": "0.1.8"
   },
   "platforms": {
     "ios": "7.0"
   },
-  "source_files": "JoyKit/**/*.{h,m}",
   "resources": "JoyKit/Assets/*",
   "frameworks": [
     "UIKit",
@@ -88,7 +87,6 @@
     },
     {
       "name": "CellsLibruary",
-      "source_files": "JoyKit/CellsLibruary/**/*.{h,m}",
       "dependencies": {
         "JoyKit/Models": [
 
@@ -100,7 +98,55 @@
 
         ]
       },
-      "public_header_files": "JoyKit/CellsLibruary/**/*.h"
+      "subspecs": [
+        {
+          "name": "TableLabelCell",
+          "source_files": "JoyKit/CellsLibruary/TableLabelCell/**/*.{h,m}",
+          "dependencies": {
+            "JoyKit/CellsLibruary/CollectionImageCell": [
+
+            ],
+            "JoyKit/CellsLibruary/TableImageCell": [
+
+            ],
+            "JoyKit/CellsLibruary/TableTextCell": [
+
+            ],
+            "JoyKit/CellsLibruary/TableSwitchCell": [
+
+            ],
+            "JoyKit/CellsLibruary/TableCollectionCell": [
+
+            ]
+          },
+          "public_header_files": "JoyKit/CellsLibruary/TableLabelCell/**/*.h"
+        },
+        {
+          "name": "CollectionImageCell",
+          "source_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}",
+          "public_header_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.h"
+        },
+        {
+          "name": "TableCollectionCell",
+          "source_files": "JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}",
+          "public_header_files": "JoyKit/CellsLibruary/TableCollectionCell/**/*.h"
+        },
+        {
+          "name": "TableImageCell",
+          "source_files": "JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}",
+          "public_header_files": "JoyKit/CellsLibruary/TableImageCell/**/*.h"
+        },
+        {
+          "name": "TableTextCell",
+          "source_files": "JoyKit/CellsLibruary/TableTextCell/**/*.{h,m}",
+          "public_header_files": "JoyKit/CellsLibruary/TableTextCell/**/*.h"
+        },
+        {
+          "name": "TableSwitchCell",
+          "source_files": "JoyKit/CellsLibruary/TableSwitchCell/**/*.{h,m}",
+          "public_header_files": "JoyKit/CellsLibruary/TableSwitchCell/**/*.h"
+        }
+      ]
     },
     {
       "name": "Controllers",

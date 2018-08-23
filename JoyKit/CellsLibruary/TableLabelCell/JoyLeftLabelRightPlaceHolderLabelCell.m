@@ -44,6 +44,7 @@
         _subTitleLabel.numberOfLines = 0;
         _subTitleLabel.font = [UIFont systemFontOfSize:15];
         _subTitleLabel.backgroundColor = JOY_clearColor;
+        _subTitleLabel.textAlignment = NSTextAlignmentRight;
     }
     return _subTitleLabel;
 }

@@ -23,7 +23,7 @@
 }
 @property (nonatomic,readonly)BOOL                        editing;
 @property (nonatomic,strong)UIView                      *backView;
-
+@property (nonatomic,strong)UIView                      *noDataBackView;
 @end
 
 const NSString *tableHDelegate =  @"tableHDelegate";
@@ -100,6 +100,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 #pragma mark 刷新table
 -(JoyTableAutoLayoutView *)reloadTableView{
     objc_setAssociatedObject(self, &tableHDelegate, self.dataArrayM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self.tableView setBackgroundView: self.dataArrayM.count?self.backView:self.noDataBackView?:self.backView];
     [self.tableView reloadData];
     return self;
 }
@@ -450,6 +451,15 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     __weak __typeof(&*self)weakSelf = self;
     return ^(UIView *backView){
         weakSelf.backView = backView;
+        return weakSelf;
+    };
+}
+
+//
+-(JoyTableAutoLayoutView *(^)(UIView *))setTableBackNoDataView{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIView *noDataBackView){
+        weakSelf.noDataBackView = noDataBackView;
         return weakSelf;
     };
 }

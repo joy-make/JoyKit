@@ -1,1 +1,1 @@
-../../../../../JoyKit/CellsLibruary/TableLTextCell/JoyLeftLabelTextViewCell.h
+../../../../../JoyKit/CellsLibruary/TableTextCell/JoyLeftLabelTextViewCell.h

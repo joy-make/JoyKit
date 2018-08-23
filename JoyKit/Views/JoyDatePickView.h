@@ -2,14 +2,16 @@
 //  JoyDatePickView.h
 //  Toon
 //
-//  Created by joymake on 16/1/25.
+//  Created by wangguopeng on 16/1/25.
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 
-#import "UIView+JoyCategory.h"
+#import "JoyDatePickView.h"
 
 @interface JoyDatePickView : UIView
 @property (nonatomic,copy)void (^entryClickBlock)(NSString *selectDate);
+
+- (void)setTitle:(NSString *)title;
 
 - (void)setDate:(NSDate *)date;
 

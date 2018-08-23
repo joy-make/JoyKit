@@ -51,7 +51,7 @@
         _rightLabel = [[UILabel alloc]init];
         _rightLabel.numberOfLines = 0;
         _rightLabel.font = [UIFont systemFontOfSize:15];
-        _middleLabel.textColor = UIColorFromRGB(0xAAAAAA);
+        _rightLabel.textColor = UIColorFromRGB(0xAAAAAA);
     }
     return _rightLabel;
 }
