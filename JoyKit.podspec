@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.8'
-  s.summary          = '扩展类优化'
+  s.version          = '0.1.9'
+  s.summary          = 'NSDate工具类扩展'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -72,35 +72,42 @@ s.subspec 'Models' do|ss|
 end
 
 s.subspec 'CellsLibruary' do|ss|
-    ss.subspec 'TableLabelCell' do|sss|
-        sss.source_files = 'JoyKit/CellsLibruary/TableLabelCell/**/*.{h,m}'
+    ss.subspec 'TableImageCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}'
         sss.dependency 'JoyKit/CellsLibruary/CollectionImageCell'
-        sss.dependency 'JoyKit/CellsLibruary/TableImageCell'
         sss.dependency 'JoyKit/CellsLibruary/TableTextCell'
         sss.dependency 'JoyKit/CellsLibruary/TableSwitchCell'
         sss.dependency 'JoyKit/CellsLibruary/TableCollectionCell'
-        sss.public_header_files = 'JoyKit/CellsLibruary/TableLabelCell/**/*.h'
-    end
-    ss.subspec 'CollectionImageCell' do|sss|
-        sss.source_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}'
-        sss.public_header_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.h'
-    end
-    ss.subspec 'TableCollectionCell' do|sss|
-        sss.source_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}'
-        sss.public_header_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.h'
-    end
-    ss.subspec 'TableImageCell' do|sss|
-        sss.source_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}'
+        sss.dependency 'JoyKit/CellsLibruary/TableLabelCell'
         sss.public_header_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.h'
     end
     ss.subspec 'TableTextCell' do|sss|
         sss.source_files = 'JoyKit/CellsLibruary/TableTextCell/**/*.{h,m}'
+        sss.dependency 'JoyKit/CellsLibruary/TableLabelCell'
         sss.public_header_files = 'JoyKit/CellsLibruary/TableTextCell/**/*.h'
     end
     ss.subspec 'TableSwitchCell' do|sss|
         sss.source_files = 'JoyKit/CellsLibruary/TableSwitchCell/**/*.{h,m}'
+        sss.dependency 'JoyKit/CellsLibruary/TableLabelCell'
         sss.public_header_files = 'JoyKit/CellsLibruary/TableSwitchCell/**/*.h'
     end
+
+    ss.subspec 'CollectionImageCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}'
+        sss.dependency 'JoyKit/CellsLibruary/TableLabelCell'
+        sss.public_header_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.h'
+    end
+    ss.subspec 'TableCollectionCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}'
+        sss.dependency 'JoyKit/CellsLibruary/TableLabelCell'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.h'
+    end
+    
+    ss.subspec 'TableLabelCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/TableLabelCell/**/*.{h,m}'
+        sss.public_header_files = 'JoyKit/CellsLibruary/TableLabelCell/**/*.h'
+    end
+
     ss.dependency 'JoyKit/Models'
     ss.dependency 'JoyKit/Common'
     ss.dependency 'JoyKit/Category'

@@ -24,36 +24,40 @@ PODS:
     - Masonry
   - JoyKit/CellsLibruary/CollectionImageCell (0.1.8):
     - JoyKit/Category
+    - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
   - JoyKit/CellsLibruary/TableCollectionCell (0.1.8):
     - JoyKit/Category
+    - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
   - JoyKit/CellsLibruary/TableImageCell (0.1.8):
     - JoyKit/Category
-    - JoyKit/Common
-    - JoyKit/Models
-    - Masonry
-  - JoyKit/CellsLibruary/TableLabelCell (0.1.8):
-    - JoyKit/Category
     - JoyKit/CellsLibruary/CollectionImageCell
     - JoyKit/CellsLibruary/TableCollectionCell
-    - JoyKit/CellsLibruary/TableImageCell
+    - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/CellsLibruary/TableSwitchCell
     - JoyKit/CellsLibruary/TableTextCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
+  - JoyKit/CellsLibruary/TableLabelCell (0.1.8):
+    - JoyKit/Category
+    - JoyKit/Common
+    - JoyKit/Models
+    - Masonry
   - JoyKit/CellsLibruary/TableSwitchCell (0.1.8):
     - JoyKit/Category
+    - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
   - JoyKit/CellsLibruary/TableTextCell (0.1.8):
     - JoyKit/Category
+    - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
@@ -93,7 +97,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JoyKit: 2db2c62e69378ac80d8afe6907b268f4eb915fbc
+  JoyKit: def1291a38f7c7e57b6c1e6aebd95dc972b4e168
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: 207b95c55ed86f2034c88c5d38811ff18ee011a5

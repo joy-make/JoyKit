@@ -100,13 +100,10 @@
       },
       "subspecs": [
         {
-          "name": "TableLabelCell",
-          "source_files": "JoyKit/CellsLibruary/TableLabelCell/**/*.{h,m}",
+          "name": "TableImageCell",
+          "source_files": "JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}",
           "dependencies": {
             "JoyKit/CellsLibruary/CollectionImageCell": [
-
-            ],
-            "JoyKit/CellsLibruary/TableImageCell": [
 
             ],
             "JoyKit/CellsLibruary/TableTextCell": [
@@ -117,34 +114,57 @@
             ],
             "JoyKit/CellsLibruary/TableCollectionCell": [
 
+            ],
+            "JoyKit/CellsLibruary/TableLabelCell": [
+
             ]
           },
-          "public_header_files": "JoyKit/CellsLibruary/TableLabelCell/**/*.h"
-        },
-        {
-          "name": "CollectionImageCell",
-          "source_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}",
-          "public_header_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.h"
-        },
-        {
-          "name": "TableCollectionCell",
-          "source_files": "JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}",
-          "public_header_files": "JoyKit/CellsLibruary/TableCollectionCell/**/*.h"
-        },
-        {
-          "name": "TableImageCell",
-          "source_files": "JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}",
           "public_header_files": "JoyKit/CellsLibruary/TableImageCell/**/*.h"
         },
         {
           "name": "TableTextCell",
           "source_files": "JoyKit/CellsLibruary/TableTextCell/**/*.{h,m}",
+          "dependencies": {
+            "JoyKit/CellsLibruary/TableLabelCell": [
+
+            ]
+          },
           "public_header_files": "JoyKit/CellsLibruary/TableTextCell/**/*.h"
         },
         {
           "name": "TableSwitchCell",
           "source_files": "JoyKit/CellsLibruary/TableSwitchCell/**/*.{h,m}",
+          "dependencies": {
+            "JoyKit/CellsLibruary/TableLabelCell": [
+
+            ]
+          },
           "public_header_files": "JoyKit/CellsLibruary/TableSwitchCell/**/*.h"
+        },
+        {
+          "name": "CollectionImageCell",
+          "source_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}",
+          "dependencies": {
+            "JoyKit/CellsLibruary/TableLabelCell": [
+
+            ]
+          },
+          "public_header_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.h"
+        },
+        {
+          "name": "TableCollectionCell",
+          "source_files": "JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}",
+          "dependencies": {
+            "JoyKit/CellsLibruary/TableLabelCell": [
+
+            ]
+          },
+          "public_header_files": "JoyKit/CellsLibruary/TableCollectionCell/**/*.h"
+        },
+        {
+          "name": "TableLabelCell",
+          "source_files": "JoyKit/CellsLibruary/TableLabelCell/**/*.{h,m}",
+          "public_header_files": "JoyKit/CellsLibruary/TableLabelCell/**/*.h"
         }
       ]
     },

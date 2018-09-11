@@ -10,10 +10,6 @@
 
 #import "Joy.h"
 #import "JoyAlert.h"
-#import "JoyDatePickView.h"
-#import "JoyPickerView.h"
-#import "JoyUISegementView.h"
-#import "JoyCollectionView.h"
 #import "JoyBaseModel.h"
 
 #import "JoyNavProtocol.h"
@@ -21,7 +17,6 @@
 #import "JoyProtoCol.h"
 
 #import "JoyBaseVC.h"
-#import "JoyTableAutoLayoutView.h"
 #import "JoyPresenterBase.h"
 #import "JoyInteractorBase.h"
 #import "JoySectionBaseModel.h"
@@ -37,6 +32,14 @@
 #import "UITableViewCell+JoyCell.h"
 #import "UITextField+JoyCategory.h"
 #import "UIView+JoyCategory.h"
+
+#import "JoyDatePickView.h"
+#import "JoySelectDatePickView.h"
+#import "JoyPickerView.h"
+#import "JoyTableAutoLayoutView.h"
+#import "JoyCollectionView.h"
+#import "JoyUISegementView.h"
+#import "JoyNoDataBackView.h"
 
 #define JoyImageCollectionViewCell              @"JoyImageCollectionViewCell"                   //collectionVieeCell
 #define JoyLeftAvatarRightLabelCell             @"JoyLeftAvatarRightLabelCell"                  //左头像右label

@@ -10,3 +10,8 @@
 @interface NSArray (JoyCrash)
 
 @end
+
+
+@interface NSMutableArray (JoyCrash)
+
+@end
