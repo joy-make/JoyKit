@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.9'
+  s.version          = '0.1.10'
   s.summary          = 'NSDate工具类扩展'
 
 # This description is used to generate tags and improve search results.
@@ -39,6 +39,7 @@ s.resources = 'JoyKit/Assets/*'
 # s.frameworks = 'UIKit', 'MapKit'
 
 s.subspec 'JoyHeader' do|ss|
+    ss.summary = '模块集合'
     ss.source_files = 'JoyKit/JoyHeader/**/*.{h,m}'
     ss.dependency 'JoyKit/CellsLibruary'
     ss.dependency 'JoyKit/Category'
@@ -49,6 +50,7 @@ s.subspec 'JoyHeader' do|ss|
 end
 
 s.subspec 'Views' do|ss|
+    ss.summary = '视图'
     ss.source_files = 'JoyKit/Views/**/*.{h,m}'
     ss.dependency 'JoyKit/CellsLibruary'
     ss.dependency 'JoyKit/Category'
@@ -56,22 +58,26 @@ s.subspec 'Views' do|ss|
 end
 
 s.subspec 'Common' do|ss|
+    ss.summary = '公共类'
     ss.source_files = 'JoyKit/Common/**/*.{h,m}'
     ss.dependency 'JoyKit/Category'
     ss.public_header_files = 'JoyKit/Common/**/*.h'
 end
 
 s.subspec 'Category' do|ss|
+    ss.summary = '扩展类'
     ss.source_files = 'JoyKit/Category/**/*.{h,m}'
     ss.public_header_files = 'JoyKit/Category/**/*.h'
 end
 
 s.subspec 'Models' do|ss|
+    ss.summary = '数据模型'
     ss.source_files = 'JoyKit/Models/**/*.{h,m}'
     ss.public_header_files = 'JoyKit/Models/**/*.h'
 end
 
 s.subspec 'CellsLibruary' do|ss|
+    ss.summary = 'cell库'
     ss.subspec 'TableImageCell' do|sss|
         sss.source_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}'
         sss.dependency 'JoyKit/CellsLibruary/CollectionImageCell'
@@ -114,6 +120,7 @@ s.subspec 'CellsLibruary' do|ss|
 end
 
 s.subspec 'Controllers' do|ss|
+    ss.summary = '控制器'
     ss.source_files = 'JoyKit/Controllers/**/*.{h,m}'
     ss.dependency 'JoyKit/Common'
     ss.dependency 'JoyKit/Category'
@@ -121,6 +128,7 @@ s.subspec 'Controllers' do|ss|
 end
 
 s.subspec 'Utility' do|ss|
+    ss.summary = '工具类'
     ss.source_files = 'JoyKit/Utility/**/*.{h,m}'
     ss.public_header_files = 'JoyKit/Utility/**/*.h'
 end
