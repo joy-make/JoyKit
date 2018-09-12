@@ -1,7 +1,7 @@
 {
   "name": "JoyKit",
-  "version": "0.1.8",
-  "summary": "扩展类优化",
+  "version": "0.1.10",
+  "summary": "NSDate工具类扩展",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.8"
+    "tag": "0.1.10"
   },
   "platforms": {
     "ios": "7.0"
