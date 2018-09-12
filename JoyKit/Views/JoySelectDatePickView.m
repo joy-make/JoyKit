@@ -12,20 +12,24 @@
 
 @interface JoySelectDatePickView  ()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic,strong)UIPickerView *pickerView;
+@property (nonatomic,assign) JoyDateType          dateType;
 @property (nonatomic,strong)UIView     *          coverView;
 @property (nonatomic,strong)UIToolbar  *          toolBar;
 @property (nonatomic,strong)NSDate     *          minDate;
 @property (nonatomic,strong)NSDate     *          maxDate;
 @property (nonatomic,strong)NSDate     *          selectDate;
 @property (nonatomic, strong)NSCalendar*          calendar;
-@property (nonatomic,strong)NSArray<NSArray*>*    dataArray;
+@property (nonatomic,strong)NSMutableArray<NSArray*>*    dataArray;
 @property (nonatomic, strong)NSDateFormatter *    formatter;
 @property (nonatomic,weak) UILabel           *    titleLabel;
+@property (nonatomic,strong) UIButton        *    leftBarBtn;
+@property (nonatomic,strong) UIButton        *    rightBarBtn;
+
 @end
 
 @implementation JoySelectDatePickView
 
-
+#pragma clang diagnostic ignored "-Wunguarded-availability"
 - (instancetype)init
 {
     if(self = [super init]){
@@ -88,13 +92,13 @@
         UIButton *spaceBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 5, 10, 25)];
         UIBarButtonItem *spaceBarItem = [[UIBarButtonItem alloc]initWithCustomView:spaceBtn];
         
-        UIButton *calcleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        calcleBtn.frame = CGRectMake(0, 5, 30, 25);
-        [calcleBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
-        [calcleBtn addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
-        [calcleBtn setTitle:@"取消" forState:UIControlStateNormal];
-        [calcleBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:calcleBtn];
+        self.leftBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.leftBarBtn.frame = CGRectMake(0, 5, 30, 25);
+        [self.leftBarBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
+        [self.leftBarBtn addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.leftBarBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [self.leftBarBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftBarBtn];
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, SCREEN_W-120, 25)];
         titleLabel.font = [UIFont systemFontOfSize:16];
@@ -103,13 +107,13 @@
         self.titleLabel = titleLabel;
         UIBarButtonItem * titleBar = [[UIBarButtonItem alloc]initWithCustomView:titleLabel];
         
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(0, 5, 30, 25);
-        [btn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
-        [btn setTitle:@"确定" forState:UIControlStateNormal];
-        [btn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:btn];
+        self.rightBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.rightBarBtn.frame = CGRectMake(0, 5, 50, 25);
+        [self.rightBarBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
+        [self.rightBarBtn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.rightBarBtn setTitle:@"确定" forState:UIControlStateNormal];
+        [self.rightBarBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:self.rightBarBtn];
         NSArray * buttonsArray = [NSArray arrayWithObjects:spaceBarItem,cancleBarItem,titleBar,doneBtn,spaceBarItem,nil];
         [_toolBar setItems:buttonsArray];
         
@@ -133,7 +137,10 @@
         [list addObject:rowStr];
         componet++;
     }
-    NSString * dateStr = [NSString stringWithFormat:@"%@-%@-%@",list.firstObject,[list objectAtIndex:1],[list objectAtIndex:2]];
+    NSString *hour = list.count>3?[list objectAtIndex:3]:@"00";
+    NSString *minute = list.count>4?[list objectAtIndex:4]:@"00";
+
+    NSString * dateStr = [NSString stringWithFormat:@"%@-%@-%@ %@:%@",list.firstObject,[list objectAtIndex:1],[list objectAtIndex:2],hour,minute];
     NSDate * date = [self.formatter dateFromString:dateStr];
     self.EntryBtnClickBlock?self.EntryBtnClickBlock(date):nil;
 }
@@ -177,7 +184,7 @@
 // 每列宽度
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     
-    return [UIScreen mainScreen].bounds.size.width/self.dataArray.count;
+    return [UIScreen mainScreen].bounds.size.width/self.dataArray.count -10;
 }
 // 返回选中的行
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -201,7 +208,7 @@
 //返回当前行的内容,此处是将数组中数值添加到滚动的那个显示栏上
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[self.dataArray objectAtIndex:component] objectAtIndex:row] stringByAppendingString:component==0?@"年":component==1?@"月":@"日"];
+    return [[[self.dataArray objectAtIndex:component] objectAtIndex:row] stringByAppendingString:component==0?@"":component==1?@"月":component==2?@"日":component==3?@"时":@"分"];
 }
 
 - (void)showPickView{
@@ -212,6 +219,18 @@
 #pragma mark 设置标题
 -(void)setTitle:(NSString *)title{
     self.titleLabel.text = title;
+}
+
+-(void)setToolbarLeftTitle:(NSString *)title{
+    [self.leftBarBtn setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setToolbarRightTitle:(NSString *)title{
+    [self.rightBarBtn setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setDateType:(JoyDateType)dateType{
+    _dateType = dateType;
 }
 
 #pragma mark 设置起始截止日期
@@ -234,9 +253,20 @@
     long minDay = [self.calendar component:NSCalendarUnitDay fromDate:self.minDate];
     long maxDay = [self.calendar component:NSCalendarUnitDay fromDate:self.maxDate];
     
+    long minHour = [self.calendar component:NSCalendarUnitHour fromDate:self.minDate];
+    long maxHour = [self.calendar component:NSCalendarUnitHour fromDate:self.maxDate];
+    
+    long minMinute = [self.calendar component:NSCalendarUnitMinute fromDate:self.minDate];
+    long maxMinute = [self.calendar component:NSCalendarUnitMinute fromDate:self.maxDate];
+
+
+    
     NSMutableArray *yearList = [NSMutableArray array];
     NSMutableArray *monthList = [NSMutableArray array];
     NSMutableArray *dayList = [NSMutableArray array];
+    NSMutableArray *hourList = [NSMutableArray array];
+    NSMutableArray *minuteList = [NSMutableArray array];
+
     
     long year = minYear;
     while (year<=maxYear) {
@@ -261,7 +291,32 @@
         [dayList addObject:[NSString stringWithFormat:@"%ld",listStartDay]];
         listStartDay++;
     }
-    self.dataArray = [NSMutableArray arrayWithObjects:yearList,monthList,dayList,nil];
+
+    if(self.dateType>=JoyDateYearHour){
+        long listStartHour =0;
+        long listEndHour =23;
+        while (listStartHour<=listEndHour) {
+            [hourList addObject:[NSString stringWithFormat:@"%ld",listStartHour]];
+            listStartHour++;
+        }
+    }
+    
+    if(self.dateType>=JoyDateYearMinute){
+        long listStartMinute =0;
+        long listEndMinute =59;
+        while (listStartMinute<=listEndMinute) {
+            [minuteList addObject:[NSString stringWithFormat:@"%ld",listStartMinute]];
+            listStartMinute++;
+        }
+    }
+    
+    [self.dataArray removeAllObjects];
+    
+    yearList.count?[self.dataArray addObject:yearList]:nil;
+    monthList.count?[self.dataArray addObject:monthList]:nil;
+    dayList.count?[self.dataArray addObject:dayList]:nil;
+    hourList.count?[self.dataArray addObject:hourList]:nil;
+    minuteList.count?[self.dataArray addObject:minuteList]:nil;
 }
 
 #pragma mark 获取某月的最大日期数量
@@ -284,9 +339,9 @@
                                         fromDate:self.selectDate];
         [self generateDataSourceWithYear:components.year month:components.month];
         [self showPickView];
-        NSString *yearStr = [NSString stringWithFormat:@"%ld",components.year];
-        NSString *monthStr = [NSString stringWithFormat:@"%ld",components.month];
-        NSString *dayStr = [NSString stringWithFormat:@"%ld",components.day];
+        NSString *yearStr = [NSString stringWithFormat:@"%ld",(long)components.year];
+        NSString *monthStr = [NSString stringWithFormat:@"%ld",(long)components.month];
+        NSString *dayStr = [NSString stringWithFormat:@"%ld",(long)components.day];
         if ([self.dataArray.firstObject containsObject:yearStr]) {
             NSInteger index =  [self.dataArray.firstObject indexOfObject:yearStr];
             [self.pickerView selectRow:index inComponent:0 animated:animated];
@@ -309,10 +364,13 @@
 -(NSDateFormatter *)formatter{
     if(!_formatter){
         _formatter = [[NSDateFormatter alloc] init];
-        [_formatter setDateFormat:@"yyyy-MM-dd"]; // 年-月
+        [_formatter setDateFormat:@"yyyy-MM-dd HH:mm"]; // 年-月
     }
     return _formatter;
 }
 
+-(NSMutableArray<NSArray *> *)dataArray{
+    return _dataArray = _dataArray?:[NSMutableArray array];
+}
 
 @end
