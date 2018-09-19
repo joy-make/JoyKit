@@ -1,0 +1,6 @@
+module Pods_JoyKit_Example {
+  umbrella header "Pods-JoyKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -41,6 +41,22 @@
 #import "JoyUISegementView.h"
 #import "JoyNoDataBackView.h"
 
+#import "JoyWebLoader.h"
+#import "JoyWebView.h"
+
+#import "JoyLocationManager.h"
+
+#import "JoyMediaRecordPlay.h"
+#import "JoyRecordView.h"
+
+#import "JoyQRCodeScan.h"
+#import "JoyQRCodeScanView.h"
+#import "QRCodeView.h"
+
+#import "JoyCoreMotion.h"
+#import "JoySportCalcer.h"
+
+
 #define JoyImageCollectionViewCell              @"JoyImageCollectionViewCell"                   //collectionVieeCell
 #define JoyLeftAvatarRightLabelCell             @"JoyLeftAvatarRightLabelCell"                  //左头像右label
 #define JoyLeftAvatarRightTopBottomLabel        @"JoyLeftAvatarRightTopBottomLabel"             //左头像右上下label

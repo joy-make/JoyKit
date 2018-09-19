@@ -7,12 +7,17 @@
 #import "UIBarButtonItem+JoyBarItem.h"
 #import "JoyBaseVC+Extention.h"
 #import "UIImage+Extension.h"
+#import <objc/runtime.h>
 
 static const float KNavLeftSpace = 15;
 static const float KNavWidth = 40;
 static const float KleftNavItemSpace = -6;
 static const float KrightNavItemSpace = -8;
 
+static NSString *JoyedgesForExtendedLayout = @"JoyedgesForExtendedLayout";
+static NSString *JoyNavBackImage = @"JoyNavBackImage";
+static NSString *JoyBarMetrics = @"JoyBarMetrics";
+static NSString *JoyShadowImage = @"JoyShadowImage";
 
 @implementation JoyBaseVC
 
@@ -20,6 +25,26 @@ static const float KrightNavItemSpace = -8;
     [super viewDidLoad];
     [self setNavItem];
     NSLog(@"The current viewController is %@", self);
+}
+
+- (void)setRectEdgeAll{
+    objc_setAssociatedObject(self, &JoyedgesForExtendedLayout, @(self.edgesForExtendedLayout), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &JoyNavBackImage, [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    objc_setAssociatedObject(self, &JoyedgesForExtendedLayout, self.navigationController.navigationBar.shadowImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+}
+
+- (void)recoveryEdgeNav{
+    self.edgesForExtendedLayout =[objc_getAssociatedObject(self, &JoyedgesForExtendedLayout) integerValue];
+    [self.navigationController.navigationBar setBackgroundImage:objc_getAssociatedObject(self, &JoyNavBackImage)
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = objc_getAssociatedObject(self, &JoyShadowImage);
+    
 }
 
 - (void)setNavItem{

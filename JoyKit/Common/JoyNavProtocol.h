@@ -52,4 +52,8 @@
 #pragma mark根据vc的name返回到某个vc
 - (void)popToVCWithVCName:(NSString *)vcName;
 
+- (void)setRectEdgeAll;
+
+- (void)recoveryEdgeNav;
+
 @end

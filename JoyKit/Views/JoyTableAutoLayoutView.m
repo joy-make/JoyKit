@@ -63,7 +63,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         _tableView.dataSource = self;
         _tableView.sectionFooterHeight = 0;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 44;
+//        _tableView.estimatedRowHeight = 44;
     }
     return _tableView;
 }

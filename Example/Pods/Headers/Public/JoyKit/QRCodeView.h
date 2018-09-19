@@ -1,0 +1,1 @@
+../../../../../JoyKit/JoyQRCode/QRScanView/QRCodeView.h

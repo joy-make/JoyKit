@@ -6,7 +6,7 @@
 //  Copyright © 2017年 joymake. All rights reserved.
 //
 
-#import "JoyKit.h"
+#import <JoyKit/JoyKit.h>
 
 @interface JVInteractor : JoyInteractorBase
 @property (nonatomic,strong)NSMutableArray *dataArrayM;

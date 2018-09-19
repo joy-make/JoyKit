@@ -11,7 +11,7 @@ typedef void(^textFieldChangedBlock)(void);
 
 @interface UITextField (JoyCategory)
 
-#pragma MARK 设置最大字符数限制，超过后会截掉
+#pragma MARK 设置最大字符数限制,超过后会截掉
 -(void)setTextMaxNum:(NSInteger )maxNum;
 
 #pragma MARK 超过最大字数后提示信息

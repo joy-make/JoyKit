@@ -41,7 +41,19 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 #pragma markUIBezierPath 裁剪
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c;
 
+//颜色转换图片
 +(UIImage*)imageWithColor:(UIColor*)color;
+
+//条形码
+- (UIImage *)barCodeImageWithBarStr:(NSString *)barStr;
+
+/**
+ 二维码
+ @param qrStr 二维码字符串
+ @param imageName 中间的logo
+ @return 二维码图片
+ */
+-(UIImage *)logoQrCodeWithStr:(NSString *)qrStr image:(NSString *)imageName;
 
 /**
  view转换图片
