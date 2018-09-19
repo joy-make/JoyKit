@@ -110,6 +110,7 @@ end
 s.subspec 'JoyLocation' do|ss|
     ss.source_files = 'JoyKit/JoyLocation/**/*.{h,m}'
     ss.dependency 'JoyKit/Utility'
+    ss.dependency 'JoyKit/Common'
     ss.frameworks = 'CoreLocation'
     ss.public_header_files = 'JoyKit/JoyLocation/**/*.h'
 end
