@@ -93,7 +93,7 @@ s.subspec 'Controllers' do|ss|
     ss.source_files = 'JoyKit/Controllers/**/*.{h,m}'
     ss.dependency 'JoyKit/Common'
     ss.dependency 'JoyKit/Category'
-    ss.dependency 'JoyKit/Category'
+    ss.dependency 'JoyKit/JoyWebView'
     ss.public_header_files = 'JoyKit/Controllers/**/*.h'
 end
 
