@@ -117,6 +117,9 @@
         ],
         "JoyKit/Category": [
 
+        ],
+        "JoyKit/JoyWebView": [
+
         ]
       },
       "public_header_files": "JoyKit/Controllers/**/*.h"
@@ -140,6 +143,9 @@
       "source_files": "JoyKit/JoyLocation/**/*.{h,m}",
       "dependencies": {
         "JoyKit/Utility": [
+
+        ],
+        "JoyKit/Common": [
 
         ]
       },
@@ -167,7 +173,7 @@
         ]
       },
       "public_header_files": "JoyKit/JoyQRCode/**/*.h",
-      "resources": "JoyKit/JoyQRCode/*.{png,jpg,jpeg}"
+      "resources": "JoyKit/JoyQRCode/**/*.{png,jpg,jpeg}"
     },
     {
       "name": "JoyMediaRecordPlay",
@@ -191,7 +197,7 @@
         "AVFoundation"
       ],
       "public_header_files": "JoyKit/JoyMediaRecordPlay/**/*.h",
-      "resources": "JoyKit/JoyMediaRecordPlay/*.{png,jpg,jpeg}"
+      "resources": "JoyKit/JoyMediaRecordPlay/**/*.{png,jpg,jpeg}"
     },
     {
       "name": "JoyWebView",

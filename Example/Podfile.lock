@@ -73,6 +73,7 @@ PODS:
   - JoyKit/Controllers (0.1.12):
     - JoyKit/Category
     - JoyKit/Common
+    - JoyKit/JoyWebView
     - Masonry
   - JoyKit/JoyCoreMotion (0.1.12):
     - JoyKit/Common
@@ -92,6 +93,7 @@ PODS:
     - JoyKit/Views
     - Masonry
   - JoyKit/JoyLocation (0.1.12):
+    - JoyKit/Common
     - JoyKit/Utility
     - Masonry
   - JoyKit/JoyMediaRecordPlay (0.1.12):
@@ -136,7 +138,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JoyKit: 9e727d77a924858257098322f7c7205c5ea97cfc
+  JoyKit: 642a1c2203dbdd5b05d96a6b82cb97b7d4e15d07
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: 207b95c55ed86f2034c88c5d38811ff18ee011a5

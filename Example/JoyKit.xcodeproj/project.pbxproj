@@ -315,6 +315,19 @@
 				"${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg",
 				"${PODS_ROOT}/../../JoyKit/Assets/select@2x.png",
 				"${PODS_ROOT}/../../JoyKit/Assets/select@3x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_CameraFocus.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_PhotoLibruary.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_StartRecordVideo@2x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_StartRecordVideo@3x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_SwitchCamera.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_SwitchCamera1.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_Video_Down.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/LW_Video_FlashLight.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_ preview_video_back@2x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_ preview_video_back@3x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_preview_video_done@2x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_preview_video_done@3x.png",
+				"${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qrScanBorder.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -323,6 +336,19 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/joymakeHead.jpg",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/select@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/select@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_CameraFocus.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_PhotoLibruary.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_StartRecordVideo@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_StartRecordVideo@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_SwitchCamera.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_SwitchCamera1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_Video_Down.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LW_Video_FlashLight.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/trends_ preview_video_back@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/trends_ preview_video_back@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/trends_preview_video_done@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/trends_preview_video_done@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/qrScanBorder.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

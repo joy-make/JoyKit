@@ -124,7 +124,7 @@ s.subspec 'JoyQRCode' do|ss|
     ss.dependency 'JoyKit/Category'
     ss.dependency 'JoyKit/Common'
     ss.public_header_files = 'JoyKit/JoyQRCode/**/*.h'
-    ss.resources = 'JoyKit/JoyQRCode/*.{png,jpg,jpeg}'
+    ss.resources = 'JoyKit/JoyQRCode/**/*.{png,jpg,jpeg}'
 end
 
 # 视频录制
@@ -136,7 +136,7 @@ s.subspec 'JoyMediaRecordPlay' do|ss|
     ss.dependency 'JoyKit/JoyCoreMotion'
     ss.frameworks = 'AssetsLibrary','AVFoundation'
     ss.public_header_files = 'JoyKit/JoyMediaRecordPlay/**/*.h'
-    ss.resources = 'JoyKit/JoyMediaRecordPlay/*.{png,jpg,jpeg}'
+    ss.resources = 'JoyKit/JoyMediaRecordPlay/**/*.{png,jpg,jpeg}'
 end
 
 # web
