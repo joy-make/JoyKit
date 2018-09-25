@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>detail</key>
+	<dict>
+		<key>description</key>
+		<string>根据服务器下发的配置文件配置页面UI</string>
+		<key>excutor</key>
+		<string>SCViewController</string>
+	</dict>
+	<key>test2</key>
+	<dict>
+		<key>description</key>
+		<string></string>
+		<key>excutor</key>
+		<string>test2VC</string>
+	</dict>
+</dict>
+</plist>

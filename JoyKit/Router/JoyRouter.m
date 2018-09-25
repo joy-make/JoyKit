@@ -8,6 +8,12 @@
 
 #import "JoyRouter.h"
 #import <UIKit/UIKit.h>
+#import "JoyRouterUtil.h"
+
+@interface JoyRouter()
+@property (nonatomic,strong)JoyRouterUtil *routerUtil;
+@property (nonatomic,copy)NSString *scheme;
+@end
 
 @implementation JoyRouter
 
@@ -24,13 +30,17 @@
     return inst;
 }
 
+-(void)configScheme:(NSString *)scheme{
+    _scheme = scheme;
+}
+
 #pragma mark 通信协议实现
 -(void)routerModule:(NSString *)module path:(NSString *)path actionType:(JoyRouteActionType)actionType parameter:(NSDictionary *)params block:(JoyRouteBlock)block{
-    NSObject <JoyRouteProtocol>*obj = (NSObject <JoyRouteProtocol>*)[self getObjWithClassStr:path];
+    NSString *excutor = [self.routerUtil getExcutorWithModule:module path:path];
+    NSObject <JoyRouteProtocol>*obj = (NSObject <JoyRouteProtocol>*)[self getObjWithClassStr:excutor];
     if(obj){
         if([obj respondsToSelector:@selector(routeParam:block:)])
             [obj routeParam:params block:block];
-        
             switch (actionType) {
             case JoyRouteActionTypePush:
                 [[self getNav] pushViewController:(UIViewController *)obj animated:YES];
@@ -52,33 +62,22 @@
             default:
                 break;
         }
+    }else{
+        NSError *error = [NSError errorWithDomain:@"scbu" code:0 userInfo:@{@"message":@"未找到指定页面"}];
+        block?block(nil,error):nil;
     }
 }
 
 #pragma mark 通过url方式打开app应用指定页面
 -(BOOL)openNativeWithUrl:(NSURL *)url{
-    if (url.scheme.length && url.host.length) {
-        NSMutableDictionary *param = [self resolveUrlQuery:url.query];
-        [self routerModule:@"" path:url.host actionType:JoyRouteActionTypePush parameter:param block:^(NSDictionary *params) {
-        }];
-        return YES;
+    if (url.scheme.length && url.host.length && [url.scheme isEqualToString:self.scheme]) {
+        NSMutableDictionary *param = [self.routerUtil resolveUrlQuery:url];
+        NSString *module = [self.routerUtil getModuleStrFromUrl:url];
+        NSString *path = [self.routerUtil getPathStrFromUrl:url];
+        [self routerModule:module path:path actionType:JoyRouteActionTypePush parameter:param block:nil];
+        return (module && path);
     }
     return NO;
-}
-
-#pragma mark 解析urlQuery参数
-- (NSMutableDictionary *)resolveUrlQuery:(NSString *)query{
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    if(query){
-        NSArray *params = [query componentsSeparatedByString:@"&"];
-        for (NSString *keyValueStr in params) {
-            NSArray *list = [keyValueStr componentsSeparatedByString:@"="];
-            if(list.count==2){
-                [param setObject:[list.lastObject stringByRemovingPercentEncoding] forKey:list.firstObject];
-            }
-        }
-    }
-    return param;
 }
 
 -(NSObject *)getObjWithClassStr:(NSString *)classStr{
@@ -105,5 +104,9 @@
     }else{
         return (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     }
+}
+
+-(JoyRouterUtil *)routerUtil{
+    return _routerUtil = _routerUtil?:[[JoyRouterUtil alloc]init];
 }
 @end

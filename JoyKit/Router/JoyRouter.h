@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^JoyRouteBlock) (NSDictionary *params);
+typedef void (^JoyRouteBlock) (NSDictionary *params,NSError *error);
 
 typedef NS_ENUM(NSInteger,JoyRouteActionType) {
     JoyRouteActionTypeCommunication,
@@ -33,6 +33,14 @@ typedef NS_ENUM(NSInteger,JoyRouteActionType) {
 
 + (instancetype)sharedInstance;
 
+@property (nonatomic,readonly)NSString *scheme;
+
+/**
+ 配置scheme
+ @param scheme scheme
+ */
+- (void)configScheme:(NSString *)scheme;
+
 /**
  通信方法
  @param module 业务模块名
@@ -45,8 +53,14 @@ typedef NS_ENUM(NSInteger,JoyRouteActionType) {
 
 /**
  url通信
- @param url 协议数据。url://testVC?title=test&name=tixi
+ @param url 协议数据。joy://person/detail?title=test&name=tixi
  */
 - (BOOL)openNativeWithUrl:(NSURL *)url;
+
+/**
+ 获取当前app Root
+ @return Root
+ */
+- (UINavigationController *)getNav;
 
 @end

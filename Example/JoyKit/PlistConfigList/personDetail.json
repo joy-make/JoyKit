@@ -1,0 +1,170 @@
+{
+    "data": {
+        "avatar": "https:\/\/img.zcool.cn\/community\/0471245540a5070000017c5017db60.jpg@160w_160h_1c_1e_1o_100sh.jpg",
+        "intruduction": "这是一个自定义的简介,用于测试可配置的列表视图.",
+        "location": true,
+        "phone": "",
+        "birthday": "",
+        "email": "scbu@sqbj.com",
+        "like": "",
+        "sex": "女",
+        "name": "张三"
+    },
+    "style": [
+        {
+            "changeKey": "avatar",
+            "tapAction": "selectAvatar",
+            "accessoryType": 1,
+            "style": 2,
+            "title": "请选择你的头像",
+            "cellName": "JoyLeftAvatarRightLabelCell"
+        },
+        {
+            "maxNumber": "10",
+            "style": 1,
+            "cellName": "JoyTextCell",
+            "changeKey": "name",
+            "placeHolder": "请输入你的姓名(必填)",
+            "title": "姓名",
+            "accessoryType": 0
+        },
+        {
+            "maxNumber": "11",
+            "style": 1,
+            "cellName": "JoyTextCell",
+            "changeKey": "phone",
+            "placeHolder": "请输入你的联系方式(必填)",
+            "title": "手机号码",
+            "accessoryType": 0,
+            "keyboardType": "4"
+        },
+        {
+            "maxNumber": "30",
+            "style": 1,
+            "cellName": "JoyTextCell",
+            "changeKey": "email",
+            "placeHolder": "请输入你的邮箱(必填)",
+            "title": "邮箱地址",
+            "accessoryType": 0,
+            "keyboardType": "7"
+        },
+        {
+            "style": "0",
+            "tapAction": "selectSex",
+            "cellName": "JoyLeftLabelRightPlaceHolderLabelCell",
+            "changeKey": "sex",
+            "placeHolder": "请选择",
+            "title": "性别",
+            "accessoryType": 1
+        },
+        {
+            "style": "0",
+            "tapAction": "selectBirthday",
+            "cellName": "JoyLeftLabelRightPlaceHolderLabelCell",
+            "changeKey": "birthday",
+            "placeHolder": "请选择",
+            "title": "出生日期",
+            "accessoryType": 2
+        },
+        {
+            "style": "0",
+            "tapAction": "selectLike",
+            "cellName": "JoyLeftLabelRightPlaceHolderLabelCell",
+            "changeKey": "like",
+            "placeHolder": "请选择",
+            "title": "兴趣爱好",
+            "accessoryType": 2
+        },
+        {
+            "changeKey": "location",
+            "style": "3",
+            "title": "是否允许获取位置",
+            "cellName": "JoySwitchCell"
+        },
+        {
+            "changeKey": "intruduction",
+            "maxNumber": "100",
+            "style": "1",
+            "title": "个人简介",
+            "cellName": "JoyLeftLabelTextViewCell",
+            "placeHolder": "请输入个人信息"
+        },
+        {
+            "accessoryType": 0,
+            "style": 0,
+            "longPressAction": "longPressAction",
+            "cellName": "JoyMiddleLabelCell",
+            "title": "这是一个可以长按的labelCell"
+        },
+        {
+            "maxNumber": "100",
+            "style": "1",
+            "placeHolder": "这是一个50汉字textView",
+            "cellName": "JoyTextViewCell"
+        },
+        {
+            "maxNumber": "20",
+            "style": "1",
+            "placeHolder": "这是一个10字长度textField",
+            "cellName": "JoyTextNoLabelCell"
+        },
+        {
+            "maxNumber": "20",
+            "borderStyle": "0",
+            "style": "1",
+            "cellName": "JoyTextNoLabelCell",
+            "placeHolder": "textField样式0"
+        },
+        {
+            "maxNumber": "20",
+            "borderStyle": "1",
+            "style": "1",
+            "cellName": "JoyTextNoLabelCell",
+            "placeHolder": "textField样式1"
+        },
+        {
+            "maxNumber": "20",
+            "borderStyle": "2",
+            "style": "1",
+            "cellName": "JoyTextNoLabelCell",
+            "placeHolder": "textField样式2"
+        },
+        {
+            "editingStyle": "0",
+            "maxNumber": "20",
+            "borderStyle": "3",
+            "style": "1",
+            "cellName": "JoyTextNoLabelCell",
+            "placeHolder": "textField样式3"
+        },
+        {
+            "editingStyle": "3",
+            "maxNumber": "11",
+            "style": 1,
+            "cellName": "JoyTextCell",
+            "placeHolder": "textField样式4",
+            "title": "手机号码",
+            "borderStyle": "0",
+            "accessoryType": 0,
+            "keyboardType": "4"
+        },
+        {
+            "editingStyle": "2",
+            "maxNumber": "10",
+            "style": "1",
+            "placeHolder": "这是一个5字长度左标题textView",
+            "cellName": "JoyLeftLabelTextViewCell",
+            "title": "左标题text",
+            "canMove": "YES"
+        },
+        {
+            "editingStyle": "1",
+            "maxNumber": "40",
+            "style": "1",
+            "placeHolder": "这是一个20字长度左标题textView",
+            "cellName": "JoyLeftLabelTextViewCell",
+            "title": "左标题text",
+            "canMove": "YES"
+        }
+    ]
+}

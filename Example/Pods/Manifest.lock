@@ -125,13 +125,21 @@ PODS:
     - JoyKit/CellsLibruary
     - Masonry
   - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - JoyKit (from `../`)
+  - MJExtension
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Masonry
+    - MJExtension
+    - SDWebImage
 
 EXTERNAL SOURCES:
   JoyKit:
@@ -140,7 +148,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   JoyKit: 642a1c2203dbdd5b05d96a6b82cb97b7d4e15d07
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 207b95c55ed86f2034c88c5d38811ff18ee011a5
+PODFILE CHECKSUM: 3544603cb9b94b53bfc090566e745014340f7ddd
 
 COCOAPODS: 1.5.3
