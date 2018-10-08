@@ -59,11 +59,17 @@
             case JoyRouteActionTypeDismiss:
                 [[self getNav] dismissViewControllerAnimated:YES completion:nil];
                 break;
+            case JoyRouteActionTypeSetRooter:
+                [UIApplication sharedApplication].keyWindow.rootViewController = (UIViewController *)obj;
+                break;
+            case  JoyRouteActionTypeSetNavRooter:
+                [UIApplication sharedApplication].keyWindow.rootViewController = [[UINavigationController alloc]initWithRootViewController:(UIViewController *)obj];
+                break;
             default:
                 break;
         }
     }else{
-        NSError *error = [NSError errorWithDomain:@"scbu" code:0 userInfo:@{@"message":@"未找到指定页面"}];
+        NSError *error = [NSError errorWithDomain:self.scheme code:0 userInfo:@{@"message":@"未找到指定页面"}];
         block?block(nil,error):nil;
     }
 }
@@ -74,7 +80,8 @@
         NSMutableDictionary *param = [self.routerUtil resolveUrlQuery:url];
         NSString *module = [self.routerUtil getModuleStrFromUrl:url];
         NSString *path = [self.routerUtil getPathStrFromUrl:url];
-        [self routerModule:module path:path actionType:JoyRouteActionTypePush parameter:param block:nil];
+        JoyRouteActionType actionType = [self.routerUtil getActionTypeWithModule:module path:path];
+        [self routerModule:module path:path actionType:actionType parameter:param block:nil];
         return (module && path);
     }
     return NO;

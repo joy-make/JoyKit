@@ -55,12 +55,19 @@
     return [query copy];
 }
 
-
 - (NSString *)getExcutorWithModule:(NSString *)module path:(NSString *)path{
     NSString *mpath = [[NSBundle mainBundle] pathForResource:module ofType:@"plist"];
     NSDictionary *moduleMap = [NSDictionary dictionaryWithContentsOfFile:mpath];
     NSDictionary *excutorMap = [moduleMap objectForKey:path];
     return [excutorMap objectForKey:@"excutor"];
+}
+
+-(JoyRouteActionType)getActionTypeWithModule:(NSString *)module path:(NSString *)path{
+    NSString *mpath = [[NSBundle mainBundle] pathForResource:module ofType:@"plist"];
+    NSDictionary *moduleMap = [NSDictionary dictionaryWithContentsOfFile:mpath];
+    NSDictionary *excutorMap = [moduleMap objectForKey:path];
+    NSString *actionType = [excutorMap objectForKey:@"actionType"];
+    return actionType?[actionType longLongValue]:JoyRouteActionTypePush;
 }
 
 @end

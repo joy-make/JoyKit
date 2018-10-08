@@ -1,7 +1,7 @@
 {
   "name": "JoyKit",
-  "version": "0.1.12",
-  "summary": "增加小视频、陀螺仪、二维码扫描、web加载模块",
+  "version": "0.1.13",
+  "summary": "router功能扩展",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.12"
+    "tag": "0.1.13"
   },
   "platforms": {
     "ios": "7.0"

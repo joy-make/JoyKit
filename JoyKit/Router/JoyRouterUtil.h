@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JoyRouterHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -58,6 +59,14 @@ NS_ASSUME_NONNULL_BEGIN
  @return 执行类名
  */
 - (NSString *)getExcutorWithModule:(NSString *)module path:(NSString *)path;
+
+/**
+ 查找action类型
+ @param module 模块名称
+ @param path 执行路径
+ @return 执行类名
+ */
+- (JoyRouteActionType)getActionTypeWithModule:(NSString *)module path:(NSString *)path;
 @end
 
 NS_ASSUME_NONNULL_END

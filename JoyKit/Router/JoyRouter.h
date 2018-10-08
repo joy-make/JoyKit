@@ -7,16 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JoyRouterHeader.h"
 
 typedef void (^JoyRouteBlock) (NSDictionary *params,NSError *error);
-
-typedef NS_ENUM(NSInteger,JoyRouteActionType) {
-    JoyRouteActionTypeCommunication,
-    JoyRouteActionTypePush,
-    JoyRouteActionTypePresent,
-    JoyRouteActionTypePop,
-    JoyRouteActionTypeDismiss
-};
 
 @protocol JoyRouteProtocol
 
