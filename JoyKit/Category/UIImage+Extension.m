@@ -440,6 +440,16 @@ void cleanupBuffer(void *userData, void *buf_data)
     return scaledImage;
 }
 
+- (UIImage *)scaleToWidth:(CGFloat)width{
+    CGFloat height = width * self.size.height/self.size.width;
+    return [UIImage scaleToSize:self size:CGSizeMake(width, height)];
+}
+
+- (UIImage *)scaleToHeight:(CGFloat)height{
+    CGFloat width = height * self.size.width/self.size.height;
+    return [UIImage scaleToSize:self size:CGSizeMake(width, height)];
+}
+
 #pragma markUIBezierPath 裁剪
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c {
     int w = img.size.width * img.scale;

@@ -31,7 +31,8 @@
 //获取section上的row数据源
 - (JoySectionBaseModel *)getSectionData{
     JoySectionBaseModel *section =[[JoySectionBaseModel alloc] init];
-
+    section.sectionHeadViewName = @"JVCustHeaderFooterView";
+    section.sectionH = 100;
         JoyCellBaseModel *cellModel= (JoyCellBaseModel *)[self joyProtocolObjectFromStr:@"JoyCellBaseModel"];
         cellModel.cellName = @[JoyMiddleLabelCell,JoyLeftMiddleRightLabelCell,JoyLeftLabelRightPlaceHolderLabelCell][arc4random()%3];
         [self setCellWithModel:cellModel];

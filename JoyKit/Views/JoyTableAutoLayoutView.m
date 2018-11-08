@@ -14,16 +14,19 @@
 #import <objc/runtime.h>
 #import "JoyCellBaseModel+Action.h"
 #import "JoyCellBaseModel+Edit.h"
+#import "UITableViewHeaderFooterView+JoyHeaderFooter.h"
 
 #define SCREEN_HEIGHT_OF_IPHONE6PLUS 736
 #define IOS8_OR_LATER ([[UIDevice currentDevice] systemVersion].floatValue >= 8.0)
 @interface JoyTableAutoLayoutView ()<JoyCellDelegate>{
-    NSMutableArray *registCellArrayM;
+    NSMutableArray *_registHeaderFooterArrayM;
+    NSMutableArray *_registCellArrayM;
     BOOL _isHasTableFoot;
 }
 @property (nonatomic,readonly)BOOL                        editing;
 @property (nonatomic,strong)UIView                      *backView;
 @property (nonatomic,strong)UIView                      *noDataBackView;
+@property (nonatomic,strong)NSMutableArray              *registHeaderFooterArrayM;
 @end
 
 const NSString *tableHDelegate =  @"tableHDelegate";
@@ -41,7 +44,8 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     if (self = [super initWithFrame:frame]) {
         if (!IOS8_OR_LATER)
         {class_addMethod([self class], @selector(tableView:heightForRowAtIndexPath:), (IMP)tableRowH, "f@:@:@");}
-        registCellArrayM = [NSMutableArray array];
+        _registCellArrayM = [NSMutableArray array];
+        _registHeaderFooterArrayM = [NSMutableArray array];
         [self addSubview:self.tableView];
         [self addSubViewToSelf];
         [self setConstraint];
@@ -120,52 +124,79 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 #pragma mark 🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲Table DataSource Protocol🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
+    [self registTableHeaderFootWithViewName:sectionModel.sectionHeadViewName];
     return sectionModel.sectionH?:([sectionModel.sectionTitle length]?KNormalSectionH:KNoInfoSectionH);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
+    [self registTableHeaderFootWithViewName:sectionModel.sectionFootViewName];
     return sectionModel.sectionFootH?:([sectionModel.sectionFootTitle length]?KNormalSectionH:KNoInfoSectionFootH);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
-    sectionModel.sectionH = sectionModel.sectionH?:sectionModel.sectionTitle?KNormalSectionH:KNoInfoSectionH;
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, sectionModel.sectionH)];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,view.frame.size.width, sectionModel.sectionH)];
-    titleLabel.text =  sectionModel.sectionTitle;
-    titleLabel.font = [UIFont systemFontOfSize:14];
-    titleLabel.textColor = UIColorFromRGB(0x777E8C);
-    [titleLabel sizeToFit];
-    CGFloat titleLabelW = titleLabel.frame.size.width;
-    CGFloat titleLabelH = titleLabel.frame.size.height;
-    CGFloat titleLabelX = 9;
-    CGFloat titleLabelY = sectionModel.sectionH - (7) - titleLabelH;
-    titleLabel.frame = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
-    [view addSubview:titleLabel];
-    return view;
+    UITableViewHeaderFooterView *headerView = nil;
+    if (sectionModel.sectionHeadViewName) {
+        [self registTableHeaderFootWithViewName:sectionModel.sectionHeadViewName];
+        headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:sectionModel.sectionHeadViewName];
+        __weak __typeof (&*self)weakSelf = self;
+        headerView.headerViewActionBlock = ^(NSObject * _Nonnull actionObject) {
+            [weakSelf headerFooterActionSection:section actionObject:actionObject isHeader:YES];
+        };
+        [headerView setHeaderFooterWithModel:sectionModel isHeader:YES];
+    }else{
+        sectionModel.sectionH = sectionModel.sectionH?:sectionModel.sectionTitle?KNormalSectionH:KNoInfoSectionH;
+        headerView = (UITableViewHeaderFooterView *)[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, sectionModel.sectionH)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,headerView.frame.size.width, sectionModel.sectionH)];
+        titleLabel.text =  sectionModel.sectionTitle;
+        titleLabel.font = [UIFont systemFontOfSize:14];
+        titleLabel.textColor = UIColorFromRGB(0x777E8C);
+        [titleLabel sizeToFit];
+        CGFloat titleLabelW = titleLabel.frame.size.width;
+        CGFloat titleLabelH = titleLabel.frame.size.height;
+        CGFloat titleLabelX = 9;
+        CGFloat titleLabelY = sectionModel.sectionH - (7) - titleLabelH;
+        titleLabel.frame = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
+        [headerView addSubview:titleLabel];
+    }
+    return headerView;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
-    sectionModel.sectionFootH = sectionModel.sectionFootH?:sectionModel.sectionFootTitle?KNormalSectionH:KNoInfoSectionFootH;
-    if (sectionModel.sectionFootH <=KNoInfoSectionFootH) return nil;
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, sectionModel.sectionFootH)];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,view.frame.size.width-30, sectionModel.sectionFootH)];
-    titleLabel.numberOfLines = 0;
-    titleLabel.text =  sectionModel.sectionFootTitle;
-    titleLabel.font = [UIFont systemFontOfSize:14];
-    titleLabel.textColor = UIColorFromRGB(0x777E8C);
-    [titleLabel sizeToFit];
-    CGFloat titleLabelW = titleLabel.frame.size.width;
-    CGFloat titleLabelH = titleLabel.frame.size.height;
-    CGFloat titleLabelX = 15;
-    CGFloat titleLabelY = 10;
-    titleLabel.frame = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
-    [view addSubview:titleLabel];
-    return view;
+    UITableViewHeaderFooterView *headerView = nil;
+    if (sectionModel.sectionFootViewName) {
+        [self registTableHeaderFootWithViewName:sectionModel.sectionFootViewName];
+        headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:sectionModel.sectionFootViewName];
+        __weak __typeof (&*self)weakSelf = self;
+        headerView.headerViewActionBlock = ^(NSObject * _Nonnull actionObject) {
+            [weakSelf headerFooterActionSection:section actionObject:actionObject isHeader:NO];
+        };
+        [headerView setHeaderFooterWithModel:sectionModel.headObj isHeader:NO];
+    }else{
+        sectionModel.sectionFootH = sectionModel.sectionFootH?:sectionModel.sectionFootTitle?KNormalSectionH:KNoInfoSectionFootH;
+        if (sectionModel.sectionFootH <=KNoInfoSectionFootH) return nil;
+        headerView = (UITableViewHeaderFooterView *)[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, sectionModel.sectionFootH)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,headerView.frame.size.width-30, sectionModel.sectionFootH)];
+        titleLabel.numberOfLines = 0;
+        titleLabel.text =  sectionModel.sectionFootTitle;
+        titleLabel.font = [UIFont systemFontOfSize:14];
+        titleLabel.textColor = UIColorFromRGB(0x777E8C);
+        [titleLabel sizeToFit];
+        CGFloat titleLabelW = titleLabel.frame.size.width;
+        CGFloat titleLabelH = titleLabel.frame.size.height;
+        CGFloat titleLabelX = 15;
+        CGFloat titleLabelY = 10;
+        titleLabel.frame = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
+        [headerView addSubview:titleLabel];
+    }
+    return headerView;
+}
+
+- (void)headerFooterActionSection:(NSInteger )section actionObject:(NSObject *)actionObject isHeader:(BOOL)isHeader{
+    HeaderFooterActionBlock headerFooterAction = objc_getAssociatedObject(self, @selector(headerFooterAction));
+    headerFooterAction?headerFooterAction(section,actionObject,isHeader):nil;
 }
 
 //ios7系统需要计算cell的h
@@ -335,7 +366,6 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 //模拟selectAction
 -(void)cellDidSelectWithIndexPath:(NSIndexPath *)indexPath action:(NSString *)action{
-    
     self.oldSelectIndexPath = self.currentSelectIndexPath;
     [self hideKeyBoard];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -415,11 +445,19 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 }
 
 - (void)registTableCellWithCellModel:(JoyCellBaseModel *)cellModel{
-    if (![registCellArrayM containsObject:cellModel.cellName])
+    if (![_registCellArrayM containsObject:cellModel.cellName])
     {
         cellModel.cellType == ECellCodeType?[_tableView registerClass:NSClassFromString(cellModel.cellName) forCellReuseIdentifier:cellModel.cellName]:
         [_tableView registerNib:[UINib nibWithNibName:cellModel.cellName bundle:JOY_GETBUNDLE(cellModel.bundleName)] forCellReuseIdentifier:cellModel.cellName];
-        [registCellArrayM addObject:cellModel.cellName];
+        [_registCellArrayM addObject:cellModel.cellName];
+    }
+}
+
+- (void)registTableHeaderFootWithViewName:(NSString *)headerFooterViewName{
+    if (![_registHeaderFooterArrayM containsObject:headerFooterViewName]&&headerFooterViewName)
+    {
+        [_tableView registerClass:NSClassFromString(headerFooterViewName) forHeaderFooterViewReuseIdentifier:headerFooterViewName];
+        [_registHeaderFooterArrayM addObject:headerFooterViewName];
     }
 }
 
@@ -540,6 +578,14 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 -(JoyTableAutoLayoutView *(^)(CellTextCharacterHasChanged))cellTextCharacterHasChanged{
     __weak __typeof(&*self)weakSelf = self;
     return ^(CellTextCharacterHasChanged block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+-(JoyTableAutoLayoutView *(^)(HeaderFooterActionBlock))headerFooterAction{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(HeaderFooterActionBlock block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
         return weakSelf;
     };

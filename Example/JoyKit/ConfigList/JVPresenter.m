@@ -34,6 +34,10 @@
         })
         .cellTextEiditEnd(^(NSIndexPath *indexPath, NSString *content, NSString *key){
             //文本结束编辑
+        })
+        .headerFooterAction(^(NSInteger section,NSObject *actionObject,BOOL isHeader){
+            JoySectionBaseModel *model = [weakSelf.interactor.dataArrayM objectAtIndex:section];
+            model.headerFooterAToBBlock?model.headerFooterAToBBlock(JOY_RandomColor):nil;
         });
     }];
 }

@@ -21,6 +21,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */; };
 		BB799E042154D14900D768D1 /* JVPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DF12154D14900D768D1 /* JVPresenter.m */; };
 		BB799E052154D14900D768D1 /* JoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DF22154D14900D768D1 /* JoyViewController.m */; };
 		BB799E062154D14900D768D1 /* JVInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DF62154D14900D768D1 /* JVInteractor.m */; };
@@ -70,6 +71,8 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C4814AC38034352457FFBDA /* Pods-JoyKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BAC0C3416A7422957C12A698 /* Pods-JoyKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1C23B6219430DE0071DF92 /* JVCustHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JVCustHeaderFooterView.h; sourceTree = "<group>"; };
+		BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JVCustHeaderFooterView.m; sourceTree = "<group>"; };
 		BB799DF12154D14900D768D1 /* JVPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVPresenter.m; sourceTree = "<group>"; };
 		BB799DF22154D14900D768D1 /* JoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyViewController.m; sourceTree = "<group>"; };
 		BB799DF32154D14900D768D1 /* JVInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVInteractor.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				BB799DF42154D14900D768D1 /* JVPresenter.h */,
 				BB799DF52154D14900D768D1 /* JoyViewController.h */,
 				BB799DF62154D14900D768D1 /* JVInteractor.m */,
+				BB1C23B6219430DE0071DF92 /* JVCustHeaderFooterView.h */,
+				BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */,
 			);
 			path = ConfigList;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				BB799E0B2154D14900D768D1 /* SCViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				BB799E082154D14900D768D1 /* PersonInteractor.m in Sources */,
+				BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */,
 				BB799E0A2154D14900D768D1 /* Person.m in Sources */,
 				BB799E062154D14900D768D1 /* JVInteractor.m in Sources */,
 				BB799E092154D14900D768D1 /* PersonPresenter.m in Sources */,

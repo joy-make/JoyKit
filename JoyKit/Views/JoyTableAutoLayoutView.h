@@ -27,6 +27,8 @@ typedef void (^ScrollBlock)(UIScrollView *scrollView);
 
 typedef void (^CellCollectionBlock)(NSIndexPath *indexPath,NSIndexPath *collectionIndexPath);
 
+typedef void (^HeaderFooterActionBlock)(NSInteger section,NSObject *actionObject,BOOL isHeaderAction);
+
 @class JoySectionBaseModel;
 @interface JoyTableAutoLayoutView : UIView<UITableViewDataSource,UITableViewDelegate>
 
@@ -65,6 +67,9 @@ typedef void (^CellCollectionBlock)(NSIndexPath *indexPath,NSIndexPath *collecti
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextEiditEnd)(CellTextEndChanged cellTextEiditEndBlock);
 #pragma mark  Cell上文本字符编辑发生变化
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextCharacterHasChanged)(CellTextCharacterHasChanged cellTextCharacterHasChangedBlock);
+#pragma mark  Cell 选中
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^headerFooterAction)(HeaderFooterActionBlock headerFooterAction);
+
 //**************编辑Action结束
 #pragma mark Table滚动
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScroll)(ScrollBlock scrollBlock);

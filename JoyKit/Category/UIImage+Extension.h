@@ -38,6 +38,12 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 
 + (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
 
+//按宽度等比例缩放
+- (UIImage *)scaleToWidth:(CGFloat)width;
+
+//按高度等比例缩放
+- (UIImage *)scaleToHeight:(CGFloat)height;
+
 #pragma markUIBezierPath 裁剪
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c;
 
@@ -46,7 +52,6 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 
 //条形码
 - (UIImage *)barCodeImageWithBarStr:(NSString *)barStr;
-
 /**
  二维码
  @param qrStr 二维码字符串
