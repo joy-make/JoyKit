@@ -43,7 +43,11 @@
             [obj routeParam:params block:block];
             switch (actionType) {
             case JoyRouteActionTypePush:
-                [[self getNav] pushViewController:(UIViewController *)obj animated:YES];
+                {
+                    UIViewController *vc = (UIViewController *)obj;
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [[self getNav] pushViewController:(UIViewController *)obj animated:YES];
+                }
                 break;
                 
             case JoyRouteActionTypePresent:
@@ -104,7 +108,7 @@
 
 #pragma mark 获取导航栈
 - (UINavigationController *)getNav{
-    if([[UIApplication sharedApplication].keyWindow.rootViewController isMemberOfClass:UITabBarController.class]){
+    if([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:UITabBarController.class]){
         return [(UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController selectedViewController];
     }else if ([[UIApplication sharedApplication].keyWindow.rootViewController isMemberOfClass:UINavigationController.class]){
         return (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
