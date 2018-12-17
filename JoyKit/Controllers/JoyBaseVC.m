@@ -31,7 +31,7 @@ static NSString *JoyShadowImage = @"JoyShadowImage";
     objc_setAssociatedObject(self, &JoyedgesForExtendedLayout, @(self.edgesForExtendedLayout), OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(self, &JoyNavBackImage, [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    objc_setAssociatedObject(self, &JoyedgesForExtendedLayout, self.navigationController.navigationBar.shadowImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &JoyShadowImage, self.navigationController.navigationBar.shadowImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     self.edgesForExtendedLayout = UIRectEdgeAll;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
