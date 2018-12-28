@@ -148,6 +148,7 @@
 #pragma mark - 显示pickerView
 - (void)showPickerView{
     __block CGRect rect = self.coverView.frame;
+    self.coverView.hidden = NO;
     rect.origin.y = 300;
     self.coverView.frame =rect;
     self.coverView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0];
@@ -169,7 +170,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         weakSelf.coverView.frame = rect;
     } completion:^(BOOL finished) {
-        //        weakSelf.coverView.hidden = YES;
+        weakSelf.coverView.hidden = YES;
     }];
 }
 
