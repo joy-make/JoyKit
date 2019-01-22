@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.19'
+  s.version          = '0.1.20'
   s.summary          = '选择日期控件隐藏展示控制逻辑bug修复'
 
 # This description is used to generate tags and improve search results.
