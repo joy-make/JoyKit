@@ -3,9 +3,10 @@ import fileinput
 
 # ======================  edit by yourself  ======================
 sources = [
+
 ]
 
-spec_libraries_name = 'scbu'
+spec_libraries_name = ''
 is_allow_warnings = True
 is_use_libraries = False
 is_show_verbose_log = False
@@ -61,7 +62,7 @@ def podCommandEdit():
     pod_push_command = 'pod trunk push ' + spec_libraries_name + ' ' + podspec_file_name
     if len(sources) > 0:
         # rely on  private sourece
-#        pod_push_command += ' --sources='
+        pod_push_command += ' --sources='
 
         for index,source in enumerate(sources):
             lib_command += source
