@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UICollectionReusableView+JoyHeaderFooter.h>
+#import "UICollectionReusableView+JoyHeaderFooter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

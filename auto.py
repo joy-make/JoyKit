@@ -9,7 +9,7 @@ sources = [
 spec_libraries_name = ''
 is_allow_warnings = True
 is_use_libraries = False
-is_show_verbose_log = False
+is_show_verbose_log = True
 # ==================================================================
 
 new_tag = ""
