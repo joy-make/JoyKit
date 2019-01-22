@@ -1,7 +1,7 @@
 {
   "name": "JoyKit",
-  "version": "0.1.14",
-  "summary": "router协议扩展",
+  "version": "0.1.18",
+  "summary": "选择日期控件隐藏展示控制逻辑bug修复",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.14"
+    "tag": "0.1.18"
   },
   "platforms": {
     "ios": "7.0"
@@ -238,7 +238,7 @@
           "name": "TableImageCell",
           "source_files": "JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}",
           "dependencies": {
-            "JoyKit/CellsLibruary/CollectionImageCell": [
+            "JoyKit/CellsLibruary/CollectionCell": [
 
             ],
             "JoyKit/CellsLibruary/TableTextCell": [
@@ -277,14 +277,14 @@
           "public_header_files": "JoyKit/CellsLibruary/TableSwitchCell/**/*.h"
         },
         {
-          "name": "CollectionImageCell",
-          "source_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}",
+          "name": "CollectionCell",
+          "source_files": "JoyKit/CellsLibruary/CollectionCell/**/*.{h,m}",
           "dependencies": {
             "JoyKit/CellsLibruary/TableLabelCell": [
 
             ]
           },
-          "public_header_files": "JoyKit/CellsLibruary/CollectionImageCell/**/*.h"
+          "public_header_files": "JoyKit/CellsLibruary/CollectionCell/**/*.h"
         },
         {
           "name": "TableCollectionCell",

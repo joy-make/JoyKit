@@ -1,1 +1,1 @@
-../../../../../JoyKit/CellsLibruary/CollectionImageCell/JoyImageCollectionViewCell.h
+../../../../../JoyKit/CellsLibruary/CollectionCell/JoyImageCollectionViewCell.h

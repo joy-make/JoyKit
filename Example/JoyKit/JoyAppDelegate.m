@@ -9,12 +9,13 @@
 #import "JoyAppDelegate.h"
 #import "JoyViewController.h"
 #import <JoyKit/JoyRouter.h>
+#import "CollectionVC.h"
 
 @implementation JoyAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    JoyViewController *vc = [[JoyViewController alloc]init];
+    CollectionVC *vc = [[CollectionVC alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyWindow];

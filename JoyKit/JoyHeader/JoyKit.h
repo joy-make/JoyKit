@@ -21,6 +21,7 @@
 #import "JoyInteractorBase.h"
 #import "JoySectionBaseModel.h"
 #import "JoyCellBaseModel.h"
+#import "JoyCollectionFlowLayout.h"
 
 #import "JoyCellBaseModel+Action.h"
 #import "JoyCellBaseModel+Edit.h"
@@ -40,7 +41,6 @@
 #import "JoyCollectionView.h"
 #import "JoyUISegementView.h"
 #import "JoyNoDataBackView.h"
-
 #import "JoyWebLoader.h"
 #import "JoyWebView.h"
 
@@ -72,5 +72,6 @@
 #define JoyTextViewCell                         @"JoyTextViewCell"                              //textviewcell
 #define JoyLeftLabelTextViewCell                @"JoyLeftLabelTextViewCell"                     //左label右textview
 #define JoySwitchCell                           @"JoySwitchCell"                                //左label右switch
+#define JoyCollectionTextCell                   @"JoyCollectionTextCell"
 
 #endif /* JoyKit_h */

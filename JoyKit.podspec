@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.18'
+  s.version          = '0.1.19'
   s.summary          = '选择日期控件隐藏展示控制逻辑bug修复'
 
 # This description is used to generate tags and improve search results.
@@ -158,7 +158,7 @@ end
 s.subspec 'CellsLibruary' do|ss|
     ss.subspec 'TableImageCell' do|sss|
         sss.source_files = 'JoyKit/CellsLibruary/TableImageCell/**/*.{h,m}'
-        sss.dependency 'JoyKit/CellsLibruary/CollectionImageCell'
+        sss.dependency 'JoyKit/CellsLibruary/CollectionCell'
         sss.dependency 'JoyKit/CellsLibruary/TableTextCell'
         sss.dependency 'JoyKit/CellsLibruary/TableSwitchCell'
         sss.dependency 'JoyKit/CellsLibruary/TableCollectionCell'
@@ -176,10 +176,10 @@ s.subspec 'CellsLibruary' do|ss|
         sss.public_header_files = 'JoyKit/CellsLibruary/TableSwitchCell/**/*.h'
     end
 
-    ss.subspec 'CollectionImageCell' do|sss|
-        sss.source_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.{h,m}'
+    ss.subspec 'CollectionCell' do|sss|
+        sss.source_files = 'JoyKit/CellsLibruary/CollectionCell/**/*.{h,m}'
         sss.dependency 'JoyKit/CellsLibruary/TableLabelCell'
-        sss.public_header_files = 'JoyKit/CellsLibruary/CollectionImageCell/**/*.h'
+        sss.public_header_files = 'JoyKit/CellsLibruary/CollectionCell/**/*.h'
     end
     ss.subspec 'TableCollectionCell' do|sss|
         sss.source_files = 'JoyKit/CellsLibruary/TableCollectionCell/**/*.{h,m}'

@@ -32,6 +32,8 @@
 		BB799E0B2154D14900D768D1 /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DFF2154D14900D768D1 /* SCViewController.m */; };
 		BB799E0F2154E85100D768D1 /* personDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = BB799E0E2154E85100D768D1 /* personDetail.json */; };
 		BB799E132154EF6600D768D1 /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB799E122154EF6600D768D1 /* person.plist */; };
+		BBCABA1A21F5982A0007BC1A /* CollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCABA1921F5982A0007BC1A /* CollectionVC.m */; };
+		BBCABA1D21F599420007BC1A /* CollectionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCABA1C21F599420007BC1A /* CollectionInteractor.m */; };
 		D0C14AABC89106EFC0093287 /* libPods-JoyKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA1B7FE68E8F2CBD5FA7C24 /* libPods-JoyKit_Example.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,10 @@
 		BB799E032154D14900D768D1 /* PersonInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInteractor.h; sourceTree = "<group>"; };
 		BB799E0E2154E85100D768D1 /* personDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = personDetail.json; sourceTree = "<group>"; };
 		BB799E122154EF6600D768D1 /* person.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
+		BBCABA1821F5982A0007BC1A /* CollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionVC.h; sourceTree = "<group>"; };
+		BBCABA1921F5982A0007BC1A /* CollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionVC.m; sourceTree = "<group>"; };
+		BBCABA1B21F599420007BC1A /* CollectionInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionInteractor.h; sourceTree = "<group>"; };
+		BBCABA1C21F599420007BC1A /* CollectionInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionInteractor.m; sourceTree = "<group>"; };
 		DBA1B7FE68E8F2CBD5FA7C24 /* libPods-JoyKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoyKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2DBA04B0E12EDDAEE4A14 /* Pods-JoyKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Tests/Pods-JoyKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +162,7 @@
 		6003F593195388D20070C39A /* Example for JoyKit */ = {
 			isa = PBXGroup;
 			children = (
+				BBCABA1121F597400007BC1A /* JoyFloLayout */,
 				BB799DF02154D14800D768D1 /* ConfigList */,
 				BB799DF72154D14900D768D1 /* PlistConfigList */,
 				6003F59C195388D20070C39A /* JoyAppDelegate.h */,
@@ -212,12 +219,12 @@
 		BB799DF02154D14800D768D1 /* ConfigList */ = {
 			isa = PBXGroup;
 			children = (
-				BB799DF12154D14900D768D1 /* JVPresenter.m */,
+				BB799DF52154D14900D768D1 /* JoyViewController.h */,
 				BB799DF22154D14900D768D1 /* JoyViewController.m */,
 				BB799DF32154D14900D768D1 /* JVInteractor.h */,
-				BB799DF42154D14900D768D1 /* JVPresenter.h */,
-				BB799DF52154D14900D768D1 /* JoyViewController.h */,
 				BB799DF62154D14900D768D1 /* JVInteractor.m */,
+				BB799DF42154D14900D768D1 /* JVPresenter.h */,
+				BB799DF12154D14900D768D1 /* JVPresenter.m */,
 				BB1C23B6219430DE0071DF92 /* JVCustHeaderFooterView.h */,
 				BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */,
 			);
@@ -241,6 +248,17 @@
 				BB799E0E2154E85100D768D1 /* personDetail.json */,
 			);
 			path = PlistConfigList;
+			sourceTree = "<group>";
+		};
+		BBCABA1121F597400007BC1A /* JoyFloLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BBCABA1821F5982A0007BC1A /* CollectionVC.h */,
+				BBCABA1921F5982A0007BC1A /* CollectionVC.m */,
+				BBCABA1B21F599420007BC1A /* CollectionInteractor.h */,
+				BBCABA1C21F599420007BC1A /* CollectionInteractor.m */,
+			);
+			path = JoyFloLayout;
 			sourceTree = "<group>";
 		};
 		F4E94A1AFEB614C11C004F6F /* Pods */ = {
@@ -452,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCABA1D21F599420007BC1A /* CollectionInteractor.m in Sources */,
 				BB799E072154D14900D768D1 /* JoyCellBaseModel+Type.m in Sources */,
 				6003F59E195388D20070C39A /* JoyAppDelegate.m in Sources */,
 				BB799E0B2154D14900D768D1 /* SCViewController.m in Sources */,
@@ -460,6 +479,7 @@
 				BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */,
 				BB799E0A2154D14900D768D1 /* Person.m in Sources */,
 				BB799E062154D14900D768D1 /* JVInteractor.m in Sources */,
+				BBCABA1A21F5982A0007BC1A /* CollectionVC.m in Sources */,
 				BB799E092154D14900D768D1 /* PersonPresenter.m in Sources */,
 				BB799E052154D14900D768D1 /* JoyViewController.m in Sources */,
 				BB799E042154D14900D768D1 /* JVPresenter.m in Sources */,

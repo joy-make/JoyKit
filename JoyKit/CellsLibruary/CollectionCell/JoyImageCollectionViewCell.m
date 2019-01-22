@@ -12,17 +12,26 @@
 #import "Joy.h"
 
 @interface JoyImageCollectionViewCell ()
-@property (weak, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UILabel *titleLabel;
 @end
 @implementation JoyImageCollectionViewCell
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self.contentView addSubview:self.imageView];
+        [self.contentView addSubview:self.titleLabel];
+        self.contentView.backgroundColor = [UIColor orangeColor];
+        [self setConstraint];
+    }
+    return self;
+}
 
 -(instancetype)init{
     if (self = [super init]) {
         [self.contentView addSubview:self.imageView];
         [self.contentView addSubview:self.titleLabel];
         [self setConstraint];
-        [self updateConstraintsIfNeeded];
     }
     return self;
 }
@@ -35,6 +44,7 @@
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLabel;
 }
@@ -42,18 +52,18 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.imageView,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(5);
+                   make.leading.mas_equalTo(5);
                    make.width.mas_equalTo(weakSelf.imageView.mas_height);
-                   make.height.mas_equalTo(54);
+                   make.height.mas_equalTo(55);
                    make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(5);
-                   make.centerX.mas_equalTo(weakSelf.contentView.mas_centerX);
+                   make.centerX.mas_equalTo(weakSelf.contentView);
                    );
     
     MAS_CONSTRAINT(self.titleLabel,
                    make.leading.mas_equalTo(weakSelf.contentView).offset(5);
                    make.height.mas_equalTo(20);
                    make.top.mas_equalTo(weakSelf.imageView.mas_bottom).offset(5);
-                   make.bottom.mas_equalTo(weakSelf.contentView).offset(5);
+                   make.bottom.mas_equalTo(weakSelf.contentView).offset(-5);
                    make.centerX.mas_equalTo(weakSelf.contentView.mas_centerX);
                    );
 }

@@ -122,7 +122,7 @@
 - (void)segmentTap:(UISegmentedControl *)segment{
     self.selectIndex = segment.selectedSegmentIndex;
     self.setmentValuechangedBlock?self.setmentValuechangedBlock(segment.selectedSegmentIndex):nil;
-    CGRect newRect = CGRectMake(20+SCREEN_W/_segmentItems.count * segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, SCREEN_W/_segmentItems.count-40, 2);
+    CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
     __weak __typeof (&*_bottomView)weakBottomView = _bottomView;
     [UIView animateWithDuration:0.3 animations:^{
         [weakBottomView setFrame:newRect];
