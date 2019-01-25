@@ -15,6 +15,12 @@
     UIView *_separateLineSuperview;
     UIView *_bottomSeparateLineSuperview;
 }
+@property (nonatomic,strong)NSArray *segmentItems;
+@property (nonatomic,strong)UIColor *separateColor;
+@property (nonatomic,strong)UIColor *selectColor;
+@property (nonatomic,strong)UIColor *deselectColor;
+@property (nonatomic,strong)UIColor *bottomSliderColor;
+@property (nonatomic,assign)BOOL isDefaultNoSelect;
 
 @end
 
@@ -32,30 +38,93 @@
     return self;
 }
 
--(void)setSegmentItems:(NSArray *)segmentItems{
-    _segmentItems = segmentItems;
-    [self updateSegment];
+-(JoyUISegementView *(^)(NSArray *))setSegmentItems{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(NSArray *items){
+        weakSelf.segmentItems = items;
+        [self updateSegment];
+        return weakSelf;
+    };
 }
 
--(void)setSelectColor:(UIColor *)selectColor{
-    _selectColor = selectColor;
-    [self updateSegment];
+-(JoyUISegementView *(^)(UIColor *))setSelectColor{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIColor *color){
+        weakSelf.selectColor = color;
+        [self updateSegment];
+        return weakSelf;
+    };
 }
 
-- (void)setDeselectColor:(UIColor *)deselectColor{
-    _deselectColor = deselectColor;
-    [self updateSegment];
+-(JoyUISegementView *(^)(UIColor *))setDeselectColor{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIColor *color){
+        weakSelf.deselectColor = color;
+        [self updateSegment];
+        return weakSelf;
+    };
 }
 
-- (void)setSeparateColor:(UIColor *)separateColor{
-    _separateColor = separateColor;
-    [self updateSegment];
+-(JoyUISegementView *(^)(UIColor *))setSeparateColor{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIColor *color){
+        weakSelf.separateColor = color;
+        [self updateSegment];
+        return weakSelf;
+    };
 }
 
-- (void)setBottomSliderColor:(UIColor *)bottomSliderColor{
-    _bottomSliderColor = bottomSliderColor;
-    [self updateSegment];
+-(JoyUISegementView *(^)(UIColor *))setBottomSliderColor{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIColor *color){
+        weakSelf.bottomSliderColor = color;
+        [self updateSegment];
+        return weakSelf;
+    };
 }
+
+-(JoyUISegementView *(^)(BOOL))setIsDefaultNoSelect{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(BOOL select){
+        weakSelf.isDefaultNoSelect = select;
+        [self updateSegment];
+        return weakSelf;
+    };
+}
+
+-(JoyUISegementView *(^)(SegmentChangedBlock))segmentValuechangedBlock{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(SegmentChangedBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+
+//-(void)setSegmentItems:(NSArray *)segmentItems{
+//    _segmentItems = segmentItems;
+//    [self updateSegment];
+//}
+
+//-(void)setSelectColor:(UIColor *)selectColor{
+//    _selectColor = selectColor;
+//    [self updateSegment];
+//}
+
+//- (void)setDeselectColor:(UIColor *)deselectColor{
+//    _deselectColor = deselectColor;
+//    [self updateSegment];
+//}
+
+//- (void)setSeparateColor:(UIColor *)separateColor{
+//    _separateColor = separateColor;
+//    [self updateSegment];
+//}
+//
+//- (void)setBottomSliderColor:(UIColor *)bottomSliderColor{
+//    _bottomSliderColor = bottomSliderColor;
+//    [self updateSegment];
+//}
 
 - (void)updateSegment{
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -109,9 +178,12 @@
         separateView.backgroundColor = self.separateColor?:[UIColor clearColor];
         [_separateLineSuperview addSubview:separateView];
     }
-    [_segment setSelectedSegmentIndex:0];
     _bottomView = [[UIView alloc]initWithFrame:CGRectMake(20, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2)];
-    _bottomView.backgroundColor = self.bottomSliderColor;
+
+    if(!self.isDefaultNoSelect){
+        [_segment setSelectedSegmentIndex:0];
+        _bottomView.backgroundColor = self.bottomSliderColor;
+    }
 
     [_separateLineSuperview addSubview:_bottomView];
     _bottomSeparateLineSuperview = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(_separateLineSuperview.frame), self.width, 0.5)];
@@ -120,8 +192,11 @@
 }
 
 - (void)segmentTap:(UISegmentedControl *)segment{
+    _bottomView.backgroundColor = self.bottomSliderColor;
     self.selectIndex = segment.selectedSegmentIndex;
-    self.setmentValuechangedBlock?self.setmentValuechangedBlock(segment.selectedSegmentIndex):nil;
+    SegmentChangedBlock segmentValuechangedBlock = objc_getAssociatedObject(self, @selector(segmentValuechangedBlock));
+    
+    segmentValuechangedBlock?segmentValuechangedBlock(segment.selectedSegmentIndex):nil;
     CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
     __weak __typeof (&*_bottomView)weakBottomView = _bottomView;
     [UIView animateWithDuration:0.3 animations:^{
