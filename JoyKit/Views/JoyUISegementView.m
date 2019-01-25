@@ -14,13 +14,14 @@
     UIView *_bottomView;
     UIView *_separateLineSuperview;
     UIView *_bottomSeparateLineSuperview;
+    NSDate *_oldDate;
 }
 @property (nonatomic,strong)NSArray *segmentItems;
 @property (nonatomic,strong)UIColor *separateColor;
 @property (nonatomic,strong)UIColor *selectColor;
 @property (nonatomic,strong)UIColor *deselectColor;
 @property (nonatomic,strong)UIColor *bottomSliderColor;
-@property (nonatomic,assign)BOOL isDefaultNoSelect;
+@property (nonatomic,assign)BOOL isTouchUpInAction;
 
 @end
 
@@ -83,11 +84,19 @@
     };
 }
 
--(JoyUISegementView *(^)(BOOL))setIsDefaultNoSelect{
+-(JoyUISegementView *(^)(NSInteger))setDefaultSelectIndex{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(NSInteger selectIndex){
+        weakSelf.selectIndex = selectIndex;
+        [self updateSegment];
+        return weakSelf;
+    };
+}
+
+-(JoyUISegementView *(^)(BOOL))setTouchUpInAction{
     __weak __typeof(&*self)weakSelf = self;
     return ^(BOOL select){
-        weakSelf.isDefaultNoSelect = select;
-        [self updateSegment];
+        weakSelf.isTouchUpInAction = select;
         return weakSelf;
     };
 }
@@ -100,33 +109,8 @@
     };
 }
 
-
-//-(void)setSegmentItems:(NSArray *)segmentItems{
-//    _segmentItems = segmentItems;
-//    [self updateSegment];
-//}
-
-//-(void)setSelectColor:(UIColor *)selectColor{
-//    _selectColor = selectColor;
-//    [self updateSegment];
-//}
-
-//- (void)setDeselectColor:(UIColor *)deselectColor{
-//    _deselectColor = deselectColor;
-//    [self updateSegment];
-//}
-
-//- (void)setSeparateColor:(UIColor *)separateColor{
-//    _separateColor = separateColor;
-//    [self updateSegment];
-//}
-//
-//- (void)setBottomSliderColor:(UIColor *)bottomSliderColor{
-//    _bottomSliderColor = bottomSliderColor;
-//    [self updateSegment];
-//}
-
 - (void)updateSegment{
+    _oldDate = [NSDate date];
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIFont *font = [UIFont boldSystemFontOfSize:15];
     _segment = [[UISegmentedControl alloc]initWithItems:_segmentItems];
@@ -180,9 +164,9 @@
     }
     _bottomView = [[UIView alloc]initWithFrame:CGRectMake(20, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2)];
 
-    if(!self.isDefaultNoSelect){
-        [_segment setSelectedSegmentIndex:0];
-        _bottomView.backgroundColor = self.bottomSliderColor;
+    if(self.selectIndex !=-1 &&self.segmentItems.count>self.selectIndex){
+        [_segment setSelectedSegmentIndex:self.selectIndex];
+        [self updateBottomViewFrame];
     }
 
     [_separateLineSuperview addSubview:_bottomView];
@@ -192,15 +176,49 @@
 }
 
 - (void)segmentTap:(UISegmentedControl *)segment{
+    NSTimeInterval timerInterval = [[NSDate date]timeIntervalSinceDate:_oldDate];
+    _oldDate = [NSDate date];
+    if(timerInterval>0.3){
+        self.selectIndex = segment.selectedSegmentIndex;
+        SegmentChangedBlock segmentValuechangedBlock = objc_getAssociatedObject(self, @selector(segmentValuechangedBlock));
+        segmentValuechangedBlock?segmentValuechangedBlock(segment.selectedSegmentIndex):nil;
+        [self updateBottomViewFrame];
+    }
+}
+
+- (void)updateBottomViewFrame{
     _bottomView.backgroundColor = self.bottomSliderColor;
-    self.selectIndex = segment.selectedSegmentIndex;
-    SegmentChangedBlock segmentValuechangedBlock = objc_getAssociatedObject(self, @selector(segmentValuechangedBlock));
-    
-    segmentValuechangedBlock?segmentValuechangedBlock(segment.selectedSegmentIndex):nil;
-    CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
+    CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * _segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
     __weak __typeof (&*_bottomView)weakBottomView = _bottomView;
     [UIView animateWithDuration:0.3 animations:^{
         [weakBottomView setFrame:newRect];
     }];
+}
+
+//处理超出区域点击无效的问题
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    CGPoint tempPoint = [_segment convertPoint:point fromView:self];
+    //判断点击的点是否在按钮区域内
+    if (CGRectContainsPoint(_segment.bounds, tempPoint) && self.isTouchUpInAction){
+        //返回按钮
+        NSInteger selectIndex = point.x/(_segment.width/_segment.numberOfSegments);
+        _segment.selectedSegmentIndex = selectIndex;
+        [self segmentTap:_segment];
+        return _segment;
+    }
+    else{
+        return  [super hitTest:point withEvent:event];
+    }
+//    UIView *view = [super hitTest:point withEvent:event];
+//    if (view == nil){
+//        //转换坐标
+//        CGPoint tempPoint = [self.centerBtn convertPoint:point fromView:self];
+//        //判断点击的点是否在按钮区域内
+//        if (CGRectContainsPoint(self.centerBtn.bounds, tempPoint)){
+//            //返回按钮
+//            return _centerBtn;
+//        }
+//    }
+//    return view;
 }
 @end

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.22'
+  s.version          = '0.1.23'
   s.summary          = '扩展segment支持链式'
 
 # This description is used to generate tags and improve search results.
