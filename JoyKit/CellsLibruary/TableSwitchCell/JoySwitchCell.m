@@ -9,10 +9,11 @@
 #import "JoySwitchCell.h"
 #import "JoyCellBaseModel.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoySwitchCell ()
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UISwitch *mySwitch;
+@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UISwitch *mySwitch;
 
 @end
 
@@ -67,6 +68,9 @@
     self.titleLabel.text = model.title;
     self.mySwitch.userInteractionEnabled = !model.disable;
     self.mySwitch.on = model.on;
+    if(model.titleColor){
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor, 1);
+    }
     __block JoySwitchCellBaseModel *switchModel = model;
     __weak typeof (self) weakSelf = self;
     model.aToBCellBlock= ^(id onState){
@@ -81,7 +85,7 @@
     [super setSelected:selected animated:animated];
 }
 
-- (IBAction)switchValueChanged:(UISwitch *)sender {
+- (void)switchValueChanged:(UISwitch *)sender {
     JoySwitchCellBaseModel *model = objc_getAssociatedObject(self, _cmd) ;
     model.on = sender.on;
     if ([self.delegate respondsToSelector:@selector(textChanged:andText:andChangedKey:)]) {

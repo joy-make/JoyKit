@@ -48,19 +48,19 @@ typedef void(^AToBCellBlock)(id obj);
 @property (nonatomic,assign)  ECellType                         cellType;
 
 // 背景色
-@property (nonatomic,strong) UIColor                            *backgroundColor;
+@property (nonatomic,copy) NSString                            *backgroundColor;
 
 //标题
 @property (nonatomic,copy)    NSString                          *title;
 
 //标题颜色
-@property (nonatomic,strong)    UIColor                         *titleColor;
+@property (nonatomic,copy)    NSString                         *titleColor;
 
 //副标题
 @property (nonatomic,copy)    NSString                          *subTitle;
 
 //标题颜色
-@property (nonatomic,strong)    UIColor                         *subTitleColor;
+@property (nonatomic,copy)    NSString                         *subTitleColor;
 
 //副标题
 @property (nonatomic,copy)    NSString                          *topicTitle;

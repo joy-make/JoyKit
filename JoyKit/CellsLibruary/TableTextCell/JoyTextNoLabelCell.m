@@ -11,6 +11,8 @@
 #import "NSString+JoyCategory.h"
 #import "UITextField+JoyCategory.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
+
 @interface JoyTextNoLabelCell()<UITextFieldDelegate>
 @property (strong, nonatomic) UITextField *textField;
 @property (nonatomic,copy) NSString *inputOldStr;
@@ -74,7 +76,7 @@
                         range:NSMakeRange(0, model.placeHolder.length)];
     self.textField.attributedPlaceholder = placeholder;
     if(model.titleColor){
-        self.textField.textColor = model.titleColor;
+        self.textField.textColor = KJoyHexColor(model.titleColor,1);
     }
 
 }

@@ -9,6 +9,7 @@
 #import "JoyLeftLabelRightIconCell.h"
 #import "JoyCellBaseModel.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyLeftLabelRightIconCell ()
 
@@ -61,7 +62,7 @@
     self.titleLabel.text = model.title;
     SDIMAGE_LOAD(self.imageVIew, model.avatar, model.placeHolderImageStr);
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
     if (model.viewShape == EImageTypeRound) {
         self.imageVIew.layer.masksToBounds = YES;

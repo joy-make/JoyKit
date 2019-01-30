@@ -34,8 +34,8 @@
         [cellModel isMemberOfClass:JoySwitchCellBaseModel.class]?((JoySwitchCellBaseModel*)cellModel).on = [[self.person valueForKey:cellModel.changeKey] boolValue]:nil;
         [cellModel isMemberOfClass:JoyImageCellBaseModel.class]?((JoyImageCellBaseModel*)cellModel).avatar = [self.person valueForKey:cellModel.changeKey]:nil;
         }
-        cellModel.titleColor = JOY_RandomColor;
-        cellModel.subTitleColor = JOY_RandomColor;
+        cellModel.titleColor = @"#347AEB";
+        cellModel.subTitleColor = @"#CCCCCC";
         [sectionModel.rowArrayM addObject:cellModel];
     }];
     return sectionModel;

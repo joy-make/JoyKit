@@ -8,6 +8,7 @@
 
 #import "JoyLeftIconTopBottomLabelCell.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyLeftIconTopBottomLabelCell ()
 @property (strong, nonatomic) UIImageView *accessView;
@@ -81,10 +82,10 @@
     self.titleLabel.text = model.title;
     self.subTitleLabel.text = model.subTitle;
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
     if (model.subTitleColor) {
-        self.subTitleLabel.textColor = model.subTitleColor;
+        self.subTitleLabel.textColor = KJoyHexColor(model.subTitleColor,1);
     }
     self.accessView.image = model.placeHolderImageStr.length?[UIImage imageNamed:model.placeHolderImageStr]:nil;
     

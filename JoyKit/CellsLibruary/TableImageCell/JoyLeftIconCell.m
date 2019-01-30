@@ -9,6 +9,7 @@
 #import "JoyLeftIconCell.h"
 #import "JoyCellBaseModel.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyLeftIconCell ()
 
@@ -70,6 +71,11 @@
     }else{
         _iconImageView.layer.masksToBounds = NO;
     }
+    
+    if (model.titleColor) {
+        _titleLabel.textColor = KJoyHexColor(model.titleColor, 1);
+    }
+
     _titleLabel.text = model.title;
 }
 

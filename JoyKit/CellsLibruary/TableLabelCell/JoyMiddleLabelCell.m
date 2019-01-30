@@ -8,6 +8,7 @@
 
 #import "JoyMiddleLabelCell.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyMiddleLabelCell ()
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -50,7 +51,7 @@
     self.model = model;
     self.titleLabel.text = model.title;
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
 }
 

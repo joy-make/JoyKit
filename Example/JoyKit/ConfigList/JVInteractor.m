@@ -59,9 +59,9 @@
 
 - (void)setCellWithModel:(JoyCellBaseModel *)cellModel{
     cellModel.title =cellModel.placeHolder= [NSString stringWithFormat:@"这是一个%@cell",cellModel.cellName];
-    cellModel.titleColor = JOY_RandomColor;
-    cellModel.subTitleColor = JOY_RandomColor;
-    cellModel.backgroundColor = JOY_RandomColor;
+    cellModel.titleColor = @"0x347AEB";
+    cellModel.subTitleColor = @"0x222222";
+    cellModel.backgroundColor = @"0xee88FF";
     cellModel.accessoryType = arc4random()%4;
     //        cellModel.canMove = YES;
     cellModel.subTitle = [NSString stringWithFormat:@"model%@",NSStringFromClass(cellModel.class)];

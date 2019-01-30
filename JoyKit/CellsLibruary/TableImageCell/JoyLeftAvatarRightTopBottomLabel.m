@@ -10,6 +10,8 @@
 #import "JoyLeftAvatarRightTopBottomLabel.h"
 #import "JoyCellBaseModel.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
+
 @interface JoyLeftAvatarRightTopBottomLabel ()
 
 @property (strong, nonatomic) UIImageView *headImageView;
@@ -80,10 +82,10 @@
     self.titleLabel.text = model.title;
     self.subtitleLabel.text = model.subTitle;
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
     if (model.subTitleColor) {
-        self.subtitleLabel.textColor = model.subTitleColor;
+        self.subtitleLabel.textColor = KJoyHexColor(model.subTitleColor,1);
     }
     SDIMAGE_LOAD(self.headImageView, model.avatar,model.placeHolderImageStr);
 }

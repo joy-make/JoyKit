@@ -10,6 +10,7 @@
 #import "JoyCellBaseModel.h"
 #import "UIImageView+JoyCategory.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyImageCollectionViewCell ()
 @property (strong, nonatomic) UIImageView *imageView;
@@ -72,7 +73,7 @@
     [self.imageView joySetImageWithUrlString:cellModel.avatar placeholderImage:[UIImage imageNamed:cellModel.placeHolderImageStr]];
     self.titleLabel.text = cellModel.title;
     if(cellModel.titleColor){
-        self.titleLabel.textColor = cellModel.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(cellModel.titleColor,1);
     }
 }
 @end

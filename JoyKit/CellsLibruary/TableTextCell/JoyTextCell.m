@@ -11,6 +11,7 @@
 #import "NSString+JoyCategory.h"
 #import "UITextField+JoyCategory.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyTextCell()<UITextFieldDelegate>
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -85,7 +86,7 @@
     objc_setAssociatedObject(self, @selector(editingEnd:), model, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, @selector(textFieldDidEndEditing:), model, OBJC_ASSOCIATION_RETAIN);
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
     if (model.placeHolder) {
         NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc]initWithString:model.placeHolder];

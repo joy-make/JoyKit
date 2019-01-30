@@ -9,6 +9,8 @@
 #import "JoyLeftLabelRightPlaceHolderLabelCell.h"
 #import "JoyCellBaseModel.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
+
 @interface JoyLeftLabelRightPlaceHolderLabelCell ()
 
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -84,7 +86,7 @@
 - (void)setCellWithModel:(JoyCellBaseModel *)model{
     self.titleLabel.text = model.title;
     self.subTitleLabel.text = model.subTitle;
-    self.titleLabel.textColor = model.titleColor?:UIColorFromRGB(0x000000);
+    self.titleLabel.textColor = model.titleColor?KJoyHexColor(model.titleColor,1):UIColorFromRGB(0x000000);
     self.placeHolderLabe.text = model.placeHolder;
     self.placeHolderLabe.hidden =  self.subTitleLabel.text.length;
 }

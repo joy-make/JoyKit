@@ -14,6 +14,8 @@
 #import "JoyCellBaseModel.h"
 #import "NSString+JoyCategory.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
+
 @interface JoyLeftLabelTextViewCell()<UITextViewDelegate>
 @property (strong, nonatomic)  UILabel *titleLabel;
 @property (strong, nonatomic)  UITextView *textView;
@@ -100,7 +102,7 @@
     self.textView.text = model.subTitle;
     self.placeHolderLabel.text = model.placeHolder;
     self.placeHolderLabel.hidden = self.textView.text.length;
-    self.titleLabel.textColor = model.titleColor?model.titleColor:[UIColor darkTextColor];
+    self.titleLabel.textColor = model.titleColor?KJoyHexColor(model.titleColor,1):[UIColor darkTextColor];
     CGSize constraintSize = CGSizeMake(KTEXTMaXWIDTH, MAXFLOAT);
     CGSize size = [self.textView sizeThatFits:constraintSize];
     if (size.height >= KTEXTMaXHEIGHT)

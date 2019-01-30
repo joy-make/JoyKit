@@ -8,6 +8,7 @@
 
 #import "JoyLeftMiddleRightLabelCell.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyLeftMiddleRightLabelCell ()
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -89,10 +90,10 @@
     self.middleLabel.text = setModel.topicTitle;
     self.rightLabel.text = model.subTitle;
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
     if (model.subTitleColor) {
-        self.middleLabel.textColor = model.subTitleColor;
+        self.middleLabel.textColor = KJoyHexColor(model.subTitleColor,1);
     }
 
 }

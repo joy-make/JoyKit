@@ -15,6 +15,7 @@
 #import "JoyCellBaseModel+Action.h"
 #import "JoyCellBaseModel+Edit.h"
 #import "UITableViewHeaderFooterView+JoyHeaderFooter.h"
+#import "UIColor+JoyColor.h"
 
 #define SCREEN_HEIGHT_OF_IPHONE6PLUS 736
 #define IOS8_OR_LATER ([[UIDevice currentDevice] systemVersion].floatValue >= 8.0)
@@ -245,7 +246,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         [cell setCellWithModel:model];
     }
     
-    model.backgroundColor? cell.backgroundColor = model.backgroundColor:nil;
+    model.backgroundColor? cell.backgroundColor = KJoyHexColor(model.backgroundColor,1):nil;
     
     cell.beginUpdatesBlock =^(){
         [weakSelf beginUpdates];

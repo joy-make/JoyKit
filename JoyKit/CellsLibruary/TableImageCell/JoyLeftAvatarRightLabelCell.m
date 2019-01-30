@@ -8,6 +8,8 @@
 
 #import "JoyLeftAvatarRightLabelCell.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
+
 @interface JoyLeftAvatarRightLabelCell ()
 @property (strong, nonatomic) UIImageView *headImageView;
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -61,7 +63,7 @@
         self.titleLabel.text =  model.title;
     }
     if (model.titleColor) {
-        self.titleLabel.textColor = model.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(model.titleColor,1);
     }
     if (model.viewShape == EImageTypeRound) {
         self.headImageView.layer.cornerRadius = 27;

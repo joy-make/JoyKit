@@ -7,6 +7,7 @@
 //
 
 #import "JoyBaseCell.h"
+#import "UIColor+JoyColor.h"
 
 @implementation JoyBaseCell
 

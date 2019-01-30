@@ -10,23 +10,23 @@
 
 @implementation NSDate (JoyExtention)
 
-- (NSDate *)addMinutes:(long long)minutes{
+- (NSDate *)addMinutes:(NSInteger)minutes{
     return [self dateByAddingTimeInterval:minutes*60];
 }
 
-- (NSDate *)addHours:(long long)hours{
+- (NSDate *)addHours:(NSInteger)hours{
     return [self dateByAddingTimeInterval:hours*60*60];
 }
 
-- (NSDate *)addDays:(long long)days{
+- (NSDate *)addDays:(NSInteger)days{
     return [self dateByAddingTimeInterval:days*60*60*24];
 }
 
-- (NSDate *)addWeeks:(long long)weeks{
+- (NSDate *)addWeeks:(NSInteger)weeks{
     return [self dateByAddingTimeInterval:weeks*60*60*24*7];
 }
 
-- (NSDate *)addMonths:(long long)months{
+- (NSDate *)addMonths:(NSInteger)months{
 
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
@@ -47,11 +47,11 @@
     return newdate;
 }
 
-- (NSDate *)addYears:(long long)years{
+- (NSDate *)addYears:(NSInteger)years{
     return [self dateByAddingTimeInterval:years*60*60*24*365];
 }
 
-- (NSDate *)addYears:(long long)years months:(long long)months days:(long long)days hours:(long long)hours minutes:(long long)minutes seconds:(long long)seconds{
+- (NSDate *)addYears:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds{
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
@@ -93,7 +93,7 @@
     return date;
 }
 
-+(long long)getIntervalFromDate:(NSDate*)from end:(NSDate *)end dateUnit:(NSCalendarUnit)unit{
++(NSInteger)getIntervalFromDate:(NSDate*)from end:(NSDate *)end dateUnit:(NSCalendarUnit)unit{
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [calendar
                                     components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond

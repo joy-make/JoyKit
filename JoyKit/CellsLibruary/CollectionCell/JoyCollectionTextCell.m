@@ -9,6 +9,7 @@
 #import "JoyCollectionTextCell.h"
 #import "JoyCellBaseModel.h"
 #import "Joy.h"
+#import "UIColor+JoyColor.h"
 
 @interface JoyCollectionTextCell ()
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -58,7 +59,7 @@
 - (void)setCellWithModel:(JoyImageCellBaseModel *)cellModel{
     self.titleLabel.text = cellModel.title;
     if(cellModel.titleColor){
-        self.titleLabel.textColor = cellModel.titleColor;
+        self.titleLabel.textColor = KJoyHexColor(cellModel.titleColor,1);
     }
 }
 @end

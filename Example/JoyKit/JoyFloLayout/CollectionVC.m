@@ -11,7 +11,6 @@
 #import <Masonry/Masonry.h>
 #import "CollectionInteractor.h"
 #import "JoyCollectionFlowLayout.h"
-#import "JoyUISegementView.h"
 #import "UIColor+JoyColor.h"
 
 @interface CollectionVC ()
@@ -26,21 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.collectionView];
-    JoyUISegementView *segment = [[JoyUISegementView alloc]initWithFrame:CGRectMake(0, 0, 200, 50)];
-    segment.segmentItems = @[@"test",@"test",@"test"];
-    segment.selectColor = [UIColor joyColorWithHEXString:@"#347AEB"];
-    segment.deselectColor = [UIColor joyColorWithHEXString:@"#333333"];
-    segment.bottomSliderColor = [UIColor joyColorWithHEXString:@"#0000FF"];
 
-//
-//    @property (nonatomic,strong)UIColor *separateColor;
-//    @property (nonatomic,strong)UIColor *selectColor;
-//    @property (nonatomic,strong)UIColor *deselectColor;
-//    @property (nonatomic,strong)UIColor *bottomSliderColor;
-//
-    
-    [self.view addSubview:segment];
-    
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];

@@ -11,25 +11,25 @@
 @interface NSDate (JoyExtention)
 
 //计算minutes后的时间
-- (NSDate *)addMinutes:(long long)minutes;
+- (NSDate *)addMinutes:(NSInteger)minutes;
 
 //计算hours后的时间
-- (NSDate *)addHours:(long long)hours;
+- (NSDate *)addHours:(NSInteger)hours;
 
 //计算days后的时间
-- (NSDate *)addDays:(long long)days;
+- (NSDate *)addDays:(NSInteger)days;
 
 //计算weeks后的时间
-- (NSDate *)addWeeks:(long long)weeks;
+- (NSDate *)addWeeks:(NSInteger)weeks;
 
 //计算months后的时间
-- (NSDate *)addMonths:(long long)months;
+- (NSDate *)addMonths:(NSInteger)months;
 
 //计算years后的时间
-- (NSDate *)addYears:(long long)years;
+- (NSDate *)addYears:(NSInteger)years;
 
 //计算years+months+days+hours+minutes+seconds后的时间
-- (NSDate *)addYears:(long long)years months:(long long)months days:(long long)days hours:(long long)hours minutes:(long long)minutes seconds:(long long)seconds;
+- (NSDate *)addYears:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
 
 //按指定格式转化日期为字符串
 - (NSString*)timeStringformat:(NSString*)format;
@@ -51,7 +51,7 @@
  @param unit 时间单位 NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond
  @return 间隔（分）
  */
-+ (long long)getIntervalFromDate:(NSDate*)from end:(NSDate *)end dateUnit:(NSCalendarUnit)unit;
++ (NSInteger)getIntervalFromDate:(NSDate*)from end:(NSDate *)end dateUnit:(NSCalendarUnit)unit;
 
 /**
  获取当前日期单位的首日
