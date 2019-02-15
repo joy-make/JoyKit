@@ -45,12 +45,16 @@
 
 -(void)leftNavItemClickAction{
     [super leftNavItemClickAction];
-    [JoyAlert showWithMessage:@"你要往哪儿跳,默认返回上一级页面"];
+    [self.interactor.dataArrayM removeAllObjects];
+    self.interactor.dataArrayM = nil;
+    [self.layoutView removeFromSuperview];
+    self.layoutView = nil;
 }
 
 -(void)rightNavItemClickAction{
     [super rightNavItemClickAction];
     [self.presenter rightNavItemClickAction];
 }
+
 @end
 

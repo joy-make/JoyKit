@@ -29,7 +29,7 @@
 - (void)setConstraints{
     [self.testBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.mas_equalTo(0);
-        make.height.mas_equalTo(100);
+        make.height.mas_equalTo(30);
         make.width.mas_equalTo(100);
     }];
 }
@@ -37,7 +37,7 @@
 -(UIButton *)testBtn{
     if (!_testBtn) {
         _testBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_testBtn setFrame:CGRectMake(0, 0, 375, 100)];
+        [_testBtn setFrame:CGRectMake(0, 0, 375, 30)];
         [_testBtn setTitle:@"sectionBtn" forState:UIControlStateNormal];
         [_testBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     }

@@ -17,7 +17,7 @@
     __weak __typeof (&*self)weakSelf = self;
     [self.interactor getDataSourceSuccess:^(NSArray *list)
     {
-    weakSelf.layoutView.setDataSource(weakSelf.interactor.dataArrayM)
+        weakSelf.layoutView.setDataSource(weakSelf.interactor.dataArrayM)
         .reloadTable()
         .setTableEdit(YES)
         .cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
@@ -53,4 +53,7 @@
 }
 
 
+-(void)dealloc{
+    
+}
 @end

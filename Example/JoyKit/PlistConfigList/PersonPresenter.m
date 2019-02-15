@@ -13,8 +13,9 @@
 @implementation PersonPresenter
 
 -(void)reloadDataSource{
+    __weak __typeof(&*self)weakSelf = self;
     [self.interactor getPersonList:^{
-        self.tableView.setDataSource(self.interactor.dataArrayM).reloadTable();
+        weakSelf.tableView.setDataSource(weakSelf.interactor.dataArrayM).reloadTable();
     }];
 }
 
@@ -36,11 +37,12 @@
 
 -(void)setTableView:(JoyTableAutoLayoutView *)tableView{
     _tableView = tableView;
+    __weak __typeof(&*self)weakSelf = self;
     _tableView.cellTextEiditEnd(^(NSIndexPath *indexPath, NSString *content, NSString *key) {
-        key?[self.interactor.person setValue:content forKey:key]:nil;
+        key?[weakSelf.interactor.person setValue:content forKey:key]:nil;
     })
     .cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
-        [super performTapAction:tapAction];
+        [weakSelf performTapAction:tapAction];
     })
 //    .setTableEdit(YES)
     .cellEiditAction(^(UITableViewCellEditingStyle editingStyle,NSIndexPath *indexPath) {
@@ -109,5 +111,9 @@
 
 - (void)selectAvatar{
     [JoyAlert showWithMessage:@"选取头像"];
+}
+
+-(void)dealloc{
+    
 }
 @end

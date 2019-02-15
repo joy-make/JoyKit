@@ -27,7 +27,6 @@
 @property (nonatomic,readonly)BOOL                        editing;
 @property (nonatomic,strong)UIView                      *backView;
 @property (nonatomic,strong)UIView                      *noDataBackView;
-@property (nonatomic,strong)NSMutableArray              *registHeaderFooterArrayM;
 @end
 
 const NSString *tableHDelegate =  @"tableHDelegate";
@@ -238,6 +237,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         [weakSelf reloadWithScheme:scheme andIndexPath:indexPath andObj:obj];
         [weakSelf.tableView endUpdates];
     };
+    
     cell.delegate = self;
     
     cell.index = indexPath;

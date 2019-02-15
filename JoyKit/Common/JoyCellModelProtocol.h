@@ -6,23 +6,57 @@
 //  Copyright © 2016年 Joy. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger,ECellType) {
+    ECellCodeType,
+    ECellXibType
+};
+
+typedef NS_ENUM(NSInteger,ETextCellType) {
+    leftViewModel,
+    rightViewModel,
+    normalModel
+};
+
+typedef NS_ENUM(NSInteger,EImageType) {
+    EImageTypeRound,
+    EImageTypeSquare
+};
+
+
+typedef NS_ENUM(NSInteger,ERefreshScheme) {
+    ERefreshSchemeRow,      //单列
+    ERefreshSchemeSection,  //单section
+    ERefreshSchemeTable,    //整个table
+    ERefreshSchemeView      //整个view 扩展类使用
+};
+
+typedef void(^CellBlock)(id obj,ERefreshScheme refreshScheme);
+
+typedef void(^AToBCellBlock)(id obj);
+
 @protocol JoyCellModelProtocol <NSObject>
+//cellType xib 或代码
+@property (nonatomic,assign)  ECellType                         cellType;
+
+@property (nonatomic,copy) NSMutableDictionary                  *obj;
+
 // 背景色
-@property (nonatomic,strong) UIColor                            *backgroundColor;
+@property (nonatomic,copy) NSString                            *backgroundColor;
 
 //标题
 @property (nonatomic,copy)    NSString                          *title;
 
 //标题颜色
-@property (nonatomic,strong)    UIColor                         *titleColor;
+@property (nonatomic,copy)    NSString                         *titleColor;
 
 //副标题
 @property (nonatomic,copy)    NSString                          *subTitle;
 
 //标题颜色
-@property (nonatomic,strong)    UIColor                         *subTitleColor;
+@property (nonatomic,copy)    NSString                         *subTitleColor;
 
 //副标题
 @property (nonatomic,copy)    NSString                          *topicTitle;
@@ -62,7 +96,10 @@
 
 @property (nonatomic,assign)  bool                              disable;
 
-@property (nonatomic,assign) BOOL                               canMove;
+//点击事件回调时实现model的回调函数，执行此函数
+@property (nonatomic,copy)CellBlock                             cellBlock;
 
-@property (nonatomic,assign) BOOL                               selected;
+//正向传值,以减少没必要的cell刷新
+@property (nonatomic,copy)AToBCellBlock                         aToBCellBlock;
+
 @end

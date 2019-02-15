@@ -7,15 +7,14 @@
 //
 
 #import "JoyAppDelegate.h"
-#import "JoyViewController.h"
 #import <JoyKit/JoyRouter.h>
-#import "CollectionVC.h"
+#import "HomeVC.h"
 
 @implementation JoyAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    JoyViewController *vc = [[JoyViewController alloc]init];
+    HomeVC *vc = [[HomeVC alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyWindow];

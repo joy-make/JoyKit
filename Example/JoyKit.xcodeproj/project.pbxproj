@@ -32,6 +32,7 @@
 		BB799E0B2154D14900D768D1 /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DFF2154D14900D768D1 /* SCViewController.m */; };
 		BB799E0F2154E85100D768D1 /* personDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = BB799E0E2154E85100D768D1 /* personDetail.json */; };
 		BB799E132154EF6600D768D1 /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB799E122154EF6600D768D1 /* person.plist */; };
+		BB85CDFD221692A800B0DE1F /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85CDFC221692A800B0DE1F /* HomeVC.m */; };
 		BBCABA1A21F5982A0007BC1A /* CollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCABA1921F5982A0007BC1A /* CollectionVC.m */; };
 		BBCABA1D21F599420007BC1A /* CollectionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCABA1C21F599420007BC1A /* CollectionInteractor.m */; };
 		D0C14AABC89106EFC0093287 /* libPods-JoyKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA1B7FE68E8F2CBD5FA7C24 /* libPods-JoyKit_Example.a */; };
@@ -93,6 +94,8 @@
 		BB799E032154D14900D768D1 /* PersonInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInteractor.h; sourceTree = "<group>"; };
 		BB799E0E2154E85100D768D1 /* personDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = personDetail.json; sourceTree = "<group>"; };
 		BB799E122154EF6600D768D1 /* person.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
+		BB85CDFB221692A800B0DE1F /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		BB85CDFC221692A800B0DE1F /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 		BBCABA1821F5982A0007BC1A /* CollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionVC.h; sourceTree = "<group>"; };
 		BBCABA1921F5982A0007BC1A /* CollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionVC.m; sourceTree = "<group>"; };
 		BBCABA1B21F599420007BC1A /* CollectionInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionInteractor.h; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		6003F593195388D20070C39A /* Example for JoyKit */ = {
 			isa = PBXGroup;
 			children = (
+				BB85CDFA2216926200B0DE1F /* Home */,
 				BBCABA1121F597400007BC1A /* JoyFloLayout */,
 				BB799DF02154D14800D768D1 /* ConfigList */,
 				BB799DF72154D14900D768D1 /* PlistConfigList */,
@@ -248,6 +252,15 @@
 				BB799E0E2154E85100D768D1 /* personDetail.json */,
 			);
 			path = PlistConfigList;
+			sourceTree = "<group>";
+		};
+		BB85CDFA2216926200B0DE1F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BB85CDFB221692A800B0DE1F /* HomeVC.h */,
+				BB85CDFC221692A800B0DE1F /* HomeVC.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		BBCABA1121F597400007BC1A /* JoyFloLayout */ = {
@@ -473,6 +486,7 @@
 				BBCABA1D21F599420007BC1A /* CollectionInteractor.m in Sources */,
 				BB799E072154D14900D768D1 /* JoyCellBaseModel+Type.m in Sources */,
 				6003F59E195388D20070C39A /* JoyAppDelegate.m in Sources */,
+				BB85CDFD221692A800B0DE1F /* HomeVC.m in Sources */,
 				BB799E0B2154D14900D768D1 /* SCViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				BB799E082154D14900D768D1 /* PersonInteractor.m in Sources */,

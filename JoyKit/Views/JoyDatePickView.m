@@ -104,7 +104,7 @@
         UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:calcleBtn];
         
         //        UIBarButtonItem * btnSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5,  - 120, 25)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5,  SCREEN_W-120, 25)];
         titleLabel.font = [UIFont systemFontOfSize:16];
         titleLabel.textColor = UIColorFromRGB(0x666666);
         titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -126,6 +126,7 @@
         shadowView.backgroundColor = UIColorFromRGB(0xEFF4F9);
         [_toolBar addSubview:shadowView];
     }
+    
     return _toolBar;
 }
 

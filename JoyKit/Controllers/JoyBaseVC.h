@@ -6,6 +6,7 @@
 #import <UIKIT/UIKit.h>
 #import "Joy.h"
 #import "JoyNavProtocol.h"
+#import "NSObject+JoyCategory.h"
 
 @interface JoyBaseVC : UIViewController<JoyNavProtocol>
 

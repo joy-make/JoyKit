@@ -87,22 +87,22 @@
     }];
 }
 
-#pragma mark private method Action
-- (void)performTapAction:(NSString *)tapActionStr{
-    if (tapActionStr) {
-        SEL selector = NSSelectorFromString(tapActionStr);
-        IMP imp = [self methodForSelector:selector];
-        void (*func)(id, SEL) = (void *)imp;
-        if ([self respondsToSelector:selector]) {
-            func(self, selector);
-            NSLog(@"\n *********************************************************\n You has performed the Method \"%@\"  in the class \"%@\" \n *********************************************************\n ",tapActionStr,NSStringFromClass([self class]));
-        }else{
-            NSLog(@"\n *********************************************************\n Oh my God ,I hasn't Found the Method \"%@\" in implementation,Please Sure it's in the class \"%@\"\n *********************************************************\n ",tapActionStr,NSStringFromClass([self class]));
-        }
-    }else{
-        NSLog( @"\n *********************************************************\n You had do nothing,if you want to do something please tell you cellModel and Realize it  in the class \"%@\"  \n *********************************************************\n ",NSStringFromClass([self class]));
-    }
-}
+//#pragma mark private method Action
+//- (void)performTapAction:(NSString *)tapActionStr{
+//    if (tapActionStr) {
+//        SEL selector = NSSelectorFromString(tapActionStr);
+//        IMP imp = [self methodForSelector:selector];
+//        void (*func)(id, SEL) = (void *)imp;
+//        if ([self respondsToSelector:selector]) {
+//            func(self, selector);
+//            NSLog(@"\n *********************************************************\n You has performed the Method \"%@\"  in the class \"%@\" \n *********************************************************\n ",tapActionStr,NSStringFromClass([self class]));
+//        }else{
+//            NSLog(@"\n *********************************************************\n Oh my God ,I hasn't Found the Method \"%@\" in implementation,Please Sure it's in the class \"%@\"\n *********************************************************\n ",tapActionStr,NSStringFromClass([self class]));
+//        }
+//    }else{
+//        NSLog( @"\n *********************************************************\n You had do nothing,if you want to do something please tell you cellModel and Realize it  in the class \"%@\"  \n *********************************************************\n ",NSStringFromClass([self class]));
+//    }
+//}
 
 #pragma MARk goRoot
 - (void)popToRootVC{

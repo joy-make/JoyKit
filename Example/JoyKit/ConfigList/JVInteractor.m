@@ -17,7 +17,7 @@
     dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         int i = 0;
-        while (i++<10) {
+        while (i++<100) {
             NSLog(@"%@", [NSString stringWithFormat:@"apply😄%d",i]);
             [self.dataArrayM addObject:[self getSectionData]];
         }
@@ -32,14 +32,14 @@
 - (JoySectionBaseModel *)getSectionData{
     JoySectionBaseModel *section =[[JoySectionBaseModel alloc] init];
     section.sectionHeadViewName = @"JVCustHeaderFooterView";
-    section.sectionH = 100;
+    section.sectionH = 30;
         JoyCellBaseModel *cellModel= (JoyCellBaseModel *)[self joyProtocolObjectFromStr:@"JoyCellBaseModel"];
         cellModel.cellName = @[JoyMiddleLabelCell,JoyLeftMiddleRightLabelCell,JoyLeftLabelRightPlaceHolderLabelCell][arc4random()%3];
         [self setCellWithModel:cellModel];
         [section.rowArrayM addObject:cellModel];
 
         JoyTextCellBaseModel *textCellModel= (JoyTextCellBaseModel *)[self joyProtocolObjectFromStr:@"JoyTextCellBaseModel"];
-        textCellModel.cellName = @[JoyTextCell,JoyTextNoLabelCell,JoyLeftLabelTextViewCell,@"JoyTextViewCell"][arc4random()%4];
+        textCellModel.cellName = @[JoyTextCell,JoyTextNoLabelCell,JoyLeftLabelTextViewCell,JoyTextViewCell][arc4random()%4];
 //    textCellModel.cellName = @"JoyTextViewCell";
 
         [self setCellWithModel:textCellModel];
@@ -63,7 +63,7 @@
     cellModel.subTitleColor = @"0x222222";
     cellModel.backgroundColor = @"0xee88FF";
     cellModel.accessoryType = arc4random()%4;
-    //        cellModel.canMove = YES;
+            cellModel.canMove = YES;
     cellModel.subTitle = [NSString stringWithFormat:@"model%@",NSStringFromClass(cellModel.class)];
     cellModel.editingStyle = arc4random()%3;
     cellModel.tapAction = @"tapAction";

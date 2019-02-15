@@ -70,11 +70,13 @@
     objc_setAssociatedObject(self, @selector(textFieldDidEndEditing:), model, OBJC_ASSOCIATION_RETAIN);
     self.contentView.userInteractionEnabled = !model.disable;
     
-    NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc]initWithString:model.placeHolder];
-    [placeholder addAttribute:NSForegroundColorAttributeName
-                        value:UIColorFromRGB(0x95989F)
-                        range:NSMakeRange(0, model.placeHolder.length)];
-    self.textField.attributedPlaceholder = placeholder;
+    if(model.placeHolder){
+        NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc]initWithString:model.placeHolder];
+        [placeholder addAttribute:NSForegroundColorAttributeName
+                            value:UIColorFromRGB(0x95989F)
+                            range:NSMakeRange(0, model.placeHolder.length)];
+        self.textField.attributedPlaceholder = placeholder;
+    }
     if(model.titleColor){
         self.textField.textColor = KJoyHexColor(model.titleColor,1);
     }

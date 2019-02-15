@@ -8,6 +8,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (JoyCategory)
+
 + (void)swizzleMethod:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector;
+
+- (void)performTapAction:(NSString *)tapActionStr;
 
 @end

@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Joy.h"
+#import "NSObject+JoyCategory.h"
 
 @interface JoyPresenterBase : NSObject
 @property (nonatomic, weak)UIView *rootView;
@@ -39,9 +40,6 @@
 
 #pragma MARk goRoot
 - (void)popToRootVC;
-
-#pragma mark private method Action
-- (void)performTapAction:(NSString *)tapActionStr;
 
 #pragma mark reloadData
 - (void)reloadDataSource;

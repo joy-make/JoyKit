@@ -25,19 +25,18 @@
     JoySectionBaseModel *sectionModel = [JoySectionBaseModel sectionWithHeaderModel:nil footerModel:nil cellModels:nil sectionH:0 sectionTitle:@""];
 
     NSArray *data = (NSArray *)[[self readLocalFileWithName:@"personDetail"] objectForKey:@"style"];
-    
-    [data enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
+    for (NSDictionary *dict in data) {
         JoyCellBaseModel *cellModel = [JoyCellBaseModel initWithStyle:[dict[@"style"] integerValue] obj:dict];
         if(cellModel.changeKey){
-        [cellModel isMemberOfClass:JoyCellBaseModel.class]? cellModel.subTitle = [self.person valueForKey:cellModel.changeKey]:nil;
-        [cellModel isMemberOfClass:JoyTextCellBaseModel.class]? cellModel.subTitle = [self.person valueForKey:cellModel.changeKey]:nil;
-        [cellModel isMemberOfClass:JoySwitchCellBaseModel.class]?((JoySwitchCellBaseModel*)cellModel).on = [[self.person valueForKey:cellModel.changeKey] boolValue]:nil;
-        [cellModel isMemberOfClass:JoyImageCellBaseModel.class]?((JoyImageCellBaseModel*)cellModel).avatar = [self.person valueForKey:cellModel.changeKey]:nil;
+            [cellModel isMemberOfClass:JoyCellBaseModel.class]? cellModel.subTitle = [self.person valueForKey:cellModel.changeKey]:nil;
+            [cellModel isMemberOfClass:JoyTextCellBaseModel.class]? cellModel.subTitle = [self.person valueForKey:cellModel.changeKey]:nil;
+            [cellModel isMemberOfClass:JoySwitchCellBaseModel.class]?((JoySwitchCellBaseModel*)cellModel).on = [[self.person valueForKey:cellModel.changeKey] boolValue]:nil;
+            [cellModel isMemberOfClass:JoyImageCellBaseModel.class]?((JoyImageCellBaseModel*)cellModel).avatar = [self.person valueForKey:cellModel.changeKey]:nil;
         }
         cellModel.titleColor = @"#347AEB";
         cellModel.subTitleColor = @"#CCCCCC";
         [sectionModel.rowArrayM addObject:cellModel];
-    }];
+    }
     return sectionModel;
 }
 
@@ -75,5 +74,9 @@
     NSData *data = [[NSData alloc] initWithContentsOfFile:path];
     // 对数据进行JSON格式化并返回字典形式
     return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+}
+
+-(void)dealloc{
+    
 }
 @end

@@ -44,7 +44,6 @@ static NSString *JoyShadowImage = @"JoyShadowImage";
     [self.navigationController.navigationBar setBackgroundImage:objc_getAssociatedObject(self, &JoyNavBackImage)
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = objc_getAssociatedObject(self, &JoyShadowImage);
-    
 }
 
 - (void)setNavItem{
