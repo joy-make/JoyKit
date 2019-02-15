@@ -17,11 +17,11 @@
 
 -(void)getPersonList:(VOIDBLOCK)success{
     [self getServiceData];
-    [self.dataArrayM addObject:[self getConfigData]];
+    [self getConfigData];
     success?success():nil;
 }
 
-- (JoySectionBaseModel *)getConfigData{
+- (void)getConfigData{
     JoySectionBaseModel *sectionModel = [JoySectionBaseModel sectionWithHeaderModel:nil footerModel:nil cellModels:nil sectionH:0 sectionTitle:@""];
 
     NSArray *data = (NSArray *)[[self readLocalFileWithName:@"personDetail"] objectForKey:@"style"];
@@ -35,9 +35,8 @@
         }
         cellModel.titleColor = @"#347AEB";
         cellModel.subTitleColor = @"#CCCCCC";
-        [sectionModel.rowArrayM addObject:cellModel];
+        [self.dataArrayM addObject:cellModel];
     }
-    return sectionModel;
 }
 
 - (void)getServiceData{

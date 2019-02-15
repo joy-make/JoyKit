@@ -27,6 +27,9 @@
 @property (nonatomic,readonly)BOOL                        editing;
 @property (nonatomic,strong)UIView                      *backView;
 @property (nonatomic,strong)UIView                      *noDataBackView;
+@property (nonatomic,strong)NSMutableArray              *registHeaderFooterArrayM;
+@property (nonatomic,assign)bool                        isSectionTable;
+
 @end
 
 const NSString *tableHDelegate =  @"tableHDelegate";
@@ -44,14 +47,19 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     if (self = [super initWithFrame:frame]) {
         if (!IOS8_OR_LATER)
         {class_addMethod([self class], @selector(tableView:heightForRowAtIndexPath:), (IMP)tableRowH, "f@:@:@");}
-        _registCellArrayM = [NSMutableArray array];
-        _registHeaderFooterArrayM = [NSMutableArray array];
+        [self configPara];
         [self addSubview:self.tableView];
         [self addSubViewToSelf];
         [self setConstraint];
         [self setNeedsUpdateConstraints];
     }
     return self;
+}
+
+- (void)configPara{
+    _registCellArrayM = [NSMutableArray array];
+    _registHeaderFooterArrayM = [NSMutableArray array];
+    self.isSectionTable = true;
 }
 
 #pragma mark 供子类扩展使用
@@ -123,18 +131,27 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 #pragma mark 🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲Table DataSource Protocol🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (!self.isSectionTable) {
+        return KNoInfoSectionH;
+    }
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
     [self registTableHeaderFootWithViewName:sectionModel.sectionHeadViewName];
     return sectionModel.sectionH?:([sectionModel.sectionTitle length]?KNormalSectionH:KNoInfoSectionH);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (!self.isSectionTable) {
+        return KNoInfoSectionFootH;
+    }
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
     [self registTableHeaderFootWithViewName:sectionModel.sectionFootViewName];
     return sectionModel.sectionFootH?:([sectionModel.sectionFootTitle length]?KNormalSectionH:KNoInfoSectionFootH);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (!self.isSectionTable) {
+        return nil;
+    }
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
     UITableViewHeaderFooterView *headerView = nil;
     if (sectionModel.sectionHeadViewName) {
@@ -164,6 +181,9 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (!self.isSectionTable) {
+        return nil;
+    }
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
     UITableViewHeaderFooterView *headerView = nil;
     if (sectionModel.sectionFootViewName) {
@@ -201,34 +221,36 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 //ios7系统需要计算cell的h
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
-//    if(!model.cellH){
-//        [self registTableCellWithCellModel:model];
-//        UITableViewCell <JoyCellProtocol>*cell= [tableView dequeueReusableCellWithIdentifier:model.cellName];
-//        if ([cell respondsToSelector:@selector(setCellWithModel:)]) {
-//            [cell setCellWithModel:model];
-//        }
-//        [cell.contentView setNeedsLayout];
-//        [cell.contentView layoutIfNeeded];
-//        CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height+1;
-//        model.cellH = height;
-//    }
+    JoyCellBaseModel * model;
+    if (!self.isSectionTable) {
+        model = (JoyCellBaseModel * )[self.dataArrayM objectAtIndex:indexPath.row];
+    }else{
+        JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
+        model  = sectionModel.rowArrayM[indexPath.row];
+    }
     return model.cellH?:44;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArrayM.count;
+    return self.isSectionTable?self.dataArrayM.count:1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (!self.isSectionTable) {
+        return self.dataArrayM.count;
+    }
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
     return sectionModel.rowArrayM.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+    JoyCellBaseModel * model;
+    if (!self.isSectionTable) {
+        model = (JoyCellBaseModel *)[self.dataArrayM objectAtIndex:indexPath.row];
+    }else{
+        JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
+        model  = sectionModel.rowArrayM[indexPath.row];
+    }
     [self registTableCellWithCellModel:model];
     UITableViewCell <JoyCellProtocol>*cell = [tableView dequeueReusableCellWithIdentifier:model.cellName];
     __weak __typeof (&*self)weakSelf = self;
@@ -237,7 +259,6 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         [weakSelf reloadWithScheme:scheme andIndexPath:indexPath andObj:obj];
         [weakSelf.tableView endUpdates];
     };
-    
     cell.delegate = self;
     
     cell.index = indexPath;
@@ -284,7 +305,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
+    JoySectionBaseModel *sectionModel = self.isSectionTable?[self.dataArrayM objectAtIndex:indexPath.section]:nil;
     
     if(sectionModel.sectionLeadingOffSet)
     {
@@ -309,15 +330,13 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 #pragma mark 是否可编辑
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+    JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];
     return model.editingStyle != UITableViewCellEditingStyleNone;
 }
 
 #pragma mark 是否可挪移
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+    JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];
     return [model respondsToSelector:@selector(canMove)]?model.canMove:NO;
 }
 
@@ -330,8 +349,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 #pragma mark 编辑类型
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+    JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];
     return model.editingStyle;
 }
 
@@ -370,14 +388,24 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     self.oldSelectIndexPath = self.currentSelectIndexPath;
     [self hideKeyBoard];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+    JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];
     if (!model.disable) {
         self.currentSelectIndexPath = indexPath;
         CellSelectBlock cellSelectBlock = objc_getAssociatedObject(self, @selector(cellDidSelect));
         cellSelectBlock?cellSelectBlock(indexPath,action?:model.tapAction):nil;
         [model action:action];
     }
+}
+
+- (JoyCellBaseModel *)getCellModelWithIndexPath:(NSIndexPath *)indexPath{
+    JoyCellBaseModel * model;
+    if(!self.isSectionTable){
+        model = (JoyCellBaseModel * )[self.dataArrayM objectAtIndex:indexPath.row];
+    }else{
+        JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
+        model  = sectionModel.rowArrayM[indexPath.row];
+    }
+    return model;
 }
 
 #pragma mark collectionCell点击事件
@@ -430,8 +458,8 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         default:
             break;
     }
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+    JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];
+
     model.changeKey?[self textChanged:indexPath andText:obj andChangedKey:model.changeKey]:nil;
 }
 
@@ -525,6 +553,9 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 -(JoyTableAutoLayoutView *(^)(void))reloadTable{
     __weak __typeof(&*self)weakSelf = self;
     return ^(){
+        if (weakSelf.dataArrayM.count) {
+            weakSelf.isSectionTable = [weakSelf.dataArrayM.firstObject isKindOfClass:JoySectionBaseModel.class];
+        }
         [weakSelf reloadTableView];
         return weakSelf;
     };
@@ -608,6 +639,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         return weakSelf;
     };
 }
+
 
 -(void)dealloc{
     self.dataArrayM = nil;

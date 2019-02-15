@@ -7,7 +7,7 @@
 //
 #define KTEXTMaXWIDTH  self.contentView.width-20
 #define KTEXTMaXHEIGHT 200
-#define KTEXTMINHEIGHT 33.6667
+#define KTEXTMINHEIGHT 34
 #define KTEXTTBSPACE  10
 
 #import "JoyTextViewCell.h"
@@ -65,7 +65,7 @@
     MAS_CONSTRAINT(self.textView,
                    make.leading.mas_equalTo(weakSelf.contentView).offset(5);
                    make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
-                   make.height.mas_greaterThanOrEqualTo(33.6667);
+                   make.height.mas_greaterThanOrEqualTo(33.5);
                    make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(5);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
