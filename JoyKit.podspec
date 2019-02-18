@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.24'
-  s.summary          = 'table颜色传值改为hexstring'
+  s.version          = '0.1.25'
+  s.summary          = 'table支持无section数据源'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
