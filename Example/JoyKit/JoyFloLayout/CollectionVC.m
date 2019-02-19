@@ -12,12 +12,15 @@
 #import "CollectionInteractor.h"
 #import "JoyCollectionFlowLayout.h"
 #import "UIColor+JoyColor.h"
+#import "JoyPickerView.h"
+#import <JoySectionBaseModel.h>
+#import <JoyCellBaseModel.h>
 
 @interface CollectionVC ()
 @property (nonatomic,strong)JoyCollectionView *collectionView;
 @property (nonatomic,strong)CollectionInteractor *interactor;
 @property (nonatomic,strong)JoyCollectionFlowLayout *flowLayout;
-
+@property (nonatomic,strong)JoyPickerView *joyPickerView;
 @end
 
 @implementation CollectionVC
@@ -30,9 +33,21 @@
         make.edges.mas_equalTo(self.view);
     }];
     
+    [self.joyPickerView setToolbarLeftTitle:@"cancle" textColor:[UIColor redColor]];
+    [self.joyPickerView setToolbarRightTitle:@"enter" textColor:[UIColor greenColor]];
+    [self.joyPickerView setTitle:@"测试" textColor:[UIColor purpleColor]];
+    [self.joyPickerView reloadPickViewWithDataSource:@[@[@"1",@"2",@"3"],@[@"4",@"5",@"6"],@[@"7"]]];
+    self.joyPickerView.EntryBtnClickBlock = ^(NSMutableArray<JoyPickSelectedModel *> *selectedDataArrayM) {
+        NSLog(@"");
+    } ;
+    
+    __weak __typeof(&*self)weakSelf = self;
     [self.interactor getDataSource:^{
         self.collectionView.setDataSource(self.interactor.dataArrayM).reloadCollection().cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
-            
+            JoySectionBaseModel *sectionModel = [self.interactor.dataArrayM objectAtIndex:indexPath.section];
+            JoyImageCellBaseModel *model =[sectionModel.rowArrayM objectAtIndex:indexPath.row];
+            [self.joyPickerView setTitle:model.title textColor:[UIColor purpleColor]];
+            [self.joyPickerView showPickView];
         }).collectionScroll(^(UIScrollView *scrollView) {
             NSLog(@"");
         });
@@ -62,5 +77,9 @@
 
 -(CollectionInteractor *)interactor{
     return _interactor = _interactor?:[[CollectionInteractor alloc]init];
+}
+
+-(JoyPickerView *)joyPickerView{
+    return _joyPickerView = _joyPickerView?:[[JoyPickerView alloc]init];
 }
 @end

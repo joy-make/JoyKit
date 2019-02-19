@@ -218,16 +218,19 @@
 }
 
 #pragma mark 设置标题
--(void)setTitle:(NSString *)title{
+-(void)setTitle:(NSString *)title textColor:(UIColor *)textColor{
     self.titleLabel.text = title;
+    if(textColor)self.titleLabel.textColor = textColor;
 }
 
--(void)setToolbarLeftTitle:(NSString *)title{
+-(void)setToolbarLeftTitle:(NSString *)title textColor:(UIColor *)color{
     [self.leftBarBtn setTitle:title forState:UIControlStateNormal];
+    if(color) [self.leftBarBtn setTitleColor:color forState:UIControlStateNormal];
 }
 
--(void)setToolbarRightTitle:(NSString *)title{
+-(void)setToolbarRightTitle:(NSString *)title textColor:(UIColor *)color{
     [self.rightBarBtn setTitle:title forState:UIControlStateNormal];
+    if(color) [self.rightBarBtn setTitleColor:color forState:UIControlStateNormal];
 }
 
 -(void)setDateType:(JoyDateType)dateType{

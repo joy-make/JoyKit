@@ -18,8 +18,8 @@
 @property (nonatomic,strong)UIView       *coverView;
 @property (nonatomic,strong)UIToolbar    *toolBar;
 @property (nonatomic,weak) UILabel       *titleLabel;
-@property (nonatomic,strong)UIButton     *cancelButton;
-@property (nonatomic,strong)UIButton     *sureButton;
+@property (nonatomic,strong)UIButton     *toolBarLeftBtn;
+@property (nonatomic,strong)UIButton     *toolBarRightBtn;
 @property (nonatomic,strong)UIDatePicker *pickView;
 @property (nonatomic,strong)NSDate       *selectDate;
 @end
@@ -95,13 +95,13 @@
         UIButton *spaceBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 5, 10, 25)];
         UIBarButtonItem *spaceBarItem = [[UIBarButtonItem alloc]initWithCustomView:spaceBtn];
         
-        UIButton *calcleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        calcleBtn.frame = CGRectMake(0, 5, 30, 25);
-        [calcleBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
-        [calcleBtn addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
-        [calcleBtn setTitle:@"取消" forState:UIControlStateNormal];
-        [calcleBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:calcleBtn];
+        self.toolBarLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.toolBarLeftBtn.frame = CGRectMake(0, 5, 30, 25);
+        [self.toolBarLeftBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
+        [self.toolBarLeftBtn addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.toolBarLeftBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [self.toolBarLeftBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.toolBarLeftBtn];
         
         //        UIBarButtonItem * btnSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5,  SCREEN_W-120, 25)];
@@ -111,13 +111,13 @@
         self.titleLabel = titleLabel;
         UIBarButtonItem * titleBar = [[UIBarButtonItem alloc]initWithCustomView:titleLabel];
         
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(0, 5, 30, 25);
-        [btn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
-        [btn setTitle:@"确定" forState:UIControlStateNormal];
-        [btn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:btn];
+        self.toolBarRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.toolBarRightBtn.frame = CGRectMake(0, 5, 30, 25);
+        [self.toolBarRightBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
+        [self.toolBarRightBtn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.toolBarRightBtn setTitle:@"确定" forState:UIControlStateNormal];
+        [self.toolBarRightBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:self.toolBarRightBtn];
         NSArray * buttonsArray = [NSArray arrayWithObjects:spaceBarItem,cancleBarItem,titleBar,doneBtn,spaceBarItem,nil];
         [_toolBar setItems:buttonsArray];
         
@@ -151,7 +151,22 @@
 }
 
 -(void)setTitle:(NSString *)title{
+    [self setTitle:title textColor:nil];
+}
+
+-(void)setTitle:(NSString *)title textColor:(UIColor *)textColor{
     self.titleLabel.text = title;
+    if(textColor) self.titleLabel.textColor = textColor;
+}
+
+-(void)setToolbarLeftTitle:(NSString *)title textColor:(UIColor *)textColor{
+    [self.toolBarLeftBtn setTitleColor:textColor forState:UIControlStateNormal];
+    [self.toolBarLeftBtn setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setToolbarRightTitle:(NSString *)title textColor:(UIColor *)textColor{
+    [self.toolBarRightBtn setTitleColor:textColor forState:UIControlStateNormal];
+    [self.toolBarRightBtn setTitle:title forState:UIControlStateNormal];
 }
 
 - (void)setDate:(NSDate *)date{

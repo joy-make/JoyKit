@@ -12,7 +12,11 @@
 @interface JoyPickerView ()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic,strong)UIView     *          coverView;
 @property (nonatomic,strong)UIToolbar  *          toolBar;
+@property (nonatomic,weak) UILabel     *          titleLabel;
+@property (nonatomic,strong)UIButton   *          toolBarLeftBtn;
+@property (nonatomic,strong)UIButton   *          toolBarRightBtn;
 @property (nonatomic,strong)NSArray<NSArray*>     *dataArray;
+
 @end
 
 @implementation JoyPickerView
@@ -86,29 +90,58 @@
 - (UIToolbar *)toolBar{
     if(!_toolBar){
         _toolBar = [[UIToolbar alloc]initWithFrame:CGRectZero];
-        
+        [_toolBar setBackgroundImage:[UIImage new] forToolbarPosition:0 barMetrics:UIBarMetricsDefault];
+        _toolBar.backgroundColor = [UIColor whiteColor];
         UIButton *spaceBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 5, 10, 25)];
         UIBarButtonItem *spaceBarItem = [[UIBarButtonItem alloc]initWithCustomView:spaceBtn];
         
-        UIButton *calcleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        calcleBtn.frame = CGRectMake(0, 5, 40, 25);
-        [calcleBtn setTitleColor:self.tintColor forState:UIControlStateNormal];
-        [calcleBtn addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
-        [calcleBtn setTitle:@"取消" forState:UIControlStateNormal];
-        UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:calcleBtn];
+        self.toolBarLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.toolBarLeftBtn.frame = CGRectMake(0, 5, 30, 25);
+        [self.toolBarLeftBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
+        [self.toolBarLeftBtn addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.toolBarLeftBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [self.toolBarLeftBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        UIBarButtonItem *cancleBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.toolBarLeftBtn];
         
-        UIBarButtonItem * btnSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        //        UIBarButtonItem * btnSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5,  SCREEN_W-120, 25)];
+        titleLabel.font = [UIFont systemFontOfSize:16];
+        titleLabel.textColor = UIColorFromRGB(0x666666);
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel = titleLabel;
+        UIBarButtonItem * titleBar = [[UIBarButtonItem alloc]initWithCustomView:titleLabel];
         
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(0, 5, 40, 25);
-        [btn setTitleColor:self.tintColor forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
-        [btn setTitle:@"完成" forState:UIControlStateNormal];
-        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:btn];
-        NSArray * buttonsArray = [NSArray arrayWithObjects:spaceBarItem,cancleBarItem,btnSpace,doneBtn,spaceBarItem,nil];
+        self.toolBarRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.toolBarRightBtn.frame = CGRectMake(0, 5, 30, 25);
+        [self.toolBarRightBtn setTitleColor:UIColorFromRGB(0x347AEB) forState:UIControlStateNormal];
+        [self.toolBarRightBtn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.toolBarRightBtn setTitle:@"确定" forState:UIControlStateNormal];
+        [self.toolBarRightBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]initWithCustomView:self.toolBarRightBtn];
+        NSArray * buttonsArray = [NSArray arrayWithObjects:spaceBarItem,cancleBarItem,titleBar,doneBtn,spaceBarItem,nil];
         [_toolBar setItems:buttonsArray];
+        
+        //分割线
+        UIView* shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, _toolBar.bottom+44, SCREEN_W, 0.5)];
+        shadowView.backgroundColor = UIColorFromRGB(0xEFF4F9);
+        [_toolBar addSubview:shadowView];
     }
     return _toolBar;
+}
+
+-(void)setTitle:(NSString *)title textColor:(UIColor *)textColor{
+    self.titleLabel.text = title;
+    if(textColor) self.titleLabel.textColor = textColor;
+}
+
+-(void)setToolbarLeftTitle:(NSString *)title textColor:(UIColor *)textColor{
+    [self.toolBarLeftBtn setTitleColor:textColor forState:UIControlStateNormal];
+    [self.toolBarLeftBtn setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setToolbarRightTitle:(NSString *)title textColor:(UIColor *)textColor{
+    [self.toolBarRightBtn setTitleColor:textColor forState:UIControlStateNormal];
+    [self.toolBarRightBtn setTitle:title forState:UIControlStateNormal];
 }
 
 - (void)cancelClick{
@@ -117,7 +150,16 @@
 }
 - (void)sureClick{
     [self hidePickerView];
-    self.EntryBtnClickBlock?self.EntryBtnClickBlock():nil;
+    NSMutableArray <JoyPickSelectedModel *>*selectedDataArrayM = [NSMutableArray array];
+    for (int i=0; i<self.dataArray.count; i++) {
+        JoyPickSelectedModel *model = [[JoyPickSelectedModel alloc]init];
+        model.component = i;
+        model.row = [self.pickerView selectedRowInComponent:i];
+        NSArray *componentArray = [self.dataArray objectAtIndex:i];
+        model.value = componentArray.count>model.row?[componentArray objectAtIndex:model.row]:nil;
+        [selectedDataArrayM addObject:model];
+    }
+    self.EntryBtnClickBlock?self.EntryBtnClickBlock(selectedDataArrayM):nil;
 }
 
 #pragma mark - 显示pickerView
@@ -206,5 +248,9 @@
 - (void)hidePickView{
     self.coverView.hidden =YES;
 }
+
+@end
+
+@implementation JoyPickSelectedModel
 
 @end

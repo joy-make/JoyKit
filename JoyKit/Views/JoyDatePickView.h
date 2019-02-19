@@ -13,6 +13,12 @@
 
 - (void)setTitle:(NSString *)title;
 
+- (void)setTitle:(NSString *)title textColor:(UIColor *)textColor;
+
+- (void)setToolbarLeftTitle:(NSString *)title textColor:(UIColor *)textColor;
+
+- (void)setToolbarRightTitle:(NSString *)title textColor:(UIColor *)textColor;
+
 - (void)setDate:(NSDate *)date;
 
 - (void)setMinDate:(NSDate *)minimumDate;

@@ -27,13 +27,13 @@ typedef NS_ENUM(NSInteger,JoyDateType) {
 @property (nonatomic,readonly)UIPickerView *pickerView;
 
 //设置工具条左标题
-- (void)setToolbarLeftTitle:(NSString *)title;
+- (void)setToolbarLeftTitle:(NSString *)title textColor:(UIColor *)color;
 
 //设置工具条右标题
-- (void)setToolbarRightTitle:(NSString *)title;
+- (void)setToolbarRightTitle:(NSString *)title textColor:(UIColor *)color;
 
 //设置工具条标题
-- (void)setTitle:(NSString *)title;
+- (void)setTitle:(NSString *)title textColor:(UIColor *)textColor;
 
 //设置日期类型格式
 - (void)setDateType:(JoyDateType)dateType;
