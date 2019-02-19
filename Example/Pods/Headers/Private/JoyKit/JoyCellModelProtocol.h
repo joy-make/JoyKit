@@ -1,1 +1,1 @@
-../../../../../JoyKit/Common/JoyCellModelProtocol.h
+../../../../../JoyKit/Models/JoyCellModelProtocol.h

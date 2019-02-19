@@ -27,7 +27,9 @@
 
 #pragma mark 开关类型model
 @interface JoySwitchCellBaseModel : JoyCellBaseModel
-@property (nonatomic,assign) BOOL  on;
+@property (nonatomic,assign) BOOL    on;
+@property (nonatomic,copy) NSString  *switchBackColor;
+@property (nonatomic,copy) NSString  *onTintColor;
 @end
 
 @interface JoyTableCollectionCellBaseModel: JoyCellBaseModel

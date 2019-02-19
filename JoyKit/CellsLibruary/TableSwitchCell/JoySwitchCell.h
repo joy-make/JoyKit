@@ -14,3 +14,11 @@
  */
 @interface JoySwitchCell : JoyBaseCell
 @end
+
+
+/**
+ 带副标题的cell
+ */
+@interface JoySwitchSubTitleCell : JoySwitchCell
+@end
+

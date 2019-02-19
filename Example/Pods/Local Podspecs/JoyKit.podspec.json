@@ -1,7 +1,7 @@
 {
   "name": "JoyKit",
-  "version": "0.1.24",
-  "summary": "table颜色传值改为hexstring",
+  "version": "0.1.25",
+  "summary": "table支持无section数据源,joypickview回调数据源扩展以及ui控制扩展",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/joy-make/JoyKit",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/joy-make/JoyKit.git",
-    "tag": "0.1.24"
+    "tag": "0.1.25"
   },
   "platforms": {
     "ios": "7.0"

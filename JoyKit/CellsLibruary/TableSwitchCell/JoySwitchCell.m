@@ -70,6 +70,14 @@
     if(model.titleColor){
         self.titleLabel.textColor = KJoyHexColor(model.titleColor, 1);
     }
+    if(model.switchBackColor){
+        self.mySwitch.backgroundColor = KJoyHexColor(model.switchBackColor, 1);
+    }
+    
+    if(model.onTintColor){
+        self.mySwitch.onTintColor = KJoyHexColor(model.onTintColor, 1);
+    }
+
     __block JoySwitchCellBaseModel *switchModel = model;
     __weak typeof (self) weakSelf = self;
     model.aToBCellBlock= ^(id onState){
@@ -91,5 +99,68 @@
         [self.delegate textChanged:self.index andText:(NSString *)@(sender.on) andChangedKey:model.changeKey];
     }
 }
+
+@end
+
+
+@interface JoySwitchSubTitleCell ()
+@property (strong, nonatomic) UILabel *subTitleLabel;
+
+@end
+
+@implementation JoySwitchSubTitleCell
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.subTitleLabel];
+        [self.contentView addSubview:self.mySwitch];
+        [self setConstraint];
+        [self updateConstraintsIfNeeded];
+    }
+    return self;
+}
+
+-(void)setConstraint{
+    __weak __typeof(&*self)weakSelf = self;
+    MAS_CONSTRAINT(self.titleLabel,
+                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
+                   make.trailing.mas_equalTo(weakSelf.mySwitch.mas_leading).offset(-15);
+                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(18);
+                   make.bottom.mas_equalTo(weakSelf.contentView.mas_centerY).mas_offset(-3);
+                   );
+    
+    MAS_CONSTRAINT(self.subTitleLabel,
+                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
+                   make.trailing.mas_equalTo(weakSelf.mySwitch.mas_leading).offset(-15);
+                   make.bottom.mas_equalTo(-18);
+                   make.top.mas_equalTo(weakSelf.contentView.mas_centerY).mas_offset(3);
+                   );
+    
+    MAS_CONSTRAINT(self.mySwitch,
+                   make.trailing.mas_equalTo(weakSelf.contentView.mas_trailing).offset(-15);
+                   make.width.mas_equalTo(49);
+                   make.top.mas_greaterThanOrEqualTo(weakSelf.contentView.mas_top).offset(6);
+                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
+                   );
+}
+
+-(void)setCellWithModel:(JoySwitchCellBaseModel *)model{
+    [super setCellWithModel:model];
+    model.subTitle = model.subTitle;
+    if(model.subTitleColor){
+        self.subTitleLabel.textColor = KJoyHexColor(model.subTitleColor, 1);
+    }
+}
+
+-(UILabel *)subTitleLabel{
+    if(!_subTitleLabel){
+        _subTitleLabel = [[UILabel alloc]init];
+        _subTitleLabel.numberOfLines = 0;
+        _subTitleLabel.font = [UIFont systemFontOfSize:12];
+        _subTitleLabel.textColor = KJoyHexColor(@"0x999999", 1);
+    }
+    return _subTitleLabel;
+}
+
 
 @end
