@@ -46,7 +46,8 @@
         [section.rowArrayM addObject:textCellModel];
 
         JoySwitchCellBaseModel *switchCellModel= (JoySwitchCellBaseModel *)[self joyProtocolObjectFromStr:@"JoySwitchCellBaseModel"];
-        switchCellModel.cellName = JoySwitchCell;
+        switchCellModel.cellName = JoySwitchSubTitleCell;
+        switchCellModel.subTitle = @"副标题";
         [self setCellWithModel:switchCellModel];
         [section.rowArrayM addObject:switchCellModel];
 

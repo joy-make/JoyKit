@@ -72,6 +72,7 @@
 #define JoyTextViewCell                         @"JoyTextViewCell"                              //textviewcell
 #define JoyLeftLabelTextViewCell                @"JoyLeftLabelTextViewCell"                     //左label右textview
 #define JoySwitchCell                           @"JoySwitchCell"                                //左label右switch
+#define JoySwitchSubTitleCell                   @"JoySwitchSubTitleCell"                        //带副标题的swithcell
 #define JoyCollectionTextCell                   @"JoyCollectionTextCell"
 
 #endif /* JoyKit_h */

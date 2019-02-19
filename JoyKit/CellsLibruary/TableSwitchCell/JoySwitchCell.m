@@ -15,19 +15,23 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UISwitch *mySwitch;
 
+- (void)addSubViews;
 @end
 
 @implementation JoySwitchCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self.contentView addSubview:self.titleLabel];
-        [self.contentView addSubview:self.mySwitch];
+        [self addSubViews];
         [self setConstraint];
         [self updateConstraintsIfNeeded];
     }
     return self;
 }
 
+- (void)addSubViews{
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.mySwitch];
+}
 
 -(UILabel *)titleLabel{
     if(!_titleLabel){
@@ -104,62 +108,63 @@
 
 
 @interface JoySwitchSubTitleCell ()
-@property (strong, nonatomic) UILabel *subTitleLabel;
+@property (strong, nonatomic) UILabel *switchSubTitleLabel;
 
 @end
 
 @implementation JoySwitchSubTitleCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self.contentView addSubview:self.titleLabel];
-        [self.contentView addSubview:self.subTitleLabel];
-        [self.contentView addSubview:self.mySwitch];
+        [self addSubViews];
         [self setConstraint];
         [self updateConstraintsIfNeeded];
     }
     return self;
 }
 
+- (void)addSubViews{
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.switchSubTitleLabel];
+    [self.contentView addSubview:self.mySwitch];
+}
+
 -(void)setConstraint{
-    __weak __typeof(&*self)weakSelf = self;
-    MAS_CONSTRAINT(self.titleLabel,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
-                   make.trailing.mas_equalTo(weakSelf.mySwitch.mas_leading).offset(-15);
-                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(18);
-                   make.bottom.mas_equalTo(weakSelf.contentView.mas_centerY).mas_offset(-3);
-                   );
-    
-    MAS_CONSTRAINT(self.subTitleLabel,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
-                   make.trailing.mas_equalTo(weakSelf.mySwitch.mas_leading).offset(-15);
-                   make.bottom.mas_equalTo(-18);
-                   make.top.mas_equalTo(weakSelf.contentView.mas_centerY).mas_offset(3);
-                   );
-    
     MAS_CONSTRAINT(self.mySwitch,
-                   make.trailing.mas_equalTo(weakSelf.contentView.mas_trailing).offset(-15);
+                   make.trailing.mas_equalTo(-15);
                    make.width.mas_equalTo(49);
-                   make.top.mas_greaterThanOrEqualTo(weakSelf.contentView.mas_top).offset(6);
-                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
+                   make.top.mas_greaterThanOrEqualTo(6);
+                   make.centerY.mas_equalTo(self.contentView.mas_centerY);
+                   );
+    MAS_CONSTRAINT(self.titleLabel,
+                   make.leading.mas_equalTo(15);
+                   make.trailing.mas_equalTo(self.mySwitch.mas_leading).offset(-15);
+                   make.top.mas_equalTo(18);
+                   make.bottom.mas_equalTo(self.contentView.mas_centerY).mas_offset(-3);
+                   );
+    
+    MAS_CONSTRAINT(self.switchSubTitleLabel,
+                   make.leading.trailing.mas_equalTo(self.titleLabel);
+                   make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(6);
+                   make.bottom.mas_equalTo(-18);
                    );
 }
 
 -(void)setCellWithModel:(JoySwitchCellBaseModel *)model{
     [super setCellWithModel:model];
-    model.subTitle = model.subTitle;
+    self.switchSubTitleLabel.text = model.subTitle;
     if(model.subTitleColor){
-        self.subTitleLabel.textColor = KJoyHexColor(model.subTitleColor, 1);
+        self.switchSubTitleLabel.textColor = KJoyHexColor(model.subTitleColor, 1);
     }
 }
 
--(UILabel *)subTitleLabel{
-    if(!_subTitleLabel){
-        _subTitleLabel = [[UILabel alloc]init];
-        _subTitleLabel.numberOfLines = 0;
-        _subTitleLabel.font = [UIFont systemFontOfSize:12];
-        _subTitleLabel.textColor = KJoyHexColor(@"0x999999", 1);
+-(UILabel *)switchSubTitleLabel{
+    if(!_switchSubTitleLabel){
+        _switchSubTitleLabel = [[UILabel alloc]init];
+        _switchSubTitleLabel.numberOfLines = 0;
+        _switchSubTitleLabel.font = [UIFont systemFontOfSize:12];
+        _switchSubTitleLabel.textColor = KJoyHexColor(@"0x999999", 1);
     }
-    return _subTitleLabel;
+    return _switchSubTitleLabel;
 }
 
 
