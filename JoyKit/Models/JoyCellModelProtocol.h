@@ -1,13 +1,13 @@
 //
-//  TNACellModelProtocol.h
-//  Toon
+//  JoyCellModelProtocol.h
+//  JoyKit
 //
-//  Created by joymake on 2016/12/27.
-//  Copyright © 2016年 Joy. All rights reserved.
+//  Created by Joymake on 2019/2/19.
 //
-
 
 #import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,ECellType) {
     ECellCodeType,
@@ -38,6 +38,7 @@ typedef void(^CellBlock)(id obj,ERefreshScheme refreshScheme);
 typedef void(^AToBCellBlock)(id obj);
 
 @protocol JoyCellModelProtocol <NSObject>
+
 //cellType xib 或代码
 @property (nonatomic,assign)  ECellType                         cellType;
 
@@ -131,3 +132,5 @@ typedef void(^AToBCellBlock)(id obj);
 @property (nonatomic,copy)    NSString                          *placeHolderImageStr;
 
 @end
+
+NS_ASSUME_NONNULL_END

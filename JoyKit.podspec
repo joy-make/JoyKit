@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.25'
-  s.summary          = 'table支持无section数据源,joypickview回调数据源扩展以及ui控制扩展'
+  s.version          = '0.1.26'
+  s.summary          = 'joycellProtocol文件优化'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
