@@ -55,7 +55,7 @@
     MAS_CONSTRAINT(self.titleLabel,
                    make.leading.mas_equalTo(weakSelf.contentView).offset(15);
                    make.trailing.mas_equalTo(weakSelf.mySwitch.mas_leading).offset(-15);
-                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(10);
+                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(18);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
     

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -93,7 +94,11 @@ typedef void(^AToBCellBlock)(id obj);
 //值改变事件
 @property (nonatomic,copy)    NSString                          *valuechangeAction;
 
+@property (nonatomic,assign) CGFloat                            rowLeadingOffSet;
+
 @property (nonatomic,assign)  bool                              disable;
+
+@property (nonatomic,assign)  bool                              selected;
 
 //点击事件回调时实现model的回调函数，执行此函数
 @property (nonatomic,copy)CellBlock                             cellBlock;

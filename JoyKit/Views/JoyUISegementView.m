@@ -171,7 +171,7 @@
 
     [_separateLineSuperview addSubview:_bottomView];
     _bottomSeparateLineSuperview = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(_separateLineSuperview.frame), self.width, 0.5)];
-    _bottomSeparateLineSuperview.backgroundColor = UIColorFromRGB(0xDDDEE3);
+//    _bottomSeparateLineSuperview.backgroundColor = UIColorFromRGB(0xDDDEE3);
     [_separateLineSuperview addSubview:_bottomSeparateLineSuperview];
 }
 
@@ -188,11 +188,16 @@
 
 - (void)updateBottomViewFrame{
     _bottomView.backgroundColor = self.bottomSliderColor;
-    CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * _segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
-    __weak __typeof (&*_bottomView)weakBottomView = _bottomView;
-    [UIView animateWithDuration:0.3 animations:^{
-        [weakBottomView setFrame:newRect];
-    }];
+    if (self.segmentItems.count>_segment.selectedSegmentIndex) {
+        NSString *title = [self.segmentItems objectAtIndex:_segment.selectedSegmentIndex];
+        if (title.length) {
+            CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * _segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
+            __weak __typeof (&*_bottomView)weakBottomView = _bottomView;
+            [UIView animateWithDuration:0.3 animations:^{
+                [weakBottomView setFrame:newRect];
+            }];
+        }
+    }
 }
 
 //处理超出区域点击无效的问题

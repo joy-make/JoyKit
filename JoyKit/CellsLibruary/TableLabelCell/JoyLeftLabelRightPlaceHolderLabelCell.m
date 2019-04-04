@@ -54,7 +54,7 @@
 -(UILabel *)placeHolderLabe{
     if(!_placeHolderLabe){
     _placeHolderLabe = [[UILabel alloc]init];
-    _placeHolderLabe.textColor = UIColorFromRGB(0x95989F);
+    _placeHolderLabe.textColor = UIColorFromRGB(0xCCCCCC);
     _placeHolderLabe.font = [UIFont systemFontOfSize:15];
     }
     return _placeHolderLabe;

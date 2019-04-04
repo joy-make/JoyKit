@@ -55,7 +55,7 @@
                 break;
                 
             case JoyRouteActionTypePop:{
-                UIViewController *vc = [self getPopToVC:path];
+                UIViewController *vc = [self getPopToVC:NSStringFromClass(obj.class)];
                 vc?[[self getNav] popToViewController:vc animated:YES]:[[self getNav] popViewControllerAnimated:YES];
             }
                 break;

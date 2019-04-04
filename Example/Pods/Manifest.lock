@@ -1,46 +1,46 @@
 PODS:
-  - JoyKit (0.1.25):
-    - JoyKit/Category (= 0.1.25)
-    - JoyKit/CellsLibruary (= 0.1.25)
-    - JoyKit/Common (= 0.1.25)
-    - JoyKit/Controllers (= 0.1.25)
-    - JoyKit/JoyCoreMotion (= 0.1.25)
-    - JoyKit/JoyHeader (= 0.1.25)
-    - JoyKit/JoyLocation (= 0.1.25)
-    - JoyKit/JoyMediaRecordPlay (= 0.1.25)
-    - JoyKit/JoyQRCode (= 0.1.25)
-    - JoyKit/JoyWebView (= 0.1.25)
-    - JoyKit/Models (= 0.1.25)
-    - JoyKit/Router (= 0.1.25)
-    - JoyKit/Utility (= 0.1.25)
-    - JoyKit/Views (= 0.1.25)
+  - JoyKit (0.1.26):
+    - JoyKit/Category (= 0.1.26)
+    - JoyKit/CellsLibruary (= 0.1.26)
+    - JoyKit/Common (= 0.1.26)
+    - JoyKit/Controllers (= 0.1.26)
+    - JoyKit/JoyCoreMotion (= 0.1.26)
+    - JoyKit/JoyHeader (= 0.1.26)
+    - JoyKit/JoyLocation (= 0.1.26)
+    - JoyKit/JoyMediaRecordPlay (= 0.1.26)
+    - JoyKit/JoyQRCode (= 0.1.26)
+    - JoyKit/JoyWebView (= 0.1.26)
+    - JoyKit/Models (= 0.1.26)
+    - JoyKit/Router (= 0.1.26)
+    - JoyKit/Utility (= 0.1.26)
+    - JoyKit/Views (= 0.1.26)
     - Masonry
-  - JoyKit/Category (0.1.25):
+  - JoyKit/Category (0.1.26):
     - Masonry
-  - JoyKit/CellsLibruary (0.1.25):
+  - JoyKit/CellsLibruary (0.1.26):
     - JoyKit/Category
-    - JoyKit/CellsLibruary/CollectionCell (= 0.1.25)
-    - JoyKit/CellsLibruary/TableCollectionCell (= 0.1.25)
-    - JoyKit/CellsLibruary/TableImageCell (= 0.1.25)
-    - JoyKit/CellsLibruary/TableLabelCell (= 0.1.25)
-    - JoyKit/CellsLibruary/TableSwitchCell (= 0.1.25)
-    - JoyKit/CellsLibruary/TableTextCell (= 0.1.25)
+    - JoyKit/CellsLibruary/CollectionCell (= 0.1.26)
+    - JoyKit/CellsLibruary/TableCollectionCell (= 0.1.26)
+    - JoyKit/CellsLibruary/TableImageCell (= 0.1.26)
+    - JoyKit/CellsLibruary/TableLabelCell (= 0.1.26)
+    - JoyKit/CellsLibruary/TableSwitchCell (= 0.1.26)
+    - JoyKit/CellsLibruary/TableTextCell (= 0.1.26)
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/CellsLibruary/CollectionCell (0.1.25):
-    - JoyKit/Category
-    - JoyKit/CellsLibruary/TableLabelCell
-    - JoyKit/Common
-    - JoyKit/Models
-    - Masonry
-  - JoyKit/CellsLibruary/TableCollectionCell (0.1.25):
+  - JoyKit/CellsLibruary/CollectionCell (0.1.26):
     - JoyKit/Category
     - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/CellsLibruary/TableImageCell (0.1.25):
+  - JoyKit/CellsLibruary/TableCollectionCell (0.1.26):
+    - JoyKit/Category
+    - JoyKit/CellsLibruary/TableLabelCell
+    - JoyKit/Common
+    - JoyKit/Models
+    - Masonry
+  - JoyKit/CellsLibruary/TableImageCell (0.1.26):
     - JoyKit/Category
     - JoyKit/CellsLibruary/CollectionCell
     - JoyKit/CellsLibruary/TableCollectionCell
@@ -50,36 +50,36 @@ PODS:
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/CellsLibruary/TableLabelCell (0.1.25):
+  - JoyKit/CellsLibruary/TableLabelCell (0.1.26):
     - JoyKit/Category
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/CellsLibruary/TableSwitchCell (0.1.25):
+  - JoyKit/CellsLibruary/TableSwitchCell (0.1.26):
     - JoyKit/Category
     - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/CellsLibruary/TableTextCell (0.1.25):
+  - JoyKit/CellsLibruary/TableTextCell (0.1.26):
     - JoyKit/Category
     - JoyKit/CellsLibruary/TableLabelCell
     - JoyKit/Common
     - JoyKit/Models
     - Masonry
-  - JoyKit/Common (0.1.25):
+  - JoyKit/Common (0.1.26):
     - JoyKit/Category
     - Masonry
-  - JoyKit/Controllers (0.1.25):
+  - JoyKit/Controllers (0.1.26):
     - JoyKit/Category
     - JoyKit/Common
     - JoyKit/JoyWebView
     - Masonry
-  - JoyKit/JoyCoreMotion (0.1.25):
+  - JoyKit/JoyCoreMotion (0.1.26):
     - JoyKit/Common
     - JoyKit/Utility
     - Masonry
-  - JoyKit/JoyHeader (0.1.25):
+  - JoyKit/JoyHeader (0.1.26):
     - JoyKit/Category
     - JoyKit/CellsLibruary
     - JoyKit/Controllers
@@ -92,35 +92,35 @@ PODS:
     - JoyKit/Utility
     - JoyKit/Views
     - Masonry
-  - JoyKit/JoyLocation (0.1.25):
+  - JoyKit/JoyLocation (0.1.26):
     - JoyKit/Common
     - JoyKit/Utility
     - Masonry
-  - JoyKit/JoyMediaRecordPlay (0.1.25):
+  - JoyKit/JoyMediaRecordPlay (0.1.26):
     - JoyKit/Category
     - JoyKit/Common
     - JoyKit/JoyCoreMotion
     - JoyKit/Utility
     - Masonry
-  - JoyKit/JoyQRCode (0.1.25):
+  - JoyKit/JoyQRCode (0.1.26):
     - JoyKit/Category
     - JoyKit/Common
     - JoyKit/JoyCoreMotion
     - JoyKit/JoyMediaRecordPlay
     - JoyKit/Utility
     - Masonry
-  - JoyKit/JoyWebView (0.1.25):
+  - JoyKit/JoyWebView (0.1.26):
     - JoyKit/Category
     - JoyKit/Common
     - JoyKit/Utility
     - Masonry
-  - JoyKit/Models (0.1.25):
+  - JoyKit/Models (0.1.26):
     - Masonry
-  - JoyKit/Router (0.1.25):
+  - JoyKit/Router (0.1.26):
     - Masonry
-  - JoyKit/Utility (0.1.25):
+  - JoyKit/Utility (0.1.26):
     - Masonry
-  - JoyKit/Views (0.1.25):
+  - JoyKit/Views (0.1.26):
     - JoyKit/Category
     - JoyKit/CellsLibruary
     - Masonry
@@ -146,7 +146,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JoyKit: 329495d91cae9b9fd206fa5c3a6357a1ddd545d1
+  JoyKit: bc1753a64606844f087301f1d447d3d1685b6bd3
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681

@@ -22,7 +22,7 @@
 -(void)setPickView:(JoyPickerView *)pickView{
     _pickView = pickView;
     __weak __typeof(&*self)weakSelf = self;
-    _pickView.EntryBtnClickBlock = ^{
+    _pickView.EntryBtnClickBlock = ^(NSMutableArray<JoyPickSelectedModel *> *selectedDataArrayM) {
         [weakSelf pickSelectEntryClick];
     };
 }

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSMutableArray *list = [self getDataSource];
-    [self setDefaultConstraintWithView:self.layoutView andTitle:@"10000条随机数据测试"];
+    [self setDefaultConstraintWithView:self.layoutView andTitle:@""];
     self.layoutView.setDataSource(list)
     .reloadTable()
     .cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {

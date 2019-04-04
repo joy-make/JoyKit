@@ -14,7 +14,9 @@
 
 
 @implementation JoyCellBaseModel
-
++ (NSArray *)mj_ignoredPropertyNames{
+    return @[];
+}
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     NSLog(@"%@",key);
@@ -105,7 +107,7 @@
 }
 
 -(UITableViewCellAccessoryType )accessoryType{
-    NSNumber *number = [self.obj objectForKey:@"cellType"];
+    NSNumber *number = [self.obj objectForKey:@"accessoryType"];
     return number?[number integerValue]:UITableViewCellAccessoryNone;
 };
 
@@ -158,7 +160,7 @@
 
 //点击事件的sel name 在子类中实现
 -(void)setTapAction:(NSString *)tapAction{
-    [self.obj setObject:tapAction forKey:@"tapAction"];
+    tapAction?[self.obj setObject:tapAction forKey:@"tapAction"]:nil;
 }
 
 -(NSString *)tapAction{
@@ -167,7 +169,7 @@
 
 //长按的sel name 在子类中实现
 -(void)setLongPressAction:(NSString *)longPressAction{
-    [self.obj setObject:longPressAction forKey:@"longPressAction"];
+    longPressAction?[self.obj setObject:longPressAction forKey:@"longPressAction"]:nil;
 }
 
 -(NSString *)longPressAction{
@@ -176,7 +178,7 @@
 
 //文本类cell text发生变化时传回的key值用于修改对象对应的值
 -(void)setChangeKey:(NSString *)changeKey{
-    [self.obj setObject:changeKey forKey:@"changeKey"];
+    changeKey?[self.obj setObject:changeKey forKey:@"changeKey"]:nil;
 }
 
 -(NSString *)changeKey{
@@ -185,12 +187,21 @@
 
 //值改变事件
 -(void)setValuechangeAction:(NSString *)valuechangeAction{
-    [self.obj setObject:valuechangeAction forKey:@"valuechangeAction"];
+    valuechangeAction?[self.obj setObject:valuechangeAction forKey:@"valuechangeAction"]:nil;
 }
 
 -(NSString *)valuechangeAction{
     return [self.obj objectForKey:@"valuechangeAction"];
 };
+
+-(void)setRowLeadingOffSet:(CGFloat)rowLeadingOffSet{
+    [self.obj setObject:@(rowLeadingOffSet) forKey:@"rowLeadingOffSet"];
+}
+
+-(CGFloat)rowLeadingOffSet{
+    NSNumber *number = [self.obj objectForKey:@"rowLeadingOffSet"];
+    return number?[number floatValue]:0;
+}
 
 -(void)setDisable:(bool)disable{
     [self.obj setObject:@(disable) forKey:@"disable"];
@@ -200,6 +211,16 @@
     NSNumber *number = [self.obj objectForKey:@"disable"];
     return number?[number boolValue]:NO;
 };
+
+-(void)setSelected:(bool)selected{
+    [self.obj setObject:@(selected) forKey:@"selected"];
+}
+
+-(bool )selected{
+    NSNumber *number = [self.obj objectForKey:@"selected"];
+    return number?[number boolValue]:NO;
+};
+
 
 //点击事件回调时实现model的回调函数，执行此函数
 -(void)setCellBlock:(CellBlock)cellBlock{
@@ -299,7 +320,7 @@
 }
 
 -(void)setPlaceHolderImageStr:(NSString *)placeHolderImageStr{
-    [self.obj setObject:placeHolderImageStr forKey:@"placeHolderImageStr"];
+    placeHolderImageStr?[self.obj setObject:placeHolderImageStr forKey:@"placeHolderImageStr"]:nil;
 }
 
 -(NSString *)placeHolderImageStr{

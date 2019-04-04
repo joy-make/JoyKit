@@ -306,10 +306,10 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     JoySectionBaseModel *sectionModel = self.isSectionTable?[self.dataArrayM objectAtIndex:indexPath.section]:nil;
-    
-    if(sectionModel.sectionLeadingOffSet)
+    JoyCellBaseModel *model = self.isSectionTable?[sectionModel.rowArrayM objectAtIndex:indexPath.row]:[self.dataArrayM objectAtIndex:indexPath.row];
+    if(sectionModel.sectionLeadingOffSet || model.rowLeadingOffSet)
     {
-        [cell respondsToSelector:@selector(setSeparatorInset:)]?[cell setSeparatorInset:UIEdgeInsetsMake(0, sectionModel.sectionLeadingOffSet, 0, 0)]:nil;
+        [cell respondsToSelector:@selector(setSeparatorInset:)]?[cell setSeparatorInset:UIEdgeInsetsMake(0, sectionModel.sectionLeadingOffSet?:model.rowLeadingOffSet, 0, 0)]:nil;
         if (@available(iOS 8.0, *)) {
         [cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]?[cell setPreservesSuperviewLayoutMargins:NO]:nil;
         }
@@ -346,7 +346,9 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     cellMoveActionBlock?cellMoveActionBlock(sourceIndexPath, destinationIndexPath):nil;
 }
 
-
+- (NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath*)indexPath{
+    return@"删除";
+}
 #pragma mark 编辑类型
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];

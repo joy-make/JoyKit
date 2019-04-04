@@ -12,6 +12,15 @@
 #import "Joy.h"
 #import "UIColor+JoyColor.h"
 
+@implementation JoyCollectionBaseCell
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    if  (self = [super initWithFrame:frame]){
+    }
+    return self;
+}
+@end
+
 @interface JoyImageCollectionViewCell ()
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UILabel *titleLabel;

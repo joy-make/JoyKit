@@ -20,7 +20,7 @@
 const int min_cellSpace = 5;
 const int min_cellInset = 15;
 
-@interface JoyCollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource>{
+@interface JoyCollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource,JoyCollectionCellDelegate>{
     NSMutableArray *_registCellArrayM;
     NSMutableArray *_registSectionHeaderM;
     NSMutableArray *_registSectionFooterM;
@@ -133,13 +133,28 @@ const int min_cellInset = 15;
         [_collectionView registerClass:NSClassFromString(model.cellName) forCellWithReuseIdentifier:model.cellName];
         [_registCellArrayM addObject:model.cellName];
     }
-    JoyImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:model.cellName forIndexPath:indexPath];
+    JoyCollectionBaseCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:model.cellName forIndexPath:indexPath];
+    cell.userInteractionEnabled = !model.disable;
+    
     [cell setCellWithModel:model];
+    if ([cell respondsToSelector:@selector(delegate)]) {
+        cell.delegate = self;
+        cell.indexPath = indexPath;
+    }
+    if ([cell respondsToSelector:@selector(indexPath)]) {
+        cell.indexPath = indexPath;
+    }
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self cellDidSelectWithIndexPath:indexPath action:nil];
+    [collectionView setUserInteractionEnabled:NO];
+    __weak __typeof(&*self)weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf.collectionView setUserInteractionEnabled:YES];
+    });
+
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -230,7 +245,7 @@ const int min_cellInset = 15;
     if (!model.disable) {
         self.currentSelectIndexPath = indexPath;
         CollectionCellSelectBlock cellSelectBlock = objc_getAssociatedObject(self, @selector(cellDidSelect));
-        cellSelectBlock?cellSelectBlock(indexPath,action?:model.tapAction):nil;
+        cellSelectBlock?cellSelectBlock(indexPath,action?:action?:model.tapAction):nil;
         [model action:action];
     }
 }

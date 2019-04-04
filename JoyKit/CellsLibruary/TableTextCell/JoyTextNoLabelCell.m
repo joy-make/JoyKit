@@ -73,7 +73,7 @@
     if(model.placeHolder){
         NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc]initWithString:model.placeHolder];
         [placeholder addAttribute:NSForegroundColorAttributeName
-                            value:UIColorFromRGB(0x95989F)
+                            value:UIColorFromRGB(0xCCCCCC)
                             range:NSMakeRange(0, model.placeHolder.length)];
         self.textField.attributedPlaceholder = placeholder;
     }
