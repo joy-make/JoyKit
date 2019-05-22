@@ -118,6 +118,9 @@ typedef void(^AToBCellBlock)(id obj);
 
 @property (nonatomic,assign)  ETextCellType                     textFieldModel;
 
+@property (nonatomic,assign)  UITextFieldViewMode               clearButtonMode;
+
+
 //文本类cell text max字符数量
 @property (nonatomic,assign)  NSInteger                         maxNumber;
 

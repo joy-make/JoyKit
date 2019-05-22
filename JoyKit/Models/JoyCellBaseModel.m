@@ -28,7 +28,7 @@
 }
 
 -(void)setCellType:(ECellType)cellType{
-    [self.obj setObject:@(cellType) forKey:@"cellType"];
+    [self joy_setObject:@(cellType) forKey:@"cellType"];
 }
 
 -(ECellType)cellType{
@@ -37,7 +37,7 @@
 }
 
 -(void)setBackgroundColor:(NSString *)backgroundColor{
-    [self.obj setObject:backgroundColor forKey:@"backgroundColor"];
+    [self joy_setObject:backgroundColor forKey:@"backgroundColor"];
 }
 
 -(NSString *)backgroundColor{
@@ -45,7 +45,7 @@
 }
 
 -(void)setTitle:(NSString *)title{
-    [self.obj setObject:title forKey:@"title"];
+    [self joy_setObject:title forKey:@"title"];
 }
 
 -(NSString *)title{
@@ -58,7 +58,7 @@
 
 //标题颜色
 -(void)setTitleColor:(NSString *)titleColor{
-    [self.obj setObject:titleColor forKey:@"titleColor"];
+    [self joy_setObject:titleColor forKey:@"titleColor"];
 }
 
 -(NSString *)titleColor{
@@ -67,7 +67,7 @@
 
 //副标题
 -(void)setSubTitle:(NSString *)subTitle{
-    [self.obj setObject:subTitle forKey:@"subTitle"];
+    [self joy_setObject:subTitle forKey:@"subTitle"];
 }
 
 -(NSString *)subTitle{
@@ -76,7 +76,7 @@
 
 //标题颜色
 -(void)setSubTitleColor:(NSString *)subTitleColor{
-    [self.obj setObject:subTitleColor forKey:@"subTitleColor"];
+    [self joy_setObject:subTitleColor forKey:@"subTitleColor"];
 }
 
 -(NSString *)subTitleColor{
@@ -85,7 +85,7 @@
 
 //副标题
 -(void)setTopicTitle:(NSString *)topicTitle{
-    [self.obj setObject:topicTitle forKey:@"topicTitle"];
+    [self joy_setObject:topicTitle forKey:@"topicTitle"];
 }
 
 -(NSString *)topicTitle{
@@ -94,7 +94,7 @@
 
 //扩展字段
 -(void)setExpandObj:(NSObject *)expandObj{
-    [self.obj setObject:expandObj forKey:@"expandObj"];
+    [self joy_setObject:expandObj forKey:@"expandObj"];
 }
 
 -(NSObject *)expandObj{
@@ -103,7 +103,7 @@
 
 //右箭头隐藏与否 yes隐藏 no显示
 -(void)setAccessoryType:(UITableViewCellAccessoryType)accessoryType{
-    [self.obj setObject:@(accessoryType) forKey:@"accessoryType"];
+    [self joy_setObject:@(accessoryType) forKey:@"accessoryType"];
 }
 
 -(UITableViewCellAccessoryType )accessoryType{
@@ -113,7 +113,7 @@
 
 //cell的编辑类型
 -(void)setEditingStyle:(UITableViewCellEditingStyle)editingStyle{
-    [self.obj setObject:@(editingStyle) forKey:@"editingStyle"];
+    [self joy_setObject:@(editingStyle) forKey:@"editingStyle"];
 }
 
 -(UITableViewCellEditingStyle )editingStyle{
@@ -123,7 +123,7 @@
 
 //cell的名字,复用使用
 -(void)setCellName:(NSString *)cellName{
-    [self.obj setObject:cellName forKey:@"cellName"];
+    [self joy_setObject:cellName forKey:@"cellName"];
 }
 
 -(NSString *)cellName{
@@ -132,7 +132,7 @@
 
 //bundleName xib且非公共cell时,需要传自己的bundle名字
 -(void)setBundleName:(NSString *)bundleName{
-    [self.obj setObject:bundleName forKey:@"bundleName"];
+    [self joy_setObject:bundleName forKey:@"bundleName"];
 }
 
 -(NSString *)bundleName{
@@ -141,7 +141,7 @@
 
 //二级副标题
 -(void)setPlaceHolder:(NSString *)placeHolder{
-    [self.obj setObject:placeHolder forKey:@"placeHolder"];
+    [self joy_setObject:placeHolder forKey:@"placeHolder"];
 }
 
 -(NSString *)placeHolder{
@@ -150,7 +150,7 @@
 
 //cell的高度
 -(void)setCellH:(CGFloat)cellH{
-    [self.obj setObject:@(cellH) forKey:@"cellH"];
+    [self joy_setObject:@(cellH) forKey:@"cellH"];
 }
 
 -(CGFloat )cellH{
@@ -160,7 +160,7 @@
 
 //点击事件的sel name 在子类中实现
 -(void)setTapAction:(NSString *)tapAction{
-    tapAction?[self.obj setObject:tapAction forKey:@"tapAction"]:nil;
+    tapAction?[self joy_setObject:tapAction forKey:@"tapAction"]:nil;
 }
 
 -(NSString *)tapAction{
@@ -169,7 +169,7 @@
 
 //长按的sel name 在子类中实现
 -(void)setLongPressAction:(NSString *)longPressAction{
-    longPressAction?[self.obj setObject:longPressAction forKey:@"longPressAction"]:nil;
+    longPressAction?[self joy_setObject:longPressAction forKey:@"longPressAction"]:nil;
 }
 
 -(NSString *)longPressAction{
@@ -178,7 +178,7 @@
 
 //文本类cell text发生变化时传回的key值用于修改对象对应的值
 -(void)setChangeKey:(NSString *)changeKey{
-    changeKey?[self.obj setObject:changeKey forKey:@"changeKey"]:nil;
+    changeKey?[self joy_setObject:changeKey forKey:@"changeKey"]:nil;
 }
 
 -(NSString *)changeKey{
@@ -187,7 +187,7 @@
 
 //值改变事件
 -(void)setValuechangeAction:(NSString *)valuechangeAction{
-    valuechangeAction?[self.obj setObject:valuechangeAction forKey:@"valuechangeAction"]:nil;
+    valuechangeAction?[self joy_setObject:valuechangeAction forKey:@"valuechangeAction"]:nil;
 }
 
 -(NSString *)valuechangeAction{
@@ -195,7 +195,7 @@
 };
 
 -(void)setRowLeadingOffSet:(CGFloat)rowLeadingOffSet{
-    [self.obj setObject:@(rowLeadingOffSet) forKey:@"rowLeadingOffSet"];
+    [self joy_setObject:@(rowLeadingOffSet) forKey:@"rowLeadingOffSet"];
 }
 
 -(CGFloat)rowLeadingOffSet{
@@ -204,7 +204,7 @@
 }
 
 -(void)setDisable:(bool)disable{
-    [self.obj setObject:@(disable) forKey:@"disable"];
+    [self joy_setObject:@(disable) forKey:@"disable"];
 }
 
 -(bool )disable{
@@ -213,7 +213,7 @@
 };
 
 -(void)setSelected:(bool)selected{
-    [self.obj setObject:@(selected) forKey:@"selected"];
+    [self joy_setObject:@(selected) forKey:@"selected"];
 }
 
 -(bool )selected{
@@ -224,7 +224,7 @@
 
 //点击事件回调时实现model的回调函数，执行此函数
 -(void)setCellBlock:(CellBlock)cellBlock{
-    [self.obj setObject:cellBlock forKey:@"cellBlock"];
+    [self joy_setObject:cellBlock forKey:@"cellBlock"];
 }
 
 -(CellBlock)cellBlock{
@@ -233,11 +233,19 @@
 
 //正向传值,以减少没必要的cell刷新
 -(void)setAToBCellBlock:(AToBCellBlock)aToBCellBlock{
-    [self.obj setObject:aToBCellBlock forKey:@"aToBCellBlock"];
+    [self joy_setObject:aToBCellBlock forKey:@"aToBCellBlock"];
 }
 
 -(AToBCellBlock)aToBCellBlock{
     return [self.obj objectForKey:@"aToBCellBlock"];
+}
+
+- (void)joy_setObject:(id)obj forKey:(NSString *)key{
+    if(obj &&key){
+        [self.obj setObject:obj forKey:key];
+    }else if([self.obj objectForKey:key]!=nil){
+        [self.obj removeObjectForKey:key];
+    }
 }
 
 @end
@@ -246,7 +254,7 @@
 @implementation JoyTextCellBaseModel
 
 -(void)setBorderStyle:(UITextBorderStyle)borderStyle{
-    [self.obj setObject:@(borderStyle) forKey:@"borderStyle"];
+    [self joy_setObject:@(borderStyle) forKey:@"borderStyle"];
 }
 
 -(UITextBorderStyle)borderStyle{
@@ -255,7 +263,7 @@
 }
 
 - (void)setSecureTextEntry:(bool)secureTextEntry{
-    [self.obj setObject:@(secureTextEntry) forKey:@"secureTextEntry"];
+    [self joy_setObject:@(secureTextEntry) forKey:@"secureTextEntry"];
 }
 
 -(bool)secureTextEntry{
@@ -264,7 +272,7 @@
 }
 
 -(void)setTextFieldModel:(ETextCellType)textFieldModel{
-    [self.obj setObject:@(textFieldModel) forKey:@"textFieldModel"];
+    [self joy_setObject:@(textFieldModel) forKey:@"textFieldModel"];
 }
 
 -(ETextCellType)textFieldModel{
@@ -272,8 +280,17 @@
     return number?[number integerValue]:leftViewModel;
 }
 
+- (void)setClearButtonMode:(UITextFieldViewMode)clearButtonMode{
+    [self joy_setObject:@(clearButtonMode) forKey:@"clearButtonMode"];
+}
+
+-(UITextFieldViewMode)clearButtonMode{
+    NSNumber *number = [self.obj objectForKey:@"clearButtonMode"];
+    return number?[number integerValue]:UITextFieldViewModeNever;
+}
+
 -(void)setMaxNumber:(NSInteger)maxNumber{
-    [self.obj setObject:@(maxNumber) forKey:@"maxNumber"];
+    [self joy_setObject:@(maxNumber) forKey:@"maxNumber"];
 }
 
 -(NSInteger)maxNumber{
@@ -282,7 +299,7 @@
 }
 
 -(void)setKeyboardType:(UIKeyboardType)keyboardType{
-    [self.obj setObject:@(keyboardType) forKey:@"keyboardType"];
+    [self joy_setObject:@(keyboardType) forKey:@"keyboardType"];
 }
 
 -(UIKeyboardType)keyboardType{
@@ -295,7 +312,7 @@
 @implementation JoyImageCellBaseModel
 
 -(void)setAvatarBundleName:(NSString *)avatarBundleName{
-    [self.obj setObject:avatarBundleName forKey:@"avatarBundleName"];
+    [self joy_setObject:avatarBundleName forKey:@"avatarBundleName"];
 }
 
 -(NSString *)avatarBundleName{
@@ -303,7 +320,7 @@
 }
 
 -(void)setAvatar:(NSString *)avatar{
-    [self.obj setObject:avatar forKey:@"avatar"];
+    [self joy_setObject:avatar forKey:@"avatar"];
 }
 
 -(NSString *)avatar{
@@ -311,7 +328,7 @@
 }
 
 -(void)setViewShape:(EImageType)viewShape{
-    [self.obj setObject:@(viewShape) forKey:@"viewShape"];
+    [self joy_setObject:@(viewShape) forKey:@"viewShape"];
 }
 
 -(EImageType)viewShape{
@@ -320,7 +337,7 @@
 }
 
 -(void)setPlaceHolderImageStr:(NSString *)placeHolderImageStr{
-    placeHolderImageStr?[self.obj setObject:placeHolderImageStr forKey:@"placeHolderImageStr"]:nil;
+    placeHolderImageStr?[self joy_setObject:placeHolderImageStr forKey:@"placeHolderImageStr"]:nil;
 }
 
 -(NSString *)placeHolderImageStr{

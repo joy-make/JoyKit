@@ -168,7 +168,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,headerView.frame.size.width, sectionModel.sectionH)];
         titleLabel.text =  sectionModel.sectionTitle;
         titleLabel.font = [UIFont systemFontOfSize:14];
-        titleLabel.textColor = UIColorFromRGB(0x777E8C);
+        titleLabel.textColor = UIColorFromRGB(0x999999);
         [titleLabel sizeToFit];
         CGFloat titleLabelW = titleLabel.frame.size.width;
         CGFloat titleLabelH = titleLabel.frame.size.height;

@@ -150,4 +150,7 @@
  */
 -(UIImage *)snapshotSingleView;
 
+- (UIImage*)imageFromRect:(CGRect)rect;
+
+- (void)cutImageFromRect:(CGRect)frame successBlock:(nullable void(^)(UIImage * _Nullable image,NSData * _Nullable imagedata))block;
 @end

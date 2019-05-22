@@ -15,6 +15,8 @@ typedef void (^SegmentChangedBlock)(NSInteger selectIndex);
 @property (nonatomic,readonly)JoyUISegementView    *(^setSeparateColor)(UIColor *separateColor);
 @property (nonatomic,readonly)JoyUISegementView    *(^setSelectColor)(UIColor *selectColor);
 @property (nonatomic,readonly)JoyUISegementView    *(^setDeselectColor)(UIColor *deselectColor);
+@property (nonatomic,readonly)JoyUISegementView    *(^setSelectBackImage)(UIImage *selectImage);
+@property (nonatomic,readonly)JoyUISegementView    *(^setDeselectBackImage)(UIImage *deselectImage);
 @property (nonatomic,readonly)JoyUISegementView    *(^setBottomSliderColor)(UIColor *bottomSliderColor);
 @property (nonatomic,readonly)JoyUISegementView    *(^setDefaultSelectIndex)(NSInteger selectIndex);        //默认选中1，-1为不选中
 @property (nonatomic,readonly)JoyUISegementView    *(^setTouchUpInAction)(BOOL needTouchUpInAction);        //是否开启点击事件，默认不开启，默认为valuechaged触发事件

@@ -43,7 +43,7 @@
     __weak __typeof(&*self)weakSelf = self;
     return ^(NSArray *items){
         weakSelf.segmentItems = items;
-        [self updateSegment];
+        [weakSelf updateSegment];
         return weakSelf;
     };
 }
@@ -52,7 +52,7 @@
     __weak __typeof(&*self)weakSelf = self;
     return ^(UIColor *color){
         weakSelf.selectColor = color;
-        [self updateSegment];
+        [weakSelf updateSegment];
         return weakSelf;
     };
 }
@@ -61,16 +61,33 @@
     __weak __typeof(&*self)weakSelf = self;
     return ^(UIColor *color){
         weakSelf.deselectColor = color;
-        [self updateSegment];
+        [weakSelf updateSegment];
         return weakSelf;
     };
 }
+
+-(JoyUISegementView *(^)(UIImage *))setSelectBackImage{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIImage *color){
+//        [weakSelf setImage:color state:UIControlStateSelected];
+        return weakSelf;
+    };
+}
+
+-(JoyUISegementView *(^)(UIImage *))setDeselectBackImage{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIImage *color){
+        [weakSelf setImage:color state:UIControlStateNormal];
+        return weakSelf;
+    };
+}
+
 
 -(JoyUISegementView *(^)(UIColor *))setSeparateColor{
     __weak __typeof(&*self)weakSelf = self;
     return ^(UIColor *color){
         weakSelf.separateColor = color;
-        [self updateSegment];
+        [weakSelf updateSegment];
         return weakSelf;
     };
 }
@@ -79,7 +96,7 @@
     __weak __typeof(&*self)weakSelf = self;
     return ^(UIColor *color){
         weakSelf.bottomSliderColor = color;
-        [self updateSegment];
+        [weakSelf updateSegment];
         return weakSelf;
     };
 }
@@ -88,7 +105,7 @@
     __weak __typeof(&*self)weakSelf = self;
     return ^(NSInteger selectIndex){
         weakSelf.selectIndex = selectIndex;
-        [self updateSegment];
+        [weakSelf updateSegment];
         return weakSelf;
     };
 }
@@ -109,10 +126,14 @@
     };
 }
 
+- (void)setImage:(UIImage *)image state:(UIControlState)state{
+    [_segment setBackgroundImage:image forState:state barMetrics:UIBarMetricsDefault];
+}
+
 - (void)updateSegment{
     _oldDate = [NSDate date];
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    UIFont *font = [UIFont boldSystemFontOfSize:15];
+    UIFont *font = [UIFont boldSystemFontOfSize:16];
     _segment = [[UISegmentedControl alloc]initWithItems:_segmentItems];
     _segment.backgroundColor = [UIColor clearColor];
     _segment.tintColor = [UIColor clearColor];
@@ -149,7 +170,7 @@
     [_segment setFrame:CGRectMake(0, 0, segmentTotalW, CGRectGetHeight(self.frame))];
     _segment.center = self.center;
     
-    _separateLineSuperview = [[UIView alloc]initWithFrame:_segment.frame];
+    _separateLineSuperview = [[UIView alloc]initWithFrame:_segment.bounds];
     //屏蔽tap，让responsder穿透到segment层
     _separateLineSuperview.userInteractionEnabled = NO;
     [self addSubview:_separateLineSuperview];
@@ -158,12 +179,12 @@
     
     for (int i = 0; i<_segment.numberOfSegments-1; i++) {
         separateLinePositionX+=[_segment widthForSegmentAtIndex:i];
-        UIView *separateView = [[UIView alloc]initWithFrame:CGRectMake(separateLinePositionX+1,0, 1, separateLinePositionH)];
+        UIView *separateView = [[UIView alloc]initWithFrame:CGRectMake(separateLinePositionX+1,5, 1, separateLinePositionH-2*5)];
         separateView.backgroundColor = self.separateColor?:[UIColor clearColor];
         [_separateLineSuperview addSubview:separateView];
     }
-    _bottomView = [[UIView alloc]initWithFrame:CGRectMake(20, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2)];
-
+    _bottomView = [[UIView alloc]initWithFrame:CGRectMake(20, CGRectGetHeight(_separateLineSuperview.frame)-2, 20, 3)];
+    _bottomView.layer.cornerRadius = 1.5;
     if(self.selectIndex !=-1 &&self.segmentItems.count>self.selectIndex){
         [_segment setSelectedSegmentIndex:self.selectIndex];
         [self updateBottomViewFrame];
@@ -178,11 +199,13 @@
 - (void)segmentTap:(UISegmentedControl *)segment{
     NSTimeInterval timerInterval = [[NSDate date]timeIntervalSinceDate:_oldDate];
     _oldDate = [NSDate date];
-    if(timerInterval>0.3){
+    if(timerInterval>0.2 && [[self.segmentItems objectAtIndex:segment.selectedSegmentIndex] length]>0){
         self.selectIndex = segment.selectedSegmentIndex;
         SegmentChangedBlock segmentValuechangedBlock = objc_getAssociatedObject(self, @selector(segmentValuechangedBlock));
         segmentValuechangedBlock?segmentValuechangedBlock(segment.selectedSegmentIndex):nil;
         [self updateBottomViewFrame];
+    }else if ([[self.segmentItems objectAtIndex:segment.selectedSegmentIndex] length]==0){
+        [segment setSelectedSegmentIndex:self.selectIndex];
     }
 }
 
@@ -191,10 +214,11 @@
     if (self.segmentItems.count>_segment.selectedSegmentIndex) {
         NSString *title = [self.segmentItems objectAtIndex:_segment.selectedSegmentIndex];
         if (title.length) {
-            CGRect newRect = CGRectMake(20+self.width/_segmentItems.count * _segment.selectedSegmentIndex, CGRectGetHeight(_separateLineSuperview.frame)-2, self.width/_segmentItems.count-40, 2);
+            CGFloat bottomWidth =  self.width/_segmentItems.count-40;
             __weak __typeof (&*_bottomView)weakBottomView = _bottomView;
-            [UIView animateWithDuration:0.3 animations:^{
-                [weakBottomView setFrame:newRect];
+            CGFloat centerX = self.width/_segmentItems.count/2 *(_segment.selectedSegmentIndex*2+1);
+            [UIView animateWithDuration:0.2 animations:^{
+                weakBottomView.centerX = centerX;
             }];
         }
     }

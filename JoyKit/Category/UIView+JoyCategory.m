@@ -293,4 +293,71 @@ static   UIInterfaceOrientation AppInterfaceOrientation() {
     UIGraphicsEndImageContext();
     return image;
 }
+
+- (UIImage*)imageFromRect:(CGRect)rect{
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, [UIScreen mainScreen].scale);
+//    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 1);
+
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    rect.size.width*=[UIScreen mainScreen].scale;
+    rect.size.height*=[UIScreen mainScreen].scale;
+    CGRect myImageRect = rect;
+    CGImageRef imageRef = image.CGImage;
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef,myImageRect );
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, myImageRect, subImageRef);
+    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    CGImageRelease(subImageRef);
+    UIGraphicsEndImageContext();
+    return smallImage;
+}
+
+- (void)cutImageFromRect:(CGRect)frame successBlock:(nullable void(^)(UIImage * _Nullable image,NSData * _Nullable imagedata))block{
+    
+    //先把裁剪区域上面显示的层隐藏掉
+    for (UIView * wipe in self.subviews) {
+        [wipe setHidden:YES];
+    }
+    
+    // ************************   进行第一次裁剪 ********************
+    
+    //1.开启上下文
+    //    UIGraphicsBeginImageContext(view.frame.size);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+    
+    //2、获取当前的上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //3、添加裁剪区域
+    UIBezierPath * path = [UIBezierPath bezierPathWithRect:frame];
+    [path addClip];
+    //4、渲染
+    [self.layer renderInContext:ctx];
+    //5、从上下文中获取
+    UIImage * newImage = UIGraphicsGetImageFromCurrentImageContext();
+    //7、关闭上下文
+    UIGraphicsEndImageContext();
+    
+    //8、进行完第一次裁剪之后，我们就已经拿到了没有半透明层的图片，这个时候可以恢复显示
+    for (UIView * wipe in self.subviews) {
+        [wipe setHidden:NO];
+    }
+    
+    // ************************   进行第二次裁剪 ********************
+    //9、开启上下文，这个时候的大小就是我们最终要显示图片的大小
+    UIGraphicsBeginImageContextWithOptions(frame.size, NO, [UIScreen mainScreen].scale);
+    
+    //10、这里把x y 坐标向左、上移动
+    [newImage drawAtPoint:CGPointMake(- frame.origin.x, - frame.origin.y)];
+    
+    //11、得到要显示区域的图片
+    UIImage * fImage = UIGraphicsGetImageFromCurrentImageContext();
+    //12、得到data类型 便于保存
+    NSData * data2 = UIImageJPEGRepresentation(fImage, 1);
+    //13、关闭上下文
+    UIGraphicsEndImageContext();
+    //14、回调
+    block(fImage,data2);
+}
 @end
