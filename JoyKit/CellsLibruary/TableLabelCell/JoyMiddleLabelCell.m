@@ -11,7 +11,7 @@
 #import "UIColor+JoyColor.h"
 
 @interface JoyMiddleLabelCell ()
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *titleLabel;
 @property (nonatomic,strong) JoyCellBaseModel   *model;
 @end
 
