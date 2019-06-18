@@ -105,17 +105,74 @@
         offsetY = offset;
     }
     animation.values = @[
-                  [NSValue valueWithCGPoint:CGPointMake(originPos.x, originPos.y)],
-                  [NSValue valueWithCGPoint:CGPointMake(originPos.x-offsetX, originPos.y-offsetY)],
-                  [NSValue valueWithCGPoint:CGPointMake(originPos.x, originPos.y)],
-                  [NSValue valueWithCGPoint:CGPointMake(originPos.x+offsetX, originPos.y+offsetY)],
-                  [NSValue valueWithCGPoint:CGPointMake(originPos.x, originPos.y)]
-                  ];
+                         [NSValue valueWithCGPoint:CGPointMake(originPos.x, originPos.y)],
+                         [NSValue valueWithCGPoint:CGPointMake(originPos.x-offsetX, originPos.y-offsetY)],
+                         [NSValue valueWithCGPoint:CGPointMake(originPos.x, originPos.y)],
+                         [NSValue valueWithCGPoint:CGPointMake(originPos.x+offsetX, originPos.y+offsetY)],
+                         [NSValue valueWithCGPoint:CGPointMake(originPos.x, originPos.y)]
+                         ];
     animation.repeatCount = repeat;
     animation.duration = duration;
     animation.fillMode = kCAFillModeForwards;
     [view.layer addAnimation:animation forKey:@"animation"];
 }
+
++ (void)showaRadiousPathAnimationInView:(UIView *)view point:(CGPoint)point radius:(CGFloat)radious startAngle:(CGFloat)startAngle endAlgle:(CGFloat)endAngle Repeat:(CGFloat)repeat Duration:(CGFloat)duration {
+    if (repeat == 0) {
+        repeat = MAXFLOAT;
+    }
+    NSAssert([view.layer isKindOfClass:[CALayer class]] , @"invalid target");
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+    //设置动画属性，因为是沿着贝塞尔曲线动，所以要设置为position
+    animation.keyPath = @"position";
+    //贝塞尔曲线
+    //clockwise 是否为顺时针
+    UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:point radius:radious startAngle:0 endAngle:2*M_PI clockwise:true];
+    
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint:CGPointMake(0, point.y)];
+    [bezierPath addCurveToPoint:CGPointMake(375, point.y) controlPoint1:CGPointMake(120, point.y-150) controlPoint2:CGPointMake(240, point.y+150)];
+    
+    // 设置贝塞尔曲线路径
+    animation.path = circlePath.CGPath;
+    // 将动画对象添加到视图的layer上
+    
+    animation.repeatCount = repeat;
+    animation.duration = duration;
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;// 告诉在动画结束的时候不要移除
+    [view.layer addAnimation:animation forKey:@"animation"];
+}
+
++ (void)showBezierPathAnimationView:(UIView *)view startPont:(CGPoint)startPont endPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1  controlPoint2:(CGPoint)controlPoint2 Repeat:(CGFloat)repeat Duration:(CGFloat)duration autoreverses:(BOOL)autoreverses{
+    if (repeat == 0) {
+        repeat = MAXFLOAT;
+    }
+    NSAssert([view.layer isKindOfClass:[CALayer class]] , @"invalid target");
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+    //设置动画属性，因为是沿着贝塞尔曲线动，所以要设置为position
+    animation.keyPath = @"position";
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint:startPont];
+    [bezierPath addCurveToPoint:endPoint controlPoint1:controlPoint1 controlPoint2:controlPoint2];
+    
+    // 设置贝塞尔曲线路径
+    animation.path = bezierPath.CGPath;
+    // 将动画对象添加到视图的layer上
+    
+    animation.repeatCount = repeat;
+    animation.duration = duration;
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;// 告诉在动画结束的时候不要移除
+    animation.autoreverses = autoreverses;
+    [view.layer addAnimation:animation forKey:@"animation"];
+    
+}
+
 
 + (void)clearAnimationInView:(UIView *)view {
     [view.layer removeAllAnimations];

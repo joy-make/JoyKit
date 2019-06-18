@@ -91,6 +91,17 @@
     return NO;
 }
 
+-(BOOL)openNativeWithUrl:(NSURL *)url actionType:(JoyRouteActionType)actionType block:(JoyRouteBlock)block{
+    if (url.scheme.length && url.host.length && [url.scheme isEqualToString:self.scheme]) {
+        NSMutableDictionary *param = [self.routerUtil resolveUrlQuery:url];
+        NSString *module = [self.routerUtil getModuleStrFromUrl:url];
+        NSString *path = [self.routerUtil getPathStrFromUrl:url];
+        [self routerModule:module path:path actionType:actionType parameter:param block:block];
+        return (module && path);
+    }
+    return NO;
+}
+
 -(NSObject *)getObjWithClassStr:(NSString *)classStr{
     NSObject *obj = [[NSClassFromString(classStr) alloc]init];
     return obj;

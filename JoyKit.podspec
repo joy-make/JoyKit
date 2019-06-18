@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '0.1.30'
-  s.summary          = 'bug修复'
+  s.version          = '1.0.0'
+  s.summary          = '增加上拉下拉刷新'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

@@ -11,6 +11,7 @@
 
 #import "UIView+JoyCategory.h"
 #import "Joy.h"
+
 @class JoyTableAutoLayoutView;
 
 typedef void (^CellSelectBlock)(NSIndexPath *indexPath,NSString *tapAction);
@@ -29,6 +30,9 @@ typedef void (^CellCollectionBlock)(NSIndexPath *indexPath,NSIndexPath *collecti
 
 typedef void (^HeaderFooterActionBlock)(NSInteger section,NSObject *actionObject,BOOL isHeaderAction);
 
+typedef void (^JoyRefreshBlock)(void);
+
+
 @class JoySectionBaseModel;
 @interface JoyTableAutoLayoutView : UIView<UITableViewDataSource,UITableViewDelegate>
 
@@ -42,42 +46,51 @@ typedef void (^HeaderFooterActionBlock)(NSInteger section,NSObject *actionObject
 
 //**********************************链式配置,以支持链式调用*************************************************
 #pragma mark  让Table确认是否可编辑
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableEdit)(BOOL canEdit);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableEdit)(BOOL canEdit);                                         //设置table是否可编辑
 #pragma mark  给Table数据源
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setDataSource)(NSMutableArray<JoySectionBaseModel *> *dataArrayM);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setDataSource)(NSMutableArray<JoySectionBaseModel *> *dataArrayM);   //设置数据源
 #pragma mark  给背景视图TableBackView
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableBackView)(UIView *backView);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableBackView)(UIView *backView);                                 //设置背景图
 #pragma mark  给背景视图设置无数据源BackView
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableBackNoDataView)(UIView *noDataView);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableBackNoDataView)(UIView *noDataView);                         //设置无数据视图
 #pragma mark  给头视图TableHeadView
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableHeadView)(UIView *headView);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableHeadView)(UIView *headView);                                 //设置头视图
 #pragma mark  给尾视图TableFootView
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableFootView)(UIView *footView);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^setTableFootView)(UIView *footView);                                 //设置尾视图
 #pragma mark  刷新整个Table
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^reloadTable)(void);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^reloadTable)(void);                                                  //刷新table
+
 
 //**************编辑Action
 #pragma mark  Cell 选中
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellDidSelect)(CellSelectBlock cellSelectBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellDidSelect)(CellSelectBlock cellSelectBlock);                    //cell点击事件
 #pragma mark  Cell 编辑
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellEiditAction)(CellEditingBlock cellEditingBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellEiditAction)(CellEditingBlock cellEditingBlock);                //cell编辑事件回调
 #pragma mark  Cell 挪动从from 挪到to
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellMoveAction)(CellMoveBlock cellMoveBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellMoveAction)(CellMoveBlock cellMoveBlock);                       //cell是否可挪移
 #pragma mark  Cell上文本编辑结束
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextEiditEnd)(CellTextEndChanged cellTextEiditEndBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextEiditEnd)(CellTextEndChanged cellTextEiditEndBlock);        //cell上文本编辑结束
 #pragma mark  Cell上文本字符编辑发生变化
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextCharacterHasChanged)(CellTextCharacterHasChanged cellTextCharacterHasChangedBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextCharacterHasChanged)(CellTextCharacterHasChanged cellTextCharacterHasChangedBlock);//cell上文本发生变化
 #pragma mark  Cell 选中
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^headerFooterAction)(HeaderFooterActionBlock headerFooterAction);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^headerFooterAction)(HeaderFooterActionBlock headerFooterAction);     //头部、底部事件（自定义）
 
 //**************编辑Action结束
 #pragma mark Table滚动
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScroll)(ScrollBlock scrollBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScroll)(ScrollBlock scrollBlock);                               //table滚动
 
 #pragma mark tableCollection
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDidSelect)(CellCollectionBlock collectionDidSelectBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDidSelect)(CellCollectionBlock collectionDidSelectBlock);  //collection选中
 
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDeSelect)(CellCollectionBlock collectionDeSelectBlock);
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDeSelect)(CellCollectionBlock collectionDeSelectBlock);    //collection反选
+
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyHeaderRefreshblock)(JoyRefreshBlock refreshBlock);                //下拉刷新
+
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyFooterRefreshblock)(JoyRefreshBlock refreshBlock);                //上拉刷新
+
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyEndHeaderRefreshblock)(void);                                     //结束下拉刷新
+
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyEndFooterRefreshblock)(void);                                     //结束上拉刷新
 
 //**********************************链式配置,以支持链式调用*************************************************
 

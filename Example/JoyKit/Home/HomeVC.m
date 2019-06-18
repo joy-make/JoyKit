@@ -8,6 +8,7 @@
 
 #import "HomeVC.h"
 #import <JoyKit/JoyKit.h>
+
 @interface HomeVC ()
 @property (nonatomic,strong)JoyTableAutoLayoutView *layoutView;
 

@@ -14,9 +14,11 @@
 
 
 @implementation JoyCellBaseModel
-+ (NSArray *)mj_ignoredPropertyNames{
-    return @[];
-}
+
+
+//+ (NSArray *)mj_ignoredPropertyNames{
+//    return @[@"cellType",@"cellName",@"backgroundColor",@"title",@"titleColor",@"subTitle",@"subTitleColor",@"topicTitle",@"expandObj",@"accessoryType",@"editingStyle",@"bundleName",@"placeHolder",@"cellH",@"tapAction",@"longPressAction",@"changeKey",@"valuechangeAction",@"rowLeadingOffSet",@"disable",@"selected",@"cellBlock",@"aToBCellBlock",@"borderStyle",@"secureTextEntry",@"textFieldModel",@"clearButtonMode",@"maxNumber",@"keyboardType",@"avatarBundleName",@"avatar",@"viewShape",@"placeHolderImageStr",@"on",@"switchBackColor",@"onTintColor",@"itemList"];
+//}
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     NSLog(@"%@",key);

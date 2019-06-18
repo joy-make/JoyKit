@@ -16,20 +16,43 @@
 #import "JoyCellBaseModel+Edit.h"
 #import "UITableViewHeaderFooterView+JoyHeaderFooter.h"
 #import "UIColor+JoyColor.h"
+#import "CAAnimation+HCAnimation.h"
 
 #define SCREEN_HEIGHT_OF_IPHONE6PLUS 736
 #define IOS8_OR_LATER ([[UIDevice currentDevice] systemVersion].floatValue >= 8.0)
+@interface JoyRefreshHeaderView : UIView
+@property (nonatomic,strong)UILabel     * downLoadLabel;
+@property (nonatomic,strong)UILabel     * timeLabel;
+- (void)startRefreshingSize:(CGSize)animationZoneSize;
+- (void)endRefreshing;
+@end
+
+@interface JoyRefreshFooterView : UIView
+@property (nonatomic,strong)UILabel     * upLoadLabel;
+@property (nonatomic,strong)UILabel     * timeLabel;
+- (void)startRefreshingSize:(CGSize)animationZoneSize;
+- (void)endRefreshing;
+@end
+
+
 @interface JoyTableAutoLayoutView ()<JoyCellDelegate>{
     NSMutableArray *_registHeaderFooterArrayM;
     NSMutableArray *_registCellArrayM;
     BOOL _isHasTableFoot;
 }
-@property (nonatomic,readonly)BOOL                        editing;
+@property (nonatomic,readonly)BOOL                      editing;
 @property (nonatomic,strong)UIView                      *backView;
 @property (nonatomic,strong)UIView                      *noDataBackView;
 @property (nonatomic,strong)NSMutableArray              *registHeaderFooterArrayM;
 @property (nonatomic,assign)bool                        isSectionTable;
 
+@property (nonatomic,assign)bool                        isDownRefreshEnable;
+@property (nonatomic,assign)bool                        isUpRefreshEnable;
+
+@property (nonatomic,assign)bool                        isDownLoading;
+@property (nonatomic,assign)bool                        isUpLoading;
+@property (nonatomic,strong)JoyRefreshHeaderView     * joy_refreshHeaderView;
+@property (nonatomic,strong)JoyRefreshFooterView     * joy_refreshFooterView;
 @end
 
 const NSString *tableHDelegate =  @"tableHDelegate";
@@ -75,7 +98,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         _tableView.dataSource = self;
         _tableView.sectionFooterHeight = 0;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-//        _tableView.estimatedRowHeight = 44;
+        //        _tableView.estimatedRowHeight = 44;
     }
     return _tableView;
 }
@@ -311,14 +334,14 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     {
         [cell respondsToSelector:@selector(setSeparatorInset:)]?[cell setSeparatorInset:UIEdgeInsetsMake(0, sectionModel.sectionLeadingOffSet?:model.rowLeadingOffSet, 0, 0)]:nil;
         if (@available(iOS 8.0, *)) {
-        [cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]?[cell setPreservesSuperviewLayoutMargins:NO]:nil;
+            [cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]?[cell setPreservesSuperviewLayoutMargins:NO]:nil;
         }
     }
     else
     {
         [cell respondsToSelector:@selector(setSeparatorInset:)]?[cell setSeparatorInset:UIEdgeInsetsMake(0, KNoInfoSectionH, 0, 0)]:nil;
         if (@available(iOS 8.0, *)) {
-        [cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]?[cell setPreservesSuperviewLayoutMargins:NO]:nil;
+            [cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]?[cell setPreservesSuperviewLayoutMargins:NO]:nil;
         }
     }
 }
@@ -431,6 +454,68 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     ScrollBlock tableScrollBlock = objc_getAssociatedObject(self, @selector(tableScroll));
     tableScrollBlock?tableScrollBlock(scrollView):nil;
+    
+    if(!self.isDownLoading && self.isDownRefreshEnable){
+        if (scrollView.contentOffset.y<-80) {
+            self.isDownLoading = YES;
+            self.joy_refreshHeaderView.downLoadLabel.text = @"↑";
+        }else{
+            self.joy_refreshHeaderView.downLoadLabel.text = @"↓";
+        }
+    }
+    
+    if(self.isUpRefreshEnable){
+        self.joy_refreshFooterView.y = scrollView.bottom;
+        if(!self.isUpLoading &&scrollView.contentOffset.y>0){
+            if (scrollView.contentOffset.y >(scrollView.contentSize.height-scrollView.bounds.size.height +80)) {
+                self.isUpLoading = YES;
+                self.joy_refreshFooterView.upLoadLabel.text = @"↓";//↑
+            }else{
+                self.joy_refreshFooterView.upLoadLabel.text = @"↑";//↑
+            }
+        }
+    }
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if(self.isDownLoading && self.isDownRefreshEnable){
+        [self.joy_refreshHeaderView startRefreshingSize:self.tableView.size];
+        self.tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            JoyRefreshBlock headerRefreshBlock = objc_getAssociatedObject(self, @selector(joyHeaderRefreshblock));
+            headerRefreshBlock?headerRefreshBlock():nil;
+        });
+        
+    }
+    
+    if(self.isUpLoading && self.isUpRefreshEnable){
+        [self.joy_refreshFooterView startRefreshingSize:self.tableView.size];
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, scrollView.height>scrollView.contentSize.height?(scrollView.height - scrollView.contentSize.height+30):80, 0);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            JoyRefreshBlock footerRefreshBlock = objc_getAssociatedObject(self, @selector(joyFooterRefreshblock));
+            footerRefreshBlock?footerRefreshBlock():nil;
+        });
+    }
+}
+
+- (void)endHeaderRefreshing{
+    __weak __typeof(&*self)weakSelf = self;
+    [UIView animateWithDuration:1 animations:^{
+        weakSelf.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    } completion:^(BOOL finished) {
+        [weakSelf.joy_refreshHeaderView endRefreshing];;//↑
+        weakSelf.isDownLoading = NO;
+    }];
+}
+
+- (void)endFooterRefreshing{
+    __weak __typeof(&*self)weakSelf = self;
+    [UIView animateWithDuration:1 animations:^{
+        weakSelf.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    } completion:^(BOOL finished) {
+        [weakSelf.joy_refreshFooterView endRefreshing];//↑
+        weakSelf.isUpLoading = NO;
+    }];
 }
 
 - (void)hideKeyBoard{
@@ -461,7 +546,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
             break;
     }
     JoyCellBaseModel * model = [self getCellModelWithIndexPath:indexPath];
-
+    
     model.changeKey?[self textChanged:indexPath andText:obj andChangedKey:model.changeKey]:nil;
 }
 
@@ -642,6 +727,59 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     };
 }
 
+-(JoyTableAutoLayoutView *(^)(JoyRefreshBlock))joyHeaderRefreshblock{
+    self.isDownRefreshEnable = YES;
+    if (![self.tableView.subviews containsObject:self.joy_refreshHeaderView]) {
+        [self.tableView addSubview:self.joy_refreshHeaderView];
+    }
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(JoyRefreshBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+-(JoyTableAutoLayoutView *(^)(JoyRefreshBlock))joyFooterRefreshblock{
+    self.isUpRefreshEnable = YES;
+    if (![self.tableView.subviews containsObject:self.joy_refreshFooterView]) {
+        [self.tableView addSubview:self.joy_refreshFooterView];
+    }
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(JoyRefreshBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+-(JoyTableAutoLayoutView *(^)(void))joyEndHeaderRefreshblock{
+    [self endHeaderRefreshing];
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(void){
+        return weakSelf;
+    };
+}
+
+-(JoyTableAutoLayoutView *(^)(void))joyEndFooterRefreshblock{
+    [self endFooterRefreshing];
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(void){
+        return weakSelf;
+    };
+}
+
+-(JoyRefreshHeaderView *)joy_refreshHeaderView{
+    if (!_joy_refreshHeaderView) {
+        _joy_refreshHeaderView = [[JoyRefreshHeaderView alloc] initWithFrame:CGRectMake(0, -60, SCREEN_W, 60)];
+    }
+    return _joy_refreshHeaderView;
+}
+
+-(JoyRefreshFooterView *)joy_refreshFooterView{
+    if (!_joy_refreshFooterView) {
+        _joy_refreshFooterView = [[JoyRefreshFooterView alloc] initWithFrame:CGRectMake(0, -60, SCREEN_W, 60)];
+    }
+    return _joy_refreshFooterView;
+}
 
 -(void)dealloc{
     self.dataArrayM = nil;
@@ -660,3 +798,108 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 @end
 
+#pragma mark 刷新头
+@implementation JoyRefreshHeaderView
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self addSubview:self.timeLabel];
+        [self addSubview:self.downLoadLabel];
+    }
+    return self;
+}
+
+-(UILabel *)downLoadLabel{
+    if (!_downLoadLabel){
+        _downLoadLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        _downLoadLabel.font = [UIFont systemFontOfSize:25];
+        _downLoadLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _downLoadLabel;
+}
+
+-(UILabel *)timeLabel{
+    if (!_timeLabel){
+        _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 0, 200, 60)];
+        _timeLabel.font = [UIFont systemFontOfSize:13];
+        _timeLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.6];
+        _timeLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _timeLabel;
+}
+
+- (void)startRefreshingSize:(CGSize)animationZoneSize{
+    self.downLoadLabel.text = @"🌍";//↑
+    [CAAnimation showRotateAnimationInView:self.downLoadLabel Degree:M_PI*8 Direction:AxisZ Repeat:0 Duration:1 autoreverses:YES];
+    [CAAnimation showBezierPathAnimationView:self.downLoadLabel startPont:CGPointMake(0, self.downLoadLabel.bottom) endPoint:CGPointMake(SCREEN_W, self.downLoadLabel.bottom) controlPoint1:CGPointMake(SCREEN_W/3, -100) controlPoint2:CGPointMake(2*SCREEN_W/3, 100) Repeat:0 Duration:1 autoreverses:YES];
+}
+
+- (void)endRefreshing{
+    self.downLoadLabel.text = @"↓";//↑
+    self.timeLabel.text = [self timeStringformat:@"yyyy-MM-dd hh:mm:ss" date:[NSDate date]];
+    [CAAnimation clearAnimationInView:self.downLoadLabel];
+}
+
+-(NSString*)timeStringformat:(NSString*)format date:(NSDate *)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    dateFormatter = nil;
+    return dateString;
+}
+
+@end
+
+
+#pragma mark 刷新尾
+@implementation JoyRefreshFooterView
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self addSubview:self.timeLabel];
+        [self addSubview:self.upLoadLabel];
+    }
+    return self;
+}
+
+-(UILabel *)upLoadLabel{
+    if (!_upLoadLabel){
+        _upLoadLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        _upLoadLabel.font = [UIFont systemFontOfSize:25];
+        _upLoadLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _upLoadLabel;
+}
+
+-(UILabel *)timeLabel{
+    if (!_timeLabel){
+        _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 0, 200, 60)];
+        _timeLabel.font = [UIFont systemFontOfSize:13];
+        _timeLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.6];
+        _timeLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _timeLabel;
+}
+
+- (void)startRefreshingSize:(CGSize)animationZoneSize{
+    self.upLoadLabel.text = @"🏈";//↑
+    [CAAnimation showRotateAnimationInView:self.upLoadLabel Degree:M_PI*8 Direction:AxisZ Repeat:0 Duration:1 autoreverses:YES];
+    [CAAnimation showBezierPathAnimationView:self.upLoadLabel startPont:CGPointMake(0, self.upLoadLabel.bottom) endPoint:CGPointMake(SCREEN_W, self.upLoadLabel.bottom) controlPoint1:CGPointMake(SCREEN_W/3, -130) controlPoint2:CGPointMake(2*SCREEN_W/3, 60) Repeat:0 Duration:1 autoreverses:YES];
+    
+}
+
+- (void)endRefreshing{
+    self.upLoadLabel.text = @"↑";//↑
+    self.timeLabel.text = [self timeStringformat:@"yyyy-MM-dd hh:mm:ss" date:[NSDate date]];
+    [CAAnimation clearAnimationInView:self.upLoadLabel];
+}
+
+-(NSString*)timeStringformat:(NSString*)format date:(NSDate *)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    dateFormatter = nil;
+    return dateString;
+}
+
+@end

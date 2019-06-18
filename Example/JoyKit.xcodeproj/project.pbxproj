@@ -394,7 +394,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example-resources.sh",
 				"${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png",
 				"${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png",
 				"${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg",
@@ -437,7 +437,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB8B12D70AEBF40099AE0D33 /* [CP] Check Pods Manifest.lock */ = {

@@ -72,10 +72,40 @@ typedef NS_ENUM(NSInteger, ShakeDerection) {
  */
 + (void)showShakeAnimationInView:(UIView *)view Offset:(CGFloat)offset Direction:(ShakeDerection)derection Repeat:(CGFloat)repeat Duration:(CGFloat)duration;
 
+
+/**
+ 绕着某点圆形区域运动
+ 
+ @param view 动画的载体
+ @param point 中心点
+ @param radious 弧度
+ @param startAngle 起始位置
+ @param endAngle 结束位置
+ @param repeat 循环次数
+ @param duration 一次运行时间
+ */
++ (void)showaRadiousPathAnimationInView:(UIView *)view point:(CGPoint)point radius:(CGFloat)radious startAngle:(CGFloat)startAngle endAlgle:(CGFloat)endAngle Repeat:(CGFloat)repeat Duration:(CGFloat)duration;
+
+
+/**
+ 二阶贝塞尔曲线运动
+ 
+ @param view 动画的载体
+ @param startPont 起始位置
+ @param endPoint 结束位置
+ @param controlPoint1 第一个控制点
+ @param controlPoint2 第二个控制点
+ @param repeat 是否重复
+ @param duration 运行时间
+ @param autoreverses 是否回滚
+ */
++ (void)showBezierPathAnimationView:(UIView *)view startPont:(CGPoint)startPont endPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1  controlPoint2:(CGPoint)controlPoint2 Repeat:(CGFloat)repeat Duration:(CGFloat)duration autoreverses:(BOOL)autoreverses;
+
 /**
  *清除具体UIView上的所有动画
  *@param   view   实施清除的对象
  */
 + (void)clearAnimationInView:(UIView *)view;
+
 
 @end

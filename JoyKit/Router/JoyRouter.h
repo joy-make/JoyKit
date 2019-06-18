@@ -51,6 +51,14 @@ typedef void (^JoyRouteBlock) (NSDictionary *params,NSError *error);
 - (BOOL)openNativeWithUrl:(NSURL *)url;
 
 /**
+ url通信(带回调功能)
+ @param url 协议数据。joy://person/detail?title=test&name=tixi
+ @param actionType 通信方式
+ @param block 回调
+ */
+- (BOOL)openNativeWithUrl:(NSURL *)url actionType:(JoyRouteActionType)actionType block:(JoyRouteBlock)block;
+
+/**
  获取当前app Root
  @return Root
  */
