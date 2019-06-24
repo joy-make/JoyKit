@@ -461,15 +461,21 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
             self.joy_refreshHeaderView.downLoadLabel.text = @"↑";
         }else{
             self.joy_refreshHeaderView.downLoadLabel.text = @"↓";
+            self.joy_refreshHeaderView.y = - scrollView.contentOffset.y-self.joy_refreshHeaderView.height;
         }
+        self.joy_refreshFooterView.hidden = self.joy_refreshHeaderView.y<0?NO:YES;
+    }else{
+        self.joy_refreshHeaderView.y = - scrollView.contentOffset.y-self.joy_refreshHeaderView.height;
+        self.joy_refreshFooterView.hidden = self.joy_refreshHeaderView.y<0?NO:YES;
     }
     
     if(self.isUpRefreshEnable){
-        self.joy_refreshFooterView.y = scrollView.bottom;
         if(!self.isUpLoading &&scrollView.contentOffset.y>0){
-            if (scrollView.contentOffset.y >(scrollView.contentSize.height-scrollView.bounds.size.height +80)) {
-                self.isUpLoading = YES;
+            self.joy_refreshFooterView.y = scrollView.bottom-(scrollView.contentOffset.y - scrollView.contentSize.height+scrollView.bounds.size.height);
+            self.joy_refreshFooterView.hidden = scrollView.contentOffset.y<=0?YES:NO;
+            if ((scrollView.contentOffset.y - scrollView.contentSize.height+scrollView.bounds.size.height)>self.joy_refreshFooterView.height) {
                 self.joy_refreshFooterView.upLoadLabel.text = @"↓";//↑
+                self.isUpLoading = YES;
             }else{
                 self.joy_refreshFooterView.upLoadLabel.text = @"↑";//↑
             }
@@ -485,7 +491,6 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
             JoyRefreshBlock headerRefreshBlock = objc_getAssociatedObject(self, @selector(joyHeaderRefreshblock));
             headerRefreshBlock?headerRefreshBlock():nil;
         });
-        
     }
     
     if(self.isUpLoading && self.isUpRefreshEnable){
@@ -729,8 +734,8 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 -(JoyTableAutoLayoutView *(^)(JoyRefreshBlock))joyHeaderRefreshblock{
     self.isDownRefreshEnable = YES;
-    if (![self.tableView.subviews containsObject:self.joy_refreshHeaderView]) {
-        [self.tableView addSubview:self.joy_refreshHeaderView];
+    if (![self.subviews containsObject:self.joy_refreshHeaderView]) {
+        [self addSubview:self.joy_refreshHeaderView];
     }
     __weak __typeof(&*self)weakSelf = self;
     return ^(JoyRefreshBlock block){
@@ -741,8 +746,8 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 -(JoyTableAutoLayoutView *(^)(JoyRefreshBlock))joyFooterRefreshblock{
     self.isUpRefreshEnable = YES;
-    if (![self.tableView.subviews containsObject:self.joy_refreshFooterView]) {
-        [self.tableView addSubview:self.joy_refreshFooterView];
+    if (![self.subviews containsObject:self.joy_refreshFooterView]) {
+        [self addSubview:self.joy_refreshFooterView];
     }
     __weak __typeof(&*self)weakSelf = self;
     return ^(JoyRefreshBlock block){
@@ -776,7 +781,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 -(JoyRefreshFooterView *)joy_refreshFooterView{
     if (!_joy_refreshFooterView) {
-        _joy_refreshFooterView = [[JoyRefreshFooterView alloc] initWithFrame:CGRectMake(0, -60, SCREEN_W, 60)];
+        _joy_refreshFooterView = [[JoyRefreshFooterView alloc] initWithFrame:CGRectMake(0, -60, SCREEN_W, 80)];
     }
     return _joy_refreshFooterView;
 }
@@ -832,6 +837,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     self.downLoadLabel.text = @"🌍";//↑
     [CAAnimation showRotateAnimationInView:self.downLoadLabel Degree:M_PI*8 Direction:AxisZ Repeat:0 Duration:1 autoreverses:YES];
     [CAAnimation showBezierPathAnimationView:self.downLoadLabel startPont:CGPointMake(0, self.downLoadLabel.bottom) endPoint:CGPointMake(SCREEN_W, self.downLoadLabel.bottom) controlPoint1:CGPointMake(SCREEN_W/3, -100) controlPoint2:CGPointMake(2*SCREEN_W/3, 100) Repeat:0 Duration:1 autoreverses:YES];
+    [CAAnimation showScaleAnimationInView:self.downLoadLabel fromValue:1 ScaleValue:1.7 Repeat:0 Duration:0.5 autoreverses:YES];
 }
 
 - (void)endRefreshing{
@@ -864,7 +870,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 -(UILabel *)upLoadLabel{
     if (!_upLoadLabel){
-        _upLoadLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        _upLoadLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 60, 60)];
         _upLoadLabel.font = [UIFont systemFontOfSize:25];
         _upLoadLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -873,7 +879,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 -(UILabel *)timeLabel{
     if (!_timeLabel){
-        _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 0, 200, 60)];
+        _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 20, 200, 60)];
         _timeLabel.font = [UIFont systemFontOfSize:13];
         _timeLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.6];
         _timeLabel.textAlignment = NSTextAlignmentCenter;
@@ -882,10 +888,10 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 }
 
 - (void)startRefreshingSize:(CGSize)animationZoneSize{
-    self.upLoadLabel.text = @"🏈";//↑
+    self.upLoadLabel.text = @"⚽️";//↑
     [CAAnimation showRotateAnimationInView:self.upLoadLabel Degree:M_PI*8 Direction:AxisZ Repeat:0 Duration:1 autoreverses:YES];
-    [CAAnimation showBezierPathAnimationView:self.upLoadLabel startPont:CGPointMake(0, self.upLoadLabel.bottom) endPoint:CGPointMake(SCREEN_W, self.upLoadLabel.bottom) controlPoint1:CGPointMake(SCREEN_W/3, -130) controlPoint2:CGPointMake(2*SCREEN_W/3, 60) Repeat:0 Duration:1 autoreverses:YES];
-    
+    [CAAnimation showBezierPathAnimationView:self.upLoadLabel startPont:CGPointMake(0, self.upLoadLabel.bottom) endPoint:CGPointMake(SCREEN_W, self.upLoadLabel.bottom) controlPoint1:CGPointMake(SCREEN_W/3, -100) controlPoint2:CGPointMake(2*SCREEN_W/3, 60) Repeat:0 Duration:1 autoreverses:YES];
+    [CAAnimation showScaleAnimationInView:self.upLoadLabel fromValue:1 ScaleValue:1.7 Repeat:0 Duration:0.5 autoreverses:YES];
 }
 
 - (void)endRefreshing{

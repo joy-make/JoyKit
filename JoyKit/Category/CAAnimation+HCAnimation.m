@@ -60,7 +60,7 @@
     CABasicAnimation *rotateAnimation = [CABasicAnimation animationWithKeyPath:axisArray[direction]];
     rotateAnimation.fromValue = [NSNumber numberWithFloat:0.0];
     rotateAnimation.toValue = [NSNumber numberWithFloat:degree];
-    rotateAnimation.autoreverses = autoreverses?:NO;
+    rotateAnimation.autoreverses = autoreverses;
     rotateAnimation.fillMode = kCAFillModeForwards;
     rotateAnimation.removedOnCompletion = NO;
     rotateAnimation.repeatCount = repeat;

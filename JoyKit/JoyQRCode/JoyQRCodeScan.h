@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JoyQRCodeScan : NSObject
 +(instancetype)shareInstance;
+@property (nonatomic,strong,readonly)JoyQRCodeScanView *scanView;
 
 - (void)startScan:(STRINGBLOCK)scanBlock;
 

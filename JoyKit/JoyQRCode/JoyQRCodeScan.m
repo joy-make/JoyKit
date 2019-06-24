@@ -25,10 +25,11 @@
 
 - (void)startScan:(STRINGBLOCK)scanBlock{
     [self.scanView removeFromSuperview];
-    self.scanView = [[JoyQRCodeScanView alloc]init];
+    self.scanView = [[JoyQRCodeScanView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [[UIApplication sharedApplication].keyWindow addSubview:self.scanView];
-    MAS_CONSTRAINT(self.scanView, make.edges.mas_equalTo([UIApplication sharedApplication].keyWindow););
-    [[UIApplication sharedApplication].keyWindow updateConstraintsIfNeeded];
+//    MAS_CONSTRAINT(self.scanView, make.edges.mas_equalTo([UIApplication sharedApplication].keyWindow););
+//    [[UIApplication sharedApplication].keyWindow updateConstraintsIfNeeded];
+    
     _scanView.scanMMetaBlock = scanBlock;
     [_scanView.recorder.captureSession startRunning];
     __weak __typeof(&*self)weakSelf = self;

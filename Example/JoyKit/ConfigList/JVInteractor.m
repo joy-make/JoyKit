@@ -17,7 +17,7 @@
     dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         int i = 0;
-        while (i++<100) {
+        while (i++<1) {
             NSLog(@"%@", [NSString stringWithFormat:@"apply😄%d",i]);
             [self.dataArrayM addObject:[self getSectionData]];
         }

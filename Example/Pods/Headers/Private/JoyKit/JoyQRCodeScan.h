@@ -1,1 +1,1 @@
-../../../../../JoyKit/JoyQRCode/QRScan/JoyQRCodeScan.h
+../../../../../JoyKit/JoyQRCode/JoyQRCodeScan.h

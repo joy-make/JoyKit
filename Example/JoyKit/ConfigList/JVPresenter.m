@@ -38,7 +38,11 @@
         .headerFooterAction(^(NSInteger section,NSObject *actionObject,BOOL isHeader){
             JoySectionBaseModel *model = [weakSelf.interactor.dataArrayM objectAtIndex:section];
             model.headerFooterAToBBlock?model.headerFooterAToBBlock(JOY_RandomColor):nil;
-        });
+        }).joyFooterRefreshblock(^{
+            weakSelf.layoutView.joyEndFooterRefreshblock();
+        }).joyHeaderRefreshblock(^{
+            weakSelf.layoutView.joyEndHeaderRefreshblock();
+        });;
     }];
 }
 

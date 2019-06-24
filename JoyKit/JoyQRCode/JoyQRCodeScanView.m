@@ -24,35 +24,18 @@
  */
 @property(nonatomic,assign)CGFloat effectiveScale;
 @property (nonatomic,strong)UIImageView *focusCursor;
-@property (nonatomic,strong)UIButton *switchCameraBtn;
 @property (nonatomic,strong)UIButton *torchLightBtn;
 @property (nonatomic,strong)UIButton *photoSelectBtn;
 @property (nonatomic,strong)UIButton *cancleBtn;
-@property (nonatomic,strong)QRCodeView  *qrCodeBorderImageView;
 
 @end
 
 @implementation JoyQRCodeScanView
 
--(QRCodeView *)qrCodeBorderImageView{
-    if (!_qrCodeBorderImageView) {
-        _qrCodeBorderImageView = [[QRCodeView alloc]initWithFrame:CGRectZero];
-    }
-    return _qrCodeBorderImageView;
-}
-
--(UIButton *)switchCameraBtn{
-    if (!_switchCameraBtn) {
-        _switchCameraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_switchCameraBtn setImage:[UIImage imageNamed:@"LW_SwitchCamera"] forState:UIControlStateNormal];
-        [_switchCameraBtn addTarget:self action:@selector(switchCameraBtn:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _switchCameraBtn;
-}
-
 -(UIButton *)torchLightBtn{
     if (!_torchLightBtn) {
         _torchLightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_torchLightBtn setFrame:CGRectMake(self.bounds.size.width-30-20, 30, 30, 30)];
         [_torchLightBtn setImage:[UIImage imageNamed:@"LW_Video_FlashLight"] forState:UIControlStateNormal];
         [_torchLightBtn addTarget:self action:@selector(lightControl:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -62,6 +45,7 @@
 -(UIButton *)photoSelectBtn{
     if (!_photoSelectBtn) {
         _photoSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_photoSelectBtn setFrame:CGRectMake((self.bounds.size.width -50)/2, self.bounds.size.height-60-50, 50, 50)];
         [_photoSelectBtn setImage:[UIImage imageNamed:@"LW_PhotoLibruary"] forState:UIControlStateNormal];
         [_photoSelectBtn addTarget:self action:@selector(selectPhoto:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -71,24 +55,23 @@
 -(UIButton *)cancleBtn{
     if (!_cancleBtn) {
         _cancleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_cancleBtn setFrame:CGRectMake(self.photoSelectBtn.frame.origin.x-50-40, self.photoSelectBtn.frame.origin.y, 50, 50)];
         [_cancleBtn setImage:[UIImage imageNamed:@"LW_Video_Down"] forState:UIControlStateNormal];
         [_cancleBtn addTarget:self action:@selector(leaveout:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancleBtn;
 }
 
-- (instancetype)init{
-    if (self = [super init]) {
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]){
         self.backgroundColor = JOY_blackColor;
         self.effectiveScale = self.beginGestureScale = 1.0f;
         [self initCapture];
         [self setUpGesture];
         [self addGenstureRecognizer];
-        [self addSubview:self.switchCameraBtn];
         [self addSubview:self.torchLightBtn];
         [self addSubview:self.photoSelectBtn];
         [self addSubview:self.cancleBtn];
-        [self addSubview:self.qrCodeBorderImageView];
         [self setCoreMotion];
     }
     return self;
@@ -102,34 +85,22 @@
 - (void)updateConstraints{
     [super updateConstraints];
     
-    __weak __typeof (&*self)weakSelf = self;
-    
-    MAS_CONSTRAINT(self.qrCodeBorderImageView, make.height.mas_equalTo(280);
-                   make.width.mas_equalTo(280);
-                   make.centerX.mas_equalTo(weakSelf.centerX);
-                   make.centerY.mas_equalTo(weakSelf.centerY).offset(-40););
-    
-    MAS_CONSTRAINT(self.torchLightBtn, make.right.equalTo(weakSelf.mas_right).offset(-20);
-                   make.top.equalTo(weakSelf.mas_top).offset(30);
+    MAS_CONSTRAINT(self.torchLightBtn, make.right.equalTo(self.mas_right).offset(-20);
+                   make.top.equalTo(self.mas_top).offset(30);
                    make.height.mas_equalTo(30);
                    make.width.mas_equalTo(30);
                    );
     
-    MAS_CONSTRAINT(_switchCameraBtn, make.right.equalTo(weakSelf.torchLightBtn.mas_left).offset(-20);
-                   make.centerY.equalTo(weakSelf.torchLightBtn.mas_centerY);
-                   make.height.mas_equalTo(20);
-                   make.width.mas_equalTo(25);
-                   );
-    MAS_CONSTRAINT(self.photoSelectBtn, make.bottom.equalTo(weakSelf.mas_bottom).offset(-60);
-                   make.centerX.equalTo(weakSelf.mas_centerX);
+    MAS_CONSTRAINT(self.photoSelectBtn, make.bottom.equalTo(self.mas_bottom).offset(-60);
+                   make.centerX.equalTo(self.mas_centerX);
                    make.height.mas_equalTo(50);
                    make.width.mas_equalTo(50);
                    );
     
-    MAS_CONSTRAINT(self.cancleBtn, make.right.mas_equalTo(weakSelf.photoSelectBtn.mas_left).offset(-40);
-                   make.centerY.mas_equalTo(weakSelf.photoSelectBtn);
-                   make.height.mas_equalTo(weakSelf.photoSelectBtn.mas_height);
-                   make.width.mas_equalTo(weakSelf.photoSelectBtn.mas_width);
+    MAS_CONSTRAINT(self.cancleBtn, make.right.mas_equalTo(self.photoSelectBtn.mas_left).offset(-40);
+                   make.centerY.mas_equalTo(self.photoSelectBtn);
+                   make.height.mas_equalTo(self.photoSelectBtn.mas_height);
+                   make.width.mas_equalTo(self.photoSelectBtn.mas_width);
                    );
 }
 
@@ -176,11 +147,10 @@
     }
     if (videoOrientation != AVCaptureVideoOrientationPortraitUpsideDown) {
         [UIView animateWithDuration:0.5 animations:^{
-            weakSelf.switchCameraBtn.transform = rotateToTransform;
             weakSelf.torchLightBtn.transform = rotateToTransform;
             weakSelf.photoSelectBtn.transform = rotateToTransform;
             weakSelf.cancleBtn.transform = rotateToTransform;
-            weakSelf.qrCodeBorderImageView.transform = rotateToTransform;
+//            weakSelf.qrCodeBorderImageView.transform = rotateToTransform;
         }];
     }
 }
@@ -198,11 +168,6 @@
         _focusCursor.alpha = 0;
     }
     return _focusCursor;
-}
-
-- (void)switchCameraBtn:(UIButton *)btn{
-    [self.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:0.8];
-    [self.recorder switchCamera];
 }
 
 - (void)lightControl:(UIButton *)btn{
@@ -270,7 +235,7 @@
  */
 -(void)setFocusCursorWithPoint:(CGPoint)point{
     self.focusCursor.center=point;
-    [CAAnimation showRotateAnimationInView:self.focusCursor Degree:6.65*M_PI Direction:AxisZ Repeat:1 Duration:1.5 autoreverses:NO];
+    [CAAnimation showRotateAnimationInView:self.focusCursor Degree:6.65*M_PI Direction:AxisZ Repeat:0 Duration:1.5 autoreverses:NO];
     [CAAnimation showScaleAnimationInView:self.focusCursor fromValue:2 ScaleValue:1 Repeat:1 Duration:1 autoreverses:YES];
     [CAAnimation showOpacityAnimationInView:self.focusCursor fromAlpha:1 Alpha:0 Repeat:1 Duration:3 autoreverses:NO];
 }
