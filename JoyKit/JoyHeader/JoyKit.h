@@ -51,7 +51,7 @@
 
 #import "JoyQRCodeScan.h"
 #import "JoyQRCodeScanView.h"
-#import "QRCodeView.h"
+#import "JoyQRCodeScanVC.h"
 
 #import "JoyCoreMotion.h"
 #import "JoySportCalcer.h"

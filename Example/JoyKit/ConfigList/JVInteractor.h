@@ -9,6 +9,5 @@
 #import <JoyKit/JoyKit.h>
 
 @interface JVInteractor : JoyInteractorBase
-@property (nonatomic,strong)NSMutableArray *dataArrayM;
 - (void)getDataSourceSuccess:(LISTBLOCK)list;
 @end

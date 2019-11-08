@@ -12,7 +12,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CollectionInteractor : JoyInteractorBase
-@property (nonatomic,strong)NSMutableArray *dataArrayM;
 
 - (void)getDataSource:(VOIDBLOCK)success;
 @end

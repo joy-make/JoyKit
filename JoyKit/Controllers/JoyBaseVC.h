@@ -8,7 +8,7 @@
 #import "JoyNavProtocol.h"
 #import "NSObject+JoyCategory.h"
 
-@interface JoyBaseVC : UIViewController<JoyNavProtocol>
+@interface JoyBaseVC : UIViewController<JoyNavProtocol,JoyViewProtocol>
 
 #pragma mark每个子controller的标题,按需所传
 @property(nonatomic,copy)NSString *titleStr;

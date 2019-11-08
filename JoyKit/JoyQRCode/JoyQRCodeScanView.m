@@ -11,7 +11,6 @@
 #import "Joy.h"
 #import <CAAnimation+HCAnimation.h>
 #import "JoyCoreMotion.h"
-#import "QRCodeView.h"
 #import "UIView+JoyCategory.h"
 
 @interface JoyQRCodeScanView ()<UIGestureRecognizerDelegate,ReCordPlayProtoCol>
@@ -32,6 +31,7 @@
 
 @implementation JoyQRCodeScanView
 
+
 -(UIButton *)torchLightBtn{
     if (!_torchLightBtn) {
         _torchLightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -46,7 +46,7 @@
     if (!_photoSelectBtn) {
         _photoSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_photoSelectBtn setFrame:CGRectMake((self.bounds.size.width -50)/2, self.bounds.size.height-60-50, 50, 50)];
-        [_photoSelectBtn setImage:[UIImage imageNamed:@"LW_PhotoLibruary"] forState:UIControlStateNormal];
+        [_photoSelectBtn setImage:[UIImage imageNamed:@"qr_photo"] forState:UIControlStateNormal];
         [_photoSelectBtn addTarget:self action:@selector(selectPhoto:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _photoSelectBtn;
@@ -56,7 +56,7 @@
     if (!_cancleBtn) {
         _cancleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cancleBtn setFrame:CGRectMake(self.photoSelectBtn.frame.origin.x-50-40, self.photoSelectBtn.frame.origin.y, 50, 50)];
-        [_cancleBtn setImage:[UIImage imageNamed:@"LW_Video_Down"] forState:UIControlStateNormal];
+        [_cancleBtn setImage:[UIImage imageNamed:@"qr_back"] forState:UIControlStateNormal];
         [_cancleBtn addTarget:self action:@selector(leaveout:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancleBtn;
@@ -72,6 +72,7 @@
         [self addSubview:self.torchLightBtn];
         [self addSubview:self.photoSelectBtn];
         [self addSubview:self.cancleBtn];
+        [self setConstraints];
         [self setCoreMotion];
     }
     return self;
@@ -82,26 +83,25 @@
     _recorder.preViewLayer.frame = self.bounds;
 }
 
-- (void)updateConstraints{
-    [super updateConstraints];
+- (void)setConstraints{
+    [self.cancleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(20);
+        make.top.mas_equalTo(40);
+        make.height.width.mas_equalTo(30);
+    }];
     
-    MAS_CONSTRAINT(self.torchLightBtn, make.right.equalTo(self.mas_right).offset(-20);
-                   make.top.equalTo(self.mas_top).offset(30);
-                   make.height.mas_equalTo(30);
-                   make.width.mas_equalTo(30);
-                   );
+    [self.torchLightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(-20);
+        make.centerY.mas_equalTo(self.cancleBtn);
+        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(30);
+    }];
     
-    MAS_CONSTRAINT(self.photoSelectBtn, make.bottom.equalTo(self.mas_bottom).offset(-60);
-                   make.centerX.equalTo(self.mas_centerX);
-                   make.height.mas_equalTo(50);
-                   make.width.mas_equalTo(50);
-                   );
-    
-    MAS_CONSTRAINT(self.cancleBtn, make.right.mas_equalTo(self.photoSelectBtn.mas_left).offset(-40);
-                   make.centerY.mas_equalTo(self.photoSelectBtn);
-                   make.height.mas_equalTo(self.photoSelectBtn.mas_height);
-                   make.width.mas_equalTo(self.photoSelectBtn.mas_width);
-                   );
+    [self.photoSelectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(self.torchLightBtn.mas_leading).mas_offset(-20);
+        make.height.width.mas_equalTo(35);
+        make.centerY.mas_equalTo(self.cancleBtn);
+    }];
 }
 
 - (void)setCoreMotion{
@@ -171,7 +171,7 @@
 }
 
 - (void)lightControl:(UIButton *)btn{
-    [self.recorder switchTorch];
+    [self.recorder switchTorch:NO];
 }
 
 - (void)selectPhoto:(UIButton *)btn{
@@ -179,21 +179,17 @@
 }
 
 - (void)leaveout:(UIButton *)btn{
-    __weak __typeof(&*self)weakSlef = self;
-    [UIView animateWithDuration:0.3 animations:^{
-        weakSlef.y = SCREEN_H;
-    } completion:^(BOOL finished) {
-        [weakSlef.recorder stopCurrentVideoRecording];
-        [weakSlef.recorder.captureSession stopRunning];
-        [weakSlef stopCoreMotion];
-        [weakSlef removeFromSuperview];
-    }];
+    [self.recorder stopCurrentVideoRecording];
+    [self.recorder.captureSession stopRunning];
+    [self stopCoreMotion];
+    self.goBackBlock?self.goBackBlock():nil;
 }
 
 -(void)initCapture{
     if (!_recorder) {
         __weak typeof(self)weakSelf = self;
         _recorder = [[JoyMediaRecordPlay alloc]initWithCaptureType:EAVCaptureMetadataOutput];
+        [_recorder switchTorch:true];
         [self.layer addSublayer:self.recorder.preViewLayer];
         _recorder.delegate = self;
     }
@@ -225,7 +221,7 @@
 {
     CGPoint point= [tapGesture locationInView:self];
     NSLog(@"(%f,%f)",point.x,point.y);
-    [self setFocusCursorWithPoint:point];
+//    [self setFocusCursorWithPoint:point];
     [self.recorder setFoucusWithPoint:point];
 }
 /**

@@ -34,7 +34,4 @@
     success?success():nil;
 }
 
--(NSMutableArray *)dataArrayM{
-    return _dataArrayM = _dataArrayM?:[NSMutableArray array];
-}
 @end

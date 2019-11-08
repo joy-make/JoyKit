@@ -120,3 +120,11 @@ typedef enum {
 -(CATransition *)transitionWithAnimType:(TransitionAnimType)animType subType:(TransitionSubType)subType curve:(TransitionCurve)curve duration:(CGFloat)duration;
 
 @end
+
+@interface CALayer (ScanCode)
+
+- (void)addScanLayerScanW:(CGFloat)scanW scanH:(CGFloat)scanH cornerWidth:(CGFloat)cornerW;
+
+- (void)addScanLayerScanW:(CGFloat)scanW scanH:(CGFloat)scanH cornerWidth:(CGFloat)cornerW color:(UIColor *)scanColor;
+
+@end

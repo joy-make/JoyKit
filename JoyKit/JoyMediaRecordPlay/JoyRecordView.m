@@ -206,7 +206,7 @@
 }
 
 - (void)lightControl:(UIButton *)btn{
-    [self.recorder switchTorch];
+    [self.recorder switchTorch:true];
 }
 
 - (void)startRecord:(UIButton *)btn{

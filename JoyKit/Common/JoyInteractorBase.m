@@ -8,5 +8,7 @@
 
 #import "JoyInteractorBase.h"
 @implementation JoyInteractorBase
-
+-(NSMutableArray *)dataArrayM{
+    return _dataArrayM = _dataArrayM?:[NSMutableArray array];
+}
 @end

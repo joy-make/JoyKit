@@ -11,7 +11,6 @@
 #import "Person.h"
 
 @interface PersonInteractor : JoyInteractorBase
-@property (nonatomic,strong)NSMutableArray *dataArrayM;
 @property (nonatomic,strong)NSArray *sexList;
 @property (nonatomic,strong)NSArray *likeList;
 @property (nonatomic,strong)Person *person;

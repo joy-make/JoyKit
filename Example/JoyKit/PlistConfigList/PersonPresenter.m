@@ -106,7 +106,7 @@
 
 #pragma mark 长按
 -(void)longPressAction{
-    [JoyAlert showWithMessage:[NSString stringWithFormat:@"长按了第%d列cell",self.tableView.currentSelectIndexPath.row]];
+    [JoyAlert showWithMessage:[NSString stringWithFormat:@"长按了第%ld列cell",(long)self.tableView.currentSelectIndexPath.row]];
 }
 
 - (void)selectAvatar{

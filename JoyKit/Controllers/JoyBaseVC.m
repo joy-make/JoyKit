@@ -24,6 +24,8 @@ static NSString *JoyShadowImage = @"JoyShadowImage";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavItem];
+    [self addSubViews];
+    [self setConstraints];
     NSLog(@"The current viewController is %@", self);
 }
 
@@ -45,6 +47,10 @@ static NSString *JoyShadowImage = @"JoyShadowImage";
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = objc_getAssociatedObject(self, &JoyShadowImage);
 }
+
+-(void)addSubViews{}
+
+-(void)setConstraints{}
 
 - (void)setNavItem{
     self.navigationController.navigationBarHidden = NO;

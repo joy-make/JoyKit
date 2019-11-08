@@ -54,10 +54,6 @@
     }
 }
 
--(NSMutableArray *)dataArrayM{
-    return _dataArrayM = _dataArrayM?:[NSMutableArray array];
-}
-
 -(NSArray *)sexList{
     return @[@[@"男",@"女"]];
 }

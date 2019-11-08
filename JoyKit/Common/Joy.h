@@ -75,4 +75,17 @@ typedef void (^VOIDBLOCK)(void);
 
 #define SCREEN_H [UIScreen mainScreen].bounds.size.height
 #define SCREEN_W [UIScreen mainScreen].bounds.size.width
+
+// 导航栏 + 状态栏 的高度
+#define Joy_NavigationBarHeight (kDevice_Is_iPhoneX ? 88 : 64)
+#define Joy_TopMargin (kDevice_Is_iPhoneX ? 44 : 0)
+#define Joy_BottomMargin (kDevice_Is_iPhoneX ? 34 : 0)
+
+#define Joy_iOS11_Later ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
+
+#define Joy_iOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.1f)
+
+#define Joy_iOS9_Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
+
+#define Joy_iOS8_2Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.2f)
 #endif /* Joy_h */

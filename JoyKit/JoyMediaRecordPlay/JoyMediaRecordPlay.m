@@ -202,12 +202,42 @@ static const CGFloat KMinRecordTime = 3;
 
 #pragma mark 流数据丢包
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-    
+    if ([self.delegate respondsToSelector:@selector(joyCaptureOutput:didDropSampleBuffer:fromConnection:)]) {
+        [self.delegate joyCaptureOutput:captureOutput didDropSampleBuffer:sampleBuffer fromConnection:connection];
+    }
 }
 
 #pragma mark 流数据输出
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-    
+    if ([self.delegate respondsToSelector:@selector(joyCaptureOutput:didOutputSampleBuffer:fromConnection:)]){
+        [self.delegate joyCaptureOutput:captureOutput didOutputSampleBuffer:sampleBuffer fromConnection:connection];
+    }
+//    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+//      CVPixelBufferLockBaseAddress(imageBuffer,0);
+//      uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer);
+//      size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+//      size_t width = CVPixelBufferGetWidth(imageBuffer);
+//      size_t height = CVPixelBufferGetHeight(imageBuffer);
+//
+//      CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//      CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace,                                                  kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+//
+//      CGImageRef newImage = CGBitmapContextCreateImage(newContext);
+//
+//      CGContextRelease(newContext);
+//      CGColorSpaceRelease(colorSpace);
+//
+//      id object = (__bridge id)newImage;
+//
+////    [self.customLayer performSelectorOnMainThread:@selector(setContents:) withObject: object waitUntilDone:YES];
+//
+//      UIImage *image= [UIImage imageWithCGImage:newImage scale:1.0 orientation:UIImageOrientationRight];
+//      // release
+//      CGImageRelease(newImage);
+//
+////      [self.imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES];
+//
+//      CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
 }
 
 #pragma mark 扫描到数据
@@ -343,16 +373,17 @@ static const CGFloat KMinRecordTime = 3;
 }
 
 #pragma mark 手电筒
-- (void)switchTorch{
+- (void)switchTorch:(BOOL)isTorchModeAuto{
     __weak __typeof (&*self)weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
         NSError *error = nil;
         [device lockForConfiguration:&error];
         if (error) {NSLog(@"error:%@",error.description);}
-//        AVCaptureTorchMode torchMode = device.torchMode == AVCaptureTorchModeOff?AVCaptureTorchModeOn:AVCaptureTorchModeOff;
-        
         AVCaptureTorchMode torchMode = AVCaptureTorchModeAuto;
+        if(!isTorchModeAuto){
+           torchMode = device.torchMode == AVCaptureTorchModeOff?AVCaptureTorchModeOn:AVCaptureTorchModeOff;
+        }
         AVCaptureDevice *currentDevice = [weakSelf.mediaDeviceInput device];
         if(currentDevice.position == AVCaptureDevicePositionFront) torchMode = AVCaptureTorchModeOff;
         [device setTorchMode:torchMode];

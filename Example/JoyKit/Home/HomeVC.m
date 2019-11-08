@@ -34,7 +34,8 @@
 - (NSMutableArray *)getDataSource{
     NSArray *list = @[@{@"title":@"基本列表",@"tapAction":@"JoyViewController"},
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
-                      @{@"title":@"plist配置",@"tapAction":@"SCViewController"}
+                      @{@"title":@"plist配置",@"tapAction":@"SCViewController"},
+                      @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"}
                       ];
     JoySectionBaseModel *section = [[JoySectionBaseModel alloc]init];
     for (int i=0; i<list.count; i++) {
@@ -48,7 +49,7 @@
 }
 
 - (void)action:(NSString *)tapAction{
-    UIViewController *vc = [[NSClassFromString(tapAction) alloc]init];
+    JoyBaseVC *vc = [[NSClassFromString(tapAction) alloc]init];
     [self goVC:vc];
 }
 @end

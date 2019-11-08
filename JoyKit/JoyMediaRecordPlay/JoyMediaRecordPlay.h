@@ -35,11 +35,23 @@ typedef NS_ENUM(NSUInteger,EAVCaptureOutputType) {
 didStartRecordingToOutputFileAtURL:(NSURL *)fileURL
          fromConnections:(NSArray *)connections;
 
+#pragma mark 文件数据输出
 -(void)joyCaptureOutput:(AVCaptureFileOutput *)captureOutput
 didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL
         fromConnections:(NSArray *)connections error:(NSError *)error
            recordResult:(ERecordResult)recordResult;
 
+#pragma mark 流数据丢包
+-(void)joyCaptureOutput:(AVCaptureOutput *)captureOutput
+    didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer
+         fromConnection:(AVCaptureConnection *)connection;
+
+#pragma mark 流数据输出
+-(void)joyCaptureOutput:(AVCaptureOutput *)captureOutput
+  didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+         fromConnection:(AVCaptureConnection *)connection;
+
+#pragma mark 元数据输出
 - (void)joyCaptureOutput:(AVCaptureOutput *)captureOutput
 didOutputMetadataObjects:(NSArray *)metadataObjects
           fromConnection:(AVCaptureConnection *)connection;
@@ -74,8 +86,8 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 #pragma mark 移除输入
 -(void)removeAVCaptureAudioDeviceInput;
 
-#pragma mark 手电筒
-- (void)switchTorch;
+#pragma mark 手电筒  isTorchModeAuto:是否开启自动模式 不开启则根据当前开启状态取相反状态
+- (void)switchTorch:(BOOL)isTorchModeAuto;
 
 #pragma mark 切换摄像头
 - (void)switchCamera;

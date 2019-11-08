@@ -7,6 +7,7 @@
 //
 
 #import "JoyDeviceModule.h"
+#import <WebKit/WebKit.h>
 
 @implementation JoyDeviceModule
 #pragma mark 打电话
@@ -34,13 +35,20 @@
 }
 
 #pragma mark 打开设备功能
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored  "-Wincompatible-pointer-types"
 + (void)openDeviceFunctionWithUrl:(NSURL *)url{
-    static UIWebView *webView = nil;
+    static WKWebView *webView = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        webView = [UIWebView new];
+        if (@available(iOS 8.0, *)) {
+            webView = [WKWebView new];
+        } else {
+            // Fallback on earlier versions
+        }
     });
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
+#pragma clang diagnostic pop
 
 @end

@@ -115,6 +115,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_preview_video_done@2x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_preview_video_done@3x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qrScanBorder.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qr_back.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qr_photo.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png"
@@ -135,6 +137,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_preview_video_done@2x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/JoyMediaRecordPlay/images/trends_preview_video_done@3x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qrScanBorder.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qr_back.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/JoyQRCode/images/qr_photo.png"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

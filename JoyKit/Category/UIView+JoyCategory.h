@@ -11,7 +11,7 @@
 #import <objc/message.h>
 
 @interface UIView (JoyCategory)
-@property(nonatomic,readonly)UIViewController* viewController;
+@property(nonatomic,readonly)UIViewController* _Nullable  viewController;
 @property (nonatomic, assign) CGFloat x;
 @property (nonatomic, assign) CGFloat y;
 /**

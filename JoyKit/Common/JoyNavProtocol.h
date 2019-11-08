@@ -57,3 +57,11 @@
 - (void)recoveryEdgeNav;
 
 @end
+
+@protocol JoyViewProtocol <NSObject>
+
+- (void)addSubViews;
+
+- (void)setConstraints;
+
+@end

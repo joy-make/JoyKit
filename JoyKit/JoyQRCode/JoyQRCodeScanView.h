@@ -12,6 +12,7 @@
 @interface JoyQRCodeScanView : UIView
 @property (nonatomic,copy) STRINGBLOCK scanMMetaBlock;
 @property (nonatomic,copy)VOIDBLOCK selectPhotoBlock;
+@property (nonatomic,copy)VOIDBLOCK goBackBlock;
 @property (nonatomic,strong)JoyMediaRecordPlay *recorder;
 
 @end
