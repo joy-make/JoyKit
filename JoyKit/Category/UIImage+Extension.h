@@ -47,6 +47,9 @@ FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
 #pragma markUIBezierPath 裁剪
 + (UIImage *)UIBezierPathClip:(UIImage *)img cornerRadius:(CGFloat)c;
 
+#pragma mark 按指定大小压缩图片质量
+-(NSData *)compressToMaxLength:(NSUInteger)maxLength;
+
 //颜色转换图片
 +(UIImage*)imageWithColor:(UIColor*)color;
 

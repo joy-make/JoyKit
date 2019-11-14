@@ -118,12 +118,12 @@
 /**
  * Finds the first descendant view (including this view) that is a member of a particular class.
  */
-- (UIView*)descendantOrSelfWithClass:(Class)cls;
+- (UIView*_Nonnull)descendantOrSelfWithClass:(Class _Nullable )cls;
 
 /**
  * Finds the first ancestor view (including this view) that is a member of a particular class.
  */
-- (UIView*)ancestorOrSelfWithClass:(Class)cls;
+- (UIView*_Nullable)ancestorOrSelfWithClass:(Class _Nonnull )cls;
 
 /**
  * Removes all subviews.
@@ -148,9 +148,9 @@
  view转换图片
  @return 返回转后的image
  */
--(UIImage *)snapshotSingleView;
+-(UIImage *_Nullable)snapshotSingleView;
 
-- (UIImage*)imageFromRect:(CGRect)rect;
+- (UIImage*_Nullable)imageFromRect:(CGRect)rect;
 
 - (void)cutImageFromRect:(CGRect)frame successBlock:(nullable void(^)(UIImage * _Nullable image,NSData * _Nullable imagedata))block;
 @end
