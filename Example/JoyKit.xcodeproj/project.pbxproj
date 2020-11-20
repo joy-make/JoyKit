@@ -33,6 +33,8 @@
 		BB799E0F2154E85100D768D1 /* personDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = BB799E0E2154E85100D768D1 /* personDetail.json */; };
 		BB799E132154EF6600D768D1 /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB799E122154EF6600D768D1 /* person.plist */; };
 		BB85CDFD221692A800B0DE1F /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85CDFC221692A800B0DE1F /* HomeVC.m */; };
+		BB9E1ECD2503859F00FD80C2 /* PlayerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9E1ECC2503859F00FD80C2 /* PlayerListVC.m */; };
+		BB9E1ED02503862000FD80C2 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9E1ECF2503862000FD80C2 /* PlayerCell.m */; };
 		BBCABA1A21F5982A0007BC1A /* CollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCABA1921F5982A0007BC1A /* CollectionVC.m */; };
 		BBCABA1D21F599420007BC1A /* CollectionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCABA1C21F599420007BC1A /* CollectionInteractor.m */; };
 		BBFCEDD2236FCDCC007362AC /* QRCodeScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFCEDD1236FCDCC007362AC /* QRCodeScanVC.m */; };
@@ -97,6 +99,10 @@
 		BB799E122154EF6600D768D1 /* person.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
 		BB85CDFB221692A800B0DE1F /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		BB85CDFC221692A800B0DE1F /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		BB9E1ECB2503859F00FD80C2 /* PlayerListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerListVC.h; sourceTree = "<group>"; };
+		BB9E1ECC2503859F00FD80C2 /* PlayerListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerListVC.m; sourceTree = "<group>"; };
+		BB9E1ECE2503862000FD80C2 /* PlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
+		BB9E1ECF2503862000FD80C2 /* PlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 		BBCABA1821F5982A0007BC1A /* CollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionVC.h; sourceTree = "<group>"; };
 		BBCABA1921F5982A0007BC1A /* CollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionVC.m; sourceTree = "<group>"; };
 		BBCABA1B21F599420007BC1A /* CollectionInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionInteractor.h; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				BB799DF72154D14900D768D1 /* PlistConfigList */,
 				6003F59C195388D20070C39A /* JoyAppDelegate.h */,
 				6003F59D195388D20070C39A /* JoyAppDelegate.m */,
+				BB9E1ECA25037C8800FD80C2 /* Player */,
 				BBFCEDCF236FCD9D007362AC /* QRCodeScan */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -265,6 +272,17 @@
 				BB85CDFC221692A800B0DE1F /* HomeVC.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BB9E1ECA25037C8800FD80C2 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				BB9E1ECB2503859F00FD80C2 /* PlayerListVC.h */,
+				BB9E1ECC2503859F00FD80C2 /* PlayerListVC.m */,
+				BB9E1ECE2503862000FD80C2 /* PlayerCell.h */,
+				BB9E1ECF2503862000FD80C2 /* PlayerCell.m */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		BBCABA1121F597400007BC1A /* JoyFloLayout */ = {
@@ -512,9 +530,11 @@
 				BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */,
 				BB799E0A2154D14900D768D1 /* Person.m in Sources */,
 				BB799E062154D14900D768D1 /* JVInteractor.m in Sources */,
+				BB9E1ECD2503859F00FD80C2 /* PlayerListVC.m in Sources */,
 				BBCABA1A21F5982A0007BC1A /* CollectionVC.m in Sources */,
 				BB799E092154D14900D768D1 /* PersonPresenter.m in Sources */,
 				BB799E052154D14900D768D1 /* JoyViewController.m in Sources */,
+				BB9E1ED02503862000FD80C2 /* PlayerCell.m in Sources */,
 				BB799E042154D14900D768D1 /* JVPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

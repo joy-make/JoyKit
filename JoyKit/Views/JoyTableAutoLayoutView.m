@@ -483,6 +483,11 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     }
 }
 
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    ScrollBlock tableScrollBlock = objc_getAssociatedObject(self, @selector(tableScroll));
+//    tableScrollBlock?tableScrollBlock(scrollView):nil;
+}
+
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if(self.isDownLoading && self.isDownRefreshEnable){
         [self.joy_refreshHeaderView startRefreshingSize:self.tableView.size];

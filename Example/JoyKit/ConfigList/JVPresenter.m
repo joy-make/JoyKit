@@ -17,7 +17,8 @@
     __weak __typeof (&*self)weakSelf = self;
     [self.interactor getDataSourceSuccess:^(NSArray *list)
     {
-        weakSelf.layoutView.setDataSource(weakSelf.interactor.dataArrayM)
+        __strong __typeof(&*weakSelf)strongSelf = weakSelf;
+        strongSelf.layoutView.setDataSource(strongSelf.interactor.dataArrayM)
         .reloadTable()
         .setTableEdit(YES)
         .cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {

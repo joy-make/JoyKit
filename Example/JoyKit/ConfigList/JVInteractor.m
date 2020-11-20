@@ -14,18 +14,18 @@
 //获取section数据源
 - (void)getDataSourceSuccess:(LISTBLOCK)list{
 
-    dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
+//    dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_async(queue, ^{
         int i = 0;
         while (i++<100) {
             NSLog(@"%@", [NSString stringWithFormat:@"apply😄%d",i]);
             [self.dataArrayM addObject:[self getSectionData]];
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+//        dispatch_async(dispatch_get_main_queue(), ^{
             list?list(self.dataArrayM):nil;
-        });
-    });
+//        });
+//    });
 }
 
 //获取section上的row数据源

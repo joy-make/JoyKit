@@ -8,6 +8,7 @@
 
 #import "HomeVC.h"
 #import <JoyKit/JoyKit.h>
+#import <AVKit/AVKit.h>
 
 @interface HomeVC ()
 @property (nonatomic,strong)JoyTableAutoLayoutView *layoutView;
@@ -35,7 +36,8 @@
     NSArray *list = @[@{@"title":@"基本列表",@"tapAction":@"JoyViewController"},
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
                       @{@"title":@"plist配置",@"tapAction":@"SCViewController"},
-                      @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"}
+                      @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"},
+                      @{@"title":@"播放器",@"tapAction":@"PlayerListVC"}
                       ];
     JoySectionBaseModel *section = [[JoySectionBaseModel alloc]init];
     for (int i=0; i<list.count; i++) {

@@ -675,6 +675,7 @@ static const CGFloat KMinRecordTime = 3;
     NSArray *array =  [asset tracksWithMediaType:AVMediaTypeAudio];
     if (array.count > 0) {
         AVAssetTrack *audiok =[array objectAtIndex:0];
+//        所以这个方法是 把audiok的 从start 秒开始 持续时间为duration，加入到audioTrack的第totalDuration秒中。
         [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
                             ofTrack:audiok
                              atTime:totalDuration
