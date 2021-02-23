@@ -456,6 +456,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     tableScrollBlock?tableScrollBlock(scrollView):nil;
     
     if(!self.isDownLoading && self.isDownRefreshEnable){
+        self.joy_refreshHeaderView.downLoadLabel.hidden =self.joy_refreshHeaderView.timeLabel.hidden = false;
         if (scrollView.contentOffset.y<-80) {
             self.isDownLoading = YES;
             self.joy_refreshHeaderView.downLoadLabel.text = @"↑";
@@ -824,6 +825,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         _downLoadLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
         _downLoadLabel.font = [UIFont systemFontOfSize:25];
         _downLoadLabel.textAlignment = NSTextAlignmentCenter;
+        _downLoadLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.6];
     }
     return _downLoadLabel;
 }
@@ -849,6 +851,8 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     self.downLoadLabel.text = @"↓";//↑
     self.timeLabel.text = [self timeStringformat:@"yyyy-MM-dd hh:mm:ss" date:[NSDate date]];
     [CAAnimation clearAnimationInView:self.downLoadLabel];
+    self.downLoadLabel.hidden =self.timeLabel.hidden = true;
+
 }
 
 -(NSString*)timeStringformat:(NSString*)format date:(NSDate *)date{
@@ -878,6 +882,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
         _upLoadLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 60, 60)];
         _upLoadLabel.font = [UIFont systemFontOfSize:25];
         _upLoadLabel.textAlignment = NSTextAlignmentCenter;
+        _upLoadLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.6];
     }
     return _upLoadLabel;
 }
@@ -903,6 +908,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     self.upLoadLabel.text = @"↑";//↑
     self.timeLabel.text = [self timeStringformat:@"yyyy-MM-dd hh:mm:ss" date:[NSDate date]];
     [CAAnimation clearAnimationInView:self.upLoadLabel];
+    self.upLoadLabel.hidden =self.timeLabel.hidden = true;
 }
 
 -(NSString*)timeStringformat:(NSString*)format date:(NSDate *)date{
