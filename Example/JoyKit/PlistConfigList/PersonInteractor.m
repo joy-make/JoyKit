@@ -23,7 +23,6 @@
 
 - (void)getConfigData{
     JoySectionBaseModel *sectionModel = [JoySectionBaseModel sectionWithHeaderModel:nil footerModel:nil cellModels:nil sectionH:0 sectionTitle:@""];
-
     NSArray *data = (NSArray *)[[self readLocalFileWithName:@"personDetail"] objectForKey:@"style"];
     for (NSDictionary *dict in data) {
         JoyCellBaseModel *cellModel = [JoyCellBaseModel initWithStyle:[dict[@"style"] integerValue] obj:dict];
@@ -37,6 +36,15 @@
         cellModel.subTitleColor = @"#CCCCCC";
         [self.dataArrayM addObject:cellModel];
     }
+}
+
+- (NSDictionary *)readLocalFileWithName:(NSString *)name {
+    // 获取文件路径
+    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+    // 将文件数据化
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    // 对数据进行JSON格式化并返回字典形式
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 }
 
 - (void)getServiceData{
@@ -62,14 +70,6 @@
     return @[@[@"骑行",@"爬山",@"音乐",@"竞技游戏",@"美食",@"舞蹈",@"阅读"]];
 }
 
-- (NSDictionary *)readLocalFileWithName:(NSString *)name {
-    // 获取文件路径
-    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
-    // 将文件数据化
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    // 对数据进行JSON格式化并返回字典形式
-    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-}
 
 -(void)dealloc{
     

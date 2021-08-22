@@ -19,6 +19,7 @@
 
 const int min_cellSpace = 5;
 const int min_cellInset = 15;
+static int const cellCountMutiple = 10;
 
 @interface JoyCollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource,JoyCollectionCellDelegate>{
     NSMutableArray *_registCellArrayM;
@@ -30,6 +31,10 @@ const int min_cellInset = 15;
 @property (nonatomic,strong)UIView                      *backView;
 @property (nonatomic,strong)UIView                      *noDataBackView;
 @property (nonatomic,readonly)BOOL                      editing;
+@property (nonatomic,assign)CollectionScrolltype        scrollType;
+@property (nonatomic, strong) dispatch_source_t         dispatchTimer;  //GCD计时器一定要设置为成员变量， 否则会立即释放
+@property (nonatomic, weak) NSTimer *timer;
+
 @end
 
 @implementation JoyCollectionView
@@ -128,7 +133,7 @@ const int min_cellInset = 15;
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel *model = [sectionModel.rowArrayM objectAtIndex:indexPath.row];
+    JoyCellBaseModel *model = [sectionModel.rowArrayM objectAtIndex:self.scrollType.isInfinite? (indexPath.row%sectionModel.rowArrayM.count):indexPath.row];
     if (![_registCellArrayM containsObject:model.cellName]) {
         [_collectionView registerClass:NSClassFromString(model.cellName) forCellWithReuseIdentifier:model.cellName];
         [_registCellArrayM addObject:model.cellName];
@@ -148,7 +153,9 @@ const int min_cellInset = 15;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [self cellDidSelectWithIndexPath:indexPath action:nil];
+    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
+
+    [self cellDidSelectWithIndexPath:self.scrollType.isInfinite?[NSIndexPath indexPathForRow:indexPath.row%sectionModel.rowArrayM.count inSection:indexPath.section]:indexPath action:nil];
     [collectionView setUserInteractionEnabled:NO];
     __weak __typeof(&*self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -163,7 +170,8 @@ const int min_cellInset = 15;
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:section];
-    return sectionModel.rowArrayM.count;
+    
+    return self.scrollType.isInfinite?sectionModel.rowArrayM.count*cellCountMutiple +1:sectionModel.rowArrayM.count;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -231,9 +239,41 @@ const int min_cellInset = 15;
 -(JoyCollectionView *)reloadCollectionView{
     [self.collectionView setBackgroundView: self.dataArrayM.count?self.backView:self.noDataBackView?:self.backView];
     [self.collectionView reloadData];
+    if (self.scrollType.scrollInterval>0&& self.scrollType.isInfinite) {
+        [self startTimer];
+    }
     return self;
 }
 
+-(void)startTimer{
+    [self invalidateTimer];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.scrollType.scrollInterval target:self selector:@selector(startScroll) userInfo:nil repeats:YES];
+    _timer = timer;
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+-(void)invalidateTimer{
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)startScroll{
+    NSInteger offsetIndex = 0;
+    if ( self.selectStaffLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal){
+        offsetIndex = self.collectionView.contentOffset.x/ self.collectionView.bounds.size.width;
+    }else{
+        offsetIndex = self.collectionView.contentOffset.y/ self.collectionView.bounds.size.height;
+    }
+    NSIndexPath *toIndexPAth = [NSIndexPath indexPathForRow:(offsetIndex+1) inSection:0];
+    JoySectionBaseModel *sectionModel = self.dataArrayM.firstObject;
+    [self.collectionView scrollToItemAtIndexPath:toIndexPAth atScrollPosition:UICollectionViewScrollPositionNone animated:true];
+    if (offsetIndex == sectionModel.rowArrayM.count*cellCountMutiple-1) {
+        __weak __typeof(&*self)weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [weakSelf.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:false];
+        });
+    }
+}
 
 //模拟selectAction
 -(void)cellDidSelectWithIndexPath:(NSIndexPath *)indexPath action:(NSString *)action{
@@ -259,12 +299,42 @@ const int min_cellInset = 15;
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     if (scrollView == self.collectionView) {
         [self hideKeyBoard];
+        if (self.scrollType.isInfinite) {
+            [self invalidateTimer];
+        }
     }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.scrollType.isInfinite&&self.scrollType.scrollInterval>0) {
+        [self startTimer];
+    }
+    CGPoint sliderMargin = [scrollView.panGestureRecognizer velocityInView:scrollView];
+    NSLog(@"%@x%@y%@",NSStringFromCGPoint(sliderMargin),sliderMargin.x > 0?@"正":@"负",sliderMargin.y > 0?@"正":@"负");
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CollectionScrollBlock collectionScrollBlock = objc_getAssociatedObject(self, @selector(collectionScroll));
     collectionScrollBlock?collectionScrollBlock(scrollView):nil;
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //获取滚动了多少个cell大小（因为滚动前cell就偏移了一个cell的距离，所以实际cell滚动的大小要减去一）
+    if (self.scrollType.isInfinite) {
+        NSInteger offset = scrollView.contentOffset.x/ scrollView.bounds.size.width;
+        if ( self.selectStaffLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal){
+            offset = self.collectionView.contentOffset.x/ self.collectionView.bounds.size.width;
+        }else{
+            offset = self.collectionView.contentOffset.y/ self.collectionView.bounds.size.height;
+        }
+        JoySectionBaseModel *section = self.dataArrayM.firstObject;
+        if (offset==section.rowArrayM.count*cellCountMutiple) {
+           NSIndexPath *idxPath = [NSIndexPath indexPathForItem:0 inSection:0];
+            [self.collectionView scrollToItemAtIndexPath:idxPath atScrollPosition:0 animated:NO];
+        }
+    }
+
 }
 
 #pragma mark 手势触摸
@@ -294,8 +364,8 @@ const int min_cellInset = 15;
         default:
             break;
     }
-    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
-    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
+//    JoySectionBaseModel *sectionModel = [self.dataArrayM objectAtIndex:indexPath.section];
+//    JoyCellBaseModel * model  = sectionModel.rowArrayM[indexPath.row];
 //    model.changeKey?[self textChanged:indexPath andText:obj andChangedKey:model.changeKey]:nil;
 }
 
@@ -345,6 +415,15 @@ const int min_cellInset = 15;
     };
 }
 
+-(JoyCollectionView *(^)(BOOL, NSInteger))setCollectionInfinite{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(BOOL isInfinite,NSInteger scrollInterval){
+        CollectionScrolltype scropType = {isInfinite, scrollInterval};
+        weakSelf.scrollType = scropType;
+        return weakSelf;
+    };
+}
+
 -(JoyCollectionView *(^)(CollectionScrollBlock))collectionScroll{
     __weak __typeof(&*self)weakSelf = self;
     return ^(CollectionScrollBlock block){
@@ -355,7 +434,6 @@ const int min_cellInset = 15;
 
 //cell 被点击
 -(JoyCollectionView *(^)(CollectionCellSelectBlock))cellDidSelect{
-    
     __weak __typeof(&*self)weakSelf = self;
     return ^(CollectionCellSelectBlock block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
@@ -407,10 +485,16 @@ const int min_cellInset = 15;
     };
 }
 
+-(dispatch_source_t)dispatchTimer{
+    return _dispatchTimer = _dispatchTimer?:dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());;
+}
+
 -(void)dealloc{
     self.dataArrayM = nil;
     self.collectionView.delegate = nil;
     self.collectionView.dataSource = nil;
+    [self.timer invalidate];
+    self.timer = nil;
     [self removeFromSuperview];
 }
 

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '1.0.4'
-  s.summary          = '列表视图下啦更新bug修复'
+  s.version          = '1.0.5'
+  s.summary          = '支持Collection视图循环滚动'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -203,3 +203,4 @@ s.dependency 'Masonry'
 #s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/**'}
 
 end
+

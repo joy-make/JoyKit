@@ -24,6 +24,11 @@ typedef void (^CollectionScrollBlock)(UIScrollView *scrollView);
 
 typedef void (^CollectionHeaderFooterActionBlock)(NSInteger section,NSObject *actionObject,BOOL isHeaderAction);
 
+typedef struct ScrollType{
+    BOOL        isInfinite;     //是否无限多
+    NSInteger   scrollInterval  //滚动间隔时间
+}CollectionScrolltype;
+
 @class JoySectionBaseModel;
 @interface JoyCollectionView : UIView
 @property(nonatomic,strong)UICollectionView *collectionView;
@@ -34,15 +39,17 @@ typedef void (^CollectionHeaderFooterActionBlock)(NSInteger section,NSObject *ac
 
 //**********************************链式配置,以支持链式调用*************************************************
 
-#pragma mark  让Table确认是否可编辑
+#pragma mark  让Collection确认是否可编辑
 @property (nonatomic,readonly)JoyCollectionView    *(^setCollectionEdit)(BOOL canEdit);
-#pragma mark  给Table数据源
+#pragma mark  让Collection无限滚动
+@property (nonatomic,readonly)JoyCollectionView    *(^setCollectionInfinite)(BOOL isInfinite,NSInteger ScrollInterval);
+#pragma mark  给Collection数据源
 @property (nonatomic,readonly)JoyCollectionView    *(^setDataSource)(NSMutableArray<JoySectionBaseModel *> *dataArrayM);
-#pragma mark  给背景视图TableBackView
+#pragma mark  给背景视图CollectionBackView
 @property (nonatomic,readonly)JoyCollectionView    *(^setCollectionBackView)(UIView *backView);
 #pragma mark  给背景视图设置无数据源BackView
 @property (nonatomic,readonly)JoyCollectionView    *(^setCollectionBackNoDataView)(UIView *noDataView);
-#pragma mark  刷新整个Table
+#pragma mark  刷新整个Collection
 @property (nonatomic,readonly)JoyCollectionView    *(^reloadCollection)(void);
 
 

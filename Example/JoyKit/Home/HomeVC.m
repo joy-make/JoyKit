@@ -34,6 +34,7 @@
 
 - (NSMutableArray *)getDataSource{
     NSArray *list = @[@{@"title":@"基本列表",@"tapAction":@"JoyViewController"},
+                      @{@"title":@"table混合collection",@"tapAction":@"JoyTableCollectionVC"},
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
                       @{@"title":@"plist配置",@"tapAction":@"SCViewController"},
                       @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"},

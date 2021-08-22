@@ -43,11 +43,11 @@
     
     __weak __typeof(&*self)weakSelf = self;
     [self.interactor getDataSource:^{
-        self.collectionView.setDataSource(self.interactor.dataArrayM).reloadCollection().cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
-            JoySectionBaseModel *sectionModel = [self.interactor.dataArrayM objectAtIndex:indexPath.section];
+        weakSelf.collectionView.setDataSource(weakSelf.interactor.dataArrayM).reloadCollection().cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
+            JoySectionBaseModel *sectionModel = [weakSelf.interactor.dataArrayM objectAtIndex:indexPath.section];
             JoyImageCellBaseModel *model =[sectionModel.rowArrayM objectAtIndex:indexPath.row];
-            [self.joyPickerView setTitle:model.title textColor:[UIColor purpleColor]];
-            [self.joyPickerView showPickView];
+            [weakSelf.joyPickerView setTitle:model.title textColor:[UIColor purpleColor]];
+            [weakSelf.joyPickerView showPickView];
         }).collectionScroll(^(UIScrollView *scrollView) {
             NSLog(@"");
         });
