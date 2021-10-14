@@ -93,6 +93,9 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.backgroundColor = UIColorFromRGB(0xF2F2F4);
+        if (@available(iOS 15, *)) {
+            _tableView.sectionHeaderTopPadding = 0;
+        }
         _tableView.sectionHeaderHeight = 0;
         _tableView.delegate = self;
         _tableView.dataSource = self;
