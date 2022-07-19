@@ -154,3 +154,20 @@
 
 - (void)cutImageFromRect:(CGRect)frame successBlock:(nullable void(^)(UIImage * _Nullable image,NSData * _Nullable imagedata))block;
 @end
+
+
+@interface UIView (JoyEmillterLayer)
+
+//配置粒子（uicontrol 点击时会自动触发动画）
+-(void)configEmitterLayer:(UIImage *)effectImage;
+
+//参数配置粒子（uicontrol 点击时会自动触发动画）
+-(void)configEmitterLayerWithImage:(UIImage *)effectImage birthRate:(NSInteger)birthRate velocity:(CGFloat)velocity emitterSize:(CGSize)emitterSize;
+//手动开启粒子发生器并在times时间后结束
+-(void)startFireAndStopAfterTimes:(float)times;
+//结束粒子发生器
+-(void)stopFire;
+
+
+@end
+

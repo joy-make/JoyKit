@@ -361,3 +361,120 @@ static   UIInterfaceOrientation AppInterfaceOrientation() {
     block(fImage,data2);
 }
 @end
+
+static NSInteger emitterBirthRate = 20;
+static float emitterDelaytimes = 0.7;
+
+static char KEmitterKey;
+@implementation UIView (JoyEmillterLayer)
+
+-(void)configEmitterLayer:(UIImage *)effectImage{
+    [self configEmitterLayerWithImage:effectImage birthRate:20 velocity:-200 emitterSize:self.bounds.size];
+}
+
+-(void)configEmitterLayerWithImage:(UIImage *)effectImage birthRate:(NSInteger)birthRate velocity:(CGFloat)velocity emitterSize:(CGSize)emitterSize{
+    emitterBirthRate = birthRate?:emitterBirthRate;
+    CAEmitterLayer *emittLayer = [self getEmitterLayerWithEffectImage:effectImage?:[UIImage imageNamed:@"JoyLike"] birthRate:emitterBirthRate velocity:velocity emitterSize:emitterSize];
+    objc_setAssociatedObject(self, &KEmitterKey, emittLayer, OBJC_ASSOCIATION_RETAIN);
+    [self.layer addSublayer:emittLayer];
+    if ([self isKindOfClass:UIControl.class]) {
+        [(UIControl *)self addTarget:self action:@selector(emitterAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+-(void)startFireAndStopAfterTimes:(float)times{
+    emitterDelaytimes = times?:0;
+    self.emitterLayer.birthRate = emitterBirthRate;
+    if(emitterDelaytimes){
+        [self performSelector:@selector(stopEmitterLayer) withObject:nil afterDelay:times];
+    }
+}
+
+-(void)stopFire{
+    self.emitterLayer.birthRate = 0;
+}
+
+-(void)emitterAction:(UIControl *)btn{
+    self.emitterLayer.birthRate = emitterBirthRate;
+    [self performSelector:@selector(stopEmitterLayer) withObject:nil afterDelay:emitterDelaytimes];
+}
+
+-(void)stopEmitterLayer{
+    self.emitterLayer.birthRate = 0;
+}
+
+-(CAEmitterLayer *)emitterLayer{
+    return objc_getAssociatedObject(self, &KEmitterKey);
+}
+
+- (CAEmitterLayer *)getEmitterLayerWithEffectImage:(UIImage *)effectImage birthRate:(NSInteger)birthRate velocity:(CGFloat)velocity emitterSize:(CGSize)emitterSize{
+    CAEmitterLayer *emitterLayer = [CAEmitterLayer layer];
+    //定义粒子细胞是如何被呈现到layer中的
+    emitterLayer.renderMode = kCAEmitterLayerBackToFront;
+    emitterLayer.emitterPosition = CGPointMake(emitterSize.width/2, emitterSize.height/2);
+    //发射源的形状
+    //kCAEmitterLayerRectangle  发射源矩形区域
+    //kCAEmitterLayerLine       发射源一条线
+    //kCAEmitterLayerPoint      发射源一个点
+    emitterLayer.emitterShape = kCAEmitterLayerPoint;
+    
+//    // 粒子发射器 发射的模式 emitterMode的作用是进一步决定发射的区域是在发射形状的哪一部份
+//    kCAEmitterLayerPoints;  // 顶点
+//    kCAEmitterLayerOutline;     // 轮廓，即边上
+//    kCAEmitterLayerSurface;   // 表面，即图形的面积内
+//    kCAEmitterLayerVolume;    // 容积，即3D图形的体积内
+    emitterLayer.emitterMode  =  kCAEmitterLayerPoints;
+    //发射源的尺寸大小
+    emitterLayer.emitterSize = emitterSize;
+    //    emitterLayer.emitterDepth = 0.5;
+    //粒子数量
+    emitterLayer.birthRate = 0;
+    
+//    emitterLayer.shadowOpacity = 10.0;
+//    emitterLayer.shadowRadius  = 0.0;
+//    emitterLayer.shadowOffset  = CGSizeMake(0.0, 0.0);
+//    //粒子边缘的颜色
+//    emitterLayer.shadowColor = [UIColor orangeColor].CGColor;
+    CAEmitterCell *cell = [self emitterCellImage:effectImage birthRate:birthRate velocity:velocity velocityRange:emitterSize.height];
+    emitterLayer.emitterCells = @[cell];
+    return emitterLayer;
+}
+
+-(CAEmitterCell *)emitterCellImage:(UIImage *)effectImage birthRate:(CGFloat)birthRate velocity:(CGFloat)velocity velocityRange:(CGFloat)velocityRange{
+    //create a particle template
+    CAEmitterCell *cell = [[CAEmitterCell alloc] init];
+    cell.contents = (__bridge id)effectImage.CGImage;
+    //每秒创建的粒子个数
+    cell.birthRate = 1;
+    //每个粒子的存在时间
+    cell.lifetime = 2;
+    // 粒子透明度改变范围
+    cell.alphaRange = 0.10;
+    //粒子透明度变化到0的速度，单位为秒
+    cell.alphaSpeed = -0.4;
+    //粒子的扩散速度
+    cell.velocity = velocity;
+    //粒子向外扩散区域大小
+    cell.velocityRange = 4;
+    //粒子y方向的加速度分量
+    cell.yAcceleration = -200;
+    cell.emissionRange = 2*M_PI;
+    cell.emissionLongitude = M_PI_2;//x-y平面的发射方向
+    //粒子的扩散角度，设置成2*M_PI则会从360°向外扩散
+    cell.emissionRange = M_PI_4;    //周围发射角度
+    cell.spinRange = 0.15*M_PI;     //粒子旋转弧度
+    //粒子起始缩放比例
+    cell.scale = 0.2;
+    cell.scaleRange = 0.2f;
+    //粒子缩放从0~0.5的速度
+    cell.scaleSpeed = 0.01;
+    
+    cell.color = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1]CGColor];
+    cell.redRange = 1;   //可变范围 cell.redRange*cell.color.Red
+    cell.greenRange = 1;
+    cell.blueRange = 1;
+    cell.alphaRange = 0.8;
+    
+    return cell;
+}
+@end

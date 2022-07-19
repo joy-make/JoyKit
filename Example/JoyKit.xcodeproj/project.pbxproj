@@ -286,12 +286,12 @@
 				BB799E122154EF6600D768D1 /* person.plist */,
 				BB799DF82154D14900D768D1 /* Person.h */,
 				BB799DFE2154D14900D768D1 /* Person.m */,
+				BB799DFD2154D14900D768D1 /* JoyCellBaseModel+Type.h */,
 				BB799DF92154D14900D768D1 /* JoyCellBaseModel+Type.m */,
 				BB799DFA2154D14900D768D1 /* SCViewController.h */,
 				BB799DFF2154D14900D768D1 /* SCViewController.m */,
 				BB799DFB2154D14900D768D1 /* PersonInteractor.m */,
 				BB799DFC2154D14900D768D1 /* PersonPresenter.m */,
-				BB799DFD2154D14900D768D1 /* JoyCellBaseModel+Type.h */,
 				BB799E012154D14900D768D1 /* PersonPresenter.h */,
 				BB799E032154D14900D768D1 /* PersonInteractor.h */,
 				BB799E0E2154E85100D768D1 /* personDetail.json */,
@@ -402,10 +402,11 @@
 				ORGANIZATIONNAME = "joy-make";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = UPV9VG6XX3;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = C2T74DTZAJ;
+						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
+						ProvisioningStyle = Manual;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -735,8 +736,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhizhou yang (84T6T32FMA)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UPV9VG6XX3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = C2T74DTZAJ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JoyKit/JoyKit-Prefix.pch";
@@ -753,9 +754,10 @@
 				);
 				MODULE_NAME = ExampleApp;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.joymake.zz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccbfintech.gasp.dajia;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = GroupCZ_dajia_Dev;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
@@ -772,7 +774,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -805,6 +807,8 @@
 			baseConfigurationReference = 68D8EB61F92ADD299217CC0D /* Pods-JoyKit_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -818,7 +822,10 @@
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoyKit_Example.app/JoyKit_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -838,6 +845,7 @@
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoyKit_Example.app/JoyKit_Example";
 				WRAPPER_EXTENSION = xctest;

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyKit'
-  s.version          = '1.0.5'
-  s.summary          = '支持Collection视图循环滚动'
+  s.version          = '1.0.6'
+  s.summary          = '增加粒子发射器动画'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
