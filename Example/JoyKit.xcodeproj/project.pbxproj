@@ -464,6 +464,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example-resources.sh",
 				"${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png",
 				"${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png",
+				"${PODS_ROOT}/../../JoyKit/Assets/JoyLike.png",
 				"${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg",
 				"${PODS_ROOT}/../../JoyKit/Assets/select@2x.png",
 				"${PODS_ROOT}/../../JoyKit/Assets/select@3x.png",
@@ -487,6 +488,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/header_icon_back@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/header_icon_back@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JoyLike.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/joymakeHead.jpg",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/select@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/select@3x.png",

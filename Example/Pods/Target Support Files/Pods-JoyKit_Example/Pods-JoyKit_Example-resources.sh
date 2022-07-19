@@ -99,6 +99,7 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/JoyLike.png"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@2x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@3x.png"
@@ -121,6 +122,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@2x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/header_icon_back@3x.png"
+  install_resource "${PODS_ROOT}/../../JoyKit/Assets/JoyLike.png"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/joymakeHead.jpg"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@2x.png"
   install_resource "${PODS_ROOT}/../../JoyKit/Assets/select@3x.png"
@@ -152,7 +154,7 @@ rm -f "$RESOURCES_TO_COPY"
 if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ -n "${XCASSET_FILES:-}" ]
 then
   # Find all other xcassets (this unfortunately includes those of path pods and other targets).
-  OTHER_XCASSETS=$(find "$PWD" -iname "*.xcassets" -type d)
+  OTHER_XCASSETS=$(find -L "$PWD" -iname "*.xcassets" -type d)
   while read line; do
     if [[ $line != "${PODS_ROOT}*" ]]; then
       XCASSET_FILES+=("$line")
