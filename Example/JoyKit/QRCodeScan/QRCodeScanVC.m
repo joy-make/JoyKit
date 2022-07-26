@@ -23,6 +23,9 @@
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+#if TARGET_IPHONE_SIMULATOR  //模拟器
+    [JoyAlert showWithMessage:@"模拟器无法启用扫码功能,请切换真机后再试"];
+#elif TARGET_OS_IPHONE      //真机
     JoyQRCodeScanVC *vc = [[JoyQRCodeScanVC alloc]init];
     [vc setScanSize:CGSizeMake(300, 300) cornerRadius:20 color:[UIColor greenColor]];
     [self presentViewController:vc animated:true completion:nil];
@@ -32,6 +35,8 @@
     } backBlock:^{
         [weakSelf dismissViewControllerAnimated:true completion:nil];
     }];
+
+#endif
 }
 
 - (void)viewDidAppear:(BOOL)animated{

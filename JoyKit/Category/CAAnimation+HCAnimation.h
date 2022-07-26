@@ -25,8 +25,8 @@ typedef NS_ENUM(NSInteger, ShakeDerection) {
 /**
  * 在具体的UIView上实现一个缩放的动画
  *@param   view         动画的载体
- *@param   fromValue    起始缩放
- *@param   scaleValue   最终缩放值
+ *@param   fromValue    起始缩放比例
+ *@param   scaleValue   最终缩放比例
  *@param   repeat       动画循环次数，0表示无限循环
  *@param   duration     动画运行一次的时间
  *@param   autoreverses 是否恢复起始状态
@@ -35,9 +35,10 @@ typedef NS_ENUM(NSInteger, ShakeDerection) {
 
 /**
  * 在具体的UIView上实现一个移动的动画
- *@param   view         动画的载体
- *@param   repeat       动画循环次数，0表示无限循环
- *@param   duration     动画运行一次的时间
+ *@param   view                  动画的载体
+ *@param   position         目标位置
+ *@param   repeat              动画循环次数，0表示无限循环
+ *@param   duration          动画运行一次的时间
  */
 + (void)showMoveAnimationInView:(UIView *)view Position:(CGPoint)position Repeat:(CGFloat)repeat Duration:(CGFloat)duration;
 

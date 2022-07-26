@@ -38,7 +38,9 @@
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
                       @{@"title":@"plist配置",@"tapAction":@"SCViewController"},
                       @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"},
-                      @{@"title":@"播放器",@"tapAction":@"PlayerListVC"}
+                      @{@"title":@"播放器",@"tapAction":@"PlayerListVC"},
+                      @{@"title":@"动画",@"tapAction":@"JoyAnimationVC"},
+                      
                       ];
     JoySectionBaseModel *section = [[JoySectionBaseModel alloc]init];
     for (int i=0; i<list.count; i++) {

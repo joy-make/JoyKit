@@ -135,13 +135,13 @@
  *
  * otherView should be a parent view of this view.
  */
-- (CGPoint)offsetFromView:(UIView*)otherView;
+- (CGPoint)offsetFromView:(UIView*_Nullable)otherView;
 
 /**
  +* Retrive all subviews recuisivly in the reciver
  */
 
-- (NSArray*)allSubviews;
+- (NSArray*_Nullable)allSubviews;
 
 
 /**
@@ -159,10 +159,10 @@
 @interface UIView (JoyEmillterLayer)
 
 //配置粒子（uicontrol 点击时会自动触发动画）
--(void)configEmitterLayer:(UIImage *)effectImage;
+-(void)configEmitterLayer:(UIImage *_Nullable)effectImage;
 
 //参数配置粒子（uicontrol 点击时会自动触发动画）
--(void)configEmitterLayerWithImage:(UIImage *)effectImage birthRate:(NSInteger)birthRate velocity:(CGFloat)velocity emitterSize:(CGSize)emitterSize;
+-(void)configEmitterLayerWithImage:(UIImage *_Nullable)effectImage birthRate:(NSInteger)birthRate velocity:(CGFloat)velocity emitterSize:(CGSize)emitterSize;
 //手动开启粒子发生器并在times时间后结束
 -(void)startFireAndStopAfterTimes:(float)times;
 //结束粒子发生器

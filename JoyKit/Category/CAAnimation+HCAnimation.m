@@ -62,7 +62,7 @@
     rotateAnimation.toValue = [NSNumber numberWithFloat:degree];
     rotateAnimation.autoreverses = autoreverses;
     rotateAnimation.fillMode = kCAFillModeForwards;
-    rotateAnimation.removedOnCompletion = NO;
+    rotateAnimation.removedOnCompletion = YES;
     rotateAnimation.repeatCount = repeat;
     rotateAnimation.duration = duration;
     [view.layer addAnimation:rotateAnimation forKey:@"rotateAnimation"];
@@ -142,7 +142,7 @@
     animation.repeatCount = repeat;
     animation.duration = duration;
     animation.fillMode = kCAFillModeForwards;
-    animation.removedOnCompletion = NO;// 告诉在动画结束的时候不要移除
+    animation.removedOnCompletion = YES;// 告诉在动画结束的时候不要移除
     [view.layer addAnimation:animation forKey:@"animation"];
 }
 
@@ -167,7 +167,7 @@
     animation.repeatCount = repeat;
     animation.duration = duration;
     animation.fillMode = kCAFillModeForwards;
-    animation.removedOnCompletion = NO;// 告诉在动画结束的时候不要移除
+    animation.removedOnCompletion = YES;// 告诉在动画结束的时候不要移除
     animation.autoreverses = autoreverses;
     [view.layer addAnimation:animation forKey:@"animation"];
     
