@@ -17,6 +17,7 @@
     HomeVC *vc = [[HomeVC alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window.rootViewController = nav;
+    self.window.backgroundColor = UIColor.lightGrayColor;
     [self.window makeKeyWindow];
     return YES;
 }

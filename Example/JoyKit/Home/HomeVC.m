@@ -36,10 +36,12 @@
     NSArray *list = @[@{@"title":@"基本列表",@"tapAction":@"JoyViewController"},
                       @{@"title":@"table混合collection",@"tapAction":@"JoyTableCollectionVC"},
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
-                      @{@"title":@"plist配置",@"tapAction":@"SCViewController"},
+                      @{@"title":@"模拟服务器plist配置列表以及点击事件",@"tapAction":@"SCViewController"},
                       @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"},
                       @{@"title":@"播放器",@"tapAction":@"PlayerListVC"},
-                      @{@"title":@"动画",@"tapAction":@"JoyAnimationVC"},
+                      @{@"title":@"CAAnimation动画",@"tapAction":@"JoyAnimationVC"},
+                      @{@"title":@"设备强制横竖屏",@"tapAction":@"JoyDeviceOrientationVC"},
+                      @{@"title":@"陀螺仪",@"tapAction":@"JoyCoreMotionVC"},
                       
                       ];
     JoySectionBaseModel *section = [[JoySectionBaseModel alloc]init];

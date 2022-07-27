@@ -28,8 +28,13 @@
 }
 
 - (void)startMotionManager:(BOOL)isRecordingVideo{
+    [self startMotionManager:isRecordingVideo motionUpdateInterval:1/15.0];
+}
+
+//加速计采样频率 10-20:适合于确定设备当前的方向矢量  30-60:适用于游戏和其他应用程序，使用加速计实时用户输入   70-100:适用于检测高频运动，如检测用户敲击设备或快速摇动设备
+- (void)startMotionManager:(BOOL)isRecordingVideo motionUpdateInterval:(CGFloat)interval{
     self.isRecordingVideo = isRecordingVideo;
-    self.motionManager.deviceMotionUpdateInterval = 1/15.0;
+    self.motionManager.deviceMotionUpdateInterval = interval?:1/15.0;
     _motionManager.deviceMotionAvailable?  [self startDeviceMitionUpdate]:[self setMotionManager:nil];
 }
 
@@ -54,7 +59,7 @@
         {orientation = y>= 0? UIDeviceOrientationPortraitUpsideDown:UIDeviceOrientationPortrait;}
         else
         {orientation = x>=0?  UIDeviceOrientationLandscapeRight:UIDeviceOrientationLandscapeLeft;}
-        self.screenOrentationBlock?self.screenOrentationBlock(orientation):nil;
+        self.screenOrentationBlock?self.screenOrentationBlock(orientation,deviceMotion):nil;
     }
     else
     {
@@ -64,7 +69,7 @@
         {orientation = y >= 0? UIDeviceOrientationPortraitUpsideDown:UIDeviceOrientationPortrait;}
         else
         {orientation = x >= 0? UIDeviceOrientationLandscapeRight:UIDeviceOrientationLandscapeLeft;}
-        self.screenOrentationBlock?self.screenOrentationBlock(orientation):nil;
+        self.screenOrentationBlock?self.screenOrentationBlock(orientation,deviceMotion):nil;
         }
     }
 }
