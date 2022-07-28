@@ -33,6 +33,7 @@
 		A82D62D526D20A6E004590FC /* JoyTableCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A82D62CD26D20A6E004590FC /* JoyTableCollectionVC.m */; };
 		A88010B728913A0800015ACB /* JoyCoreMotionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A88010B328913A0800015ACB /* JoyCoreMotionVC.m */; };
 		A88010B828913A0800015ACB /* JoyDeviceOrientationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A88010B628913A0800015ACB /* JoyDeviceOrientationVC.m */; };
+		A88010BC2892334200015ACB /* JoyQRCodeGenerateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A88010BB2892334200015ACB /* JoyQRCodeGenerateVC.m */; };
 		A8D8F446288FCBC200CFF863 /* JoyAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D8F445288FCBC200CFF863 /* JoyAnimationVC.m */; };
 		BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */; };
 		BB799E042154D14900D768D1 /* JVPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DF12154D14900D768D1 /* JVPresenter.m */; };
@@ -104,6 +105,8 @@
 		A88010B328913A0800015ACB /* JoyCoreMotionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyCoreMotionVC.m; sourceTree = "<group>"; };
 		A88010B528913A0800015ACB /* JoyDeviceOrientationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyDeviceOrientationVC.h; sourceTree = "<group>"; };
 		A88010B628913A0800015ACB /* JoyDeviceOrientationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyDeviceOrientationVC.m; sourceTree = "<group>"; };
+		A88010BA2892334200015ACB /* JoyQRCodeGenerateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoyQRCodeGenerateVC.h; sourceTree = "<group>"; };
+		A88010BB2892334200015ACB /* JoyQRCodeGenerateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyQRCodeGenerateVC.m; sourceTree = "<group>"; };
 		A8D8F444288FCBC200CFF863 /* JoyAnimationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoyAnimationVC.h; sourceTree = "<group>"; };
 		A8D8F445288FCBC200CFF863 /* JoyAnimationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyAnimationVC.m; sourceTree = "<group>"; };
 		BAC0C3416A7422957C12A698 /* Pods-JoyKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,14 +210,15 @@
 				BB799DF72154D14900D768D1 /* PlistConfigList */,
 				6003F59C195388D20070C39A /* JoyAppDelegate.h */,
 				6003F59D195388D20070C39A /* JoyAppDelegate.m */,
+				A88010B9289232F700015ACB /* QRCode */,
 				BB9E1ECA25037C8800FD80C2 /* Player */,
 				BBFCEDCF236FCD9D007362AC /* QRCodeScan */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				A80DF71C2891354800CBFEA4 /* CollectionView */,
 				A8D8F443288FCB8E00CFF863 /* Animation */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				A88010B128913A0800015ACB /* CoreMotion */,
 				A88010B428913A0800015ACB /* DeviceScreenDirection */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -304,6 +308,15 @@
 				A88010B628913A0800015ACB /* JoyDeviceOrientationVC.m */,
 			);
 			path = DeviceScreenDirection;
+			sourceTree = "<group>";
+		};
+		A88010B9289232F700015ACB /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				A88010BA2892334200015ACB /* JoyQRCodeGenerateVC.h */,
+				A88010BB2892334200015ACB /* JoyQRCodeGenerateVC.m */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		A8D8F443288FCB8E00CFF863 /* Animation */ = {
@@ -611,6 +624,7 @@
 				BB799E0A2154D14900D768D1 /* Person.m in Sources */,
 				A80DF7222891354800CBFEA4 /* CollectionVC.m in Sources */,
 				BB799E062154D14900D768D1 /* JVInteractor.m in Sources */,
+				A88010BC2892334200015ACB /* JoyQRCodeGenerateVC.m in Sources */,
 				A82D62CE26D20A6E004590FC /* JoyTableCollectionInteractor.m in Sources */,
 				BB9E1ECD2503859F00FD80C2 /* PlayerListVC.m in Sources */,
 				A88010B828913A0800015ACB /* JoyDeviceOrientationVC.m in Sources */,
@@ -778,7 +792,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JoyKit_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhizhou yang (84T6T32FMA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UPV9VG6XX3;
@@ -798,7 +812,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.inteligence.joy.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joykit.example.com;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -163,8 +163,10 @@
 
 //参数配置粒子（uicontrol 点击时会自动触发动画）
 -(void)configEmitterLayerWithImage:(UIImage *_Nullable)effectImage birthRate:(NSInteger)birthRate velocity:(CGFloat)velocity emitterSize:(CGSize)emitterSize;
+
 //手动开启粒子发生器并在times时间后结束
 -(void)startFireAndStopAfterTimes:(float)times;
+
 //结束粒子发生器
 -(void)stopFire;
 

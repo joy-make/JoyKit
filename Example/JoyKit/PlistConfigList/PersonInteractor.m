@@ -23,6 +23,7 @@
 
 - (void)getConfigData{
     JoySectionBaseModel *sectionModel = [JoySectionBaseModel sectionWithHeaderModel:nil footerModel:nil cellModels:nil sectionH:0 sectionTitle:@""];
+    //模拟服务器数据
     NSArray *data = (NSArray *)[[self readLocalFileWithName:@"personDetail"] objectForKey:@"style"];
     for (NSDictionary *dict in data) {
         JoyCellBaseModel *cellModel = [JoyCellBaseModel initWithStyle:[dict[@"style"] integerValue] obj:dict];

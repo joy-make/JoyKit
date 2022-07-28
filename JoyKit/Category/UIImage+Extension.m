@@ -535,7 +535,7 @@ void cleanupBuffer(void *userData, void *buf_data)
 }
 
 #pragma mark 条形码
-- (UIImage *)barCodeImageWithBarStr:(NSString *)barStr
++ (UIImage *)barCodeImageWithBarStr:(NSString *)barStr
 {
     // 创建条形码
     CIFilter *filter = [CIFilter filterWithName:@"CICode128BarcodeGenerator"];
@@ -562,7 +562,7 @@ void cleanupBuffer(void *userData, void *buf_data)
 
 #pragma mark 二维码
 //MARK: 二维码中间内置图片,可以是公司logo
--(UIImage *)logoQrCodeWithStr:(NSString *)qrStr image:(NSString *)imageName{
++(UIImage *)logoQrCodeWithStr:(NSString *)qrStr image:(NSString *)imageName{
     
     //
     NSArray *filters = [CIFilter filterNamesInCategory:kCICategoryBuiltIn];

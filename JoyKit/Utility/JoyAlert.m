@@ -27,7 +27,14 @@
 {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:cancleStr otherButtonTitles:confirmStr, nil];
     objc_setAssociatedObject(self, _cmd, alertBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    [alertView show];
+
+    if ([NSThread.currentThread isMainThread]) {
+        [alertView show];
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertView show];
+        });
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

@@ -36,18 +36,20 @@
     NSArray *list = @[@{@"title":@"基本列表",@"tapAction":@"JoyViewController"},
                       @{@"title":@"table混合collection",@"tapAction":@"JoyTableCollectionVC"},
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
-                      @{@"title":@"模拟服务器plist配置列表以及点击事件",@"tapAction":@"SCViewController"},
+                      @{@"title":@"json配置UI以及点击事件",@"tapAction":@"SCViewController"},
                       @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"},
                       @{@"title":@"播放器",@"tapAction":@"PlayerListVC"},
                       @{@"title":@"CAAnimation动画",@"tapAction":@"JoyAnimationVC"},
                       @{@"title":@"设备强制横竖屏",@"tapAction":@"JoyDeviceOrientationVC"},
                       @{@"title":@"陀螺仪",@"tapAction":@"JoyCoreMotionVC"},
+                      @{@"title":@"字符串生成条形码和二维码并存储相册",@"tapAction":@"JoyQRCodeGenerateVC"},
                       
                       ];
     JoySectionBaseModel *section = [[JoySectionBaseModel alloc]init];
     for (int i=0; i<list.count; i++) {
         JoyCellBaseModel *cellModel = [[JoyCellBaseModel alloc]init];
         cellModel.title = list[i][@"title"];
+        cellModel.titleColor = [NSString stringWithFormat:@"%x",arc4random()%0xFFFFFF];
         cellModel.tapAction = list[i][@"tapAction"];
         cellModel.cellName = JoyMiddleLabelCell;
         [section.rowArrayM addObject:cellModel];

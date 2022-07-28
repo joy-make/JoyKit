@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"caanimation动画";
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.btn];
