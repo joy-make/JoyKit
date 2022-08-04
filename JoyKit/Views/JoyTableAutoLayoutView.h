@@ -14,22 +14,14 @@
 
 @class JoyTableAutoLayoutView;
 
+typedef void (^CellDisplayBlock)(UITableView *tableView,UITableViewCell *cell,NSIndexPath *indexPath);
 typedef void (^CellSelectBlock)(NSIndexPath *indexPath,NSString *tapAction);
-
 typedef void (^CellEditingBlock)(UITableViewCellEditingStyle editingStyle,NSIndexPath *indexPath);
-
 typedef void (^CellMoveBlock)(NSIndexPath *sourceIndexPath,NSIndexPath *toIndexPath);
-
-typedef void (^CellTextEndChanged)(NSIndexPath *indexPath,NSString *content,NSString *key);
-
-typedef void (^CellTextCharacterHasChanged)(NSIndexPath *indexPath,NSString *content,NSString *key);
-
+typedef void (^CellTextChanged)(NSIndexPath *indexPath,NSString *content,NSString *key);
 typedef void (^ScrollBlock)(UIScrollView *scrollView);
-
 typedef void (^CellCollectionBlock)(NSIndexPath *indexPath,NSIndexPath *collectionIndexPath);
-
 typedef void (^HeaderFooterActionBlock)(NSInteger section,NSObject *actionObject,BOOL isHeaderAction);
-
 typedef void (^JoyRefreshBlock)(void);
 
 
@@ -37,11 +29,8 @@ typedef void (^JoyRefreshBlock)(void);
 @interface JoyTableAutoLayoutView : UIView<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong)UITableView                             *tableView;
-
 @property (nonatomic,strong)NSMutableArray<JoySectionBaseModel *>   *dataArrayM;
-
 @property (nonatomic,strong)NSIndexPath                             *oldSelectIndexPath;
-
 @property (nonatomic,strong)NSIndexPath                             *currentSelectIndexPath;
 
 //**********************************链式配置,以支持链式调用*************************************************
@@ -60,6 +49,9 @@ typedef void (^JoyRefreshBlock)(void);
 #pragma mark  刷新整个Table
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^reloadTable)(void);                                                  //刷新table
 
+//**************cell显示
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellWillDisplayBlock)(CellDisplayBlock block);                       //cell即将展示
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellEndDisplayBlock)(CellDisplayBlock block);                        //cell结束展示
 
 //**************编辑Action
 #pragma mark  Cell 选中
@@ -69,27 +61,27 @@ typedef void (^JoyRefreshBlock)(void);
 #pragma mark  Cell 挪动从from 挪到to
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellMoveAction)(CellMoveBlock cellMoveBlock);                       //cell是否可挪移
 #pragma mark  Cell上文本编辑结束
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextEiditEnd)(CellTextEndChanged cellTextEiditEndBlock);        //cell上文本编辑结束
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextEiditEnd)(CellTextChanged block);        //cell上文本编辑结束
 #pragma mark  Cell上文本字符编辑发生变化
-@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextCharacterHasChanged)(CellTextCharacterHasChanged cellTextCharacterHasChangedBlock);//cell上文本发生变化
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^cellTextCharacterHasChanged)(CellTextChanged block);//cell上文本发生变化
 #pragma mark  Cell 选中
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^headerFooterAction)(HeaderFooterActionBlock headerFooterAction);     //头部、底部事件（自定义）
 
 //**************编辑Action结束
+
 #pragma mark Table滚动
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScroll)(ScrollBlock scrollBlock);                               //table滚动
-
+#pragma mark Table滚动拖拽停止
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScrollDidEndDraging)(ScrollBlock scrollBlock);                               //table滚动
+#pragma mark Table滚动减速停止
+@property (nonatomic,readonly)JoyTableAutoLayoutView    *(^tableScrollDidEndDecelerating)(ScrollBlock scrollBlock);      //table滚动
 #pragma mark tableCollection
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDidSelect)(CellCollectionBlock collectionDidSelectBlock);  //collection选中
-
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^collectionDeSelect)(CellCollectionBlock collectionDeSelectBlock);    //collection反选
-
+#pragma mark table刷新
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyHeaderRefreshblock)(JoyRefreshBlock refreshBlock);                //下拉刷新
-
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyFooterRefreshblock)(JoyRefreshBlock refreshBlock);                //上拉刷新
-
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyEndHeaderRefreshblock)(void);                                     //结束下拉刷新
-
 @property (nonatomic,readonly)JoyTableAutoLayoutView    *(^joyEndFooterRefreshblock)(void);                                     //结束上拉刷新
 
 //**********************************链式配置,以支持链式调用*************************************************
@@ -111,6 +103,7 @@ typedef void (^JoyRefreshBlock)(void);
 
 @end
 
+//设置cellH，不使用establishHeight推算行高
 @interface JoyTableBaseView : JoyTableAutoLayoutView
 
 @end

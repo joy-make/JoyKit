@@ -11,14 +11,15 @@
 #import "PlayerCell.h"
 
 @interface PlayerListVC ()
-@property (nonatomic,strong)JoyTableAutoLayoutView *listView;
+@property (nonatomic,strong)JoyTableBaseView *listView;
 @property (nonatomic,weak)AVPlayer *player;
+@property (nonatomic,weak)AVPlayerLayer *avPlayerLayer;
 @end
 
 @implementation PlayerListVC
 
--(JoyTableAutoLayoutView *)listView{
-    return _listView = _listView?:[[JoyTableAutoLayoutView alloc]initWithFrame:CGRectZero];
+-(JoyTableBaseView *)listView{
+    return _listView = _listView?:[[JoyTableBaseView alloc]initWithFrame:self.view.bounds];
 }
 
 - (void)viewDidLoad {
@@ -26,29 +27,57 @@
     NSMutableArray *list = [self getDataSource];
     [self setDefaultConstraintWithView:self.listView andTitle:@""];
     __weak __typeof(&*self)weakSelf = self;
+    self.listView.tableView.pagingEnabled = true;
     self.listView.setDataSource(list)
     .reloadTable()
     .cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
         [weakSelf action:tapAction];
     }).tableScroll(^(UIScrollView *scroll){
+
+    }).tableScrollDidEndDecelerating(^(UIScrollView *scroll){
         NSArray *list = weakSelf.listView.tableView.visibleCells;
         PlayerCell *cell =list.firstObject;
-        CGRect newRect = [cell.contentView convertRect:cell.contentView.bounds toView:weakSelf.view];
-        if (newRect.origin.y<0) {
-            cell = list[1];
-        }
+//        CGRect newRect = [cell.contentView convertRect:cell.contentView.bounds toView:weakSelf.view];
+//        if (newRect.origin.y<0) {
+//            cell = list[0];
+//        }
         NSIndexPath *path = cell.index;
         NSString *urlStr = (NSString *)[(JoyCellBaseModel *)[weakSelf.listView.dataArrayM objectAtIndex:path.row] expandObj];
         [weakSelf.player pause];
         weakSelf.player = [AVPlayer playerWithURL:[NSURL URLWithString:urlStr]];
-        AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:weakSelf.player];
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        [cell.contentView.layer addSublayer:layer];
-        layer.frame = cell.contentView.bounds;
-        [weakSelf.player play];
+//        /**
+//        指示当AVPlayerItem达到其结束时间时，播放器将自动前进到其
+//        队列中的下一个项目。此值仅支持AVQueuePlayer类的播放器。
+//        如果对非AVQueuePlayer类设置此值则会发生异常。
+//        */
+//        AVPlayerActionAtItemEndAdvance  = 0,
+//
+//        /**
+//         播放完成后自动将rate设置为0.0使视频暂停。
+//        */
+//        AVPlayerActionAtItemEndPause    = 1,
+//
+//        /**
+//        表示当AVPlayerItem达到其结束时间时，播放器将不采取任何行动。
+//        播放器的播放速度不会改变，其currentItem不会改变，其currentTime
+//        将会随着时间的推移而不断地增加或减少。
+//        */
+//        AVPlayerActionAtItemEndNone     = 2,
+//        weakSelf.player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
         
+//        [self.avPlayerLayer removeFromSuperlayer];
+        self.avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:weakSelf.player];
+//        self.avPlayerLayer replaceSublayer:<#(nonnull CALayer *)#> with:<#(nonnull CALayer *)#>
+        self.avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+        if(!hasAdd){
+            [self.view.layer addSublayer:self.avPlayerLayer];
+            self.avPlayerLayer.frame = self.view.bounds;
+        }
+//        [weakSelf.player playImmediatelyAtRate:3];
+        [weakSelf.player play];
     });
 };
+static bool hasAdd = false;
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -76,6 +105,7 @@
         JoyCellBaseModel *cellModel = [[JoyCellBaseModel alloc]init];
         cellModel.expandObj = list[i];
         cellModel.cellName = @"PlayerCell";
+        cellModel.cellH = self.view.bounds.size.height-88;
         [rowArray addObject:cellModel];
     }
     return rowArray;

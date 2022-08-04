@@ -16,9 +16,7 @@ typedef void (^CollectionCellEditingBlock)(UITableViewCellEditingStyle editingSt
 
 typedef void (^CollectionCellMoveBlock)(NSIndexPath *sourceIndexPath,NSIndexPath *toIndexPath);
 
-typedef void (^CollectionCellTextEndChanged)(NSIndexPath *indexPath,NSString *content,NSString *key);
-
-typedef void (^CollectionCellTextCharacterHasChanged)(NSIndexPath *indexPath,NSString *content,NSString *key);
+typedef void (^CellTextChanged)(NSIndexPath *indexPath,NSString *content,NSString *key);
 
 typedef void (^CollectionScrollBlock)(UIScrollView *scrollView);
 
@@ -26,7 +24,7 @@ typedef void (^CollectionHeaderFooterActionBlock)(NSInteger section,NSObject *ac
 
 typedef struct ScrollType{
     BOOL        isInfinite;     //是否无限多
-    NSInteger   scrollInterval  //滚动间隔时间
+    NSInteger   scrollInterval;  //滚动间隔时间
 }CollectionScrolltype;
 
 @class JoySectionBaseModel;
@@ -61,9 +59,9 @@ typedef struct ScrollType{
 #pragma mark  Cell 挪动从from 挪到to
 @property (nonatomic,readonly)JoyCollectionView    *(^cellMoveAction)(CollectionCellMoveBlock cellMoveBlock);
 #pragma mark  Cell上文本编辑结束
-@property (nonatomic,readonly)JoyCollectionView    *(^cellTextEiditEnd)(CollectionCellTextEndChanged cellTextEiditEndBlock);
+@property (nonatomic,readonly)JoyCollectionView    *(^cellTextEiditEnd)(CellTextChanged cellTextEiditEndBlock);
 #pragma mark  Cell上文本字符编辑发生变化
-@property (nonatomic,readonly)JoyCollectionView    *(^cellTextCharacterHasChanged)(CollectionCellTextCharacterHasChanged cellTextCharacterHasChangedBlock);
+@property (nonatomic,readonly)JoyCollectionView    *(^cellTextCharacterHasChanged)(CellTextChanged cellTextCharacterHasChangedBlock);
 #pragma mark  Cell 选中
 @property (nonatomic,readonly)JoyCollectionView    *(^headerFooterAction)(CollectionHeaderFooterActionBlock headerFooterAction);
 

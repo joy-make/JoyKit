@@ -36,16 +36,14 @@
 
 #pragma mark 打开设备功能
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored  "-Wincompatible-pointer-types"
+//#pragma clang diagnostic ignored  "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+static WKWebView *webView;
+
 + (void)openDeviceFunctionWithUrl:(NSURL *)url{
-    static WKWebView *webView = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (@available(iOS 8.0, *)) {
-            webView = [WKWebView new];
-        } else {
-            // Fallback on earlier versions
-        }
+        webView = [WKWebView new];
     });
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
 }

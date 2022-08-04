@@ -460,18 +460,18 @@ static int const cellCountMutiple = 10;
 }
 
 //cell文本编辑结束
--(JoyCollectionView *(^)(CollectionCellTextEndChanged))cellTextEiditEnd{
+-(JoyCollectionView *(^)(CellTextChanged))cellTextEiditEnd{
     __weak __typeof(&*self)weakSelf = self;
-    return ^(CollectionCellTextEndChanged block){
+    return ^(CellTextChanged block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
         return weakSelf;
     };
 }
 
 //cell 文字编辑发生变化
--(JoyCollectionView *(^)(CollectionCellTextCharacterHasChanged))cellTextCharacterHasChanged{
+-(JoyCollectionView *(^)(CellTextChanged))cellTextCharacterHasChanged{
     __weak __typeof(&*self)weakSelf = self;
-    return ^(CollectionCellTextCharacterHasChanged block){
+    return ^(CellTextChanged block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
         return weakSelf;
     };

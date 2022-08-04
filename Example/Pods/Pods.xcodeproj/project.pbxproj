@@ -395,7 +395,6 @@
 		43145D9453F0B2471C979994FBFF9E6C /* NSObject+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+JoyCategory.h"; path = "JoyKit/Category/NSObject+JoyCategory.h"; sourceTree = "<group>"; };
 		43B1699263047E07DD4DF202610851A5 /* SDImageCacheConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheConfig.m; path = SDWebImage/SDImageCacheConfig.m; sourceTree = "<group>"; };
 		43F299B173ACC9FB6529FB4CD6A1FEBC /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		45AC79182E4BBBD9F9BF6830DB330623 /* joymakeHead.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = joymakeHead.jpg; path = JoyKit/Assets/joymakeHead.jpg; sourceTree = "<group>"; };
 		472FABAE8BEF1CF5C6A5BD5212787BFB /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
 		476FD5BC8C55551677AF088235F1B192 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
 		4772B60A75FFEEE4708BC2729D8FF75E /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
@@ -403,7 +402,7 @@
 		48BF0C0F54556C24A6AB44F1FEE3A889 /* JoyLeftAvatarRightLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyLeftAvatarRightLabelCell.h; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftAvatarRightLabelCell.h; sourceTree = "<group>"; };
 		48E3CEAF8033E86AEFB4ADE46054DFB9 /* MJExtensionConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJExtensionConst.m; path = MJExtension/MJExtensionConst.m; sourceTree = "<group>"; };
 		493DFDB43C95490E0467F293AAE4BBBB /* NSString+JoyCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+JoyCategory.h"; path = "JoyKit/Category/NSString+JoyCategory.h"; sourceTree = "<group>"; };
-		49DE060F5D3B49B74C1F4375287EE5F9 /* JoyKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JoyKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		49DE060F5D3B49B74C1F4375287EE5F9 /* JoyKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JoyKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4C3D10DE2EB541685D91867DFE500216 /* LW_StartRecordVideo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "LW_StartRecordVideo@3x.png"; path = "JoyKit/JoyMediaRecordPlay/images/LW_StartRecordVideo@3x.png"; sourceTree = "<group>"; };
 		4DED1CBEB50A74EE2F0B5529EFC18215 /* JoyCollectionFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyCollectionFlowLayout.h; path = JoyKit/Common/JoyCollectionFlowLayout.h; sourceTree = "<group>"; };
 		502022A783F8714375D8824E58614E8D /* JoyRecordView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyRecordView.m; path = JoyKit/JoyMediaRecordPlay/JoyRecordView.m; sourceTree = "<group>"; };
@@ -485,7 +484,7 @@
 		89D7A9FD0ECF7E6BDE870D3ED91E4596 /* CALayer+JoyLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+JoyLayer.m"; path = "JoyKit/Category/CALayer+JoyLayer.m"; sourceTree = "<group>"; };
 		8A295539EFFCFCD9049E37CFE2084720 /* JoySwitchCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoySwitchCell.h; path = JoyKit/CellsLibruary/TableSwitchCell/JoySwitchCell.h; sourceTree = "<group>"; };
 		8B760CC97E395F754E8260BC61807748 /* JoyRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyRouter.h; path = JoyKit/Router/JoyRouter.h; sourceTree = "<group>"; };
-		8C94C126B4E84704C5917A47AE3D8018 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8C94C126B4E84704C5917A47AE3D8018 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8DDC5A945ECD048074F99A7A3D91E1A8 /* JoyQRCodeScan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoyQRCodeScan.h; path = JoyKit/JoyQRCode/JoyQRCodeScan.h; sourceTree = "<group>"; };
 		8DF41FFC1371D95A6A3B15F5FD65CB3E /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
 		8EB5489DDB75FC9AF07296DF05099130 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
@@ -509,7 +508,7 @@
 		9B9D52C386FD76CF1529ECBD0E9E2C10 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
 		9BB0AE0CA29A9635D06956836B7A8E54 /* MJProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJProperty.m; path = MJExtension/MJProperty.m; sourceTree = "<group>"; };
 		9BE53158011BAE55ADFA9A6F75EF9AAD /* UITextField+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+JoyCategory.m"; path = "JoyKit/Category/UITextField+JoyCategory.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0B7812C8449A7048772B6611D646616 /* JoySectionBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JoySectionBaseModel.h; path = JoyKit/Models/JoySectionBaseModel.h; sourceTree = "<group>"; };
 		A11281BD551D1DE138B62E4638767E7B /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
 		A15D37AAC7879080EFF2B0864D24E59F /* MJProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJProperty.h; path = MJExtension/MJProperty.h; sourceTree = "<group>"; };
@@ -585,7 +584,7 @@
 		DFDEBFAABB006BA575BEFECEA11DD306 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		E272B36B7DD351E34F4E01A83EAB786A /* JoyBaseVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyBaseVC.m; path = JoyKit/Controllers/JoyBaseVC.m; sourceTree = "<group>"; };
 		E2A7CDA0949762C0732AB655D21646B1 /* NSString+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MJExtension.h"; path = "MJExtension/NSString+MJExtension.h"; sourceTree = "<group>"; };
-		E2CDC22388A9A4165647D91C54FE0A19 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E2CDC22388A9A4165647D91C54FE0A19 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E3100D1F35642E4F1187F7F5D7C7978E /* header_icon_back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "header_icon_back@3x.png"; path = "JoyKit/Assets/header_icon_back@3x.png"; sourceTree = "<group>"; };
 		E48AFC8E156DC665BA911FB77FDBB269 /* NSObject+JoyCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+JoyCategory.m"; path = "JoyKit/Category/NSObject+JoyCategory.m"; sourceTree = "<group>"; };
 		E49CD800910893A0362F3480566AC50D /* JoyLeftIconTopBottomLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JoyLeftIconTopBottomLabelCell.m; path = JoyKit/CellsLibruary/TableImageCell/JoyLeftIconTopBottomLabelCell.m; sourceTree = "<group>"; };
@@ -1019,7 +1018,6 @@
 				2062416D8D77586204E91BE1BEC70BFF /* NSString+MJExtension.m */,
 				C0C7A9F195E198CD86F8634225C759F3 /* Support Files */,
 			);
-			name = MJExtension;
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
@@ -1212,7 +1210,6 @@
 				8984AAB78A679D365F8E4F428B4496E7 /* ViewController+MASAdditions.m */,
 				3CEC44B6090B2CDDBF68F8183B90BA50 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -1234,7 +1231,6 @@
 				75BFE723D33B25162D016695A3B4E5C9 /* Core */,
 				BA308DE2681973A28151ECDD603582AC /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1244,7 +1240,6 @@
 				B980714655C6D824C5354928E66E96DC /* header_icon_back@2x.png */,
 				E3100D1F35642E4F1187F7F5D7C7978E /* header_icon_back@3x.png */,
 				A59A38156B3298B0F38FEB3EAB622E23 /* JoyLike.png */,
-				45AC79182E4BBBD9F9BF6830DB330623 /* joymakeHead.jpg */,
 				045A48D1C636B92555A5FA2A20C0EA8E /* select@2x.png */,
 				1F1CB87EBA23274B98187918EE8DE39C /* select@3x.png */,
 				0C6CA9FEEB1BFFB134954CA8F82D3806 /* Category */,
@@ -2040,8 +2035,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

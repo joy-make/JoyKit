@@ -35,6 +35,7 @@
 		A88010B828913A0800015ACB /* JoyDeviceOrientationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A88010B628913A0800015ACB /* JoyDeviceOrientationVC.m */; };
 		A88010BC2892334200015ACB /* JoyQRCodeGenerateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A88010BB2892334200015ACB /* JoyQRCodeGenerateVC.m */; };
 		A8D8F446288FCBC200CFF863 /* JoyAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D8F445288FCBC200CFF863 /* JoyAnimationVC.m */; };
+		A8EEA5A2289381CA00D8C7DC /* JoyVideoRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EEA5A1289381CA00D8C7DC /* JoyVideoRecordVC.m */; };
 		BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */; };
 		BB799E042154D14900D768D1 /* JVPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DF12154D14900D768D1 /* JVPresenter.m */; };
 		BB799E052154D14900D768D1 /* JoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB799DF22154D14900D768D1 /* JoyViewController.m */; };
@@ -109,6 +110,8 @@
 		A88010BB2892334200015ACB /* JoyQRCodeGenerateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyQRCodeGenerateVC.m; sourceTree = "<group>"; };
 		A8D8F444288FCBC200CFF863 /* JoyAnimationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoyAnimationVC.h; sourceTree = "<group>"; };
 		A8D8F445288FCBC200CFF863 /* JoyAnimationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyAnimationVC.m; sourceTree = "<group>"; };
+		A8EEA5A0289381CA00D8C7DC /* JoyVideoRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoyVideoRecordVC.h; sourceTree = "<group>"; };
+		A8EEA5A1289381CA00D8C7DC /* JoyVideoRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoyVideoRecordVC.m; sourceTree = "<group>"; };
 		BAC0C3416A7422957C12A698 /* Pods-JoyKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoyKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoyKit_Example/Pods-JoyKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1C23B6219430DE0071DF92 /* JVCustHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JVCustHeaderFooterView.h; sourceTree = "<group>"; };
 		BB1C23B7219430DE0071DF92 /* JVCustHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JVCustHeaderFooterView.m; sourceTree = "<group>"; };
@@ -204,12 +207,12 @@
 		6003F593195388D20070C39A /* Example for JoyKit */ = {
 			isa = PBXGroup;
 			children = (
+				6003F59C195388D20070C39A /* JoyAppDelegate.h */,
+				6003F59D195388D20070C39A /* JoyAppDelegate.m */,
 				A82D62C526D20A34004590FC /* TableCollection */,
 				BB85CDFA2216926200B0DE1F /* Home */,
 				BB799DF02154D14800D768D1 /* ConfigList */,
 				BB799DF72154D14900D768D1 /* PlistConfigList */,
-				6003F59C195388D20070C39A /* JoyAppDelegate.h */,
-				6003F59D195388D20070C39A /* JoyAppDelegate.m */,
 				A88010B9289232F700015ACB /* QRCode */,
 				BB9E1ECA25037C8800FD80C2 /* Player */,
 				BBFCEDCF236FCD9D007362AC /* QRCodeScan */,
@@ -217,8 +220,9 @@
 				A8D8F443288FCB8E00CFF863 /* Animation */,
 				A88010B128913A0800015ACB /* CoreMotion */,
 				A88010B428913A0800015ACB /* DeviceScreenDirection */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				A8EEA59F2893819500D8C7DC /* VideoRecord */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -326,6 +330,15 @@
 				A8D8F445288FCBC200CFF863 /* JoyAnimationVC.m */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		A8EEA59F2893819500D8C7DC /* VideoRecord */ = {
+			isa = PBXGroup;
+			children = (
+				A8EEA5A0289381CA00D8C7DC /* JoyVideoRecordVC.h */,
+				A8EEA5A1289381CA00D8C7DC /* JoyVideoRecordVC.m */,
+			);
+			path = VideoRecord;
 			sourceTree = "<group>";
 		};
 		BB799DF02154D14800D768D1 /* ConfigList */ = {
@@ -620,6 +633,7 @@
 				A8D8F446288FCBC200CFF863 /* JoyAnimationVC.m in Sources */,
 				A88010B728913A0800015ACB /* JoyCoreMotionVC.m in Sources */,
 				BB799E082154D14900D768D1 /* PersonInteractor.m in Sources */,
+				A8EEA5A2289381CA00D8C7DC /* JoyVideoRecordVC.m in Sources */,
 				BB1C23B8219430DE0071DF92 /* JVCustHeaderFooterView.m in Sources */,
 				BB799E0A2154D14900D768D1 /* Person.m in Sources */,
 				A80DF7222891354800CBFEA4 /* CollectionVC.m in Sources */,

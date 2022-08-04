@@ -329,8 +329,11 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     [self cellDidSelectWithIndexPath:indexPath action:nil];
 }
 
+#pragma mark cell即将展示
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CellDisplayBlock block = objc_getAssociatedObject(self, @selector(cellWillDisplayBlock));
+    block?block(tableView,cell,indexPath):nil;
     JoySectionBaseModel *sectionModel = self.isSectionTable?[self.dataArrayM objectAtIndex:indexPath.section]:nil;
     JoyCellBaseModel *model = self.isSectionTable?[sectionModel.rowArrayM objectAtIndex:indexPath.row]:[self.dataArrayM objectAtIndex:indexPath.row];
     if(sectionModel.sectionLeadingOffSet || model.rowLeadingOffSet)
@@ -347,6 +350,12 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
             [cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]?[cell setPreservesSuperviewLayoutMargins:NO]:nil;
         }
     }
+}
+
+#pragma mark cell结束展示
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    CellDisplayBlock block = objc_getAssociatedObject(self, @selector(cellEndDisplayBlock));
+    block?block(tableView,cell,indexPath):nil;
 }
 
 #pragma mark ⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️Table's Action Delegate Protocol⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️⚙️
@@ -389,20 +398,20 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 
 #pragma mark 😊😊😊😊😊😊😊😊😊😊😊😊Cell‘s Delegate Protocol(text action)😊😊😊😊😊😊😊😊😊😊😊😊😊😊
 -(void)textChanged:(NSIndexPath *)selectIndex andText:(NSString *)content andChangedKey:(NSString *)changeTextKey{
-    CellTextEndChanged cellTextEiditEndBlock = objc_getAssociatedObject(self, @selector(cellTextEiditEnd));
+    CellTextChanged cellTextEiditEndBlock = objc_getAssociatedObject(self, @selector(cellTextEiditEnd));
     cellTextEiditEndBlock?cellTextEiditEndBlock(selectIndex, content,changeTextKey):nil;
 }
 
 - (void)textHasChanged:(NSIndexPath *)selectIndex andText:(NSString *)content andChangedKey:(NSString *)changeTextKey{
-    CellTextCharacterHasChanged cellTextCharacterHasChangedBlock = objc_getAssociatedObject(self, @selector(cellTextCharacterHasChanged));
+    CellTextChanged cellTextCharacterHasChangedBlock = objc_getAssociatedObject(self, @selector(cellTextCharacterHasChanged));
     cellTextCharacterHasChangedBlock?cellTextCharacterHasChangedBlock(selectIndex, content,changeTextKey):nil;
 }
 
 -(void)textshouldBeginEditWithTextContainter:(id)textContainer andIndexPath:(NSIndexPath *)indexPath{
     self.currentSelectIndexPath = indexPath;
-    CGFloat footH = SCREEN_H>= SCREEN_HEIGHT_OF_IPHONE6PLUS?190:120;
+//    CGFloat footH = SCREEN_H>= SCREEN_HEIGHT_OF_IPHONE6PLUS?190:120;
     CGFloat contentInsetBottom = SCREEN_H>= SCREEN_HEIGHT_OF_IPHONE6PLUS?340:280;
-    _isHasTableFoot?:[self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, footH)]];
+//    _isHasTableFoot?:[self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, footH)]];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, contentInsetBottom, 0);
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
@@ -488,11 +497,13 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    ScrollBlock tableScrollBlock = objc_getAssociatedObject(self, @selector(tableScroll));
-//    tableScrollBlock?tableScrollBlock(scrollView):nil;
+    ScrollBlock tableScrollEndDeceleratingBlock = objc_getAssociatedObject(self, @selector(tableScrollDidEndDecelerating));
+    tableScrollEndDeceleratingBlock?tableScrollEndDeceleratingBlock(scrollView):nil;
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    ScrollBlock tableScrollEndDragingBlock = objc_getAssociatedObject(self, @selector(tableScrollDidEndDraging));
+    tableScrollEndDragingBlock?tableScrollEndDragingBlock(scrollView):nil;
     if(self.isDownLoading && self.isDownRefreshEnable){
         [self.joy_refreshHeaderView startRefreshingSize:self.tableView.size];
         self.tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0);
@@ -662,6 +673,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     };
 }
 
+//table滚动
 -(JoyTableAutoLayoutView *(^)(ScrollBlock))tableScroll{
     __weak __typeof(&*self)weakSelf = self;
     return ^(ScrollBlock block){
@@ -670,9 +682,44 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
     };
 }
 
+//table滚动结束拖拽
+-(JoyTableAutoLayoutView *(^)(ScrollBlock))tableScrollDidEndDraging{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(ScrollBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+//table滚动结束加速
+-(JoyTableAutoLayoutView *(^)(ScrollBlock))tableScrollDidEndDecelerating{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(ScrollBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+//cell即将展示
+-(JoyTableAutoLayoutView *(^)(CellDisplayBlock))cellWillDisplayBlock{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(CellDisplayBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
+//cell结束展示
+-(JoyTableAutoLayoutView *(^)(CellDisplayBlock))cellEndDisplayBlock{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(CellDisplayBlock block){
+        objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
+        return weakSelf;
+    };
+}
+
 //cell 被点击
 -(JoyTableAutoLayoutView *(^)(CellSelectBlock))cellDidSelect{
-    
     __weak __typeof(&*self)weakSelf = self;
     return ^(CellSelectBlock block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
@@ -699,18 +746,18 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 }
 
 //cell文本编辑结束
--(JoyTableAutoLayoutView *(^)(CellTextEndChanged))cellTextEiditEnd{
+-(JoyTableAutoLayoutView *(^)(CellTextChanged))cellTextEiditEnd{
     __weak __typeof(&*self)weakSelf = self;
-    return ^(CellTextEndChanged block){
+    return ^(CellTextChanged block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
         return weakSelf;
     };
 }
 
 //cell 文字编辑发生变化
--(JoyTableAutoLayoutView *(^)(CellTextCharacterHasChanged))cellTextCharacterHasChanged{
+-(JoyTableAutoLayoutView *(^)(CellTextChanged))cellTextCharacterHasChanged{
     __weak __typeof(&*self)weakSelf = self;
-    return ^(CellTextCharacterHasChanged block){
+    return ^(CellTextChanged block){
         objc_setAssociatedObject(weakSelf, _cmd, block, OBJC_ASSOCIATION_COPY);
         return weakSelf;
     };
@@ -807,7 +854,7 @@ CGFloat tableRowH(id self, SEL _cmd, UITableView *tableView,NSIndexPath *indexPa
 @implementation JoyTableBaseView
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [[self.dataArrayM[indexPath.section] rowArrayM][indexPath.row] cellH];
+    return self.isSectionTable?[[self.dataArrayM[indexPath.section] rowArrayM][indexPath.row] cellH]:[(JoyCellBaseModel *)[self.dataArrayM objectAtIndex:indexPath.row] cellH];
 }
 
 @end

@@ -73,7 +73,7 @@
 - (void)setImageCellModel:(JoyImageCellBaseModel *)cellModel{
     [self setCellWithModel:cellModel];
     cellModel.viewShape = EImageTypeRound;
-    cellModel.placeHolderImageStr = @"joymakeHead.jpg";
+    cellModel.placeHolderImageStr = @"JoyLike.jpg";
 //    cellModel.avatarBundleName = JoyToolBundle;
 }
 

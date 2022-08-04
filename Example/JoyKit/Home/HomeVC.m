@@ -37,13 +37,13 @@
                       @{@"title":@"table混合collection",@"tapAction":@"JoyTableCollectionVC"},
                       @{@"title":@"collectionView",@"tapAction":@"CollectionVC"},
                       @{@"title":@"json配置UI以及点击事件",@"tapAction":@"SCViewController"},
-                      @{@"title":@"二维码扫描",@"tapAction":@"QRCodeScanVC"},
+                      @{@"title":@"二维码扫描",@"tapAction":@"JoyQRCodeScanVC"},
+                      @{@"title":@"AVFoundation短视频录制、播放预览、存储相册",@"tapAction":@"JoyVideoRecordVC"},
                       @{@"title":@"播放器",@"tapAction":@"PlayerListVC"},
                       @{@"title":@"CAAnimation动画",@"tapAction":@"JoyAnimationVC"},
                       @{@"title":@"设备强制横竖屏",@"tapAction":@"JoyDeviceOrientationVC"},
-                      @{@"title":@"陀螺仪",@"tapAction":@"JoyCoreMotionVC"},
+                      @{@"title":@"陀螺仪水平仪",@"tapAction":@"JoyCoreMotionVC"},
                       @{@"title":@"字符串生成条形码和二维码并存储相册",@"tapAction":@"JoyQRCodeGenerateVC"},
-                      
                       ];
     JoySectionBaseModel *section = [[JoySectionBaseModel alloc]init];
     for (int i=0; i<list.count; i++) {
@@ -58,7 +58,39 @@
 }
 
 - (void)action:(NSString *)tapAction{
-    JoyBaseVC *vc = [[NSClassFromString(tapAction) alloc]init];
-    [self goVC:vc];
+    if ([tapAction isEqualToString:@"JoyQRCodeScanVC"])
+        [self qrScanAction];
+    else
+        [self goVC:NSClassFromString(tapAction).new];
+}
+
+
+
+-(void)qrScanAction{
+#if TARGET_IPHONE_SIMULATOR  //模拟器
+    [JoyAlert showWithMessage:@"模拟器无法启用扫码功能,请切换真机后再试"];
+#elif TARGET_OS_IPHONE      //真机
+    JoyQRCodeScanVC *vc = [[JoyQRCodeScanVC alloc]init];
+    [vc setScanSize:CGSizeMake(300, 300) cornerRadius:20 color:[UIColor greenColor]];
+    [self presentViewController:vc animated:true completion:nil];
+    __weak __typeof(&*self)weakSelf = self;
+    [vc startScan:^(NSString *str) {
+        [[JoyAlert shareAlert]showalertWithMessage:str alertBlock:nil];;
+    } backBlock:^{
+        [weakSelf dismissViewControllerAnimated:true completion:nil];
+    }];
+#endif
+//    播放视频
+//    __weak typeof(self)weakSelf = self;
+//    NSString *mergeUrlStr = [JoyMediaRecordPlay generateFilePathWithType:@"mp4"];
+//    NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"video0" ofType:@"MP4"];
+//    NSURL *recordUrl = [NSURL fileURLWithPath:urlStr];
+//    [JoyMediaRecordPlay mergeAndExportVideosAtFileURLs:recordUrl newUrl:mergeUrlStr widthHeightScale:SCREEN_W/SCREEN_H presetName:AVAssetExportPresetMediumQuality mergeSucess:^{
+//        JoyPlayerView * playView= [[JoyPlayerView alloc]initWithFrame:self.view.bounds];
+//        playView.backgroundColor = JOY_blackColor;
+//        [[UIApplication sharedApplication].keyWindow addSubview:playView];
+//        playView.playUrl = [NSURL fileURLWithPath:mergeUrlStr];
+//    }];
+
 }
 @end

@@ -12,7 +12,7 @@
 
 @interface JoyTableCollectionVC ()
 @property(nonatomic,strong)JoyTableAutoLayoutView *tableView;
-@property(nonatomic,strong)JoyTableCollectionInteractor *interactor;
+@property(nonatomic,strong)JoyTableCollectionInteractor *interactor;    //数据源
 @property (nonatomic, strong) UIButton *searchBtn;
 
 @end
