@@ -59,10 +59,10 @@
 }
 
 - (void)setCellWithModel:(JoyCellBaseModel *)cellModel{
-    cellModel.title =cellModel.placeHolder= [NSString stringWithFormat:@"这是一个%@cell",cellModel.cellName];
+    cellModel.title =cellModel.placeHolder= cellModel.cellName;
     cellModel.titleColor = @"0x347AEB";
     cellModel.subTitleColor = @"0x222222";
-    cellModel.backgroundColor = @"0xee88FF";
+//    cellModel.backgroundColor = @"0xee88FF";
     cellModel.accessoryType = arc4random()%4;
             cellModel.canMove = YES;
     cellModel.subTitle = [NSString stringWithFormat:@"model%@",NSStringFromClass(cellModel.class)];
@@ -73,7 +73,7 @@
 - (void)setImageCellModel:(JoyImageCellBaseModel *)cellModel{
     [self setCellWithModel:cellModel];
     cellModel.viewShape = EImageTypeRound;
-    cellModel.placeHolderImageStr = @"JoyLike.jpg";
+    cellModel.placeHolderImageStr = @"qrScanBorder";
 //    cellModel.avatarBundleName = JoyToolBundle;
 }
 

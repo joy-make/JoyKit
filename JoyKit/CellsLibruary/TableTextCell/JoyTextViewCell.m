@@ -57,17 +57,17 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.placeHolderLabel,
-                   make.leading.mas_equalTo(weakSelf.textView).offset(10);
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
-                   make.centerY.mas_equalTo(weakSelf.textView.mas_centerY);
+                   make.leading.mas_equalTo(10);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
+                   make.centerY.mas_equalTo(weakSelf.textView);
                    );
     
     MAS_CONSTRAINT(self.textView,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(5);
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.leading.mas_equalTo(5);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(5);
-                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
+                   make.top.mas_equalTo(KCellTopOffset);
+                   make.centerY.mas_equalTo(weakSelf.contentView);
                    );
 }
 

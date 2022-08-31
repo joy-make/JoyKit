@@ -32,7 +32,7 @@
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.numberOfLines = 0;
-        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:15];
     }
     return _titleLabel;
 }
@@ -60,26 +60,26 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.titleLabel,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
+                   make.leading.mas_equalTo(15);
                    make.trailing.mas_greaterThanOrEqualTo(weakSelf.titleLabel.mas_leading).offset(-3);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.width.mas_lessThanOrEqualTo(60);
-                   make.top.mas_equalTo(weakSelf.contentView).mas_offset(5);
+//                   make.width.mas_lessThanOrEqualTo(60).priorityHigh();
+                   make.top.mas_equalTo(KCellTopOffset);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
     
     MAS_CONSTRAINT(self.middleLabel,
                    make.trailing.mas_equalTo(weakSelf.rightLabel.mas_leading).offset(-3);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.top.mas_equalTo(weakSelf.contentView).mas_offset(5);
+                   make.top.mas_equalTo(self.titleLabel);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
     
     MAS_CONSTRAINT(self.rightLabel,
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
                    make.width.mas_lessThanOrEqualTo(100);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.top.mas_equalTo(weakSelf.contentView).mas_offset(5);
+                   make.top.mas_equalTo(self.titleLabel);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
 }

@@ -55,7 +55,7 @@
     if(!_placeHolderLabe){
     _placeHolderLabe = [[UILabel alloc]init];
     _placeHolderLabe.textColor = UIColorFromRGB(0xCCCCCC);
-    _placeHolderLabe.font = [UIFont systemFontOfSize:15];
+    _placeHolderLabe.font = [UIFont boldSystemFontOfSize:15];
     }
     return _placeHolderLabe;
 }
@@ -63,18 +63,18 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.titleLabel,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
+                   make.leading.mas_equalTo(KCellLeadingOffset);
                    make.height.mas_greaterThanOrEqualTo(33.5);
                    make.width.mas_lessThanOrEqualTo(100);
-                   make.top.mas_equalTo(weakSelf.contentView).offset(5);
+                   make.top.mas_equalTo(KCellTopOffset);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
     
     MAS_CONSTRAINT(self.subTitleLabel,
                    make.leading.mas_equalTo(weakSelf.titleLabel.mas_trailing).offset(10);
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.top.mas_equalTo(weakSelf.contentView).offset(5);
+                   make.top.mas_equalTo(self.titleLabel);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
     

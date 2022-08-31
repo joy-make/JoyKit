@@ -31,7 +31,7 @@
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.numberOfLines = 0;
-        _titleLabel.font = [UIFont systemFontOfSize:16];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:15];
         _titleLabel.textColor = UIColorFromRGB(0x333333);
         _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -41,10 +41,10 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.titleLabel,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.leading.mas_equalTo(KCellLeadingOffset);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.top.mas_equalTo(weakSelf.contentView).offset(5);
+                   make.top.mas_equalTo(KCellTopOffset);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
 }

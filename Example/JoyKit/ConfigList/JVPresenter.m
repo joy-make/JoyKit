@@ -20,7 +20,7 @@
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
         strongSelf.layoutView.setDataSource(strongSelf.interactor.dataArrayM)
         .reloadTable()
-        .setTableEdit(YES)
+//        .setTableEdit(YES)
         .cellDidSelect(^(NSIndexPath *indexPath, NSString *tapAction) {
             [weakSelf performTapAction:tapAction];
         })

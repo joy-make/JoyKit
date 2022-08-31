@@ -41,7 +41,7 @@
 -(UILabel *)titleLabel{
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:15];
     }
     return _titleLabel;
 }
@@ -49,16 +49,16 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.iconImageView,
-                   make.leading.mas_equalTo(weakSelf.contentView).offset(15);
+                   make.leading.mas_equalTo(KCellLeadingOffset);
                    make.height.mas_equalTo(33.5);
                    make.width.mas_equalTo(weakSelf.iconImageView.mas_height);
-                   make.top.mas_greaterThanOrEqualTo(weakSelf.contentView).offset(5);
+                   make.top.mas_greaterThanOrEqualTo(KCellTopOffset);
                    make.centerY.mas_equalTo(weakSelf.contentView);
                    );
     
     MAS_CONSTRAINT(self.titleLabel,
                    make.leading.mas_equalTo(weakSelf.iconImageView.mas_trailing).offset(15);
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
 }

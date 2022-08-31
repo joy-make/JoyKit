@@ -42,11 +42,11 @@
 
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
-    MAS_CONSTRAINT(self.textField, make.leading.mas_equalTo(weakSelf.contentView).offset(15);
-                   make.trailing.mas_equalTo(weakSelf.contentView).offset(-15);
+    MAS_CONSTRAINT(self.textField, make.leading.mas_equalTo(KCellLeadingOffset);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
                    make.height.mas_greaterThanOrEqualTo(33.5);
-                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(5);
-                   make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
+                   make.top.mas_equalTo(KCellTopOffset);
+                   make.centerY.mas_equalTo(weakSelf.contentView);
                    );
 }
 

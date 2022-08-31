@@ -39,7 +39,7 @@
 -(UILabel *)titleLabel{
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.font = [UIFont systemFontOfSize:16];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:15];
     }
     return _titleLabel;}
 
@@ -58,7 +58,7 @@
                    make.leading.mas_equalTo(weakSelf.contentView).offset(15);
                    make.width.mas_equalTo(weakSelf.headImageView.mas_height);
                    make.height.mas_lessThanOrEqualTo(60);
-                   make.top.mas_equalTo(weakSelf.contentView.mas_top).offset(6);
+                   make.top.mas_equalTo(KCellTopOffset);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
                    );
     

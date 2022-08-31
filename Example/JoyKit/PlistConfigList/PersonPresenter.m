@@ -66,8 +66,8 @@
 #pragma MARK 日期选择
 - (void)dateSelectEntryClick:(NSString *)selectDate
 {
-    JoySectionBaseModel *sectionModel = self.interactor.dataArrayM[self.tableView.currentSelectIndexPath.section];
-    JoyTextCellBaseModel *model = sectionModel.rowArrayM[self.tableView.currentSelectIndexPath.row];
+//    JoySectionBaseModel *sectionModel = self.interactor.dataArrayM[self.tableView.currentSelectIndexPath.section];
+    JoyTextCellBaseModel *model = self.interactor.dataArrayM[self.tableView.currentSelectIndexPath.row];
     model.subTitle = selectDate;
     [self.interactor.person setValue:selectDate forKey:model.changeKey];
     [self.tableView reloadRow:self.tableView.currentSelectIndexPath];
@@ -75,8 +75,8 @@
 
 #pragma mark 选择类型回调事件
 -(void)pickSelectEntryClick{
-    JoySectionBaseModel *sectionModel = self.interactor.dataArrayM[self.tableView.currentSelectIndexPath.section];
-    JoyTextCellBaseModel *model = sectionModel.rowArrayM[self.tableView.currentSelectIndexPath.row];
+//    JoySectionBaseModel *sectionModel = self.interactor.dataArrayM[self.tableView.currentSelectIndexPath.section];
+    JoyTextCellBaseModel *model = self.interactor.dataArrayM[self.tableView.currentSelectIndexPath.row];
     NSInteger selectRow = [self.pickView.pickerView selectedRowInComponent:0];
     if([model.changeKey isEqualToString:@"sex"]){
         model.subTitle = self.interactor.sexList.firstObject[selectRow];

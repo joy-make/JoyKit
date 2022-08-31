@@ -39,7 +39,7 @@
 -(UILabel *)titleLabel{
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.font = [UIFont systemFontOfSize:16];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:15];
     }
     return _titleLabel;
 }
@@ -56,7 +56,7 @@
 -(void)setConstraint{
     __weak __typeof(&*self)weakSelf = self;
     MAS_CONSTRAINT(self.accessView,
-                   make.leading.mas_equalTo(15);
+                   make.leading.mas_equalTo(KCellLeadingOffset);
                    make.width.mas_equalTo(weakSelf.accessView.mas_height);
                    make.height.mas_equalTo(30);
                    make.centerY.mas_equalTo(weakSelf.contentView.mas_centerY);
@@ -64,15 +64,15 @@
     
     MAS_CONSTRAINT(self.titleLabel,
                    make.leading.mas_equalTo(weakSelf.accessView.mas_trailing).offset(10);
-                   make.trailing.mas_equalTo(-15);
-                   make.top.mas_equalTo(10);
+                   make.trailing.mas_equalTo(-KCellTrailingOffset);
+                   make.top.mas_equalTo(KCellTopOffset);
                    make.bottom.mas_greaterThanOrEqualTo(self.contentView.mas_centerY).offset(-5);
                    );
     
     MAS_CONSTRAINT(self.subTitleLabel,
                    make.leading.mas_equalTo(weakSelf.accessView.mas_trailing).offset(10);
-                   make.trailing.mas_equalTo(-15);
-                   make.bottom.mas_equalTo(-10);
+                   make.trailing.mas_equalTo(self.titleLabel);
+                   make.bottom.mas_equalTo(-KCellTopOffset);
                    make.top.mas_greaterThanOrEqualTo(self.contentView.mas_centerY).offset(5);
                    );
 }
